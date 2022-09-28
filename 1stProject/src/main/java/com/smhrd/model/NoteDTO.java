@@ -19,6 +19,11 @@ package com.smhrd.model;
 
 	    // 노트 작성일 
 	    private String note_date;
+	    
+	        
+		public NoteDTO() {
+			super();
+		}
 
 		public NoteDTO(String note_id, String note_title, String note_content, String note_tag, String user_id,
 				String note_date) {
