@@ -28,7 +28,7 @@ private SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSessionFac
 		// 1. sqlsession 가져오기
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		// 2. sql구문 실행
-		result = sqlSession.insert("com.smhrd.model.DAO.insert", note); //statement mapper 안에 있는 수많은 메소드 중에 어떤 메소드를 쓸꺼니? / insert구문은 무조건 두개짜리!
+		result = sqlSession.insert("com.smhrd.model.DAO.insert", note);
 		
 		sqlSession.close();
 		
