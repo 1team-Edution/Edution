@@ -1,0 +1,183 @@
+@charset "utf-8";
+
+#modal.modal-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    display: none;
+}
+#modal .modal-window {
+    box-shadow: 0 6px 10px 0 rgba(134, 134, 134, 0.37);
+    backdrop-filter: blur( 13.5px );
+    -webkit-backdrop-filter: blur( 13.5px );
+    border-radius: 10px;
+    border: 2px solid rgba(43, 43, 43, 0.18);
+    width: 500px;
+    height: 330px;
+    position: relative;
+    top: -100px;
+    padding: 10px;
+}
+#modal .title {
+    padding-left: 10px;
+    display: inline;
+    text-shadow: 1px 1px 2px rgb(255, 255, 255);
+    color: rgb(185, 183, 183);
+}
+#modal .title h2 {
+    display: inline;
+}
+#modal .close-area {
+    display: inline;
+    float: right;
+    padding-right: 10px;
+    cursor: pointer;
+    text-shadow: 1px 1px 2px rgb(255, 255, 255);
+    color: rgb(185, 183, 183);
+}
+#modal .content {
+    margin-top: 20px;
+    padding: 0px 10px;
+    text-shadow: 1px 1px 2px rgb(255, 255, 255);
+    color: rgb(185, 183, 183);
+}
+.date-button{
+    display: inline;
+    cursor: pointer;
+    color: rgb(114, 114, 114);
+}
+.save-button{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    float: right;
+    background: var(--button-bg-color);
+    color: var(--button-color);
+    margin: 0;
+    padding: 4px 8px;
+    
+    font-family: 맑은고딕,arial;
+    font-size: 15px;
+    font-weight: 200;
+    text-align: center;
+    text-decoration: none;
+    
+    border: none;
+    border-radius: 5px;
+    
+    display: inline-block;
+    width: auto;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+    transition: 0.5s;
+    --button-bg-color: #faecec;
+    --button-hover-bg-color: #ddd0d0;
+}
+button:active,
+    button:hover,
+    button:focus {
+    background: var(--button-hover-bg-color);
+    outline: 0;
+    }
+    button:disabled {
+    opacity: 0.5;
+    }
+.modal-text{
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: solid 2px #b9b9b9;
+    border-radius: 5px;
+    color: #808080;
+    font-family: 맑은고딕,arial;
+    font-size: 15px;
+}
+.modal-textarea{
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: solid 2px #b9b9b9;
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: 맑은고딕,arial;
+    color: #808080;
+    resize: none;
+}
+input[class="check"] + label {
+            display: inline-block;
+            width: 55px;
+            height: 22px;
+            border: 2px solid #bcbcbc;
+            cursor: pointer;
+            border-radius: 5px;
+            }
+input[class="check"]:checked + label {
+                background-color: #b3b1b1;
+                color: rgb(255, 255, 255);
+                text-shadow: 1px 1px 2px rgb(146, 146, 146);
+                }
+input[class="check"] {
+                    display: none;
+                }
+
+#btn-modal{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: var(--button-bg-color);
+    color: var(--button-color);
+    margin: 0;
+    padding: 0px 4px;
+    display: inline;
+    float: right;
+    cursor: pointer;
+    text-shadow: 1px 1px 2px rgb(255, 255, 255);
+    color: rgb(190, 190, 190);
+    border: none;
+    font-size: 30px;
+}
+.todoTable{
+    font-family: 맑은고딕, Arial;
+    font-size:15px;
+    color: rgb(122, 122, 122);
+}
+#task-head{
+    font-family: 맑은고딕, Arial;
+    background-color: rgb(193, 218, 218);
+    color:#747888;
+    display: inline-block;
+    border-radius: 20px;
+    padding: 0px 20px;
+    font-size: 18px; 
+    margin-left: 15px;
+}
+#container{
+    border-radius: 10px;
+    border: 1.5px solid rgba(43, 43, 43, 0.18);
+    width: 200px;
+    height: 400px;
+    position: relative;
+    top: 10px;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 0px;            
+}
+#task-board{
+    margin-left: 10px;
+    font-family: 맑은고딕, Arial;
+    font-size: 15px;
+    color:#888888;
+}
