@@ -18,7 +18,8 @@ public class SelectAllCon implements Controller {
 		
 		request.setAttribute("list", list);
 		
-		return "NoteContents";
+		// 여기는 아직 수정 전입니다----------------
+		return "main";
 		
 	}
 
