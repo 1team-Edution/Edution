@@ -1405,7 +1405,7 @@ margin:0 auto}}
 <div class="jsx-1865826807 mobile-nav-scrollable">
 <div class="jsx-1865826807 actions">
 <!-- 회원가입 페이지로 연결 -->
-<a role="button" class="jsx-2971364727 button-link" href="#">
+<a role="button" class="jsx-2971364727 button-link" href="GoJoin.do">
 <div class="jsx-2971364727 button secondary full-width button-size-l">로그인</div></a></div></div></div></nav>
 
 <div class="jsx-2604928324 spacer"></div>
