@@ -20,6 +20,7 @@ import com.smhrd.controller.QnAInsertCon;
 import com.smhrd.controller.QnASelectAllCon;
 import com.smhrd.controller.QnASelectOneCon;
 import com.smhrd.controller.QnAUpdateCon;
+import com.smhrd.controller.TodoCon;
 import com.smhrd.controller.indexView;
 
 @WebServlet("*.do")
@@ -35,12 +36,13 @@ public class FrontController1 extends HttpServlet {
 		mappings.put("/indexView.do", new indexView());
 		mappings.put("/LoginPage.do", new LoginPage());
 		mappings.put("/JoinCon.do", new JoinCon());
-
 		mappings.put("/QnASelectAll", new QnASelectAllCon());
 		mappings.put("/QnASelectOne", new QnASelectOneCon());
 		mappings.put("/QnAInsert", new QnAInsertCon());
 		mappings.put("/QnAUpdate", new QnAUpdateCon());
 		mappings.put("/QnADelete", new QnADeleteCon());
+		mappings.put("/Todo.do", new TodoCon());
+		
 	}
 
 	
