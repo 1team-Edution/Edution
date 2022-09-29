@@ -16,7 +16,7 @@ private SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSessionFac
 		// 1. sqlsession 만들기
 		SqlSession sqlSession = sqlSessionFactory.openSession(true); 
 		// 2. mapper.xml파일안에 있는 기능을 수행
-		list = (ArrayList)sqlSession.selectList("com.smhrd.model.DAO.selectAll");
+		list = (ArrayList)sqlSession.selectList("com.smhrd.model.NoteDAO.selectAll");
 		
 		sqlSession.close();
 		
@@ -28,7 +28,7 @@ private SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSessionFac
 		// 1. sqlsession 가져오기
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		// 2. sql구문 실행
-		result = sqlSession.insert("com.smhrd.model.DAO.insert", note);
+		result = sqlSession.insert("com.smhrd.model.NoteDAO.insert", note);
 		
 		sqlSession.close();
 		
@@ -40,7 +40,7 @@ private SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSessionFac
 		// 1. sqlsession 열어주기
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		// 2. mapper.xml안에 있는 쿼리문 실행
-		note = (NoteDTO)sqlSession.selectOne("com.smhrd.model.DAO.selectOne", note_seq);	
+		note = (NoteDTO)sqlSession.selectOne("com.smhrd.model.NoteDAO.selectOne", note_seq);	
 		// 3. 결과값 반환
 		sqlSession.close();
 		return note;
@@ -53,7 +53,7 @@ private SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSessionFac
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		
 		// 2. SQL문 골라서 실행시키기
-		result = sqlSession.update("com.smhrd.model.DAO.update", note);
+		result = sqlSession.update("com.smhrd.model.NoteDAO.update", note);
 		
 		// 3. 빌린 Connection 돌려주기
 		sqlSession.close();
