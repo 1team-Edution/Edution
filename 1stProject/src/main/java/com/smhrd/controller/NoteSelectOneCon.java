@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.smhrd.model.NoteDAO;
 import com.smhrd.model.NoteDTO;
 
-public class SelectOneCon implements Controller {
+public class NoteSelectOneCon implements Controller {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {

@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.smhrd.model.NoteDAO;
 import com.smhrd.model.NoteDTO;
 
-public class SelectAllCon implements Controller {
+public class NoteSelectAllCon implements Controller {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
@@ -18,8 +18,8 @@ public class SelectAllCon implements Controller {
 		
 		request.setAttribute("list", list);
 		
-		// 여기는 아직 수정 전입니다----------------
-		return "main";
+		// 여기는 아직 정확하지 않습니다--------
+		return "NoteContent";
 		
 	}
 
