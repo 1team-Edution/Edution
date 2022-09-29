@@ -1,7 +1,19 @@
+-- 테이블 확인용 셀렉트문
+select * from tbl_user;
+select * from tbl_board;
+select * from tbl_comment;
+select * from tbl_note;
+select * from tbl_todo_list;
+select * from tbl_help;
+
+-- 서버 시간 체크용 셀렉트문
+select sysdate from dual;
+
 -- 트리거 들이 제대로 생성되지 않아 트리거는 주석처리 해뒀음.
 -- oracle DB에서는 restrict 옵션을 지원하지 않아 restrict 키워드 제거함.
 
 -- tbl_user Table Create SQL
+drop table tbl_user;
 CREATE TABLE tbl_user
 (
     user_id          VARCHAR2(20)     NOT NULL, 
@@ -17,6 +29,8 @@ CREATE TABLE tbl_user
      PRIMARY KEY (user_id)
 );
 
+alter table tbl_user
+modify user_joindate default sysdate;
 
 COMMENT ON TABLE tbl_user IS '사용자';
 
