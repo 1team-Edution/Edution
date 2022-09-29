@@ -15,6 +15,11 @@ import javax.servlet.http.HttpServletResponse;
 import com.smhrd.controller.Controller;
 import com.smhrd.controller.JoinCon;
 import com.smhrd.controller.LoginPage;
+import com.smhrd.controller.NoteDeleteCon;
+import com.smhrd.controller.NoteInsertCon;
+import com.smhrd.controller.NoteSelectAllCon;
+import com.smhrd.controller.NoteSelectOneCon;
+import com.smhrd.controller.NoteUpdateCon;
 import com.smhrd.controller.QnADeleteCon;
 import com.smhrd.controller.QnAInsertCon;
 import com.smhrd.controller.QnASelectAllCon;
@@ -41,6 +46,14 @@ public class FrontController1 extends HttpServlet {
 		mappings.put("/QnAInsert", new QnAInsertCon());
 		mappings.put("/QnAUpdate", new QnAUpdateCon());
 		mappings.put("/QnADelete", new QnADeleteCon());
+
+		mappings.put("/NoteSelectAll", new NoteSelectAllCon());
+		mappings.put("/NoteSelectOne", new NoteSelectOneCon());
+		mappings.put("/NoteInsert", new NoteInsertCon());
+		mappings.put("/NoteUpdate", new NoteUpdateCon());
+		mappings.put("/NoteDelete", new NoteDeleteCon());
+		
+		
 	}
 
 	
