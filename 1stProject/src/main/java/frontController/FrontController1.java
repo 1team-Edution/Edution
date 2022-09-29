@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.smhrd.controller.Controller;
+import com.smhrd.controller.GoJoinCon;
 import com.smhrd.controller.JoinCon;
 import com.smhrd.controller.LoginPage;
 import com.smhrd.controller.NoteDeleteCon;
@@ -40,6 +41,7 @@ public class FrontController1 extends HttpServlet {
 		
 		mappings.put("/indexView.do", new indexView());
 		mappings.put("/LoginPage.do", new LoginPage());
+		mappings.put("/GoJoin.do", new GoJoinCon());
 		mappings.put("/Join.do", new JoinCon());
 		mappings.put("/QnASelectAll", new QnASelectAllCon());
 		mappings.put("/QnASelectOne", new QnASelectOneCon());
