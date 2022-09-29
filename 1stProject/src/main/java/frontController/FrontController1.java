@@ -40,7 +40,7 @@ public class FrontController1 extends HttpServlet {
 		
 		mappings.put("/indexView.do", new indexView());
 		mappings.put("/LoginPage.do", new LoginPage());
-		mappings.put("/JoinCon.do", new JoinCon());
+		mappings.put("/Join.do", new JoinCon());
 		mappings.put("/QnASelectAll", new QnASelectAllCon());
 		mappings.put("/QnASelectOne", new QnASelectOneCon());
 		mappings.put("/QnAInsert", new QnAInsertCon());
@@ -76,7 +76,7 @@ public class FrontController1 extends HttpServlet {
 		// HashMap.get(Key);
 		con = mappings.get(command);
 	
-		nextView=con.execute(request, response);
+		nextView = con.execute(request, response);
 		
 
 		if(nextView.contains("redirect:/")) {
