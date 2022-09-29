@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.smhrd.model.NoteDAO;
 
-public class DeleteCon implements Controller {
+public class NoteDeleteCon implements Controller {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
@@ -18,11 +18,11 @@ public class DeleteCon implements Controller {
 		// 여기는 아직 정확하지 않습니다--------
 		if (row > 0) {
 			
-			return "redirect:/SelectAll.do";
+			return "redirect:/NoteSelectAll.do";
 
 		} else {
 
-			return "redirect:/Delete.do";
+			return "redirect:/NoteDelete.do";
 
 		}
 
