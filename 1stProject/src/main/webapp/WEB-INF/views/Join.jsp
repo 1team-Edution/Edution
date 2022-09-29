@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 <div style="font-size: 15px; white-space: nowrap; top: 0px; width: 100%; background: rgb(255, 254, 252); display: flex; flex-direction: column; align-items: center; justify-content: center;"><nav style="display: flex; align-items: center; justify-content: center; width: 100%; max-width: 1300px; padding-left: 20px; padding-right: 20px; transition: height 250ms ease 0s; height: 80px; position: relative; overflow: hidden; box-shadow: none;">
   <div style="flex-shrink: 0;">
     <!-- index View 링크 넣기 -->
@@ -18,7 +19,6 @@
         <div style="font-weight: 500; font-size: 16px;">Edution</div></div></a></div>
         <div style="flex: 1 1 0%; display: flex; justify-content: center;"></div></nav></div>
 <!-- 여기까지 상단바 -->
-
 
   <div style="display: flex; flex-direction: column; align-items: center;">
     <div style="font-size: 50px; margin-top: 8vh; font-weight: 700; margin-bottom: 24px; text-align: center; line-height: 1.1;">회원가입</div>

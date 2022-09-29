@@ -3,7 +3,7 @@ package com.smhrd.model;
 	public class NoteDTO {
 
 	    // 노트 순번 
-	    private String note_id;
+	    private String note_seq;
 
 	    // 노트 제목 
 	    private String note_title;
@@ -19,11 +19,16 @@ package com.smhrd.model;
 
 	    // 노트 작성일 
 	    private String note_date;
+	    
+	        
+		public NoteDTO() {
+			super();
+		}
 
-		public NoteDTO(String note_id, String note_title, String note_content, String note_tag, String user_id,
+		public NoteDTO(String note_seq, String note_title, String note_content, String note_tag, String user_id,
 				String note_date) {
 			super();
-			this.note_id = note_id;
+			this.note_seq = note_seq;
 			this.note_title = note_title;
 			this.note_content = note_content;
 			this.note_tag = note_tag;
@@ -32,11 +37,11 @@ package com.smhrd.model;
 		}
 
 		public String getNote_id() {
-			return note_id;
+			return note_seq;
 		}
 
-		public void setNote_id(String note_id) {
-			this.note_id = note_id;
+		public void setNote_id(String note_seq) {
+			this.note_seq = note_seq;
 		}
 
 		public String getNote_title() {

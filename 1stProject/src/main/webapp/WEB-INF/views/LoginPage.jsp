@@ -21,21 +21,23 @@
     <div style="display: flex; align-items: center;">
         <svg viewBox="0 0 120 126" class="edutionLogo" style="width: 30px; height: 30px; display: block; fill: inherit; flex-shrink: 0; backface-visibility: hidden; margin-right: 10px;"></svg>
         <!-- 로고 이미지 넣기 -->
-        <div style="font-weight: 500; font-size: 16px;">Edution</div></div></a></div>
+        <img src="img/Edution2.png" style="width: 30px; height: 30px;">
+        <div style="font-weight: 500; font-size: 16px;
+        font-family:inter-var, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, 'Apple Color Emoji', Arial, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol';">Edution</div></div></a></div>
         <div style="flex: 1 1 0%; display: flex; justify-content: center;"></div></nav></div>
         <!-- 여기까지만 상단 부분  -->
 
 
     <div style="display: flex; flex-direction: column; align-items: center;">
-        <div style="font-size: 34px; margin-top: 20vh; font-weight: 700; margin-bottom: 24px; text-align: center; line-height: 1.1;">로그인</div>
+        <div style="font-size: 34px; margin-top: 10vh; font-weight: 700; margin-bottom: 24px; text-align: center; line-height: 1.1;">로그인</div>
         <div class="notion-login" style="width: 100%; display: flex; flex-direction: column; align-items: center; max-width: 320px; margin-bottom: 16vh;">
     <div style="display: flex; flex-direction: column; width: 100%;">
         
         <div>
         <div style="width: 100%;">
         <!-- 카카오로 로그인하기 버튼 부분 -->
-    <div class="notion-focusable" role="button" aria-disabled="false" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; white-space: nowrap; height: 36px; border-radius: 4px; color: rgb(17, 17, 17); font-size: 14px; line-height: 1; padding-left: 12px; padding-right: 12px; font-weight: 500; background: white; border: 1px solid rgba(15, 15, 15, 0.15); width: 100%; box-shadow: rgba(15, 15, 15, 0.05) 0px 1px 2px; margin-bottom: 4px;">
-        카카오로 계속하기(추가예정)</div>
+      <div class="notion-focusable" aria-disabled="false" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; white-space: nowrap; height: 36px; margin-bottom: 4px;">
+        <a href="#"><img src="img/kakao_login_medium_wide.png"></a></div>
         <!-- 페이스북으로 계속하기 버튼 부분 -->
     <div class="notion-focusable" role="button" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; white-space: nowrap; height: 36px; border-radius: 4px; color: rgb(55, 53, 47); fill: rgb(55, 53, 47); background: white; font-size: 14px; line-height: 1; padding-left: 12px; padding-right: 12px; font-weight: 500; border: 1px solid rgba(15, 15, 15, 0.15); width: 100%; box-shadow: rgba(15, 15, 15, 0.05) 0px 1px 2px; margin-top: 10px;">
         페이스북으로 계속하기(추가예정)</div>

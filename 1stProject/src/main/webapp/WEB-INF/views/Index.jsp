@@ -4,10 +4,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<head>
 <meta name="viewport" content="width=device-width"><meta charset="utf-8">
-<title class="jsx-1549916940 jsx-1382635649">Notion (노션) – 모든 팀을 위한 하나의 워크스페이스</title>
-<meta name="description" content="Notion은 단순한 워드프로세서가 아닙니다. 내 스타일에 맞게 커스텀해서 사용하세요." class="jsx-1549916940 jsx-1382635649">
+<title class="jsx-1549916940 jsx-1382635649">Edution (에듀션) – 모든 취준생을 위한 웹 스터디플래너</title>
 
 <style id="__jsx-2971364727">.button-link.jsx-2971364727{-webkit-text-decoration:none;
 text-decoration:none;
@@ -1053,43 +1051,6 @@ object-fit:contain}
 .logo-bw.jsx-3745431632{-webkit-filter:grayscale(100%);
 filter:grayscale(100%)}</style>
 
-<style id="__jsx-3135077381">.logo.jsx-3135077381{display:block;
-height:100%;
-width:100%;
-max-width:62px;
--webkit-box-flex:0;
--webkit-flex-grow:0;
--ms-flex-positive:0;
-flex-grow:0}
-.logo-limit-height.jsx-3135077381{max-height:30px;
-object-fit:contain}
-.logo-bw.jsx-3135077381{-webkit-filter:grayscale(100%);
-filter:grayscale(100%)}</style><style id="__jsx-3172076237">.logo.jsx-3172076237{display:block;
-height:100%;
-width:100%;
-max-width:84px;
--webkit-box-flex:0;
--webkit-flex-grow:0;
--ms-flex-positive:0;
-flex-grow:0}
-.logo-limit-height.jsx-3172076237{max-height:30px;
-object-fit:contain}
-.logo-bw.jsx-3172076237{-webkit-filter:grayscale(100%);
-filter:grayscale(100%)}</style>
-
-<style id="__jsx-471281099">.logo.jsx-471281099{display:block;
-height:100%;
-width:100%;
-max-width:82px;
--webkit-box-flex:0;
--webkit-flex-grow:0;
--ms-flex-positive:0;
-flex-grow:0}
-.logo-limit-height.jsx-471281099{max-height:30px;
-object-fit:contain}
-.logo-bw.jsx-471281099{-webkit-filter:grayscale(100%);
-filter:grayscale(100%)}</style>
-
 <style id="__jsx-722906092">.logos.jsx-722906092{display:-webkit-box;
 display:-webkit-flex;
 display:-ms-flexbox;
@@ -1374,43 +1335,35 @@ margin:0 auto}}
 @media screen and (min-width:1380px) {:root{--spacing-m:60px;
 --spacing-l:120px;
 --spacing-xl:160px}}</style>
-
-<meta http-equiv="origin-trial" content="A7bG5hJ4XpMV5a3V1wwAR0PalkFSxLOZeL9D/YBYdupYUIgUgGhfVJ1zBFOqGybb7gRhswfJ+AmO7S2rNK2IOwkAAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjY5NzY2Mzk5LCJpc1RoaXJkUGFydHkiOnRydWV9"><script type="text/javascript" async="" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/954804604/?random=1664257263733&amp;cv=9&amp;fst=1664257263733&amp;num=1&amp;bg=ffffff&amp;guid=ON&amp;resp=GooglemKTybQhCsO&amp;u_h=1080&amp;u_w=1920&amp;u_ah=1040&amp;u_aw=1920&amp;u_cd=24&amp;u_his=3&amp;u_tz=540&amp;u_java=false&amp;u_nplug=5&amp;u_nmime=2&amp;gtm=2oa9l0&amp;sendb=1&amp;ig=1&amp;data=event%3Dgtag.config&amp;frm=0&amp;url=https%3A%2F%2Fwww.notion.so%2Fko-kr%2Fproduct%3Futm_source%3Dgoogle%26utm_campaign%3D10805039169%26utm_medium%3D104440699817%26utm_content%3D455555244419%26utm_term%3D%25EB%2585%25B8%25EC%2585%2598%26targetid%3Daud-840164194020%3Akwd-827502875973%26gclid%3DCjwKCAjwm8WZBhBUEiwA178UnKgmZx6sM6061aKwBBAPoF1NGajA2mlsosG3HgawPUN2ZEOyxKRBZBoCOj8QAvD_BwE&amp;ref=https%3A%2F%2Fwww.google.com%2F&amp;tiba=Notion%20(%EB%85%B8%EC%85%98)%20%E2%80%93%20%EB%AA%A8%EB%93%A0%20%ED%8C%80%EC%9D%84%20%EC%9C%84%ED%95%9C%20%ED%95%98%EB%82%98%EC%9D%98%20%EC%9B%8C%ED%81%AC%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4&amp;auid=330742119.1662089229&amp;hn=www.googleadservices.com&amp;async=1&amp;rfmt=3&amp;fmt=4"></script><script charset="utf-8" src="https://client.mutinycdn.com/mutiny-client/6.3.1.0-reorder6.js"></script><script type="text/javascript" async="" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/954804604/?random=1664257264302&amp;cv=9&amp;fst=1664257264302&amp;num=1&amp;bg=ffffff&amp;guid=ON&amp;resp=GooglemKTybQhCsO&amp;u_h=1080&amp;u_w=1920&amp;u_ah=1040&amp;u_aw=1920&amp;u_cd=24&amp;u_his=3&amp;u_tz=540&amp;u_java=false&amp;u_nplug=5&amp;u_nmime=2&amp;gtm=2oa9l0&amp;sendb=1&amp;ig=1&amp;data=event%3Dform_submit&amp;frm=0&amp;url=https%3A%2F%2Fwww.notion.so%2Fko-kr%2Fproduct%3Futm_source%3Dgoogle%26utm_campaign%3D10805039169%26utm_medium%3D104440699817%26utm_content%3D455555244419%26utm_term%3D%25EB%2585%25B8%25EC%2585%2598%26targetid%3Daud-840164194020%3Akwd-827502875973%26gclid%3DCjwKCAjwm8WZBhBUEiwA178UnKgmZx6sM6061aKwBBAPoF1NGajA2mlsosG3HgawPUN2ZEOyxKRBZBoCOj8QAvD_BwE&amp;ref=https%3A%2F%2Fwww.google.com%2F&amp;tiba=Notion%20(%EB%85%B8%EC%85%98)%20%E2%80%93%20%EB%AA%A8%EB%93%A0%20%ED%8C%80%EC%9D%84%20%EC%9C%84%ED%95%9C%20%ED%95%98%EB%82%98%EC%9D%98%20%EC%9B%8C%ED%81%AC%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4&amp;auid=330742119.1662089229&amp;hn=www.googleadservices.com&amp;async=1&amp;rfmt=3&amp;fmt=4"></script><script type="text/javascript" async="" src="//munchkin.marketo.net/munchkin.js"></script><meta http-equiv="origin-trial" content="A7bG5hJ4XpMV5a3V1wwAR0PalkFSxLOZeL9D/YBYdupYUIgUgGhfVJ1zBFOqGybb7gRhswfJ+AmO7S2rNK2IOwkAAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjY5NzY2Mzk5LCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A7bG5hJ4XpMV5a3V1wwAR0PalkFSxLOZeL9D/YBYdupYUIgUgGhfVJ1zBFOqGybb7gRhswfJ+AmO7S2rNK2IOwkAAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjY5NzY2Mzk5LCJpc1RoaXJkUGFydHkiOnRydWV9"><link as="script" rel="prefetch" href="/_next/static/chunks/8261-4ac715a015c19325.js"><link as="script" rel="prefetch" href="/_next/static/chunks/7294-62f2046ffb4a2c6a.js"><link as="script" rel="prefetch" href="/_next/static/chunks/pages/templates-ffea3a585ce74b60.js"><link as="script" rel="prefetch" href="/_next/static/chunks/2199-2648de8c872b8606.js"><link as="script" rel="prefetch" href="/_next/static/chunks/pages/templates/%5Bslug%5D-886f1a2de011bd13.js"><link as="script" rel="prefetch" href="/_next/static/chunks/pages/contact-sales-8563abe7261c51f0.js"><link as="script" rel="prefetch" href="/_next/static/chunks/pages/about-1ec50e2730fa5a9a.js"><link as="script" rel="prefetch" href="/_next/static/chunks/pages/careers-e2169765b301be00.js"><link as="script" rel="prefetch" href="/_next/static/chunks/pages/security-4aa7df9c3fe1e31f.js"><link as="script" rel="prefetch" href="/_next/static/chunks/469-0327c80a4f884f57.js"><link as="script" rel="prefetch" href="/_next/static/chunks/pages/releases-95ebaf7a8b3cb555.js"><link as="script" rel="prefetch" href="/_next/static/chunks/pages/affiliates-0c6e773998229003.js"><link as="script" rel="prefetch" href="/_next/static/chunks/pages/evernote-7f9beef8c7b52dbd.js"><link as="script" rel="prefetch" href="/_next/static/chunks/pages/confluence-e7747e4d4d2fbc9c.js"><style type="text/css" data-styled-jsx="">.logo.jsx-1064760108{display:block;
-height:100%;
-width:100%;
-max-width:94px;
--webkit-box-flex:0;
--webkit-flex-grow:0;
--ms-flex-positive:0;
-flex-grow:0}
-.logo-limit-height.jsx-1064760108{max-height:30px;
-object-fit:contain}
-.logo-bw.jsx-1064760108{-webkit-filter:grayscale(100%);
-filter:grayscale(100%)}</style></head>
+</head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-</head>
+
 <body>
 
 		<header class="jsx-2604928324 header">
 		<div class="jsx-2604928324 inner">
-		<div class="jsx-2604928324 logo-wrap">
-		<!-- 로고 이미지 -->
-		<a aria-label="Notion – 홈" class="jsx-2604928324 logo" href="#">
-		<img src="./img/Edution2.png" width="30" height="30"></a>
-		</div>
-<!-- 메뉴마다 각 페이지로 이동 -->
+
 <div class="jsx-2604928324 desktop-actions">
+
+<!-- 첫 페이지로 돌아오기는 여기 href로 연결하기 -->
+<a href="#" style="display: block; text-decoration: none; user-select: none; cursor: pointer; color: inherit;">
+<div style="display: flex; align-items: center;">
+<img src="img/Edution2.png" style="width: 30px; height: 30px;">
+<div style="font-weight: 500; font-size: 16px;">Notion</div></div></a>
+
+<!-- 메뉴마다 각 페이지로 이동 -->
+<!-- Home 부분은 href 연결 하지마세요! -->
 <nav role="navigation" aria-label="Primary Navigation" class="jsx-846203990 nav">
 <div class="jsx-bfc18ca12fb5954b nav-left">
 <ul aria-label="submenu" class="jsx-bfc18ca12fb5954b nav-list">
 <li aria-expanded="false" class="jsx-1177128220 nav-item has-menu">
-<div tabindex="0" role="button" class="jsx-3643650412 hoverable">
-<div class="jsx-1177128220 label">메뉴1</div>
+<div tabindex="0" class="jsx-3643650412 hoverable">
+<a href="#"style="text-decoration: none;"><div class="jsx-1177128220 label">Home</div></a>
 
 <li aria-expanded="false" class="jsx-1177128220 nav-item has-menu">
 <div tabindex="0" role="button" class="jsx-3643650412 hoverable">
-<div class="jsx-1177128220 label">메뉴2</div>
+<a href="#" style="text-decoration: none;"><div class="jsx-1177128220 label">Community</div></a>
 
 <div class="jsx-1177128220 popup">
 <div class="jsx-b5da7e2183c315f9 menu">
@@ -1419,16 +1372,8 @@ filter:grayscale(100%)}</style></head>
 </ul></div></div></div></div></li>
 
 
-<li aria-expanded="false" class="jsx-1177128220 nav-item has-menu">
-<div tabindex="0" role="button" class="jsx-3643650412 hoverable">
-<div class="jsx-1177128220 label">메뉴3</div>
-
-<li aria-expanded="false" class="jsx-1177128220 nav-item has-menu">
-<div tabindex="0" role="button" class="jsx-3643650412 hoverable">
-<div class="jsx-1177128220 label">메뉴4</div>
-
 <li aria-expanded="false" class="jsx-1177128220 nav-item">
-	<a tabindex="0" class="jsx-3643650412 hoverable clickable has-action" href="/ko-kr/pricing">
+	<a tabindex="0" class="jsx-3643650412 hoverable clickable has-action">
 </a></li></ul></div>
 
 <div class="jsx-1028178840 nav-right non-english">
@@ -1446,7 +1391,7 @@ filter:grayscale(100%)}</style></head>
 
 <li class="jsx-1028178840 cta-item">
 	<!-- 회원가입 페이지로 연결 -->
-<a role="button" class="jsx-2971364727 button-link" href="Join.do">
+<a role="button" class="jsx-2971364727 button-link" onclick="#">
 <div class="jsx-2971364727 button primary button-size-m">회원가입</div></a></li></ul></div></nav></div>
 <div class="jsx-2604928324 mobile-actions">
 </button></div></div>
@@ -1456,13 +1401,11 @@ filter:grayscale(100%)}</style></head>
 <nav role="menu" class="jsx-1865826807 mobile-nav">
 <div class="jsx-1865826807 mobile-nav-inner">
 <div class="jsx-1865826807 mobile-nav-scrollable">
-
-
 <div class="jsx-1865826807 actions">
-<a role="button" class="jsx-2971364727 button-link" href="/signup">
-<div class="jsx-2971364727 button primary full-width button-size-l">Notion 무료 체험</div></a>
-<a role="button" class="jsx-2971364727 button-link" href="/login">
+<!-- 회원가입 페이지로 연결 -->
+<a role="button" class="jsx-2971364727 button-link" href="#">
 <div class="jsx-2971364727 button secondary full-width button-size-l">로그인</div></a></div></div></div></nav>
+
 <div class="jsx-2604928324 spacer"></div>
 <main class="jsx-1549916940 jsx-1382635649 main">
 <section class="global-margin-l">
@@ -1474,15 +1417,15 @@ filter:grayscale(100%)}</style></head>
 <span style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;max-width:100%">
 <img style="display:block;max-width:100%;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0" alt="" aria-hidden="true" src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27500%27%20height=%27338%27/%3e"></span>
 <!-- src 부분에 이미지 주소 넣기 -->
-<img alt="이미지 넣을 예정!" role="img" srcset="/cdn-cgi/image/format=auto,width=640,quality=100/front-static/pages/product/home-page-hero-refreshed-v3.png 1x, /cdn-cgi/image/format=auto,width=1080,quality=100/front-static/pages/product/home-page-hero-refreshed-v3.png 2x" src="#" decoding="async" data-nimg="intrinsic" class="next-image" style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"></span></div></div>
+<img role="img" src="img/home-page.webp"  data-nimg="intrinsic" class="next-image" style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"></span></div></div>
 <div class="global-grid-item global-grid-item-span-xs-12 global-grid-item-span-s-12 global-grid-item-span-m-7 global-grid-item-span-l-7 global-grid-item-span-xl-7 global-grid-item-order-m-1 global-grid-item-order-l-1 global-grid-item-order-xl-1">
 <div class="jsx-1805324592 text-wrap">
-<h1 class="global-title global-title global-title-color-dark global-title-weight-bold global-title-size-xl">여기에<br class="jsx-1805324592">문구 넣어주기</h1>
+<h1 class="global-title global-title global-title-color-dark global-title-weight-bold global-title-size-xl">여기에<br class="jsx-1805324592">넣을 문구 추천 해주세요</h1>
 <div class="jsx-1805324592 subtitle-wrap">
 <h2 class="global-title global-title global-title-color-medium global-title-weight-medium global-title-size-xxs">환영문구 넣어주세요</h2></div>
 <div class="jsx-1805324592 button-wrap">
 	<!-- 회원가입 페이지로 연결 -->
-<a role="button" class="jsx-860427559 button-link" href="#">
+<a role="button" class="jsx-860427559 button-link" href="Join.jsp">
 <div class="jsx-860427559 button primary button-size-l">회원가입</div></a></div>
 <div class="jsx-1805324592 trusted-by-wrap">
 </section>
@@ -1491,8 +1434,7 @@ filter:grayscale(100%)}</style></head>
 <!-- footer 넣기 -->
 <footer class="jsx-3166521707 footer">
 <nav aria-label="Secondary footer navigation" class="jsx-3147728626 footer-bottom">
-<div class="jsx-3147728626 footer-bottom-desktop">
-<div class="jsx-2842611342 copyright">©<!-- -->2022<!-- --> Notion Labs, Inc.</div>
+<div class="jsx-2842611342 copyright">©<!-- -->2022<!-- --> Edution Labs, Inc.</div>
 
 </body>
 </html>

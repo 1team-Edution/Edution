@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.model.NoteDAO"> <!-- Mapper 경로 추가 -->
+	<select id="selectAll" resultType="Note">
+  		select * from tbl_note
+  	</select>
+  	<insert id="insert" parameterType="Note">
+		insert into tbl_note(note_seq, note_title, note_content, note_tag, user_id, note_date, note_parent, note_file)
+		values(tbl_note_SEQ.nextval,#{note_title},#{note_content},#{note_tag},#{user_id},#{note_date},#{note_parent},#{note_file})
+  	</insert>
+  	<select id="selectOne" resultType="Note">
+  		select * from tbl_note 
+  		where note_seq = #{note_seq}
+  	</select>
+  	<update id="update" parameterType="Note">
+  		update tbl_note 
+  		set note_title = #{note_title},note_content = #{note_content},note_tag = #{note_tag},user_id = #{user_id},note_date = #{note_date},note_parent = #{note_parent},note_file = #{note_file}
+  	</update>
+  	<delete id="delete">
+  		delete from tbl_note 
+  		where note_seq = #{note_seq}
+  	</delete>
+</mapper>
