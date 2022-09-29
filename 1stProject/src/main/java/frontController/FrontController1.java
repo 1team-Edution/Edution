@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.smhrd.controller.Controller;
+import com.smhrd.controller.GoJoinCon;
 import com.smhrd.controller.JoinCon;
 import com.smhrd.controller.LoginPage;
 import com.smhrd.controller.NoteDeleteCon;
@@ -25,6 +26,7 @@ import com.smhrd.controller.QnAInsertCon;
 import com.smhrd.controller.QnASelectAllCon;
 import com.smhrd.controller.QnASelectOneCon;
 import com.smhrd.controller.QnAUpdateCon;
+import com.smhrd.controller.TodoCon;
 import com.smhrd.controller.indexView;
 
 @WebServlet("*.do")
@@ -40,23 +42,18 @@ public class FrontController1 extends HttpServlet {
 		mappings.put("/indexView.do", new indexView());
 		mappings.put("/LoginPage.do", new LoginPage());
 
-		mappings.put("/Join.do", new JoinCon());
-
-		mappings.put("/JoinCon.do", new JoinCon());
-
 		mappings.put("/QnASelectAll", new QnASelectAllCon());
 		mappings.put("/QnASelectOne", new QnASelectOneCon());
 		mappings.put("/QnAInsert", new QnAInsertCon());
 		mappings.put("/QnAUpdate", new QnAUpdateCon());
 		mappings.put("/QnADelete", new QnADeleteCon());
-
+		mappings.put("/Todo.do", new TodoCon());
 		mappings.put("/NoteSelectAll", new NoteSelectAllCon());
 		mappings.put("/NoteSelectOne", new NoteSelectOneCon());
 		mappings.put("/NoteInsert", new NoteInsertCon());
 		mappings.put("/NoteUpdate", new NoteUpdateCon());
 		mappings.put("/NoteDelete", new NoteDeleteCon());
 
-		
 		
 	}
 
@@ -80,7 +77,7 @@ public class FrontController1 extends HttpServlet {
 		// HashMap.get(Key);
 		con = mappings.get(command);
 	
-		nextView=con.execute(request, response);
+		nextView = con.execute(request, response);
 		
 
 		if(nextView.contains("redirect:/")) {

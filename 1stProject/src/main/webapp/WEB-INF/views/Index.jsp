@@ -1390,8 +1390,10 @@ margin:0 auto}}
 <div class="jsx-1177128220 label">로그인</div></a></li>
 
 <li class="jsx-1028178840 cta-item">
+
 	<!-- 회원가입 페이지로 연결 -->
-<a role="button" class="jsx-2971364727 button-link" onclick="#">
+<a role="button" class="jsx-2971364727 button-link" href="GoJoin.do">
+
 <div class="jsx-2971364727 button primary button-size-m">회원가입</div></a></li></ul></div></nav></div>
 <div class="jsx-2604928324 mobile-actions">
 </button></div></div>
@@ -1425,7 +1427,7 @@ margin:0 auto}}
 <h2 class="global-title global-title global-title-color-medium global-title-weight-medium global-title-size-xxs">환영문구 넣어주세요</h2></div>
 <div class="jsx-1805324592 button-wrap">
 	<!-- 회원가입 페이지로 연결 -->
-<a role="button" class="jsx-860427559 button-link" href="Join.jsp">
+<a role="button" class="jsx-860427559 button-link" href="GoJoin.do">
 <div class="jsx-860427559 button primary button-size-l">회원가입</div></a></div>
 <div class="jsx-1805324592 trusted-by-wrap">
 </section>

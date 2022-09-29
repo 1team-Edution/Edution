@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<<<<<<< HEAD
 
 <div style="font-size: 15px; white-space: nowrap; top: 0px; width: 100%; background: rgb(255, 254, 252); display: flex; flex-direction: column; align-items: center; justify-content: center;"><nav style="display: flex; align-items: center; justify-content: center; width: 100%; max-width: 1300px; padding-left: 20px; padding-right: 20px; transition: height 250ms ease 0s; height: 80px; position: relative; overflow: hidden; box-shadow: none;">
   <div style="flex-shrink: 0;">
@@ -19,6 +20,25 @@
         <div style="font-weight: 500; font-size: 16px;">Edution</div></div></a></div>
         <div style="flex: 1 1 0%; display: flex; justify-content: center;"></div></nav></div>
 <!-- 여기까지 상단바 -->
+=======
+	
+	
+			<ul class="actions vertical">
+							<li><h5>회원가입</h5></li>
+								<form action = "Join.do" enctype="multipart/form-data" method="post">
+									<li><input name = "user_id" type="text" placeholder="ID를 입력하세요"></li>
+									<li><input name = "user_pw" type="password" placeholder="PW를 입력하세요"></li>
+									<li><input name = "user_name" type="text" placeholder="이름을 입력하세요"></li>
+									<li><input name = "user_email" type="text" placeholder="E-mail을 입력하세요"></li>
+									<li><input name = "user_nick" type="text" placeholder="닉네임을 입력하세요"></li>
+									<li><input name = "user_photo" type = "file"></li>
+									<li><input name = "user_type" type="text" placeholder="사용자 유형을 입력하세요"></li>
+									<li><input name = "user_sns" type="text" placeholder="사용자sns를 입력하세요"></li>
+									<li><input name = "user_templet" type="text" placeholder="템블렛을 입력하세요"></li>
+									<li><input type = "submit" value="JoinUs" class="button fit"></li>
+								</form>
+						</ul>
+>>>>>>> branch 'master' of https://github.com/1team-Edution/Edution.git
 
   <div style="display: flex; flex-direction: column; align-items: center;">
     <div style="font-size: 50px; margin-top: 8vh; font-weight: 700; margin-bottom: 24px; text-align: center; line-height: 1.1;">회원가입</div>

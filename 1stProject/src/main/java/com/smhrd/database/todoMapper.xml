@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+	<insert id="insert" parameterType="com.smhrd.model.TodoDTO">
+		insert into tbl_todo(todo_title,todo_content,todo_tag,todo_reg_date)
+		values(#{todo_title},#{todo_content},#{todo_tag},#{todo_reg_date})
+	</insert>

@@ -13,6 +13,8 @@
       <typeAlias type="com.smhrd.model.NoteDTO" alias="Note"/>
       <!-- UserDTO typealias 추가 -->
       <typeAlias type="com.smhrd.model.UserDTO" alias="UserDTO" />
+      <!-- todoDTO 추가 -->
+      <typeAlias type="com.smhrd.model.TodoDTO" alias="TodoDTO"/>
    </typeAliases>
    
    <environments default="development">
@@ -32,6 +34,8 @@
       <mapper resource="com/smhrd/database/NoteMapper.xml" />
       <!-- JoinMapper 추가 -->
       <mapper resource="com/smhrd/database/JoinMapper.xml" />
-      
+      <!-- todoMapper 추가 -->
+      <mapper resource="com/smhrd/database/todoMapper.xml" />   
+         
    </mappers>
 </configuration>
