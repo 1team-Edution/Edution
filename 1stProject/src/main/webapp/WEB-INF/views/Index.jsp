@@ -1392,12 +1392,12 @@ filter:grayscale(100%)}</style></head>
 </head>
 <body>
 
-	<div>
 		<header class="jsx-2604928324 header">
 		<div class="jsx-2604928324 inner">
 		<div class="jsx-2604928324 logo-wrap">
 		<!-- 로고 이미지 -->
-		<a aria-label="Notion – 홈" class="jsx-2604928324 logo" href="#"></a>
+		<a aria-label="Notion – 홈" class="jsx-2604928324 logo" href="#">
+		<img src="./img/Edution2.png" width="30" height="30"></a>
 		</div>
 <!-- 메뉴마다 각 페이지로 이동 -->
 <div class="jsx-2604928324 desktop-actions">
@@ -1446,7 +1446,7 @@ filter:grayscale(100%)}</style></head>
 
 <li class="jsx-1028178840 cta-item">
 	<!-- 회원가입 페이지로 연결 -->
-<a role="button" class="jsx-2971364727 button-link" href="#">
+<a role="button" class="jsx-2971364727 button-link" href="Join.do">
 <div class="jsx-2971364727 button primary button-size-m">회원가입</div></a></li></ul></div></nav></div>
 <div class="jsx-2604928324 mobile-actions">
 </button></div></div>
