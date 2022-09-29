@@ -8,7 +8,7 @@ public class indexView implements Controller{
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		
-		return "Join";
+		return "Index";
 	}
 
 }
