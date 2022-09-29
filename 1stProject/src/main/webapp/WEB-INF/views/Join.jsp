@@ -11,7 +11,7 @@
 	
 			<ul class="actions vertical">
 							<li><h5>회원가입</h5></li>
-								<form action = "Join.do">
+								<form action = "JoinCon.do" enctype="multipart/form-data" method="post">
 									<li><input name = "user_id" type="text" placeholder="ID를 입력하세요"></li>
 									<li><input name = "user_pw" type="password" placeholder="PW를 입력하세요"></li>
 									<li><input name = "user_name" type="text" placeholder="이름을 입력하세요"></li>

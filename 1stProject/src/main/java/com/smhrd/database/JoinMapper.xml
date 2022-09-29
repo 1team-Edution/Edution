@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace ="com.smhrd.model.UserDAO">
+  
+  
+  <insert id="insert" parameterType="userDTO">
+  insert into tbl_user(user_id, user_pw, user_name, user_email, user_nick, user_photo, user_type, user_sns, user_templet)
+  values (#{user_id},#{user_pw},#{user_name},#{user_email},#{user_nick},#{user_photo}, #{user_type}, #{user_sns},#{user_templet})
+  </insert>
+  
+  
+  
+  </mapper>

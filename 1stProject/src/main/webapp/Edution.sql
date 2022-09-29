@@ -1,3 +1,35 @@
+-- DB실험용
+select * from tbl_user;
+select sysdate from dual;
+  INSERT INTO tbl_user
+    (user_id, 
+    user_pw, 
+    user_name, 
+    user_email, 
+    user_nick, 
+    user_photo,
+    user_type,
+    user_sns,
+    user_templet
+    )
+VALUES
+    (8, 
+    8, 
+    8, 
+    8, 
+    8,  
+    8, 
+    8, 
+    8, 
+    8
+    );
+
+
+
+
+
+
+
 -- 테이블 확인용 셀렉트문
 select * from tbl_user;
 select * from tbl_board;

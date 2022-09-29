@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.smhrd.controller.Controller;
+import com.smhrd.controller.JoinCon;
 import com.smhrd.controller.LoginPage;
 import com.smhrd.controller.indexView;
 
@@ -28,7 +29,7 @@ public class FrontController1 extends HttpServlet {
 		
 		mappings.put("/indexView.do", new indexView());
 		mappings.put("/LoginPage.do", new LoginPage());
-		
+		mappings.put("/JoinCon.do", new JoinCon());
 		
 	}
 	
