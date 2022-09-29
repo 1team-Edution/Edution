@@ -41,7 +41,8 @@ public class FrontController1 extends HttpServlet {
 		
 		mappings.put("/indexView.do", new indexView());
 		mappings.put("/LoginPage.do", new LoginPage());
-
+		mappings.put("/GoJoin.do", new GoJoinCon());
+		mappings.put("/Join.do", new JoinCon());
 		mappings.put("/QnASelectAll", new QnASelectAllCon());
 		mappings.put("/QnASelectOne", new QnASelectOneCon());
 		mappings.put("/QnAInsert", new QnAInsertCon());
