@@ -5,7 +5,10 @@
 <configuration>
 
    <typeAliases>
-      
+
+   	  <!-- QnADTO typealias 추가 -->
+      <typeAlias type="com.smhrd.model.QnADTO" alias="QnA" />
+
       <!-- NoteDTO typealias 추가 -->
       <typeAlias type="com.smhrd.model.NoteDTO" alias="Note"/>
       <!-- UserDTO typealias 추가 -->

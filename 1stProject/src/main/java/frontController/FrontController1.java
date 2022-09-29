@@ -15,6 +15,11 @@ import javax.servlet.http.HttpServletResponse;
 import com.smhrd.controller.Controller;
 import com.smhrd.controller.JoinCon;
 import com.smhrd.controller.LoginPage;
+import com.smhrd.controller.QnADeleteCon;
+import com.smhrd.controller.QnAInsertCon;
+import com.smhrd.controller.QnASelectAllCon;
+import com.smhrd.controller.QnASelectOneCon;
+import com.smhrd.controller.QnAUpdateCon;
 import com.smhrd.controller.indexView;
 
 @WebServlet("*.do")
@@ -30,8 +35,14 @@ public class FrontController1 extends HttpServlet {
 		mappings.put("/indexView.do", new indexView());
 		mappings.put("/LoginPage.do", new LoginPage());
 		mappings.put("/JoinCon.do", new JoinCon());
-		
+
+		mappings.put("/QnASelectAll", new QnASelectAllCon());
+		mappings.put("/QnASelectOne", new QnASelectOneCon());
+		mappings.put("/QnAInsert", new QnAInsertCon());
+		mappings.put("/QnAUpdate", new QnAUpdateCon());
+		mappings.put("/QnADelete", new QnADeleteCon());
 	}
+
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		

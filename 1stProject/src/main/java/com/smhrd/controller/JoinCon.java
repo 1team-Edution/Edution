@@ -87,7 +87,7 @@ String savePath = request.getServletContext().getRealPath("resources/image");
 		
 		if(row>0) { 
 		 
-		return "redirect:/Main.jsp";		
+		return "redirect:/indexView";		
 		}
 		
 		else {
