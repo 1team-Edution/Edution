@@ -47,6 +47,7 @@
 					  <label for="formFileMultiple" class="form-label">프로필 사진 등록</label>
 					  <input class="form-control" type="file" id="formFileMultiple" multiple>
 					</div>
+				
                       <!-- input 추가 필요할 경우 여기서부터 -->
                   
                       <label style="display: block; margin-bottom: 4px; font-size: 12px; color: rgba(55, 53, 47, 0.65);">ID/PW</label>
