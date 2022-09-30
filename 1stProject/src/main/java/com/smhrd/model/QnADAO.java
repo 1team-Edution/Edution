@@ -21,7 +21,7 @@ public class QnADAO {
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		
 		
-	list = (ArrayList)sqlSession.selectList("com.smhrd.model.QnADAO.selectAllQnA");
+	list = (ArrayList)sqlSession.selectList("com.smhrd.model.QnADAO.QnAselectAll");
 	
 	sqlSession.close();
 	
@@ -37,7 +37,7 @@ public class QnADAO {
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 
 		
-		result = sqlSession.insert("com.smhrd.model.dao.insert", qnadto);
+		result = sqlSession.insert("com.smhrd.model.QnADAO.QnAInsert", qnadto);
 
 		sqlSession.close();
 
@@ -49,7 +49,7 @@ public class QnADAO {
 		int result = 0;
 		
 		SqlSession sqlsession = sqlSessionFactory.openSession(true);
-		result = sqlsession.update("com.smhrd.model.dao.update", qnadto);
+		result = sqlsession.update("com.smhrd.model.QnADAO.QnAUpdate", qnadto);
 		
 		sqlsession.close();
 		return result;
@@ -60,7 +60,7 @@ public class QnADAO {
 		int result = 0;
 		
 		SqlSession sqlsession = sqlSessionFactory.openSession(true);
-		result = sqlsession.delete("com.smhrd.model.dao.delete", board_num);
+		result = sqlsession.delete("com.smhrd.model.QnADAO.QnADelete", board_num);
 		
 		sqlsession.close();
 		

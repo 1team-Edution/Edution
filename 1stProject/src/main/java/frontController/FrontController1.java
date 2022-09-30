@@ -44,11 +44,11 @@ public class FrontController1 extends HttpServlet {
 		mappings.put("/LoginPage.do", new LoginPage());
 		mappings.put("/GoJoin.do", new GoJoinCon());
 		mappings.put("/Join.do", new JoinCon());
-		mappings.put("/QnASelectAll", new QnASelectAllCon());
-		mappings.put("/QnASelectOne", new QnASelectOneCon());
-		mappings.put("/QnAInsert", new QnAInsertCon());
-		mappings.put("/QnAUpdate", new QnAUpdateCon());
-		mappings.put("/QnADelete", new QnADeleteCon());
+		mappings.put("/QnASelectAll.do", new QnASelectAllCon());
+		mappings.put("/QnASelectOne.do", new QnASelectOneCon());
+		mappings.put("/QnAInsert.do", new QnAInsertCon());
+		mappings.put("/QnAUpdate.do", new QnAUpdateCon());
+		mappings.put("/QnADelete.do", new QnADeleteCon());
 		mappings.put("/Todo.do", new TodoCon());
 		mappings.put("/NoteSelectAll", new NoteSelectAllCon());
 		mappings.put("/NoteSelectOne", new NoteSelectOneCon());
