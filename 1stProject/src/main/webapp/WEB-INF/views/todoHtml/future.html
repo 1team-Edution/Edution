@@ -32,31 +32,31 @@
                         <div class="modal-header">
                             <h5 class="modal-title">미래에 할 공부와 이벤트를 저장하세요.</h5>
                         </div>
-                        <form>
+                        <form action="Todo.do" method="post">
                         <div class="modal-body">
                             <div>
-                                <input type="text" class="modal-text" placeholder="Todo">
+                                <input type="text" class="modal-text" placeholder="Todo" name = "todoHead">
                                 <br>
                             </div>
                             <div>
-                                <br><textarea class="modal-textarea" id="additional-content" placeholder="추가로 메모를 하고 싶다면&#13;&#10;이곳에 작성하세요."></textarea>
+                                <br><textarea class="modal-textarea" name="todoBody" id="additional-content" placeholder="추가로 메모를 하고 싶다면&#13;&#10;이곳에 작성하세요."></textarea>
                             </div>
                         </div>
                         <div id="checkbox-area">
                             #
-                            <input type="checkbox" class="check" id="tag-check1" autocomplete="off">
+                            <input type="checkbox" class="check" id="tag-check1" name="tag" value="homework" autocomplete="off">
                             <label for="tag-check1" align="center">숙제</label>
 
-                            <input type="checkbox" class="check" id="tag-check2" autocomplete="off">
+                            <input type="checkbox" class="check" id="tag-check2" name="tag" value="exam" autocomplete="off">
                             <label for="tag-check2" align="center">시험</label>
 
-                            <input type="checkbox" class="check" id="tag-check3" autocomplete="off">
+                            <input type="checkbox" class="check" id="tag-check3" name="tag" value="review" autocomplete="off">
                             <label for="tag-check3" align="center">복습</label>
                             
-                            <input type="checkbox" class="check" id="tag-check4" autocomplete="off">
+                            <input type="checkbox" class="check" id="tag-check4" name="tag" value="preview" autocomplete="off">
                             <label for="tag-check4" align="center">예습</label>
                             
-                            <input type="checkbox" class="check" id="tag-check5" autocomplete="off">
+                            <input type="checkbox" class="check" id="tag-check5" name="tag" value="memo" autocomplete="off">
                             <label for="tag-check5" align="center">메모</label>
                         </div>
                         <div class="modal-footer">
