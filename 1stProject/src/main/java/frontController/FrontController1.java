@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.smhrd.controller.Controller;
 import com.smhrd.controller.GoJoinCon;
+import com.smhrd.controller.GoMain;
 import com.smhrd.controller.JoinCon;
 import com.smhrd.controller.LoginPage;
 import com.smhrd.controller.NoteDeleteCon;
@@ -54,6 +55,7 @@ public class FrontController1 extends HttpServlet {
 		mappings.put("/NoteInsert", new NoteInsertCon());
 		mappings.put("/NoteUpdate", new NoteUpdateCon());
 		mappings.put("/NoteDelete", new NoteDeleteCon());
+		mappings.put("/Main.do", new GoMain());
 
 		
 	}

@@ -4,11 +4,15 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>Insert title here</title>
+<title>Edution</title>
 </head>
+
 <body>
-
+<%	com.smhrd.model.UserDTO userDto = (com.smhrd.model.UserDTO)session.getAttribute("userDto");%>
+<%	if(userDto==null){%>
 <jsp:forward page="indexView.do"></jsp:forward>
-
+<%}else{%>
+<jsp:forward page="Main.do"></jsp:forward>
+<%}%>
 </body>
 </html>
