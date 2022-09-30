@@ -10,26 +10,25 @@ public class QnAInsertCon implements Controller {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-
-		String user_id = request.getParameter("user_id");
 		String user_name = request.getParameter("user_name");
+		String user_id = request.getParameter("user_id");
 		String help_content = request.getParameter("help_content");
-		
-		System.out.println(user_id);
-		System.out.println(user_name);
+	
 		System.out.println(help_content);
-
+		System.out.println(user_name);
+		System.out.println(user_id);
 		
 		QnADAO dao = new QnADAO();
 		
-		QnADTO dto = new QnADTO(user_id, help_content, user_name);
-		
+		QnADTO dto = new QnADTO(user_id, user_name, help_content);
+				
 		int result = dao.insert(dto);
 		
 		if (result > 0) {
-			return "redirect:/SelectAll.do";
+			return "redirect:/QnAInsertComplete.do";
 		}else {
-			return "redirect:/Insert.do";
+			System.out.println("입력실패");
+			return "redirect:/QnAInsert.do";
 		}
 		
 		

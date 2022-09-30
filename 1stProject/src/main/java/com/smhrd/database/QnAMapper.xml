@@ -8,19 +8,19 @@
   		select * from tbl_help where help_seq = #{help_seq}
   	</select>
   	<insert id="QnAInsert" parameterType="QnA">
-  		insert into help(help_seq,help_content)
-  		values(tbl_help_seq.nextval,#{help_content})
+  		insert into tbl_help(help_seq,help_content,user_id)
+  		values(tbl_help_seq.nextval,#{help_content},#{user_id})
   	</insert>
   	<update id="QnAUpdate" parameterType="QnA">
-  		update help set help_content=#{help_content}
+  		update tbl_help set help_content=#{help_content}
   		where help_seq=#{help_seq}
   	</update>
  	<delete id="QnADelete" parameterType="QnA">
- 		delete from help where help_seq=#{help_seq}
+ 		delete from tbl_help where help_seq=#{help_seq}
  	</delete>
   	<select id="QnASelectJoinUser" resultType="QnA">
 		select u.user_id, u.user_name, h.help_seq, h.help_content
-		from help h, user u
+		from tbl_help h, tbl_user u
 		where u.user_id = h.user_id
 		and h.help_seq=#{help_seq}  
 	</select>
