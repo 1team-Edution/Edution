@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,6 +49,15 @@
         transition:250ms height
         
         }
+
+        span >div > .user-menuselect > .moya{
+             display: none;
+            }
+            
+            span >div > .user-menuselect:hover .moya{
+                display: block;
+                margin-left: 130px;
+            }
         
         </style>
         
@@ -109,35 +117,49 @@
                             <path d="M6.02734 8.80274C6.27148 8.80274 6.47168 8.71484 6.66211 8.51465L10.2803 4.82324C10.4268 4.67676 10.5 4.49609 10.5 4.28125C10.5 3.85156 10.1484 3.5 9.72363 3.5C9.50879 3.5 9.30859 3.58789 9.15234 3.74902L6.03223 6.9668L2.90722 3.74902C2.74609 3.58789 2.55078 3.5 2.33105 3.5C1.90137 3.5 1.55469 3.85156 1.55469 4.28125C1.55469 4.49609 1.62793 4.67676 1.77441 4.82324L5.39258 8.51465C5.58789 8.71973 5.78808 8.80274 6.02734 8.80274Z"></path></svg></div>
                             <div class="user-menuselect" style="white-space: nowrap; min-width: 0px; overflow: hidden; text-overflow: ellipsis;"  >
                                 <!-- span태그 안에 이모지 유니코드 넣으면 변경됨 -->               
-                                &#10004; 시작하기</div></div></div>
+                                &#10004; 시작하기</div>
+                                <div class="moya">
+                                    <svg viewBox="0 0 14 14" class="plusThick" style="width: 16px; height: 16px; fill: rgba(55, 53, 47, 0.45); flex-shrink: 0; backface-visibility: hidden;"><path d="M2 7.16357C2 7.59692 2.36011 7.95093 2.78735 7.95093H6.37622V11.5398C6.37622 11.9731 6.73022 12.3271 7.16357 12.3271C7.59692 12.3271 7.95093 11.9731 7.95093 11.5398V7.95093H11.5398C11.9731 7.95093 12.3271 7.59692 12.3271 7.16357C12.3271 6.73022 11.9731 6.37622 11.5398 6.37622H7.95093V2.78735C7.95093 2.36011 7.59692 2 7.16357 2C6.73022 2 6.37622 2.36011 6.37622 2.78735V6.37622H2.78735C2.36011 6.37622 2 6.73022 2 7.16357Z"></path>
+                                    </svg>
+                                   </div>    
+                            </div></div>
                 </span>
         
-                <!-- 추가하기 버튼을 누르면 이 부분이 추가가 되도록 구현 -->
-                <!-- 여기 span태그 시작부터 -->
-                <span >
+                <!-- 메뉴 추가는 여기 span태그 시작부터 -->
+                <span>
                     <div class="notion-focusable" role="button" tabindex="0" style=" padding-left: 140px; user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; border-radius: 3px; margin-left: 4px; ">
-                        <div  class="user-menuselect" style="display: flex; align-items: center; width: 100%; font-size: 14px; min-height: 27px; padding: 2px 10px; margin-top: 1px; margin-bottom: 1px;">
+                        <div class="user-menuselect" style="display: flex; align-items: center; font-size: 14px; min-height: 27px; padding: 2px 10px; margin-top: 1px; margin-bottom: 1px;">
                             
-                            <div class="notion-focusable" role="button" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; position: relative; display: flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 3px;">
-                                <svg  viewBox="0 0 12 12" class="chevronDownRoundedThick" style="width: 12px; height: 12px; display: block; fill: rgba(55, 53, 47, 0.35); flex-shrink: 0; backface-visibility: hidden; transition: transform 200ms ease-out 0s; transform: rotateZ(-90deg); opacity: 1;">
-                                    <path d="M6.02734 8.80274C6.27148 8.80274 6.47168 8.71484 6.66211 8.51465L10.2803 4.82324C10.4268 4.67676 10.5 4.49609 10.5 4.28125C10.5 3.85156 10.1484 3.5 9.72363 3.5C9.50879 3.5 9.30859 3.58789 9.15234 3.74902L6.03223 6.9668L2.90722 3.74902C2.74609 3.58789 2.55078 3.5 2.33105 3.5C1.90137 3.5 1.55469 3.85156 1.55469 4.28125C1.55469 4.49609 1.62793 4.67676 1.77441 4.82324L5.39258 8.51465C5.58789 8.71973 5.78808 8.80274 6.02734 8.80274Z"></path></svg></div>
-                            <div style="flex: 1 1 auto; white-space: nowrap; min-width: 0px; overflow: hidden; text-overflow: ellipsis;"  >
+                            <div role="button" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; position: relative; display: flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 3px;">
+                            <svg  viewBox="0 0 12 12" class="chevronDownRoundedThick" style="width: 12px; height: 12px; display: block; fill: rgba(55, 53, 47, 0.35); flex-shrink: 0; backface-visibility: hidden; transition: transform 200ms ease-out 0s; transform: rotateZ(-90deg); opacity: 1;">
+                            <path d="M6.02734 8.80274C6.27148 8.80274 6.47168 8.71484 6.66211 8.51465L10.2803 4.82324C10.4268 4.67676 10.5 4.49609 10.5 4.28125C10.5 3.85156 10.1484 3.5 9.72363 3.5C9.50879 3.5 9.30859 3.58789 9.15234 3.74902L6.03223 6.9668L2.90722 3.74902C2.74609 3.58789 2.55078 3.5 2.33105 3.5C1.90137 3.5 1.55469 3.85156 1.55469 4.28125C1.55469 4.49609 1.62793 4.67676 1.77441 4.82324L5.39258 8.51465C5.58789 8.71973 5.78808 8.80274 6.02734 8.80274Z"></path></svg></div>
+                            <div class="user-menuselect" style="white-space: nowrap; min-width: 0px; overflow: hidden; text-overflow: ellipsis;"  >
                                 <!-- span태그 안에 이모지 유니코드 넣으면 변경됨 -->               
-                                &#10004; 강의노트</div></div></div>
+                                &#10004; 강의노트</div>
+                                <a class="moya" role="button">
+                                    <svg viewBox="0 0 14 14" class="plusThick" style="width: 16px; height: 16px; fill: rgba(55, 53, 47, 0.45); flex-shrink: 0; backface-visibility: hidden;"><path d="M2 7.16357C2 7.59692 2.36011 7.95093 2.78735 7.95093H6.37622V11.5398C6.37622 11.9731 6.73022 12.3271 7.16357 12.3271C7.59692 12.3271 7.95093 11.9731 7.95093 11.5398V7.95093H11.5398C11.9731 7.95093 12.3271 7.59692 12.3271 7.16357C12.3271 6.73022 11.9731 6.37622 11.5398 6.37622H7.95093V2.78735C7.95093 2.36011 7.59692 2 7.16357 2C6.73022 2 6.37622 2.36011 6.37622 2.78735V6.37622H2.78735C2.36011 6.37622 2 6.73022 2 7.16357Z"></path>
+                                    </svg>
+                                </a>    
+                            </div></div>
                 </span>
-                <!-- 여기 닫는 스판태그까지 넣기 -->
+                <!-- 여기 닫는 스판태그까지 복사해서 넣기 -->
 
                 <span >
                     <div class="notion-focusable" role="button" tabindex="0" style=" color: rgba(55, 53, 47, 0.65); padding-left: 140px; user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; border-radius: 3px; margin-left: 4px; ">
                         <div  class="user-menuselect" style="display: flex; align-items: center; width: 100%; font-size: 14px; min-height: 27px; padding: 2px 10px; margin-top: 1px; margin-bottom: 1px;">
-        
+                            
                             <div class="notion-focusable" role="button" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; position: relative; display: flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 3px;">
-                             <svg viewBox="0 0 14 14" class="plusThick" style="width: 16px; height: 16px; display: block; fill: rgba(55, 53, 47, 0.45); flex-shrink: 0; backface-visibility: hidden;"><path d="M2 7.16357C2 7.59692 2.36011 7.95093 2.78735 7.95093H6.37622V11.5398C6.37622 11.9731 6.73022 12.3271 7.16357 12.3271C7.59692 12.3271 7.95093 11.9731 7.95093 11.5398V7.95093H11.5398C11.9731 7.95093 12.3271 7.59692 12.3271 7.16357C12.3271 6.73022 11.9731 6.37622 11.5398 6.37622H7.95093V2.78735C7.95093 2.36011 7.59692 2 7.16357 2C6.73022 2 6.37622 2.36011 6.37622 2.78735V6.37622H2.78735C2.36011 6.37622 2 6.73022 2 7.16357Z"></path></svg>
+                                <svg viewBox="0 0 14 14" class="plusThick" style="width: 16px; height: 16px; display: block; fill: rgba(55, 53, 47, 0.45); flex-shrink: 0; backface-visibility: hidden;"><path d="M2 7.16357C2 7.59692 2.36011 7.95093 2.78735 7.95093H6.37622V11.5398C6.37622 11.9731 6.73022 12.3271 7.16357 12.3271C7.59692 12.3271 7.95093 11.9731 7.95093 11.5398V7.95093H11.5398C11.9731 7.95093 12.3271 7.59692 12.3271 7.16357C12.3271 6.73022 11.9731 6.37622 11.5398 6.37622H7.95093V2.78735C7.95093 2.36011 7.59692 2 7.16357 2C6.73022 2 6.37622 2.36011 6.37622 2.78735V6.37622H2.78735C2.36011 6.37622 2 6.73022 2 7.16357Z"></path></svg>
                           
                             </div>
-                            <div style="flex: 1 1 auto; white-space: nowrap; min-width: 0px; overflow: hidden; text-overflow: ellipsis;" >&nbsp;&nbsp; 추가하기</div></div></div>
+                            <div style="flex: 1 1 auto; white-space: nowrap; min-width: 0px; overflow: hidden; text-overflow: ellipsis;"  >
+                                <!-- span태그 안에 이모지 유니코드 넣으면 변경됨 -->               
+                                &nbsp;&nbsp; 추가하기</div></div></div>
                 </span>
 
+
+                
+            
                 <div style="margin-top: 18px;"></div>
             
                 <!-- 템플릿, 가져오기, 휴지통 시작하는 부분 -->
