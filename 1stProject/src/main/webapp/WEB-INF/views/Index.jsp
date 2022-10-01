@@ -1350,7 +1350,7 @@ margin:0 auto}}
 <a href="#" style="display: block; text-decoration: none; user-select: none; cursor: pointer; color: inherit;">
 <div style="display: flex; align-items: center;">
 <img src="img/Edution2.png" style="width: 30px; height: 30px;">
-<div style="font-weight: 500; font-size: 16px;">Notion</div></div></a>
+<div style="font-weight: 500; font-size: 16px;">Edution</div></div></a>
 
 <!-- 메뉴마다 각 페이지로 이동 -->
 <!-- Home 부분은 href 연결 하지마세요! -->

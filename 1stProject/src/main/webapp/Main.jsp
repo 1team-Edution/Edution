@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,11 +10,11 @@
     <title>Document</title>
 
     <style>
-        
-        
+              
             span >div > .user-menuselect:hover{
                 background: rgba(55, 53, 47, 0.08);
             }
+
         
         .header.jsx-2604928324{position:fixed;
         width:100%;
@@ -48,6 +49,15 @@
         transition:250ms height
         
         }
+
+        span >div > .user-menuselect > .moya{
+             display: none;
+            }
+            
+            span >div > .user-menuselect:hover .moya{
+                display: block;
+                margin-left: 130px;
+            }
         
         </style>
         
@@ -69,29 +79,29 @@
         <!-- 여기부터 사용자 공간 -->
          <!-- 사용자의 프로필사진, 아이디, 닉네임이 보이게 여기서 설정 해주세요! -->
          <!-- 프로필 사진은 보기 쉽게 넣어놨어요 이미지 src부분 꼭 수정해주세요! -->
-            <div style="coverflow: auto; hight:100%; width:30%; overflow:hidden; float:left; background-color: white; position: fixed;">
+            <div style="coverflow: auto; hight:100%;  overflow:hidden; float:left; background-color: white; position: fixed;">
            
             <div style="flex-grow: 0; flex-shrink: 0; padding-top: 90px; padding-bottom: 8px; padding-left: 140px; width: 240px;">
-                <div class="notion-focusable" style="margin-left: 20px; margin-right: 0px; margin-top:10px; width: calc(100% - 0px);">
+                <div style="margin-left: 20px; margin-right: 0px; margin-top:10px;">
                     <img src="img/home-page.webp" width="140px" height="140px" style= "border-radius: 70%; object-fit: cover; align-items: center;" ></div></div>
                     
                     
-                    <div class="notion-focusable" role="button" tabindex="0" style="padding-left: 140px; user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; border-radius: 3px; margin-left: 35px; margin-right: 0px; width: calc(100% - 8px);">
+                    <div style="padding-left: 140px; user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; border-radius: 3px; margin-left: 35px; margin-right: 0px; ">
                     <div style="display: flex; align-items: center; width: 100%; font-size: 14px; min-height: 27px; padding: 2px 10px; margin-top: 1px; margin-bottom: 0px; background: none;">
                     <div style=" border-radius: 3px; color: rgba(55, 53, 47, 0.65); width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; margin-right: 0px;">
                     <div style="color: inherit;"></div>
                     </div>
-                    <div style="flex: 1 1 auto; white-space: nowrap; min-width: 0px; overflow: hidden; text-overflow: clip;
+                    <div style=" white-space: nowrap; min-width: 0px; overflow: hidden; text-overflow: clip;
                     font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, 'Apple Color Emoji', Arial, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol'; -webkit-font-smoothing: auto;">
                     <h3>닉네임</h3></div>
                     </div></div>
                     
-                    <div class="notion-focusable" role="button" tabindex="0" style=" padding-left: 140px; user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; border-radius: 3px; margin-left: 35px; margin-right: 4px; width: calc(100% - 8px);">
+                    <div class="notion-focusable" role="button" tabindex="0" style=" padding-left: 140px; user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; border-radius: 3px; margin-left: 35px; margin-right: 4px; ">
                         <div style="display: flex; align-items: center; width: 100%; font-size: 14px; min-height: 27px;  margin-top: 0px; margin-bottom: 1px; background: none;">
                         <div style=" border-radius: 3px; color: rgba(55, 53, 47, 0.65);  height: 22px; display: flex; align-items: center; justify-content: center; margin-right: 0px;">
                         <div style="color: inherit;">
                     </div></div>
-                        <div style="flex: 1 1 auto; white-space: nowrap; min-width: 0px; overflow: hidden; text-overflow: clip;">이메일넣어주세요</div>
+                        <div style="white-space: nowrap; min-width: 0px; overflow: hidden; text-overflow: clip;">이메일넣어주세요</div>
                         </div></div>
             
                         <div style="margin-top: 18px;"></div>
@@ -99,30 +109,55 @@
                         
                 <!-- 여기가 메뉴바 -->
                 <span>
-                    <div class="notion-focusable" role="button" tabindex="0" style=" padding-left: 140px; user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; border-radius: 3px; margin-left: 4px; margin-right: 4px; width: calc(100% - 8px);">
-                        <div class="user-menuselect" style="display: flex; align-items: center; width: 100%; font-size: 14px; min-height: 27px; padding: 2px 10px; margin-top: 1px; margin-bottom: 1px;">
+                    <div class="notion-focusable" role="button" tabindex="0" style=" padding-left: 140px; user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; border-radius: 3px; margin-left: 4px; ">
+                        <div class="user-menuselect" style="display: flex; align-items: center; font-size: 14px; min-height: 27px; padding: 2px 10px; margin-top: 1px; margin-bottom: 1px;">
                             
-                            <div class="notion-focusable" role="button" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; position: relative; display: flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 3px;">
-                            <svg viewBox="0 0 12 12" class="chevronDownRoundedThick" style="width: 12px; height: 12px; display: block; fill: rgba(55, 53, 47, 0.35); flex-shrink: 0; backface-visibility: hidden; transition: transform 200ms ease-out 0s; transform: rotateZ(-90deg); opacity: 1;">
+                            <div role="button" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; position: relative; display: flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 3px;">
+                            <svg  viewBox="0 0 12 12" class="chevronDownRoundedThick" style="width: 12px; height: 12px; display: block; fill: rgba(55, 53, 47, 0.35); flex-shrink: 0; backface-visibility: hidden; transition: transform 200ms ease-out 0s; transform: rotateZ(-90deg); opacity: 1;">
                             <path d="M6.02734 8.80274C6.27148 8.80274 6.47168 8.71484 6.66211 8.51465L10.2803 4.82324C10.4268 4.67676 10.5 4.49609 10.5 4.28125C10.5 3.85156 10.1484 3.5 9.72363 3.5C9.50879 3.5 9.30859 3.58789 9.15234 3.74902L6.03223 6.9668L2.90722 3.74902C2.74609 3.58789 2.55078 3.5 2.33105 3.5C1.90137 3.5 1.55469 3.85156 1.55469 4.28125C1.55469 4.49609 1.62793 4.67676 1.77441 4.82324L5.39258 8.51465C5.58789 8.71973 5.78808 8.80274 6.02734 8.80274Z"></path></svg></div>
-                            <div style="flex: 1 1 auto; white-space: nowrap; min-width: 0px; overflow: hidden; text-overflow: ellipsis;"  >
+                            <div class="user-menuselect" style="white-space: nowrap; min-width: 0px; overflow: hidden; text-overflow: ellipsis;"  >
                                 <!-- span태그 안에 이모지 유니코드 넣으면 변경됨 -->               
-                                &#10004; 시작하기</div></div></div>
+                                &#10004; 시작하기</div>
+                                <div class="moya">
+                                    <svg viewBox="0 0 14 14" class="plusThick" style="width: 16px; height: 16px; fill: rgba(55, 53, 47, 0.45); flex-shrink: 0; backface-visibility: hidden;"><path d="M2 7.16357C2 7.59692 2.36011 7.95093 2.78735 7.95093H6.37622V11.5398C6.37622 11.9731 6.73022 12.3271 7.16357 12.3271C7.59692 12.3271 7.95093 11.9731 7.95093 11.5398V7.95093H11.5398C11.9731 7.95093 12.3271 7.59692 12.3271 7.16357C12.3271 6.73022 11.9731 6.37622 11.5398 6.37622H7.95093V2.78735C7.95093 2.36011 7.59692 2 7.16357 2C6.73022 2 6.37622 2.36011 6.37622 2.78735V6.37622H2.78735C2.36011 6.37622 2 6.73022 2 7.16357Z"></path>
+                                    </svg>
+                                   </div>    
+                            </div></div>
                 </span>
         
                 <!-- 메뉴 추가는 여기 span태그 시작부터 -->
                 <span>
-                    <div class="notion-focusable" role="button" tabindex="0" style=" padding-left: 140px; user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; border-radius: 3px; margin-left: 4px; margin-right: 4px; width: calc(100% - 8px);">
-                        <div class="user-menuselect" style="display: flex; align-items: center; width: 100%; font-size: 14px; min-height: 27px; padding: 2px 10px; margin-top: 1px; margin-bottom: 1px;">
+                    <div class="notion-focusable" role="button" tabindex="0" style=" padding-left: 140px; user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; border-radius: 3px; margin-left: 4px; ">
+                        <div class="user-menuselect" style="display: flex; align-items: center; font-size: 14px; min-height: 27px; padding: 2px 10px; margin-top: 1px; margin-bottom: 1px;">
                             
-                            <div class="notion-focusable" role="button" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; position: relative; display: flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 3px;">
-                            <svg viewBox="0 0 12 12" class="chevronDownRoundedThick" style="width: 12px; height: 12px; display: block; fill: rgba(55, 53, 47, 0.35); flex-shrink: 0; backface-visibility: hidden; transition: transform 200ms ease-out 0s; transform: rotateZ(-90deg); opacity: 1;">
+                            <div role="button" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; position: relative; display: flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 3px;">
+                            <svg  viewBox="0 0 12 12" class="chevronDownRoundedThick" style="width: 12px; height: 12px; display: block; fill: rgba(55, 53, 47, 0.35); flex-shrink: 0; backface-visibility: hidden; transition: transform 200ms ease-out 0s; transform: rotateZ(-90deg); opacity: 1;">
                             <path d="M6.02734 8.80274C6.27148 8.80274 6.47168 8.71484 6.66211 8.51465L10.2803 4.82324C10.4268 4.67676 10.5 4.49609 10.5 4.28125C10.5 3.85156 10.1484 3.5 9.72363 3.5C9.50879 3.5 9.30859 3.58789 9.15234 3.74902L6.03223 6.9668L2.90722 3.74902C2.74609 3.58789 2.55078 3.5 2.33105 3.5C1.90137 3.5 1.55469 3.85156 1.55469 4.28125C1.55469 4.49609 1.62793 4.67676 1.77441 4.82324L5.39258 8.51465C5.58789 8.71973 5.78808 8.80274 6.02734 8.80274Z"></path></svg></div>
-                            <div style="flex: 1 1 auto; white-space: nowrap; min-width: 0px; overflow: hidden; text-overflow: ellipsis;"  >
+                            <div class="user-menuselect" style="white-space: nowrap; min-width: 0px; overflow: hidden; text-overflow: ellipsis;"  >
                                 <!-- span태그 안에 이모지 유니코드 넣으면 변경됨 -->               
-                                &#10004; 강의노트</div></div></div>
+                                &#10004; 강의노트</div>
+                                <a class="moya" role="button">
+                                    <svg viewBox="0 0 14 14" class="plusThick" style="width: 16px; height: 16px; fill: rgba(55, 53, 47, 0.45); flex-shrink: 0; backface-visibility: hidden;"><path d="M2 7.16357C2 7.59692 2.36011 7.95093 2.78735 7.95093H6.37622V11.5398C6.37622 11.9731 6.73022 12.3271 7.16357 12.3271C7.59692 12.3271 7.95093 11.9731 7.95093 11.5398V7.95093H11.5398C11.9731 7.95093 12.3271 7.59692 12.3271 7.16357C12.3271 6.73022 11.9731 6.37622 11.5398 6.37622H7.95093V2.78735C7.95093 2.36011 7.59692 2 7.16357 2C6.73022 2 6.37622 2.36011 6.37622 2.78735V6.37622H2.78735C2.36011 6.37622 2 6.73022 2 7.16357Z"></path>
+                                    </svg>
+                                </a>    
+                            </div></div>
                 </span>
                 <!-- 여기 닫는 스판태그까지 복사해서 넣기 -->
+
+                <span >
+                    <div class="notion-focusable" role="button" tabindex="0" style=" color: rgba(55, 53, 47, 0.65); padding-left: 140px; user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; border-radius: 3px; margin-left: 4px; ">
+                        <div  class="user-menuselect" style="display: flex; align-items: center; width: 100%; font-size: 14px; min-height: 27px; padding: 2px 10px; margin-top: 1px; margin-bottom: 1px;">
+                            
+                            <div class="notion-focusable" role="button" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; position: relative; display: flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 3px;">
+                                <svg viewBox="0 0 14 14" class="plusThick" style="width: 16px; height: 16px; display: block; fill: rgba(55, 53, 47, 0.45); flex-shrink: 0; backface-visibility: hidden;"><path d="M2 7.16357C2 7.59692 2.36011 7.95093 2.78735 7.95093H6.37622V11.5398C6.37622 11.9731 6.73022 12.3271 7.16357 12.3271C7.59692 12.3271 7.95093 11.9731 7.95093 11.5398V7.95093H11.5398C11.9731 7.95093 12.3271 7.59692 12.3271 7.16357C12.3271 6.73022 11.9731 6.37622 11.5398 6.37622H7.95093V2.78735C7.95093 2.36011 7.59692 2 7.16357 2C6.73022 2 6.37622 2.36011 6.37622 2.78735V6.37622H2.78735C2.36011 6.37622 2 6.73022 2 7.16357Z"></path></svg>
+                          
+                            </div>
+                            <div style="flex: 1 1 auto; white-space: nowrap; min-width: 0px; overflow: hidden; text-overflow: ellipsis;"  >
+                                <!-- span태그 안에 이모지 유니코드 넣으면 변경됨 -->               
+                                &nbsp;&nbsp; 추가하기</div></div></div>
+                </span>
+
+
                 
             
                 <div style="margin-top: 18px;"></div>
@@ -156,17 +191,18 @@
             <div style="flex: 1 1 auto; white-space: nowrap; min-width: 0px; overflow: hidden; text-overflow: ellipsis;">휴지통</div></div></div></div>
                
         <!-- 여기까지 왼쪽 메뉴바 부분 -->
-        
-        
-        <!-- 여기부터 노트 활용 부분 -->
-        <div style="padding-top: 90px; padding-left:470px; margin-right:10px; hight:100%; overflow:auto; float: left;">
-           <!-- 이 부분에 넣어주세요 위 div태그 안에 감싸지도록! -->
-            <div style="align-items:center; "><h1>테스트해보기</h1><br>
-                <img src="img/noteimage.PNG">
+                
 
-        </div>
-        <!-- 여기까지 노트 활용 부분 -->
-        
+        <div style="column-count :auto; display: inline-block; padding-top: 90px; padding-left: 450px; margin-right:10px; width:100%; overflow:auto;">
+            <!-- 이 부분에 넣어주세요 위 div태그 안에 감싸지도록! -->
+             <h1>강의 노트 테스트 해보기</h1> <h1>강의 노트 테스트 해보기</h1> <h1>강의 노트 테스트 해보기</h1> <h1>강의 노트 테스트 해보기</h1> <h1>강의 노트 테스트 해보기</h1> <h1>강의 노트 테스트 해보기</h1>
+             <h1>강의 노트 테스트 해보기</h1> <h1>강의 노트 테스트 해보기</h1> <h1>강의 노트 테스트 해보기</h1> <h1>강의 노트 테스트 해보기</h1> <h1>강의 노트 테스트 해보기</h1> <h1>강의 노트 테스트 해보기</h1> <h1>강의 노트 테스트 해보기</h1> <h1>강의 노트 테스트 해보기</h1> <h1>강의 노트 테스트 해보기</h1>
+             <img src="img/noteimage.PNG"/><img src="img/noteimage.PNG"/><img src="img/noteimage.PNG"/><img src="img/noteimage.PNG"/><img src="img/noteimage.PNG"/><img src="img/noteimage.PNG"/><img src="img/noteimage.PNG"/><img src="img/noteimage.PNG"/>
+            </div>
+             
 
+         
+     
+       
 </body>
 </html>
