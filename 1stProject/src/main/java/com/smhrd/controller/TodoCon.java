@@ -11,6 +11,8 @@ import com.smhrd.model.TodoDTO;
 public class TodoCon implements Controller {
 
 	
+// 사용자가 입력한 할일을 db에 저장하는 controller
+	
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		try {

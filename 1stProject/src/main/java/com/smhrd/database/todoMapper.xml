@@ -5,8 +5,12 @@
   
   <mapper namespace ="com.smhrd.model.TodoDAO">
 
-	<insert id="insert" parameterType="com.smhrd.model.TodoDTO">
+	<insert id="TodoInsert" parameterType="com.smhrd.model.TodoDTO">
 		insert into tbl_todo_list(todo_seq,todo_title,todo_content,todo_tag,todo_yn,todo_percent,user_id,reg_date)
 		values(tbl_todo_list_SEQ.nextval,#{todo_title},#{todo_content},#{todo_tag},0,0,'6',#{todo_reg_date})
 	</insert>
+	<select id="todoSelect" resultType="TodoDTO">
+		select * from tbl_todo_list where user_id=#{id}
+	</select>
+	
 	</mapper>
