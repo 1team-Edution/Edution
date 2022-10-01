@@ -258,10 +258,8 @@ CREATE TABLE tbl_todo_list
     todo_seq        NUMBER(18, 0)     NOT NULL, 
     todo_title      VARCHAR2(400)     NOT NULL, 
     todo_content    VARCHAR2(4000)    NOT NULL, 
-    todo_duedate    DATE              NULL, 
     todo_tag        VARCHAR2(50)      NULL, 
     todo_yn         CHAR(1)           NOT NULL, 
-    todo_percent    NUMBER(18, 0)     NOT NULL, 
     user_id         VARCHAR2(20)      NOT NULL, 
     reg_date        DATE              NOT NULL, 
      PRIMARY KEY (todo_seq)
@@ -270,6 +268,10 @@ CREATE TABLE tbl_todo_list
 CREATE SEQUENCE tbl_todo_list_SEQ
 START WITH 1
 INCREMENT BY 1;
+
+--이 두 컬럼 더이상 사용x DB서버에서는 드랍완료했음!
+ALTER TABLE tbl_todo_list DROP COLUMN todo_duedate 
+ALTER TABLE tbl_todo_list DROP COLUMN todo_percent
 
 -- 트리거 파트 제대로 작동 안함 문제 확인 필요 --
 --CREATE OR REPLACE TRIGGER tbl_todo_list_AI_TRG
