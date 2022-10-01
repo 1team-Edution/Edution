@@ -20,6 +20,7 @@ package com.smhrd.model;
 	    // 노트 작성일 
 	    private String note_date;
 	    
+	    private String note_file;
 	        
 		public NoteDTO() {
 			super();
@@ -34,6 +35,24 @@ package com.smhrd.model;
 			this.note_tag = note_tag;
 			this.user_id = user_id;
 			this.note_date = note_date;
+		}
+
+		
+		
+		public String getNote_seq() {
+			return note_seq;
+		}
+
+		public void setNote_seq(String note_seq) {
+			this.note_seq = note_seq;
+		}
+
+		public String getNote_file() {
+			return note_file;
+		}
+
+		public void setNote_file(String note_file) {
+			this.note_file = note_file;
 		}
 
 		public String getNote_id() {

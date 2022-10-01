@@ -118,8 +118,11 @@
   }
 
   .caltodo{
-    font-size: 12px;
+    font-size: 11px;
     color: #929292;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   

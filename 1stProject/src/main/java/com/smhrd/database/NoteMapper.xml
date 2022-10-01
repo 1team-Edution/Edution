@@ -5,8 +5,9 @@
   		select * from tbl_note
   	</select>
   	<insert id="insert" parameterType="Note">
-		insert into tbl_note(note_seq, note_title, note_content, note_tag, user_id, note_date, note_parent, note_file)
-		values(tbl_note_SEQ.nextval,#{note_title},#{note_content},#{note_tag},#{user_id},#{note_date},#{note_parent},#{note_file})
+		insert into tbl_note(user_id,note_title,
+		note_content,note_date,note_parent)
+		values(#{user_id},#{note_title},#{note_content},to_date(sysdate,'yy-mm-dd'),1)
   	</insert>
   	<select id="selectOne" resultType="Note">
   		select * from tbl_note 
