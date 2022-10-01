@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page isELIgnored="false" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,6 +9,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="todo.css" type="text/css">
     <title>Document</title>
 
     <style>
@@ -63,8 +66,21 @@
         
         </head>
         <body>
-        
-        
+        <script src="./jquery-3.6.1.min.js"></script>
+        <script>	
+		//서버에 데이터를 요청하는 함수
+		$.ajax({
+                url: "GoMain",
+                dataType:"json",
+                success: function(data) {        
+                	console.log(data);
+                	let todolist=data;
+                },
+                error: function(){
+                    console.log("요청실패");
+                }
+            });		
+	</script>
         
             <header class="jsx-2604928324 header">
                 <div class="jsx-2604928324 inner">
@@ -195,13 +211,33 @@
 
         <div style="column-count :auto; display: inline-block; padding-top: 90px; padding-left: 450px; margin-right:10px; width:100%; overflow:auto;">
             <!-- 이 부분에 넣어주세요 위 div태그 안에 감싸지도록! -->
-             <h1>강의 노트 테스트 해보기</h1> <h1>강의 노트 테스트 해보기</h1> <h1>강의 노트 테스트 해보기</h1> <h1>강의 노트 테스트 해보기</h1> <h1>강의 노트 테스트 해보기</h1> <h1>강의 노트 테스트 해보기</h1>
-             <h1>강의 노트 테스트 해보기</h1> <h1>강의 노트 테스트 해보기</h1> <h1>강의 노트 테스트 해보기</h1> <h1>강의 노트 테스트 해보기</h1> <h1>강의 노트 테스트 해보기</h1> <h1>강의 노트 테스트 해보기</h1> <h1>강의 노트 테스트 해보기</h1> <h1>강의 노트 테스트 해보기</h1> <h1>강의 노트 테스트 해보기</h1>
-             <img src="img/noteimage.PNG"/><img src="img/noteimage.PNG"/><img src="img/noteimage.PNG"/><img src="img/noteimage.PNG"/><img src="img/noteimage.PNG"/><img src="img/noteimage.PNG"/><img src="img/noteimage.PNG"/><img src="img/noteimage.PNG"/>
+				<div data-include-path="./today.html"></div>
+				<div data-include-path="./monthly.html"></div>
+				<div data-include-path="./future.html"></div>
+				<div data-include-path="./calendar.html"></div>
             </div>
-             
+            
 
-         
+<script>
+    
+           window.addEventListener('load', function() {
+               var allElements = document.getElementsByTagName('*');
+               Array.prototype.forEach.call(allElements, function(el) {
+                   var includePath = el.dataset.includePath;
+                   if (includePath) {
+                       var xhttp = new XMLHttpRequest();
+                       xhttp.onreadystatechange = function () {
+                           if (this.readyState == 4 && this.status == 200) {
+                               el.outerHTML = this.responseText;
+                           }
+                       };
+                       xhttp.open('GET', includePath, true);
+                       xhttp.send();
+                   }
+               });
+           });
+    
+       </script>         
      
        
 </body>
