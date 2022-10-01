@@ -23,6 +23,7 @@ import com.smhrd.controller.NoteSelectAllCon;
 import com.smhrd.controller.NoteSelectOneCon;
 import com.smhrd.controller.NoteUpdateCon;
 import com.smhrd.controller.QnADeleteCon;
+import com.smhrd.controller.QnAInsertCompleteCon;
 import com.smhrd.controller.QnAInsertCon;
 import com.smhrd.controller.QnASelectAllCon;
 import com.smhrd.controller.QnASelectOneCon;
@@ -47,6 +48,7 @@ public class FrontController1 extends HttpServlet {
 		mappings.put("/QnASelectAll.do", new QnASelectAllCon());
 		mappings.put("/QnASelectOne.do", new QnASelectOneCon());
 		mappings.put("/QnAInsert.do", new QnAInsertCon());
+		mappings.put("/QnAInsertComplete.do", new QnAInsertCompleteCon());
 		mappings.put("/QnAUpdate.do", new QnAUpdateCon());
 		mappings.put("/QnADelete.do", new QnADeleteCon());
 		mappings.put("/Todo.do", new TodoCon());
@@ -65,14 +67,13 @@ public class FrontController1 extends HttpServlet {
 		
 		String url=request.getRequestURI();
 		
-
+		
 		String cpath=request.getContextPath();
-
+		
 		String command = url.substring( cpath.length() ); 
-
+		
 		
 		String nextView=null;
-		
 		Controller con = null;
 		
 		// 요청을 구분해서 각각의 기능을 실행
@@ -82,11 +83,14 @@ public class FrontController1 extends HttpServlet {
 	
 		nextView = con.execute(request, response);
 		
+		
+		
 
 		if(nextView.contains("redirect:/")) {
 
 		
 			response.sendRedirect(nextView.split(":/")[1]);
+			
 		}else {
 			
 

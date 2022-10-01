@@ -10,6 +10,8 @@ public class QnAInsertCon implements Controller {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
+		
+		
 		String user_name = request.getParameter("user_name");
 		String user_id = request.getParameter("user_id");
 		String help_content = request.getParameter("help_content");
@@ -25,6 +27,7 @@ public class QnAInsertCon implements Controller {
 		int result = dao.insert(dto);
 		
 		if (result > 0) {
+			System.out.println("frontcontroller 보내기 성공");
 			return "redirect:/QnAInsertComplete.do";
 		}else {
 			System.out.println("입력실패");
