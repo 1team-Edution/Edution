@@ -48,6 +48,7 @@
                     
                     <!-- 여기서부터 웹 페이지 로그인 부분 -->
                     <!-- 이곳에 action, submit, name 넣어주세요! -->
+<<<<<<< HEAD
 						<div class="mb-3">
 		  <label style="display: block; margin-bottom: 4px; font-size: 12px; color: rgba(55, 53, 47, 0.65);">프로필사진</label>
 		  <input class="form-control" type="file" id="formFile">
@@ -56,6 +57,15 @@
 		
 
 					<!-- input 추가 필요할 경우 여기서부터 -->
+=======
+                    <form>
+					 <div class="mb-3">
+					  <label for="formFileMultiple" class="form-label">프로필 사진 등록</label>
+					  <input class="form-control" type="file" id="formFileMultiple" multiple>
+					</div>
+				
+                      <!-- input 추가 필요할 경우 여기서부터 -->
+>>>>>>> branch 'master' of https://github.com/1team-Edution/Edution.git
                   
                       <label style="display: block; margin-bottom: 4px; font-size: 12px; color: rgba(55, 53, 47, 0.65);">ID/PW</label>
                       <div style="display: flex; align-items: center; width: 100%; font-size: 15px; line-height: 26px; padding: 4px 10px; position: relative; border-radius: 3px; box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px inset; background: rgba(242, 241, 238, 0.6); cursor: text; margin-top: 4px; margin-bottom: 8px;">

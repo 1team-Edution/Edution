@@ -30,14 +30,14 @@ public class QnADAO {
 	
 	}
 	
-	public int insert(QnADTO qnadto) {
+	public int insert(QnADTO dto) {
 
 		int result = 0;
 		
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 
 		
-		result = sqlSession.insert("com.smhrd.model.QnADAO.QnAInsert", qnadto);
+		result = sqlSession.insert("com.smhrd.model.QnADAO.QnAInsert", dto);
 
 		sqlSession.close();
 
