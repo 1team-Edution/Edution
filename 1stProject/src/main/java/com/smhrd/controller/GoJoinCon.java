@@ -9,6 +9,7 @@ public class GoJoinCon implements Controller {
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		
 		return "Join";
+		
 	}
 
 }

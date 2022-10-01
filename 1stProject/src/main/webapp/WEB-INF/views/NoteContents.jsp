@@ -30,7 +30,7 @@
 			</div>
 			<div class="panel-body">
 				<form action="NoteUpdate.do" method="post">
-					<input type="hidden" name="note_seq" value="${note.note_seq}">
+					<input type="hidden" name="note_seq" value="${tbl_note.note_seq}">
 					<div class="form-group">
 
 						<label>Á¦¸ñ:</label> ${note.note_title}

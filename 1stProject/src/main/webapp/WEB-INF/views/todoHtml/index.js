@@ -34,13 +34,37 @@ const renderCalender = () => {
   const firstDateIndex = dates.indexOf(1);
   const lastDateIndex = dates.lastIndexOf(TLDate);
 
+
   dates.forEach((date, i) => {
     const condition = i >= firstDateIndex && i < lastDateIndex + 1
                       ? 'this'
                       : 'other';
-    dates[i] = `<div class="date"><span class=${condition}>${date}</span><br><span class='caltodo'>할일</span></div>`;
+    dates[i] = `<div class="date"><span class=${condition}>${date}</span><br>`;
     
-  });
+    
+    //여기부터
+
+    let ynm = document.querySelector('.year-month');
+    let ynmStr=ynm.innerText;
+    ynmStr= ynmStr.replace("년 ", "-");
+    ynmStr= ynmStr.replace("월", "-");
+    let thisDate=ynmStr+date;
+    if(condition=='other'){thisDate="";}
+    //테스트용객체
+    let todotest=[{"todo_seq":1,"todo_title":"리스트출력","todo_content":"내용","todo_tag":"#exam","todo_yn":"0","todo_percent":"0","user_id":"6","reg_date":"2022-9-30"},
+            {"todo_seq":2,"todo_title":"리스트출력2","todo_content":"내용","todo_tag":"#exam","todo_yn":"0","todo_percent":"0","user_id":"6","reg_date":"2022-8-1"},
+            {"todo_seq":1,"todo_title":"리스트출력3","todo_content":"내용","todo_tag":"#exam","todo_yn":"1","todo_percent":"0","user_id":"6","reg_date":"2022-9-30"}]
+    //객체바인딩된 객체(테스트안해봄)
+
+
+            todolist.forEach(x=>{
+              if(x.reg_date==thisDate){
+                dates[i]+=`<div class='caltodo'>${x.todo_title}</div>`;          
+              }                
+        });
+    //여기까지
+    dates[i]+=`</div>`;
+    });
 
 
   document.querySelector('.dates').innerHTML = dates.join('');
@@ -55,24 +79,10 @@ const renderCalender = () => {
     }
   }
 
-  //seldate 시작
-  let clickedDates = document.querySelectorAll('.this');
-  let ynm = document.querySelector('.year-month');
-  let selDate="date";
 
-for(let i =0;i<clickedDates.length;i++){
-    clickedDates[i].addEventListener("click",function(){
-      ynmStr=ynm.innerText;
-      ynmStr= ynmStr.replace("년 ", "-");
-      ynmStr= ynmStr.replace("월", "-");
-      selDate=ynmStr+clickedDates[i].innerText;
-      //selDate: 클릭한 날짜 데이터
-      console.log(selDate);
-    });
-  }
-  //seldate 끝
 
 };
+
 
 renderCalender();
 
