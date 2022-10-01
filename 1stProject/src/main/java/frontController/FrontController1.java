@@ -18,7 +18,9 @@ import com.smhrd.controller.GoMain;
 import com.smhrd.controller.GoQnACon;
 import com.smhrd.controller.JoinCon;
 import com.smhrd.controller.LoginPage;
+import com.smhrd.controller.NoteAjax;
 import com.smhrd.controller.NoteDeleteCon;
+import com.smhrd.controller.NoteGoInsertCon;
 import com.smhrd.controller.NoteInsertCon;
 import com.smhrd.controller.NoteSelectAllCon;
 import com.smhrd.controller.NoteSelectOneCon;
@@ -54,12 +56,14 @@ public class FrontController1 extends HttpServlet {
 		mappings.put("/QnAUpdate.do", new QnAUpdateCon());
 		mappings.put("/QnADelete.do", new QnADeleteCon());
 		mappings.put("/Todo.do", new TodoCon());
-		mappings.put("/NoteSelectAll", new NoteSelectAllCon());
-		mappings.put("/NoteSelectOne", new NoteSelectOneCon());
-		mappings.put("/NoteInsert", new NoteInsertCon());
-		mappings.put("/NoteUpdate", new NoteUpdateCon());
-		mappings.put("/NoteDelete", new NoteDeleteCon());
+		mappings.put("/NoteSelectAll.do", new NoteSelectAllCon());
+		mappings.put("/NoteSelectOne.do", new NoteSelectOneCon());
+		mappings.put("/NoteInsert.do", new NoteInsertCon());
+		mappings.put("/NoteUpdate.do", new NoteUpdateCon());
+		mappings.put("/NoteDelete.do", new NoteDeleteCon());
 		mappings.put("/Main.do", new GoMain());
+		mappings.put("/NoteGoInsert.do", new NoteGoInsertCon());
+		mappings.put("/NoteAjax.do", new NoteAjax());
 
 		
 	}
