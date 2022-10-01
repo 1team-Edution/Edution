@@ -23,8 +23,10 @@ public class QnAInsertCon implements Controller {
 		QnADAO dao = new QnADAO();
 		
 		QnADTO dto = new QnADTO(user_id, user_name, help_content);
-				
+
+		
 		int result = dao.insert(dto);
+		
 		
 		if (result > 0) {
 			System.out.println("frontcontroller 보내기 성공");

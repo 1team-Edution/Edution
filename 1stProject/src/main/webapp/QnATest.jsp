@@ -6,28 +6,52 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-	    -webkit-text-size-adjust: 100%;
-    --border-color-regular: rgba(0, 0, 0, 0.1);
-    --text-color-extra-light: rgba(0,0,0,0.2);
-    --text-color-light: rgba(0,0,0,0.4);
-    --text-color-medium: rgba(0,0,0,0.6);
-    --text-color-dark: rgba(17, 17, 17, 1);
-    --text-color-regular: rgba(4, 4, 4, 1);
-    --spacing-xs: 20px;
-    --spacing-s: 40px;
-    --spacing-m: 40px;
-    --base-padding: 40px;
-    --spacing-l: 80px;
-    --spacing-xl: 80px;
-    cursor: default;
+.input.jsx-2655736279 {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    font-size: 16px;
     color: var(--text-color-dark);
-    font-family: inter-var, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 17px;
-    line-height: 1.5;
-    box-sizing: border-box;
-    display: grid;
-    grid-gap: var(--base-padding);
-    grid-template-columns: repeat(2, 1fr);
+    border: none;
+    border-radius: 5px;
+    padding: 4px 10px;
+    position: relative;
+    box-shadow: rgb(15 15 15 / 10%) 0px 0px 0px 1px inset;
+    background: white;
+    cursor: text;
+    height: 100%;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    width: 40%;
+    outline: none;
+}
+
+.label-text.jsx-3455048443 {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.global-title-size-xl.global-title-weight-bold {
+    font-variation-settings: "wght" 669;
+    letter-spacing: -0.0307em;
+}
+.primary.jsx-2971364727 {
+    color: #FFFFFF;
+    background: linear-gradient( 180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0) 100% ), #e16259;
+    box-shadow: 0px 4px 9px rgb(0 0 0 / 5%), 0px 1.54074px 2.86667px rgb(0 0 0 / 7%), 0px 0.325926px 0.733333px rgb(0 0 0 / 12%);
+}
+.background.jsx-2182651440 {
+    overflow: hidden;
+    background: #F9F5F1;
+    border-radius: 6px;
+}
+.jsx-448f407d1ced1fc8{
+	color:red;
+}
+
 </style>
 
 </head>
