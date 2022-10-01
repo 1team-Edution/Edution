@@ -19,7 +19,7 @@ public class NoteSelectAllCon implements Controller {
 		request.setAttribute("list", list);
 		
 		// 여기는 아직 정확하지 않습니다--------
-		return "NoteContent";
+		return "NoteList";
 		
 	}
 

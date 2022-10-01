@@ -1,14 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page isELIgnored="false"%>
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Notion~nickb94</title>
-    <link rel="stylesheet" href="../resources/css/app.css" />
-    <!-- Latest compiled and minified CSS -->
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 <!-- jQuery library -->
@@ -16,142 +15,102 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<script src="https://cdn.ckeditor.com/ckeditor5/35.1.0/classic/ckeditor.js"></script>
-<script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/translations/ko.js"></script> 
-  <style>
-  .ck-editor__editable { height: 400px; }
-  .ck-content { font-size: 12px; }
-  #title{
-	position : sticky;
+<!-- Latest compiled JavaScript -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="./resources/js/summernote/summernote-lite.js"></script>
+<script src="./resources/js/summernote/lang/summernote-ko-KR.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+
+<title>Insert title here</title>
+
+</head>
+<body>
+<style>
+.container {
+  display: inline-block;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
 }
-	#deleteBotton{
-	align="right"
+
+.bar1, .bar2, .bar3 {
+  width: 30px;
+  height: 2px;
+  background-color: #333;
+  margin: 8px 0;
+  transition: 0.4s;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Rotate first bar */
+.change .bar1 {
+  transform: translate(0, 11px) rotate(-45deg);
+}
+
+/* Fade out the second bar */
+.change .bar2 {opacity: 0;}
+
+/* Rotate last bar */
+.change .bar3 {
+  transform: translate(0, -11px) rotate(45deg);
 }
 </style>
-  </head>
-  <body>
-    
-    <div id="container">
-      <div id="left-div"></div>
-      <div id="right-div">
-        <div id="header">
-          <button type="button" id="slideout">>></button>
-          <div id="subheader"></div>
-        </div>
-        <div id="area-below-header">
-          <div id="box">
-            <div id="first">
-              <div id="paddedname">
-                <div id="icon">🔥</div>
-                <div id="name">사용자 이름</div>
-              </div>
-            </div>
-            <div id="second">
-              <div id="secondone">
-                <div id="searchicon">🔍</div>
-                <div id="quickfind">메뉴 1</div>
-              </div>
-              <div id="secondtwo">
-                <div id="timeicon">🔍</div>
-                <div id="allupdates">메뉴 2</div>
-              </div>
-              <div id="secondthree">
-                <div id="settingsicon">🔍</div>
-                <div id="settings">메뉴 3</div>
-              </div>
-            </div>
-            <div id="third">
-              <div id="scroller-vertical">
-                <div id="inscroller">
-                  <div id="workspace">
-                    <div id="insideworkspace">
-                      <span>Workspace</span>
-                    </div>
-                  </div>
-                  <div id="addapage">
-                  
-                    <button id="settingsicon">󠀫󠀫󠀫󠀫➕</button>
-                    <div id="settings">Add a Page</div>
-                    <button id="deleteBotton" align= "right">🗑️</button>
-                  </div>
-                </div>
 
-                <div id="inscroller">
-                  <div id="workspace">
-                    <div id="insideworkspace">
-                      <span>Private</span>
-                    </div>
-                  </div>
-                  <div id="addapage" class="one">
-                    <div id="settingsicon">󠀫󠀫󠀫󠀫➡️</div>
-                    <div id="settings">Some Untitled Page</div>
-                  </div>
-                  <div id="addapage" class="two">
-                    <div id="settingsicon">󠀫󠀫󠀫󠀫➡️</div>
-                    <div id="settings">Another Untitled Page</div>
-                  </div>
-                </div>
-                <!-- <div id="margindivinscroller"></div> -->
-                <div id="inscroller">
-                  <div id="addapage" class="three">
-                    <div id="settingsicon">󠀫󠀫󠀫󠀫🧱</div>
-                    <div id="settings">Templates</div>
-                  </div>
-                  <div id="addapage" class="four">
-                    <div id="settingsicon">󠀫󠀫󠀫󠀫📥</div>
-                    <div id="settings">Imports</div>
-                  </div>
-                  <div id="addapage" class="five">
-                    <div id="settingsicon">󠀫󠀫󠀫󠀫🗑️</div>
-                    <div id="settings">Trash</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="fourth">
-              <div id="paddednamelast">
-                <div id="icon">➕</div>
-                <div id="name">New Page</div>
-              </div>
-              
-            </div>
-          </div>
-          
-          <div id="btn"></div>
-          
-          <div id="cover"></div>
-          
-          
-          <div>
-          <form action = "Insert.do" method="post">
-          <div id = "title"><h1><input type="text" name = "note_title"></h1></div>
-          
-          
-          <textarea id="editor" name = "note_content">
-          This is some sample content.</textarea>
-          <div style = "float: right;"><button type="submit" class="btn btn-default">작성</button></div>
-          
-           </form>
-          </div>
-          
-         
-        </div>
-      </div>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header"  style="display: flex">
+    <div class="container"  onclick="myFunction(this)" style= "width: 85px">
+  <div class="bar1"></div>
+  <div class="bar2"></div>
+  <div class="bar3"></div>
+</div>
+      
+    <a class="navbar-brand" href="#">WebSiteName</a>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Page 1</a></li>
+      <li><a href="#">Page 2</a></li>
+      <li><a href="#">Page 3</a></li>
+    </ul>
+  </div>
     </div>
-    
-                <script>
-                        ClassicEditor
-                                .create( document.querySelector( '#editor' ) )
-                                .then( editor => {
-                                        console.log( editor );
-                                        language: "ko";
-                                } )
-                                .catch( error => {
-                                        console.error( error );
-                                } );
-                </script>
-    
-    <script src="../resources/js/app.js"></script>
-    
-  </body>
+</nav>
+
+<div class="panel-body">
+				<table class="table table-striped table-hover">
+					<tr>
+						<th>제목</th>
+						<th>작성자</th>
+						<th colspan=2>작성일</th>
+
+					</tr>
+
+					<!-- el표현식을 활용하면 scope영역에 객체바인딩 된 데이터를 바로 꺼내올 수 있다. -->
+					<c:forEach var="note" items="${list}">
+						<tr>
+							<td><a href="NoteSelectOne.do?note_seq=${note.note_seq}">${note.note_title}</a></td>
+							<td>${note.user_id}</td>
+							<td>${note.note_date}</td>
+							<td><button
+									onclick="location.href='NoteDelete.do?note_seq=${note.note_seq}'">삭제</button></td>
+						</tr>
+					</c:forEach>
+
+					<tr align="right">
+						<td colspan=4>
+							<button onclick="location.href = 'NoteGoInsert.do'"
+								class="btn btn-primary btn-sm">글쓰기</button>
+						</td>
+					</tr>
+				</table>
+			</div>
+	
+	
+	
+
+
+
+
+</body>
 </html>
