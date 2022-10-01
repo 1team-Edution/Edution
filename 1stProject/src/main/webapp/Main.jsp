@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page isELIgnored="false" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,15 +9,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="todo.css" type="text/css">
+    <title>Edution 나의 플래너</title>
 
-    <style>
-              
+    <style>       
             span >div > .user-menuselect:hover{
                 background: rgba(55, 53, 47, 0.08);
             }
 
-        
         .header.jsx-2604928324{position:fixed;
         width:100%;
         display:-webkit-box;
@@ -26,7 +27,6 @@
         -ms-flex-direction:column-reverse;
         flex-direction:column-reverse;
         background:#FFFEFC;
-        
         z-index:100}
         
         .inner.jsx-2604928324{display:-webkit-box;
@@ -46,8 +46,7 @@
         margin:0 auto;
         height:60px;
         -webkit-transition:250ms height;
-        transition:250ms height
-        
+        transition:250ms height 
         }
 
         span >div > .user-menuselect > .moya{
@@ -58,13 +57,213 @@
                 display: block;
                 margin-left: 130px;
             }
+         #modal.modal-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    display: none;
+}
+#modal .modal-window {
+    box-shadow: 0 6px 10px 0 rgba(134, 134, 134, 0.37);
+    backdrop-filter: blur( 13.5px );
+    -webkit-backdrop-filter: blur( 13.5px );
+    border-radius: 10px;
+    border: 2px solid rgba(43, 43, 43, 0.18);
+    width: 500px;
+    height: 330px;
+    position: relative;
+    top: -100px;
+    padding: 10px;
+}
+#modal .title {
+    padding-left: 10px;
+    display: inline;
+    text-shadow: 1px 1px 2px rgb(255, 255, 255);
+    color: rgb(185, 183, 183);
+}
+#modal .title h2 {
+    display: inline;
+}
+#modal .close-area {
+    display: inline;
+    float: right;
+    padding-right: 10px;
+    cursor: pointer;
+    text-shadow: 1px 1px 2px rgb(255, 255, 255);
+    color: rgb(185, 183, 183);
+}
+#modal .content {
+    margin-top: 20px;
+    padding: 0px 10px;
+    text-shadow: 1px 1px 2px rgb(255, 255, 255);
+    color: rgb(185, 183, 183);
+}
+.date-button{
+    display: inline;
+    cursor: pointer;
+    color: rgb(114, 114, 114);
+}
+.save-button{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    float: right;
+    background: var(--button-bg-color);
+    color: var(--button-color);
+    margin: 0;
+    padding: 4px 8px;
+    
+    font-family: 맑은고딕,arial;
+    font-size: 15px;
+    font-weight: 200;
+    text-align: center;
+    text-decoration: none;
+    
+    border: none;
+    border-radius: 5px;
+    
+    /* display: inline-block; */
+    width: auto;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+    transition: 0.5s;
+    --button-bg-color: #faecec;
+    --button-hover-bg-color: #ddd0d0;
+}
+button:active,
+    button:hover,
+    button:focus {
+    background: var(--button-hover-bg-color);
+    outline: 0;
+    }
+    button:disabled {
+    opacity: 0.5;
+    }
+.modal-text{
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: solid 2px #b9b9b9;
+    border-radius: 5px;
+    color: #808080;
+    font-family: 맑은고딕,arial;
+    font-size: 15px;
+}
+.modal-textarea{
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: solid 2px #b9b9b9;
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: 맑은고딕,arial;
+    color: #808080;
+    resize: none;
+}
+input[class="check"] + label {
+            display: inline-block;
+            width: 55px;
+            height: 22px;
+            border: 2px solid #bcbcbc;
+            cursor: pointer;
+            border-radius: 5px;
+            }
+input[class="check"]:checked + label {
+                background-color: #b3b1b1;
+                color: rgb(255, 255, 255);
+                text-shadow: 1px 1px 2px rgb(146, 146, 146);
+                }
+input[class="check"] {
+                    display: none;
+                }
+
+#btn-modal{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: var(--button-bg-color);
+    color: var(--button-color);
+    margin: 0;
+    padding: 0px 4px;
+    display: inline;
+    float: right;
+    cursor: pointer;
+    text-shadow: 1px 1px 2px rgb(255, 255, 255);
+    color: rgb(190, 190, 190);
+    border: none;
+    font-size: 30px;
+}
+.todoTable{
+    font-family: 맑은고딕, Arial;
+    font-size:15px;
+    color: rgb(122, 122, 122);
+}
+#task-head{
+    font-family: 맑은고딕, Arial;
+    background-color: rgb(193, 218, 218);
+    color:#747888;
+    display: inline-block;
+    border-radius: 20px;
+    padding: 0px 20px;
+    font-size: 18px; 
+    margin-left: 15px;
+}
+#container{
+    border-radius: 10px;
+    border: 1.5px solid rgba(43, 43, 43, 0.18);
+    width: 200px;
+    height: 400px;
+    position: relative;
+    top: 10px;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 0px;            
+}
+#task-board{
+    margin-left: 10px;
+    font-family: 맑은고딕, Arial;
+    font-size: 15px;
+    color:#888888;
+    cursor: pointer;
+}
+
+.task-done{
+    color:#cccccc;
+}
+         
         
         </style>
         
         </head>
         <body>
-        
-        
+        <script src="./jquery-3.6.1.min.js"></script>
+        <script>	
+		//서버에 데이터를 요청하는 함수
+		$.ajax({
+                url: "GoMain",
+                dataType:"json",
+                success: function(data) {        
+                	console.log(data);
+                	let todolist=data;
+                },
+                error: function(){
+                    console.log("요청실패");
+                }
+            });		
+	</script>
         
             <header class="jsx-2604928324 header">
                 <div class="jsx-2604928324 inner">
@@ -81,9 +280,12 @@
          <!-- 프로필 사진은 보기 쉽게 넣어놨어요 이미지 src부분 꼭 수정해주세요! -->
             <div style="coverflow: auto; hight:100%;  overflow:hidden; float:left; background-color: white; position: fixed;">
            
+                    <!-- 마이페이지 주소값 설정해주기 -->
+            <a onfocus=blur() href="javascript:void(window.open('MypageView.do','win0','width=1024,height=768,left=500, top=40,status=no,toolbar=no,scrollbars=no'))" style="text-decoration: none; color:black;" >
             <div style="flex-grow: 0; flex-shrink: 0; padding-top: 90px; padding-bottom: 8px; padding-left: 140px; width: 240px;">
                 <div style="margin-left: 20px; margin-right: 0px; margin-top:10px;">
-                    <img src="img/home-page.webp" width="140px" height="140px" style= "border-radius: 70%; object-fit: cover; align-items: center;" ></div></div>
+                        <img src="img/home-page.webp" width="140px" height="140px" style= "border-radius: 70%; object-fit: cover; align-items: center;" >
+                    </div></div>
                     
                     
                     <div style="padding-left: 140px; user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; border-radius: 3px; margin-left: 35px; margin-right: 0px; ">
@@ -103,8 +305,9 @@
                     </div></div>
                         <div style="white-space: nowrap; min-width: 0px; overflow: hidden; text-overflow: clip;">이메일넣어주세요</div>
                         </div></div>
-            
-                        <div style="margin-top: 18px;"></div>
+                        
+                            <div style="margin-top: 18px;"></div>
+                    </a>
                   <!-- 여기까지 사용자 공간 -->
                         
                 <!-- 여기가 메뉴바 -->
@@ -195,14 +398,81 @@
 
         <div style="column-count :auto; display: inline-block; padding-top: 90px; padding-left: 450px; margin-right:10px; width:100%; overflow:auto;">
             <!-- 이 부분에 넣어주세요 위 div태그 안에 감싸지도록! -->
-             <h1>강의 노트 테스트 해보기</h1> <h1>강의 노트 테스트 해보기</h1> <h1>강의 노트 테스트 해보기</h1> <h1>강의 노트 테스트 해보기</h1> <h1>강의 노트 테스트 해보기</h1> <h1>강의 노트 테스트 해보기</h1>
-             <h1>강의 노트 테스트 해보기</h1> <h1>강의 노트 테스트 해보기</h1> <h1>강의 노트 테스트 해보기</h1> <h1>강의 노트 테스트 해보기</h1> <h1>강의 노트 테스트 해보기</h1> <h1>강의 노트 테스트 해보기</h1> <h1>강의 노트 테스트 해보기</h1> <h1>강의 노트 테스트 해보기</h1> <h1>강의 노트 테스트 해보기</h1>
-             <img src="img/noteimage.PNG"/><img src="img/noteimage.PNG"/><img src="img/noteimage.PNG"/><img src="img/noteimage.PNG"/><img src="img/noteimage.PNG"/><img src="img/noteimage.PNG"/><img src="img/noteimage.PNG"/><img src="img/noteimage.PNG"/>
+				<!-- todaylog 시작 -->
+				<div>
+					<div id="container">
+        <b id="task-head">오늘의 학습</b><hr>
+        <!--모달 창 열기 버튼-->
+        <button id="btn-modal">+</button><br><br>
+            <!--여기에 todolist 작성-->
+            <div id="task-board">
+                할 일 목록이 여기에 출력됩니다.
             </div>
-             
+    </div>
+    <!--여기부터 모달-->
+    <div id="modal" class="modal-overlay">
+        <div class="modal-window">
+            <div class="title">
+                <h2>Today Log</h2>
+            </div>
+            <div class="close-area">X</div>
+            <div class="content">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">오늘 할 공부를 분류하고 우선순위를 결정하세요.</h5>
+                        </div>
+                        <form action="Todo.do" method="post">
+                        <div class="modal-body">
+                            <div>
+                                <input type="text" class="modal-text" placeholder="Todo" name = "todoHead">
+                                <br>
+                            </div>
+                            <div>
+                                <br><textarea class="modal-textarea" name="todoBody" id="additional-content" placeholder="추가로 메모를 하고 싶다면&#13;&#10;이곳에 작성하세요."></textarea>
+                            </div>
+                        </div>
+                        <div id="checkbox-area">
+                            #
+                            <input type="checkbox" class="check" id="tag-check1" name="tag" value="homework" autocomplete="off">
+                            <label for="tag-check1" align="center">숙제</label>
 
-         
-     
+                            <input type="checkbox" class="check" id="tag-check2" name="tag" value="exam" autocomplete="off">
+                            <label for="tag-check2" align="center">시험</label>
+
+                            <input type="checkbox" class="check" id="tag-check3" name="tag" value="review" autocomplete="off">
+                            <label for="tag-check3" align="center">복습</label>
+                            
+                            <input type="checkbox" class="check" id="tag-check4" name="tag" value="preview" autocomplete="off">
+                            <label for="tag-check4" align="center">예습</label>
+                            
+                            <input type="checkbox" class="check" id="tag-check5" name="tag" value="memo" autocomplete="off">
+                            <label for="tag-check5" align="center">메모</label>
+                        </div>
+                        <div class="modal-footer">
+                            <br>
+                                <label for="datesel">다른 날짜 선택</label>
+                                <input type="date" id="datesel" name='date'>
+                            <button type="submit" class="save-button" data-bs-dismiss="modal">입력</button>         
+                        </div>
+                    </form>
+                    </div>                  
+            </div>
+        </div>
+    </div>
+				
+				</div>
+				<!-- todaylog끝 -->
+				<div data-include-path="./monthly.html"></div>
+				<div data-include-path="./future.html"></div>
+				<div data-include-path="./calendar.html"></div>
+				
+				
+				
+				
+				
+				
+            </div>
+    
        
 </body>
 </html>

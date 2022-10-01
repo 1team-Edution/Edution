@@ -3,13 +3,12 @@ package com.smhrd.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class GoJoinCon implements Controller {
+public class PopmypageCon implements Controller {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		
-		return "Join";
-		
+		// TODO Auto-generated method stub
+		return "MyPage";
 	}
 
 }
