@@ -243,6 +243,8 @@ input[class="check"] {
 .task-done{
     color:#cccccc;
 }
+
+
          
         
         </style>
@@ -399,13 +401,13 @@ input[class="check"] {
         <div style="column-count :auto; display: inline-block; padding-top: 90px; padding-left: 450px; margin-right:10px; width:100%; overflow:auto;">
             <!-- 이 부분에 넣어주세요 위 div태그 안에 감싸지도록! -->
 				<!-- todaylog 시작 -->
-				<div>
+				<div class='todobox'>
 					<div id="container">
         <b id="task-head">오늘의 학습</b><hr>
         <!--모달 창 열기 버튼-->
         <button id="btn-modal">+</button><br><br>
             <!--여기에 todolist 작성-->
-            <div id="task-board">
+            <div id="task-board-today">
                 할 일 목록이 여기에 출력됩니다.
             </div>
     </div>
@@ -462,14 +464,301 @@ input[class="check"] {
 				
 				</div>
 				<!-- todaylog끝 -->
-				<div data-include-path="./monthly.html"></div>
-				<div data-include-path="./future.html"></div>
-				<div data-include-path="./calendar.html"></div>
+				<!-- monthlylog 시작 -->
+	<div class='todobox'>
+	<div id="container">
+        <b id="task-head">이번 달 학습 계획</b><hr>
+        <!--모달 창 열기 버튼-->
+        <button id="btn-modal">+</button><br><br>
+            <!--여기에 todolist 작성-->
+            <div id="task-board-monthly">
+                할 일 목록이 여기에 출력됩니다.
+            </div>
+    </div>
+    <!--여기부터 모달-->
+    <div id="modal" class="modal-overlay">
+        <div class="modal-window">
+            <div class="title">
+                <h2>Monthly Log</h2>
+            </div>
+            <div class="close-area">X</div>
+            <div class="content">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">이번 달 내로 마쳐야 하는 일과 사건에 대한 개요입니다.</h5>
+                        </div>
+                        <form action="Todo.do" method="post">
+                        <div class="modal-body">
+                            <div>
+                                <input type="text" class="modal-text" placeholder="Todo" name = "todoHead">
+                                <br>
+                            </div>
+                            <div>
+                                <br><textarea class="modal-textarea" name="todoBody" id="additional-content" placeholder="추가로 메모를 하고 싶다면&#13;&#10;이곳에 작성하세요."></textarea>
+                            </div>
+                        </div>
+                        <div id="checkbox-area">
+                            #
+                            <input type="checkbox" class="check" id="tag-check1" name="tag" value="homework" autocomplete="off">
+                            <label for="tag-check1" align="center">숙제</label>
+
+                            <input type="checkbox" class="check" id="tag-check2" name="tag" value="exam" autocomplete="off">
+                            <label for="tag-check2" align="center">시험</label>
+
+                            <input type="checkbox" class="check" id="tag-check3" name="tag" value="review" autocomplete="off">
+                            <label for="tag-check3" align="center">복습</label>
+                            
+                            <input type="checkbox" class="check" id="tag-check4" name="tag" value="preview" autocomplete="off">
+                            <label for="tag-check4" align="center">예습</label>
+                            
+                            <input type="checkbox" class="check" id="tag-check5" name="tag" value="memo" autocomplete="off">
+                            <label for="tag-check5" align="center">메모</label>
+                        </div>
+                        <div class="modal-footer">
+                            <br>
+                                <label for="datesel">다른 날짜 선택</label>
+                                <input type="date" id="datesel" name='date'>
+                            <button type="submit" class="save-button" data-bs-dismiss="modal">입력</button>         
+                        </div>
+                    </form>
+                    </div>                  
+            </div>
+        </div>
+    </div>
+	
+	</div>			
+	<!-- monthlylog 끝 -->
+	<!-- futurelog 시작 -->
+	<div class='todobox'>
+	 <div id="container">
+        <b id="task-head">미래 학습 계획</b><hr>
+        <!--모달 창 열기 버튼-->
+        <button id="btn-modal">+</button><br><br>
+            <!--여기에 todolist 작성-->
+            <div id="task-board">
+                할 일 목록이 여기에 출력됩니다.
+            </div>
+    </div>
+    <!--여기부터 모달-->
+    <div id="modal" class="modal-overlay">
+        <div class="modal-window">
+            <div class="title">
+                <h2>Future Log</h2>
+            </div>
+            <div class="close-area">X</div>
+            <div class="content">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">미래에 할 공부와 이벤트를 저장하세요.</h5>
+                        </div>
+                        <form action="Todo.do" method="post">
+                        <div class="modal-body">
+                            <div>
+                                <input type="text" class="modal-text" placeholder="Todo" name = "todoHead">
+                                <br>
+                            </div>
+                            <div>
+                                <br><textarea class="modal-textarea" name="todoBody" id="additional-content" placeholder="추가로 메모를 하고 싶다면&#13;&#10;이곳에 작성하세요."></textarea>
+                            </div>
+                        </div>
+                        <div id="checkbox-area">
+                            #
+                            <input type="checkbox" class="check" id="tag-check1" name="tag" value="homework" autocomplete="off">
+                            <label for="tag-check1" align="center">숙제</label>
+
+                            <input type="checkbox" class="check" id="tag-check2" name="tag" value="exam" autocomplete="off">
+                            <label for="tag-check2" align="center">시험</label>
+
+                            <input type="checkbox" class="check" id="tag-check3" name="tag" value="review" autocomplete="off">
+                            <label for="tag-check3" align="center">복습</label>
+                            
+                            <input type="checkbox" class="check" id="tag-check4" name="tag" value="preview" autocomplete="off">
+                            <label for="tag-check4" align="center">예습</label>
+                            
+                            <input type="checkbox" class="check" id="tag-check5" name="tag" value="memo" autocomplete="off">
+                            <label for="tag-check5" align="center">메모</label>
+                        </div>
+                        <div class="modal-footer">
+                            <br>
+                            <button type="submit" class="save-button" data-bs-dismiss="modal">입력</button>         
+                        </div>
+                    </form>
+                    </div>                  
+            </div>
+        </div>
+    </div>
+	</div>			
+	<!-- futurelog 끝 -->
+	<!-- calendar시작 -->
+	<div class='calendarbox'>
+	<div class="calendarbody">
+        <div class="header">
+            <div class="year-month"></div>
+            <div class="nav">
+                <button class="nav-btn go-prev" onclick="prevMonth()">&lt;</button>
+                <button class="nav-btn go-today" onclick="goToday()">Today</button>
+                <button class="nav-btn go-next" onclick="nextMonth()">&gt;</button>
+            </div>
+        </div>
+        <div class="main">
+            <div class="days">
+                <div class="day">Sun</div>
+                <div class="day">Mon</div>
+                <div class="day">Tue</div>
+                <div class="day">Wed</div>
+                <div class="day">The</div>
+                <div class="day">Fri</div>
+                <div class="day">Sat</div>
+            </div>
+            <div class="dates"></div>
+        </div>
+    </div>
+	</div>
+
 				
 				
 				
 				
-				
+	<!-- madal script -->
+	<script>
+	const modal = document.getElementById("modal")
+	const btnModal = document.getElementById("btn-modal")
+	btnModal.addEventListener("click", e => {
+	    modal.style.display = "flex"})
+	const closeBtn = modal.querySelector(".close-area")
+	closeBtn.addEventListener("click", e => {
+	    modal.style.display = "none"})   
+	modal.addEventListener("click", e => {
+	    const evTarget = e.target
+	    if(evTarget.classList.contains("modal-overlay")) {
+	        modal.style.display = "none"}
+	})
+	</script>		
+	<!-- modal script 끝 -->
+	<!-- calendar script -->
+	<script>
+	let date = new Date();
+
+
+const renderCalender = () => {
+  const viewYear = date.getFullYear();
+  const viewMonth = date.getMonth();
+
+  document.querySelector('.year-month').textContent = `${viewYear}년 ${viewMonth + 1}월`;
+
+  const prevLast = new Date(viewYear, viewMonth, 0);
+  const thisLast = new Date(viewYear, viewMonth + 1, 0);
+
+  const PLDate = prevLast.getDate();
+  const PLDay = prevLast.getDay();
+
+  const TLDate = thisLast.getDate();
+  const TLDay = thisLast.getDay();
+
+  const prevDates = [];
+  const thisDates = [...Array(TLDate + 1).keys()].slice(1);
+  const nextDates = [];
+
+  if (PLDay !== 6) {
+    for (let i = 0; i < PLDay + 1; i++) {
+      prevDates.unshift(PLDate - i);
+    }
+  }
+
+  for (let i = 1; i < 7 - TLDay; i++) {
+    nextDates.push(i);
+  }
+
+  const dates = prevDates.concat(thisDates, nextDates);
+  const firstDateIndex = dates.indexOf(1);
+  const lastDateIndex = dates.lastIndexOf(TLDate);
+
+
+  dates.forEach((date, i) => {
+    const condition = i >= firstDateIndex && i < lastDateIndex + 1
+                      ? 'this'
+                      : 'other';
+    dates[i] = `<div class="date"><span class=${condition}>${date}</span><br>`;
+    
+    
+    //여기부터
+
+    let ynm = document.querySelector('.year-month');
+    let ynmStr=ynm.innerText;
+    ynmStr= ynmStr.replace("년 ", "-");
+    ynmStr= ynmStr.replace("월", "-");
+    let thisDate=ynmStr+date;
+    if(condition=='other'){thisDate="";}
+    //테스트용객체
+    let todotest=[{"todo_seq":1,"todo_title":"리스트출력","todo_content":"내용","todo_tag":"#exam","todo_yn":"0","todo_percent":"0","user_id":"6","reg_date":"2022-9-30"},
+            {"todo_seq":2,"todo_title":"리스트출력2","todo_content":"내용","todo_tag":"#exam","todo_yn":"0","todo_percent":"0","user_id":"6","reg_date":"2022-8-1"},
+            {"todo_seq":1,"todo_title":"리스트출력3","todo_content":"내용","todo_tag":"#exam","todo_yn":"1","todo_percent":"0","user_id":"6","reg_date":"2022-9-30"}]
+    //객체바인딩된 객체(테스트안해봄)
+
+
+            todolist.forEach(x=>{
+              if(x.reg_date==thisDate){
+                dates[i]+=`<div class='caltodo'>${x.todo_title}</div>`;          
+              }                
+        });
+    //여기까지
+    dates[i]+=`</div>`;
+    });
+
+
+  document.querySelector('.dates').innerHTML = dates.join('');
+
+  const today = new Date();
+  if (viewMonth === today.getMonth() && viewYear === today.getFullYear()) {
+    for (let date of document.querySelectorAll('.this')) {
+      if (+date.innerText === today.getDate()) {
+        date.classList.add('today');
+        break;
+      }
+    }
+  }
+
+
+
+};
+
+
+renderCalender();
+
+const prevMonth = () => {
+    date.setDate(1);
+    date.setMonth(date.getMonth() - 1);
+    renderCalender();
+    
+    
+  }
+  
+  const nextMonth = () => {
+    date.setDate(1);
+    date.setMonth(date.getMonth() + 1);
+    renderCalender();
+    
+  }
+  
+  const goToday = () => {
+    date = new Date();
+    renderCalender();
+
+  }
+
+  // const firstDateIndex = date.indexOf(1);
+  // const lastDateIndex = date.lastIndexOf(TLDate);
+  // date.forEach((date, i) => {
+  //   const condition = i >= firstDateIndex && i < lastDateIndex + 1
+  //                     ? 'this'
+  //                     : 'other';
+
+  //   dates[i] = `<div class="date"><span class="${condition}">${date}</span></div>`;
+  // })
+
+</script>
+	
+	<!-- calendar script 끝 -->
 				
             </div>
     
