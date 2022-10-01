@@ -7,14 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>helpÅ×ÀÌºí¿¡ °ªÀ» ¹Þ¾Æ¿À±â À§ÇÑ Å×½ºÆ® ÆäÀÌÁö</h1>
+	<h1>helpí…Œì´ë¸”ì— ê°’ì„ ë°›ì•„ì˜¤ê¸° ìœ„í•œ í…ŒìŠ¤íŠ¸ íŽ˜ì´ì§€</h1>
 	<form action="QnAInsert.do" method="post">
 		<table>
 		
 			<tr>
-				<td>¾ÆÀÌµð</td>
-				<td>ÀÛ¼ºÀÚ</td>
-				<td>¹®ÀÇ³»¿ë</td>
+				<td>ì•„ì´ë””</td>
+				<td>ìž‘ì„±ìž</td>
+				<td>ë¬¸ì˜ë‚´ìš©</td>
 			</tr>
 
 			<tr>
