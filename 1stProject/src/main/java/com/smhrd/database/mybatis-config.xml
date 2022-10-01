@@ -8,7 +8,8 @@
 
    	  <!-- QnADTO typealias 추가 -->
       <typeAlias type="com.smhrd.model.QnADTO" alias="QnA" />
-
+   	  <!-- BoardDTO typealias 추가 -->
+      <typeAlias type="com.smhrd.model.BoardDTO" alias="Board" />
       <!-- NoteDTO typealias 추가 -->
       <typeAlias type="com.smhrd.model.NoteDTO" alias="Note"/>
       <!-- UserDTO typealias 추가 -->
@@ -32,6 +33,8 @@
       
          <!-- NoteMapper 추가 -->
       <mapper resource="com/smhrd/database/NoteMapper.xml" />
+         <!-- BoardMapper 추가 -->
+      <mapper resource="com/smhrd/database/BoardMapper.xml" />
       <!-- QnAMapper 추가 -->
       <mapper resource="com/smhrd/database/QnAMapper.xml" />
       <!-- JoinMapper 추가 -->

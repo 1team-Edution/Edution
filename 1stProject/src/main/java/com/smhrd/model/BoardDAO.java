@@ -1,28 +1,24 @@
 package com.smhrd.model;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
 
-import com.smhrd.controller.Controller;
+import com.smhrd.database.SqlSessionManager;
 
-public class BoardDAO implements Controller {
+public class BoardDAO  {
+	private SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSessionFactory();
 
-	@Override
-	public String execute(HttpServletRequest request, HttpServletResponse response) {
+	public int insert(BoardDTO dto) {
+
+		int result = 0;
 		
-		String brd_title = request.getParameter("brd_title");
-		String brd_content = request.getParameter("brd_content");
-		String brd_cnt = request.getParameter("brd_cnt");
-		String brd_likes = request.getParameter("brd_likes");
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+
 		
-		System.out.println(brd_title);
-		System.out.println(brd_content);
-		System.out.println(brd_cnt);
-		System.out.println(brd_likes);
-		
-		
-		
-		return null;
+		result = sqlSession.insert("com.smhrd.model.BoardDAO.BoardInsert", dto);
+
+		sqlSession.close();
+
+		return result;
 	}
-
 }
