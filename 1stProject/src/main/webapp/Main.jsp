@@ -138,9 +138,6 @@
                             <div style="flex: 1 1 auto; white-space: nowrap; min-width: 0px; overflow: hidden; text-overflow: ellipsis;" >&nbsp;&nbsp; 추가하기</div></div></div>
                 </span>
 
-
-                
-            
                 <div style="margin-top: 18px;"></div>
             
                 <!-- 템플릿, 가져오기, 휴지통 시작하는 부분 -->
