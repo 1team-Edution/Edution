@@ -7,7 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <head><meta name="viewport" content="width=device-width"><meta charset="utf-8"><title class="jsx-1549916940 jsx-1382635649">Notion 영업팀에 문의하기 – Notion (노션)</title><meta name="next-head-count" content="28"><link rel="stylesheet" href="/_next/static/css/19c9f219905e4383.css" data-n-g=""><link rel="preload" href="/_next/static/css/db6573b6f02de55a.css" as="style"><noscript data-n-css=""></noscript><style id="__jsx-3156065021">:root{--base-padding:20px;
+    <head>
+    <meta name="viewport" content="width=device-width"><meta charset="utf-8"><title class="jsx-1549916940 jsx-1382635649">Notion 영업팀에 문의하기 – Notion (노션)</title><meta name="next-head-count" content="28"><link rel="stylesheet" href="/_next/static/css/19c9f219905e4383.css" data-n-g=""><link rel="preload" href="/_next/static/css/db6573b6f02de55a.css" as="style"><noscript data-n-css=""></noscript><style id="__jsx-3156065021">:root{--base-padding:20px;
         --border-color-regular:rgba(0, 0, 0, 0.1);
         --text-color-extra-light:rgba(0,0,0,0.2);
         --text-color-light:rgba(0,0,0,0.4);
@@ -725,7 +726,7 @@
 <nav style="display: flex; align-items: center; justify-content: center; width: 100%; max-width: 1300px; padding-left: 20px; padding-right: 20px; transition: height 250ms ease 0s; height: 80px; position: relative; overflow: hidden; box-shadow: none;">
 <div style="flex-shrink: 0;">
     <!-- indexview로 돌아가기 -->
-<a href="#" rel="noopener noreferrer" style="display: block; text-decoration: none; user-select: none; cursor: pointer; color: inherit;">
+<a href="indexView.do" rel="noopener noreferrer" style="display: block; text-decoration: none; user-select: none; cursor: pointer; color: inherit;">
     <div style="display: flex; align-items: center;">
         <svg viewBox="0 0 120 126" class="edutionLogo" style="width: 30px; height: 30px; display: block; fill: inherit; flex-shrink: 0; backface-visibility: hidden; margin-right: 10px;"></svg>
         <!-- 로고 이미지 넣기 -->
