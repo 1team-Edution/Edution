@@ -130,13 +130,13 @@ position : sticky;
           
           
           <div>
-           <form action = "NoteInsert.do" method="post">
+           <form id = "frm" method="post" >
           
-          <div id = "title"><h1><input type="text" name = "note_title"></h1></div>
+          <div id = "title"><h1><input type="text" name = "note_title" id = "note_title"></h1></div>
           
-           <div id = "user"><input type= "text" name = "user_id" value = "user_id 02"></div>
-          <textarea class="summernote2" name = "note_content"></textarea>
-          <div style = "float: right;"><button type="submit" class="btn btn-default">작성</button></div>
+           <div id = "user"><input type= "text" name = "user_id" id = "user_id" value = "user_id 02"></div>
+          <textarea class="summernote2" name = "note_content" id = "note_content"></textarea>
+          <div style = "float: right;"><button type="submit" class="btn btn-default" id = "add">작성</button></div>
           
            </form>
           </div>
@@ -204,6 +204,23 @@ position : sticky;
 	});	
     
     </script>
+    <script type="text/javascript">
+$(document).ready(function(){
+	$('#add').on('click', function(){
+        $.ajax({
+            url: "NoteAjaxInsert.do",
+            type: "POST",
+            data: $('#frm').serialize(),
+            success: function(data){
+                console.log(data)
+            },
+            error: function(){  alert("error");  }
+        });
+    });
+});	
+
+
+</script>
     
     
   </body>

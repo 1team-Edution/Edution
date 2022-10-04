@@ -12,6 +12,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.smhrd.controller.NoteAjaxInsert;
+import com.smhrd.controller.CommunityCon;
+import com.smhrd.controller.CommunityInsertCon;
 import com.smhrd.controller.Controller;
 import com.smhrd.controller.GoJoinCon;
 import com.smhrd.controller.GoMain;
@@ -68,6 +71,10 @@ public class FrontController1 extends HttpServlet {
 		mappings.put("/NoteAjax.do", new NoteAjax());
 
 		mappings.put("/MypageView.do", new PopmypageCon());
+		mappings.put("/CommunityView.do", new CommunityCon());
+		mappings.put("/CommunityInsert.do", new CommunityInsertCon());
+		mappings.put("/NoteAjaxInsert.do", new NoteAjaxInsert());
+		
 
 
 		
@@ -98,20 +105,24 @@ public class FrontController1 extends HttpServlet {
 		
 		if(nextView != null) {
 		
-		if(nextView.contains("redirect:/")) {
 
+			if(nextView.contains("html")) {
+				RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/views/"+nextView);		
+				rd.forward(request, response);
+			
+			}
+			else if(nextView.contains("redirect:/")) {
 		
-			response.sendRedirect(nextView.split(":/")[1]);
+				response.sendRedirect(nextView.split(":/")[1]);
 			
-		}else {
+			}else {
 			
-
-			RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/views/"+nextView+".jsp");		
-			rd.forward(request, response);
+				RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/views/"+nextView+".jsp");		
+				rd.forward(request, response);
+			}
+		
+		
+		
 		}
-		
-		
-		
+		}
 	}
-	}
-}

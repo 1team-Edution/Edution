@@ -69,7 +69,9 @@ private SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSessionFac
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		
 		// 2. SQL문 찾아서 실행
+
 		result = sqlSession.delete("com.smhrd.model.NoteDAO.delete",note_seq);
+
 		
 		// 3. SqlSession 반환
 		sqlSession.close();
