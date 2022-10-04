@@ -96,15 +96,17 @@ public class FrontController1 extends HttpServlet {
 		
 		
 		
-
-		if(nextView.contains("redirect:/")) {
-
+		if(nextView.contains("html")) {
+			RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/views/"+nextView);		
+			rd.forward(request, response);
+			
+		}
+		else if(nextView.contains("redirect:/")) {
 		
 			response.sendRedirect(nextView.split(":/")[1]);
 			
 		}else {
 			
-
 			RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/views/"+nextView+".jsp");		
 			rd.forward(request, response);
 		}
