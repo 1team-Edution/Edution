@@ -96,7 +96,8 @@ public class FrontController1 extends HttpServlet {
 		
 		
 		
-
+		if(nextView != null) {
+		
 		if(nextView.contains("redirect:/")) {
 
 		
@@ -112,5 +113,5 @@ public class FrontController1 extends HttpServlet {
 		
 		
 	}
-
+	}
 }
