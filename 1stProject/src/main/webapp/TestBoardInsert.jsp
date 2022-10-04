@@ -19,11 +19,11 @@
 			</tr>
 
 			<tr>
-				<td><input type="text" name="brd_title" value="${BoardDTO.brd_title}"></td>
-				<td><input type="text" name="user_id" value ="${BoardDTO.user_id}"></td>
+				<td><input type="text" name="brd_title" ></td>
+				<td><input type="text" name="user_id" ></td>
  				<td><input type="file" name="file"></td>
-				<td><input type="text" name="brd_content" value="${BoardDTO.brd_content}"></td>
-				<td><input type="checkbox" name="brd_likes" value="0"></td>
+				<td><input type="text" name="brd_content" ></td>
+				<td><input type="checkbox" name="brd_likes" value="1"></td>
 				<td><input type="submit"></td>
 			</tr>
 

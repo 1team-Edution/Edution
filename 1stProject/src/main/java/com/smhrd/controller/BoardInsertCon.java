@@ -15,10 +15,10 @@ public class BoardInsertCon implements Controller {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
+		String file = null;
 		
-		String savePath = request.getServletContext().getRealPath("C:/Users/smhrd/Desktop/FirstProjectImage");
+		String savePath = request.getServletContext().getRealPath("resources/test").trim();
 		
-		System.out.println(savePath);
 		int maxSize = 1024 * 1024 * 5;
 		
 		String encoding = "UTF-8";
@@ -32,23 +32,33 @@ public class BoardInsertCon implements Controller {
 			e.printStackTrace();
 		}
 		
-		String file = multi.getFilesystemName("file");
+		if(multi.getFilesystemName("file") != null) {
+			
+			 file = multi.getFilesystemName("file");
+		} else {
+			System.out.println("파일이 null 이에에요ㅠ");
+		}
 		
-		String brd_title = request.getParameter("brd_title");
-		String brd_content = request.getParameter("brd_content");
-		int brd_likes = Integer.parseInt(request.getParameter("brd_likes"));
-		String user_id = request.getParameter("user_id");
 		
-		brd_likes += 1;
-		System.out.println(brd_title);
-		System.out.println(brd_content);
-		System.out.println(user_id);
-		System.out.println(brd_likes);
+		
+		
+		
+		String brd_title = multi.getParameter("brd_title");
+		String brd_content = multi.getParameter("brd_content");
+		int brd_likes = Integer.parseInt(multi.getParameter("brd_likes"));
+		String user_id = multi.getParameter("user_id");
+		
+		
+		System.out.println(file);
+		System.out.println("제목" + brd_title);
+		System.out.println("내용"+brd_content);
+		System.out.println("id"+user_id);
+		System.out.println("좋아요"+brd_likes);
 		
 		BoardDTO dto = new BoardDTO();
 		dto.setBrd_title(brd_title);
 		dto.setBrd_content(brd_content);
-		dto.setBrd_likes(brd_likes);
+		dto.setBrd_likes(brd_likes+1);
 		dto.setUser_id(user_id);
 		dto.setBrd_file(file);
 		BoardDAO dao = new BoardDAO();
@@ -57,11 +67,11 @@ public class BoardInsertCon implements Controller {
 		System.out.println("result 갯수" + result);
 		if(result > 0) {
 			System.out.println("게시글 입력완료");
-			return null;
+			return "redirect:/BoardSelectAll.do";
 			
 		}else {
 			System.out.println("게시글 입력실패");
-			return null;
+			return "TestBoardInsert";
 		}
 	}
 

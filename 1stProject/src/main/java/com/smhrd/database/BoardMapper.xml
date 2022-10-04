@@ -5,9 +5,10 @@
   		insert into tbl_board(brd_seq, brd_title, brd_content, brd_file, brd_date, user_id, brd_cnt, brd_likes)
   		values(tbl_board_seq.nextval,#{brd_title},#{brd_content},#{brd_file}, sysdate, #{user_id}, 1, #{brd_likes})
   	</insert>
-	<select id="QnAselectAll" resultType="QnA">
-  		select * from tbl_help
-  	</select>
+	<select id="BoardselectAll" resultType="Board">
+		<!-- select * from tbl_board -->
+		select u.user_name, b.brd_title, b.brd_date from tbl_board b, tbl_user u where b.user_id = u.user_id
+ 	</select>
   	<select id="QnASelectOne" resultType="QnA">
   		select * from tbl_help where help_seq = #{help_seq}
   	</select>
