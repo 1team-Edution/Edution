@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.smhrd.controller.CommunityCon;
+import com.smhrd.controller.CommunityInsertCon;
 import com.smhrd.controller.Controller;
 import com.smhrd.controller.GoJoinCon;
 import com.smhrd.controller.GoMain;
@@ -62,6 +64,10 @@ public class FrontController1 extends HttpServlet {
 		mappings.put("/NoteDelete", new NoteDeleteCon());
 		mappings.put("/Main.do", new GoMain());
 		mappings.put("/MypageView.do", new PopmypageCon());
+		mappings.put("/CommunityView.do", new CommunityCon());
+		mappings.put("/CommunityInsert.do", new CommunityInsertCon());
+	
+		
 
 		
 	}
