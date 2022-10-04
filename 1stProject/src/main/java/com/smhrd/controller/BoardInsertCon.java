@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
-import com.smhrd.controller.Controller;
 import com.smhrd.model.BoardDAO;
 import com.smhrd.model.BoardDTO;
 
