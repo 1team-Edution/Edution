@@ -13,13 +13,15 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 <!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="./resources/js/summernote/summernote-lite.js"></script>
 <script src="./resources/js/summernote/lang/summernote-ko-KR.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+ 
+  
   <style>
   .ck-editor__editable { height: 400px; }
   .ck-content { font-size: 12px; }
@@ -170,7 +172,8 @@ position : sticky;
           	});
           $('.note-statusbar').hide();
                 </script>
-    <script type="text/javascript">
+              
+    <script>
 	let pageTitle = document.getElementById("page_title");
 	$(document).ready(function(){
 			$.ajax({
@@ -185,11 +188,13 @@ position : sticky;
 						
 						console.log(res[i].note_title);
 						console.log(res[i].note_seq);
+						console.log(res);
 						
 						pageTitle.innerHTML += `<div style ="overflow : auto";><button id="settingsicon" style ="margin-left: 15px;">󠀫󠀫󠀫󠀫➕</button>
 						<a href="NoteSelectOne.do?note_seq=${res[i].note_seq}">${res[i].note_title}</a><div style = "float: right; margin-right: 15px;">
 						<button id="deleteBotton" style="overflow : auto;" onclick="location.href='NoteDelete.do?note_seq=${res[i].note_seq}'">🗑️</button></div></div>`;
-					}
+					  
+					  }
 				},
 				error : function(e){
 					console.log(e)

@@ -13,8 +13,9 @@ public class NoteSelectAllCon implements Controller {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 
-		NoteDAO n_dao = new NoteDAO();
-		ArrayList<NoteDTO> list = n_dao.selectAll();
+		response.setCharacterEncoding("UTF-8");
+		NoteDAO dao = new NoteDAO();
+		ArrayList<NoteDTO> list = dao.selectAll();
 		
 		request.setAttribute("list", list);
 		

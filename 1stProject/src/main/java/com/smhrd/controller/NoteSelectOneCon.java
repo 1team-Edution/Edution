@@ -13,8 +13,8 @@ public class NoteSelectOneCon implements Controller {
 		
 			String note_seq = request.getParameter("note_seq");
 		
-			NoteDAO n_dao = new NoteDAO();
-			NoteDTO note = n_dao.selectOne(note_seq);
+			NoteDAO dao = new NoteDAO();
+			NoteDTO note = dao.selectOne(note_seq);
 			
 			request.setAttribute("note", note);
 			
