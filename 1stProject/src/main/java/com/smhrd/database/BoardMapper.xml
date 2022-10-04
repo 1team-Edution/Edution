@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.model.BoardDAO"> <!-- Mapper 경로 추가 -->
+  	<insert id="BoardInsert" parameterType="Board">
+  		insert into tbl_board(brd_seq, brd_title, brd_content, brd_file, brd_date, user_id, brd_cnt, brd_likes)
+  		values(tbl_board_seq.nextval,#{brd_title},#{brd_content},#{brd_file}, sysdate, #{user_id}, 1, #{brd_likes})
+  	</insert>
+	<select id="QnAselectAll" resultType="QnA">
+  		select * from tbl_help
+  	</select>
+  	<select id="QnASelectOne" resultType="QnA">
+  		select * from tbl_help where help_seq = #{help_seq}
+  	</select>
+  	<update id="QnAUpdate" parameterType="QnA">
+  		update tbl_help set help_content=#{help_content}
+  		where help_seq=#{help_seq}
+  	</update>
+ 	<delete id="QnADelete" parameterType="QnA">
+ 		delete from tbl_help where help_seq=#{help_seq}
+ 	</delete>
+  	<select id="QnASelectJoinUser" resultType="QnA">
+		select u.user_id, u.user_name, h.help_seq, h.help_content
+		from tbl_help h, tbl_user u
+		where u.user_id = h.user_id
+		and h.help_seq=#{help_seq}  
+	</select>
+</mapper>

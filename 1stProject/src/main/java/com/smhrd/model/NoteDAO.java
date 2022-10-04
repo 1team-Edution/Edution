@@ -36,14 +36,14 @@ private SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSessionFac
 	}
 	
 	public NoteDTO selectOne(String note_seq){
-		NoteDTO note = null;
+		NoteDTO result = null;
 		// 1. sqlsession 열어주기
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		// 2. mapper.xml안에 있는 쿼리문 실행
-		note = (NoteDTO)sqlSession.selectOne("com.smhrd.model.NoteDAO.selectOne", note_seq);	
+		result = (NoteDTO)sqlSession.selectOne("com.smhrd.model.NoteDAO.selectOne", note_seq);	
 		// 3. 결과값 반환
 		sqlSession.close();
-		return note;
+		return result;
 	}
 	
 	public int update(NoteDTO note) {
@@ -69,7 +69,7 @@ private SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSessionFac
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		
 		// 2. SQL문 찾아서 실행
-		result = sqlSession.delete("com.smhrd.model.DAO.delete", note_seq);
+		result = sqlSession.delete("com.smhrd.model.NoteDAO.delete", note_seq);
 		
 		// 3. SqlSession 반환
 		sqlSession.close();

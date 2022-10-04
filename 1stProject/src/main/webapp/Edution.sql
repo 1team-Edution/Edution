@@ -198,6 +198,10 @@ ALTER TABLE tbl_comment
     ADD CONSTRAINT FK_tbl_comment_brd_seq_tbl_boa FOREIGN KEY (brd_seq)
         REFERENCES tbl_board (brd_seq) ;
         
+-- tbl_board brd_title 12자 제한으로 수정
+ALTER TABLE tbl_board
+MODIFY brd_title VARCHAR2(36);
+        
 -- tbl_note Table Create SQL
 CREATE TABLE tbl_note
 (
@@ -352,3 +356,9 @@ COMMENT ON COLUMN tbl_help.help_date IS '문의 작성일자';
 ALTER TABLE tbl_help
     ADD CONSTRAINT FK_tbl_help_user_id_tbl_user_u FOREIGN KEY (user_id)
         REFERENCES tbl_user (user_id) ;
+        
+        
+        
+select * from TBL_NOTE
+
+insert into TBL_NOTE values(tbl_note_SEQ.nextval,'테스트','테스트 입니다','태그','user_id 02',to_date(sysdate,'yyyy-mm-dd'),'1',null)

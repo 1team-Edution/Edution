@@ -17,26 +17,26 @@ public class GoMain implements Controller {
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		//userdto 받아서 tododto 객체바인딩하고 메인으로가는 controller
 		
-		HttpSession session = request.getSession();
-		UserDTO userDto = (UserDTO) session.getAttribute("userDto");
-		TodoDAO dao = new TodoDAO();
+//		HttpSession session = request.getSession();
+//		UserDTO userDto = (UserDTO) session.getAttribute("userDto");
+//		TodoDAO dao = new TodoDAO();
+//		
+//		String id=userDto.getUser_id();
+//		
+//		ArrayList<TodoDTO> todoDtos = dao.callTodo(id);
+////		request.setAttribute("todo", todoDtos);
+//		Gson gson = new Gson();
+//		String jsonArr = gson.toJson(todoDtos);
+//		response.setContentType("application/json; charset=UTF-8"); 
+//		PrintWriter out;
+//		try {
+//			out = response.getWriter();
+//			out.print(jsonArr);
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
 		
-		String id=userDto.getUser_id();
-		
-		ArrayList<TodoDTO> todoDtos = dao.callTodo(id);
-//		request.setAttribute("todo", todoDtos);
-		Gson gson = new Gson();
-		String jsonArr = gson.toJson(todoDtos);
-		response.setContentType("application/json; charset=UTF-8"); 
-		PrintWriter out;
-		try {
-			out = response.getWriter();
-			out.print(jsonArr);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		return "Main";
+		return "Main.html";
 	}
 
 }
