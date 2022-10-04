@@ -7,9 +7,9 @@
   		where t1.user_id = t2.user_id
   	</select>
   	<insert id="insert" parameterType="Note">
-		insert into tbl_note(user_id,note_title,
+		insert into tbl_note(note_seq,user_id,note_title,
 		note_content,note_date,note_parent)
-		values(#{user_id},#{note_title},#{note_content},to_date(sysdate,'yy-mm-dd'),1)
+		values(tbl_note_seq.nextval,#{user_id},#{note_title},#{note_content},to_date(sysdate,'yy-mm-dd'),1)
   	</insert>
   	<select id="selectOne" resultType="Note">
   		select * from tbl_note 
