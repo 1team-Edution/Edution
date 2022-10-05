@@ -1,6 +1,7 @@
 package com.smhrd.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -27,6 +28,18 @@ private SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSessionFac
 		list = (ArrayList) sqlSession.selectList("com.smhrd.model.TodoDAO.TodoSelect", id);
 		sqlSession.close();
 		return list;
+		
+	}
+	
+	public ArrayList<TodoDTO> selectyn (String id) {
+		ArrayList<TodoDTO> list = null;
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		list = (ArrayList)sqlSession.selectList("com.smhrd.model.TodoDAO.selectyn", id);
+		
+		
+		sqlSession.close();
+		return list;
+		
 		
 	}
 

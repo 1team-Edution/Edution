@@ -23,7 +23,90 @@ public class TodoDTO {
 			
 			System.out.println(todo_title+todo_content+todo_tag+reg_date);
 			}
+
+	
+
+	public TodoDTO() {
+		super();
+	}
+
+
+
+	public String getTodo_seq() {
+		return todo_seq;
+	}
+
+
+	public void setTodo_seq(String todo_seq) {
+		this.todo_seq = todo_seq;
+	}
+
+
+	public String getTodo_title() {
+		return todo_title;
+	}
+
+
+	public void setTodo_title(String todo_title) {
+		this.todo_title = todo_title;
+	}
+
+
+	public String getTodo_content() {
+		return todo_content;
+	}
+
+
+	public void setTodo_content(String todo_content) {
+		this.todo_content = todo_content;
+	}
+
+
+	public String getTodo_tag() {
+		return todo_tag;
+	}
+
+
+	public void setTodo_tag(String todo_tag) {
+		this.todo_tag = todo_tag;
+	}
+
+
+	public int getTodo_yn() {
+		return todo_yn;
+	}
+
+
+	public void setTodo_yn(int todo_yn) {
+		this.todo_yn = todo_yn;
+	}
+
+
+	public String getUser_id() {
+		return user_id;
+	}
+
+
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
+	}
+
+
+	public String getReg_date() {
+		return reg_date;
+	}
+
+
+	public void setReg_date(String reg_date) {
+		this.reg_date = reg_date;
+	}
 		
 				
 	}
+
+	
+
+
+
+	
 
