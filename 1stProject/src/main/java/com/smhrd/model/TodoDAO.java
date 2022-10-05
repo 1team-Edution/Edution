@@ -54,7 +54,7 @@ private SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSessionFac
 	public int check(String todonum) {
 		int result = 0;
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
-		result =(int)sqlSession.update("com.smhrd.model.TodoDAO.update", todonum);
+		result =sqlSession.update("com.smhrd.model.TodoDAO.updateCheck", todonum);
 		sqlSession.close();
 		return result;
 	}
@@ -62,7 +62,15 @@ private SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSessionFac
 	public int delete(String todonum) {
 		int result = 0;
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
-		result = sqlSession.delete("com.smhrd.model.TodoDAO.delete", todonum);
+		result = sqlSession.delete("com.smhrd.model.TodoDAO.TodoDelete", todonum);
+		sqlSession.close();
+		return result;
+	}
+
+	public int checkundo(String todonum) {
+		int result = 0;
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		result =sqlSession.update("com.smhrd.model.TodoDAO.updateUndo", todonum);
 		sqlSession.close();
 		return result;
 	}

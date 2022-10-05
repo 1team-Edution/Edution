@@ -7,12 +7,25 @@
 
 	<insert id="TodoInsert" parameterType="com.smhrd.model.TodoDTO">
 		insert into tbl_todo_list(todo_seq,todo_title,todo_content,todo_tag,todo_yn,user_id,reg_date)
-		values(tbl_todo_list_SEQ.nextval,#{todo_title},#{todo_content},#{todo_tag},0,#{user_id},#{reg_date})
+		values(tbl_todo_list_SEQ.nextval,#{todo_title},#{todo_content, jdbcType=VARCHAR},#{todo_tag, jdbcType=VARCHAR},0,#{user_id},#{reg_date})
 	</insert>
+	
+	<update id="updateCheck">
+	 	update tbl_todo_list set todo_yn=1 where todo_seq=#{todonum}
+	</update>
+	<update id="updateUndo">
+	 	update tbl_todo_list set todo_yn=0 where todo_seq=#{todonum}
+	</update>
+	
 	<select id="TodoSelect" resultType="TodoDTO" parameterType="TodoDTO">
 		select * from tbl_todo_list where user_id=#{user_id}
 	</select>
 	<select id="selectyn" resultType = "TodoDTO">
 		select todo_yn, user_id from tbl_todo_list group by todo_yn, user_id
 	</select>
+	
+	 <delete id="TodoDelete">
+	 	delete from tbl_todo_list where todo_seq=#{todonum}
+	 </delete>
+	
 	</mapper>

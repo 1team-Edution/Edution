@@ -43,7 +43,7 @@ public class GoMain implements Controller {
 
 		
 
-		return "Main";
+		return "Main.html";
 	}
 
 }

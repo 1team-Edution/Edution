@@ -103,6 +103,7 @@ CREATE TABLE tbl_board
      PRIMARY KEY (brd_seq)
 );
 
+
 CREATE SEQUENCE tbl_board_SEQ
 START WITH 1
 INCREMENT BY 1;
@@ -257,13 +258,14 @@ CREATE TABLE tbl_todo_list
 (
     todo_seq        NUMBER(18, 0)     NOT NULL, 
     todo_title      VARCHAR2(400)     NOT NULL, 
-    todo_content    VARCHAR2(4000)    NOT NULL, 
+    todo_content    VARCHAR2(4000)  NULL, 
     todo_tag        VARCHAR2(50)      NULL, 
     todo_yn         CHAR(1)           NOT NULL, 
     user_id         VARCHAR2(20)      NOT NULL, 
     reg_date        DATE              NOT NULL, 
      PRIMARY KEY (todo_seq)
 );
+
 
 CREATE SEQUENCE tbl_todo_list_SEQ
 START WITH 1
