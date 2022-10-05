@@ -12,17 +12,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-<<<<<<< HEAD
+
 import com.smhrd.controller.NoteAjaxInsert;
 import com.smhrd.controller.NoteAjaxSelectone;
-=======
+
 
 import com.smhrd.controller.BoardInsertCon;
 import com.smhrd.controller.BoardSelectAllCon;
 
->>>>>>> branch 'master' of https://github.com/1team-Edution/Edution.git
-import com.smhrd.controller.CommunityCon;
-import com.smhrd.controller.CommunityInsertCon;
+
 import com.smhrd.controller.Controller;
 import com.smhrd.controller.GoJoinCon;
 import com.smhrd.controller.GoMain;
@@ -46,7 +44,6 @@ import com.smhrd.controller.QnAUpdateCon;
 import com.smhrd.controller.TodoAjax;
 import com.smhrd.controller.TodoCon;
 import com.smhrd.controller.indexView;
-import com.smhrd.controller.testAjax;
 
 @WebServlet("*.do")
 public class FrontController1 extends HttpServlet {
@@ -96,8 +93,6 @@ public class FrontController1 extends HttpServlet {
 		mappings.put("/BoardSelectAll.do", new BoardSelectAllCon());
 		
 
-		mappings.put("/CommunityView.do", new CommunityCon());
-		mappings.put("/CommunityInsert.do", new CommunityInsertCon());
 		mappings.put("/NoteAjaxInsert.do", new NoteAjaxInsert());
 		mappings.put("/NoteAjaxSelectone.do", new NoteAjaxSelectone());
 		
