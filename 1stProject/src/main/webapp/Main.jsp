@@ -1,9 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page isELIgnored="false" %>
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="todo.css" type="text/css">
     <title>Edution 나의 플래너</title>
 
     <style>       
@@ -51,10 +57,7 @@
                 display: block;
                 margin-left: 130px;
             }
-
-@charset "utf-8";
-
-.modal-overlay {
+         #modal.modal-overlay {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -72,7 +75,7 @@
     border: 1px solid rgba(255, 255, 255, 0.18);
     display: none;
 }
-.modal-window {
+#modal .modal-window {
     box-shadow: 0 6px 10px 0 rgba(134, 134, 134, 0.37);
     backdrop-filter: blur( 13.5px );
     -webkit-backdrop-filter: blur( 13.5px );
@@ -84,16 +87,16 @@
     top: -100px;
     padding: 10px;
 }
-.title {
+#modal .title {
     padding-left: 10px;
     display: inline;
     text-shadow: 1px 1px 2px rgb(255, 255, 255);
     color: rgb(185, 183, 183);
 }
-.title h2 {
+#modal .title h2 {
     display: inline;
 }
-.close {
+#modal .close-area {
     display: inline;
     float: right;
     padding-right: 10px;
@@ -101,7 +104,7 @@
     text-shadow: 1px 1px 2px rgb(255, 255, 255);
     color: rgb(185, 183, 183);
 }
-.content {
+#modal .content {
     margin-top: 20px;
     padding: 0px 10px;
     text-shadow: 1px 1px 2px rgb(255, 255, 255);
@@ -187,7 +190,7 @@ input[class="check"] {
                     display: none;
                 }
 
-.btn-modal{
+#btn-modal{
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -203,17 +206,12 @@ input[class="check"] {
     border: none;
     font-size: 30px;
 }
-
 .todoTable{
     font-family: 맑은고딕, Arial;
     font-size:15px;
     color: rgb(122, 122, 122);
 }
-
-.task-done{
-    color:#cccccc;
-}
-#task-head-today{
+#task-head{
     font-family: 맑은고딕, Arial;
     background-color: rgb(193, 218, 218);
     color:#747888;
@@ -221,211 +219,30 @@ input[class="check"] {
     border-radius: 20px;
     padding: 0px 20px;
     font-size: 18px; 
-    margin-left: 30px;
+    margin-left: 15px;
 }
-#container-today{
+#container{
     border-radius: 10px;
     border: 1.5px solid rgba(43, 43, 43, 0.18);
     width: 200px;
     height: 400px;
-    top: 10px;
-    padding: 10px;
-    margin-left: 10px;
-    margin-right: 0px;    
-    position: absolute; top:140px; right: 0; left:460px;         
-}
-
-#task-board-today{
-    margin-left: 10px;
-    font-family: 맑은고딕, Arial;
-    font-size: 15px;
-    color:#888888;
-    cursor: pointer;
-}
-#task-head-monthly{
-    font-family: 맑은고딕, Arial;
-    background-color: rgb(193, 218, 218);
-    color:#747888;
-    display: inline-block;
-    border-radius: 20px;
-    padding: 0px 20px;
-    font-size: 18px;
-    margin-left: 10px;
-}
-#container-monthly{
-    border-radius: 10px;
-    border: 1.5px solid rgba(43, 43, 43, 0.18);
-    width: 200px;
-    height: 400px;
-    top: 10px;
-    padding: 10px;
-    margin-left: 10px;
-    margin-right: 0px;    
-    position: absolute; top:140px; right: 0; left:700px;        
-}
-#task-board-monthly{
-    margin-left: 10px;
-    font-family: 맑은고딕, Arial;
-    font-size: 15px;
-    color:#888888;
-    cursor: pointer;
-}
-
-#task-head-future{
-    font-family: 맑은고딕, Arial;
-    background-color: rgb(193, 218, 218);
-    color:#747888;
-    display: inline-block;
-    border-radius: 20px;
-    padding: 0px 20px;
-    font-size: 18px;
-    margin-left: 20px;
-}
-#container-future{
-    border-radius: 10px;
-    border: 1.5px solid rgba(43, 43, 43, 0.18);
-    width: 200px;
-    height: 400px;
-    top: 10px;
-    padding: 10px;
-    margin-left: 10px;
-    margin-right: 0px;  
-    position: absolute; top:140px; right: 0; left:940px;           
-}
-#task-board-future{
-    margin-left: 10px;
-    font-family: 맑은고딕, Arial;
-    font-size: 15px;
-    color:#888888;
-    cursor: pointer;
-}
- 
-
-
-  .calendar {
-    width: 600px;
-    margin: 50px;
-    position: absolute; top:540px; right: 0; left:470px;   
-    box-sizing: border-box;
-  }
-
-  .cal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-sizing: border-box;
-  }
-  
-  .year-month {
-    font-size: 20px;
-    box-sizing: border-box;
-  }
-  
-  .nav {
-    display: flex;
-    border: 1px solid #ffffff;
-    border-radius: 5px;
-    box-sizing: border-box;
-  }
-  
-  .nav-btn {
-    width: 28px;
-    height: 30px;
-    border: none;
-    font-size: 16px;
-    line-height: 34px;
-    background-color: transparent;
-    cursor: pointer;
-    box-sizing: border-box;
-  }
-  
-  .go-today {
-    width: 60px;
-    border-left: 1px solid #ffffff;
-    border-right: 1px solid #ffffff;
-    box-sizing: border-box;
-  }
-  .go-prev, .go-next{
-    font-size: 25px;
-    color:#b8b8b8;
-    box-sizing: border-box;
-  }
-
-
-  .days {
-    display: flex;
-    margin: 25px 0 10px;
-    box-sizing: border-box;
-  }
-  
-  .day {
-    width: calc(100% / 7);
-    text-align: center;
-    box-sizing: border-box;
-  }
-  
-  .dates {
-    display: flex;
-    flex-flow: row wrap;
-    height: 500px;
-    border-top: 1px solid #d4d4d4;
-    border-right: 1px solid #d4d4d4;
-    box-sizing: border-box;
-    
-  }
-  
-  .date {
-    width: calc(100% / 7);
-    padding: 15px;
-    text-align: right;
-    border-bottom: 1px solid #d4d4d4;
-    border-left: 1px solid #d4d4d4;
-    box-sizing: border-box;
-  }
-
-  .day:nth-child(7n + 1),
-.date:nth-child(7n + 1) {
-  color: #ff0000;
-}
-
-.day:nth-child(7n),
-.date:nth-child(7n) {
-  color: #396EE2;
-}
-
-.other {
-    opacity: .3;
-  }
-.this{
-  cursor: pointer;
-}
-
-  .today {
     position: relative;
-    color: #FFFFFF;
-  }
-  
-  .today::before {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: -1;
-    display: block;
-    width: 26px;
-    height: 26px;
-    background-color: #ff0000;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    content: '';
-  }
+    top: 10px;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 0px;            
+}
+#task-board{
+    margin-left: 10px;
+    font-family: 맑은고딕, Arial;
+    font-size: 15px;
+    color:#888888;
+    cursor: pointer;
+}
 
-  .caltodo{
-    font-size: 11px;
-    color: #929292;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
+.task-done{
+    color:#cccccc;
+}
 
 
          
@@ -583,36 +400,199 @@ input[class="check"] {
 
         <div style="column-count :auto; display: inline-block; padding-top: 90px; padding-left: 450px; margin-right:10px; width:100%; overflow:auto;">
             <!-- 이 부분에 넣어주세요 위 div태그 안에 감싸지도록! -->
-				    <div id="container-today">
-        <b id="task-head-today">오늘의 학습</b><hr>
+				<!-- todaylog 시작 -->
+				<div class='todobox'>
+					<div id="container">
+        <b id="task-head">오늘의 학습</b><hr>
         <!--모달 창 열기 버튼-->
-        <button id="btn-modal1" class="btn-modal">+</button><br><br>
+        <button id="btn-modal">+</button><br><br>
             <!--여기에 todolist 작성-->
             <div id="task-board-today">
                 할 일 목록이 여기에 출력됩니다.
             </div>
     </div>
-    <div id="container-monthly">
-        <b id="task-head-monthly">이번 달 학습 계획</b><hr>
+    <!--여기부터 모달-->
+    <div id="modal" class="modal-overlay">
+        <div class="modal-window">
+            <div class="title">
+                <h2>Today Log</h2>
+            </div>
+            <div class="close-area">X</div>
+            <div class="content">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">오늘 할 공부를 분류하고 우선순위를 결정하세요.</h5>
+                        </div>
+                        <form action="Todo.do" method="post">
+                        <div class="modal-body">
+                            <div>
+                                <input type="text" class="modal-text" placeholder="Todo" name = "todoHead">
+                                <br>
+                            </div>
+                            <div>
+                                <br><textarea class="modal-textarea" name="todoBody" id="additional-content" placeholder="추가로 메모를 하고 싶다면&#13;&#10;이곳에 작성하세요."></textarea>
+                            </div>
+                        </div>
+                        <div id="checkbox-area">
+                            #
+                            <input type="checkbox" class="check" id="tag-check1" name="tag" value="homework" autocomplete="off">
+                            <label for="tag-check1" align="center">숙제</label>
+
+                            <input type="checkbox" class="check" id="tag-check2" name="tag" value="exam" autocomplete="off">
+                            <label for="tag-check2" align="center">시험</label>
+
+                            <input type="checkbox" class="check" id="tag-check3" name="tag" value="review" autocomplete="off">
+                            <label for="tag-check3" align="center">복습</label>
+                            
+                            <input type="checkbox" class="check" id="tag-check4" name="tag" value="preview" autocomplete="off">
+                            <label for="tag-check4" align="center">예습</label>
+                            
+                            <input type="checkbox" class="check" id="tag-check5" name="tag" value="memo" autocomplete="off">
+                            <label for="tag-check5" align="center">메모</label>
+                        </div>
+                        <div class="modal-footer">
+                            <br>
+                                <label for="datesel">다른 날짜 선택</label>
+                                <input type="date" id="datesel" name='date'>
+                            <button type="submit" class="save-button" data-bs-dismiss="modal">입력</button>         
+                        </div>
+                    </form>
+                    </div>                  
+            </div>
+        </div>
+    </div>
+				
+				</div>
+				<!-- todaylog끝 -->
+				<!-- monthlylog 시작 -->
+	<div class='todobox'>
+	<div id="container">
+        <b id="task-head">이번 달 학습 계획</b><hr>
         <!--모달 창 열기 버튼-->
-        <button id="btn-modal2" class="btn-modal">+</button><br><br>
+        <button id="btn-modal">+</button><br><br>
             <!--여기에 todolist 작성-->
             <div id="task-board-monthly">
                 할 일 목록이 여기에 출력됩니다.
             </div>
     </div>
-        <div id="container-future">
-        <b id="task-head-future">미래 학습 계획</b><hr>
+    <!--여기부터 모달-->
+    <div id="modal" class="modal-overlay">
+        <div class="modal-window">
+            <div class="title">
+                <h2>Monthly Log</h2>
+            </div>
+            <div class="close-area">X</div>
+            <div class="content">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">이번 달 내로 마쳐야 하는 일과 사건에 대한 개요입니다.</h5>
+                        </div>
+                        <form action="Todo.do" method="post">
+                        <div class="modal-body">
+                            <div>
+                                <input type="text" class="modal-text" placeholder="Todo" name = "todoHead">
+                                <br>
+                            </div>
+                            <div>
+                                <br><textarea class="modal-textarea" name="todoBody" id="additional-content" placeholder="추가로 메모를 하고 싶다면&#13;&#10;이곳에 작성하세요."></textarea>
+                            </div>
+                        </div>
+                        <div id="checkbox-area">
+                            #
+                            <input type="checkbox" class="check" id="tag-check1" name="tag" value="homework" autocomplete="off">
+                            <label for="tag-check1" align="center">숙제</label>
+
+                            <input type="checkbox" class="check" id="tag-check2" name="tag" value="exam" autocomplete="off">
+                            <label for="tag-check2" align="center">시험</label>
+
+                            <input type="checkbox" class="check" id="tag-check3" name="tag" value="review" autocomplete="off">
+                            <label for="tag-check3" align="center">복습</label>
+                            
+                            <input type="checkbox" class="check" id="tag-check4" name="tag" value="preview" autocomplete="off">
+                            <label for="tag-check4" align="center">예습</label>
+                            
+                            <input type="checkbox" class="check" id="tag-check5" name="tag" value="memo" autocomplete="off">
+                            <label for="tag-check5" align="center">메모</label>
+                        </div>
+                        <div class="modal-footer">
+                            <br>
+                                <label for="datesel">다른 날짜 선택</label>
+                                <input type="date" id="datesel" name='date'>
+                            <button type="submit" class="save-button" data-bs-dismiss="modal">입력</button>         
+                        </div>
+                    </form>
+                    </div>                  
+            </div>
+        </div>
+    </div>
+	
+	</div>			
+	<!-- monthlylog 끝 -->
+	<!-- futurelog 시작 -->
+	<div class='todobox'>
+	 <div id="container">
+        <b id="task-head">미래 학습 계획</b><hr>
         <!--모달 창 열기 버튼-->
-        <button id="btn-modal3" class="btn-modal">+</button><br><br>
+        <button id="btn-modal">+</button><br><br>
             <!--여기에 todolist 작성-->
-            <div id="task-board-future">
+            <div id="task-board">
                 할 일 목록이 여기에 출력됩니다.
             </div>
     </div>
-   
-    <div class="calendar">
-        <div class="cal-header">
+    <!--여기부터 모달-->
+    <div id="modal" class="modal-overlay">
+        <div class="modal-window">
+            <div class="title">
+                <h2>Future Log</h2>
+            </div>
+            <div class="close-area">X</div>
+            <div class="content">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">미래에 할 공부와 이벤트를 저장하세요.</h5>
+                        </div>
+                        <form action="Todo.do" method="post">
+                        <div class="modal-body">
+                            <div>
+                                <input type="text" class="modal-text" placeholder="Todo" name = "todoHead">
+                                <br>
+                            </div>
+                            <div>
+                                <br><textarea class="modal-textarea" name="todoBody" id="additional-content" placeholder="추가로 메모를 하고 싶다면&#13;&#10;이곳에 작성하세요."></textarea>
+                            </div>
+                        </div>
+                        <div id="checkbox-area">
+                            #
+                            <input type="checkbox" class="check" id="tag-check1" name="tag" value="homework" autocomplete="off">
+                            <label for="tag-check1" align="center">숙제</label>
+
+                            <input type="checkbox" class="check" id="tag-check2" name="tag" value="exam" autocomplete="off">
+                            <label for="tag-check2" align="center">시험</label>
+
+                            <input type="checkbox" class="check" id="tag-check3" name="tag" value="review" autocomplete="off">
+                            <label for="tag-check3" align="center">복습</label>
+                            
+                            <input type="checkbox" class="check" id="tag-check4" name="tag" value="preview" autocomplete="off">
+                            <label for="tag-check4" align="center">예습</label>
+                            
+                            <input type="checkbox" class="check" id="tag-check5" name="tag" value="memo" autocomplete="off">
+                            <label for="tag-check5" align="center">메모</label>
+                        </div>
+                        <div class="modal-footer">
+                            <br>
+                            <button type="submit" class="save-button" data-bs-dismiss="modal">입력</button>         
+                        </div>
+                    </form>
+                    </div>                  
+            </div>
+        </div>
+    </div>
+	</div>			
+	<!-- futurelog 끝 -->
+	<!-- calendar시작 -->
+	<div class='calendarbox'>
+	<div class="calendarbody">
+        <div class="header">
             <div class="year-month"></div>
             <div class="nav">
                 <button class="nav-btn go-prev" onclick="prevMonth()">&lt;</button>
@@ -620,7 +600,7 @@ input[class="check"] {
                 <button class="nav-btn go-next" onclick="nextMonth()">&gt;</button>
             </div>
         </div>
-        <div class="cal-main">
+        <div class="main">
             <div class="days">
                 <div class="day">Sun</div>
                 <div class="day">Mon</div>
@@ -633,377 +613,155 @@ input[class="check"] {
             <div class="dates"></div>
         </div>
     </div>
-	 <!--여기부터 today모달-->
-    <div id="modal1" class="modal-overlay">
-        <div class="modal-window">
-            <div class="title">
-                <h2>Today Log</h2>
-            </div>
-            <div class="close-area1 close">X</div>
-            <div class="content">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">오늘 할 공부를 분류하고 우선순위를 결정하세요.</h5>
-                        </div>
-                        <form action="Todo.do" method="post">
-                        <div class="modal-body">
-                            <div>
-                                <input type="text" class="modal-text" name = "todoHead" placeholder="Todo">
-                                <br>
-                            </div>
-                            <div>
-                                <br><textarea class="modal-textarea" name="todoBody" id="additional-content" placeholder="추가로 메모를 하고 싶다면&#13;&#10;이곳에 작성하세요."></textarea>
-                            </div>
-                        </div>
-                        <div id="checkbox-area">
-                            #
-                            <input type="checkbox" class="check" id="tag-check1" name="tag" value="homework" autocomplete="off">
-                            <label for="tag-check1" align="center">숙제</label>
+	</div>
 
-                            <input type="checkbox" class="check" id="tag-check2" name="tag" value="exam" autocomplete="off">
-                            <label for="tag-check2" align="center">시험</label>
-
-                            <input type="checkbox" class="check" id="tag-check3" name="tag" value="review" autocomplete="off">
-                            <label for="tag-check3" align="center">복습</label>
-                            
-                            <input type="checkbox" class="check" id="tag-check4" name="tag" value="preview" autocomplete="off">
-                            <label for="tag-check4" align="center">예습</label>
-                            
-                            <input type="checkbox" class="check" id="tag-check5" name="tag" value="memo" autocomplete="off">
-                            <label for="tag-check5" align="center">메모</label>
-                        </div>
-                        <div class="modal-footer">
-                            <br>
-                                <label for="datesel">다른 날짜 선택</label>
-                                <input type="date" id="datesel">
-                            <button type="submit" class="save-button" data-bs-dismiss="modal">입력</button>         
-                        </div>
-                    </form>
-                    </div>                  
-            </div>
-        </div>
-    </div>
-    <!--여기까지-->
-    <!--여기부터 monthly 모달-->
-    <div id="modal2" class="modal-overlay">
-        <div class="modal-window">
-            <div class="title">
-                <h2>Monthly Log</h2>
-            </div>
-            <div class="close-area2 close">X</div>
-            <div class="content">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">이번 달 내로 마쳐야 하는 일과 사건에 대한 개요입니다.</h5>
-                        </div>
-                        <form action="Todo.do" method="post">
-                        <div class="modal-body">
-                            <div>
-                                <input type="text" class="modal-text" placeholder="Todo">
-                                <br>
-                            </div>
-                            <div>
-                                <br><textarea class="modal-textarea" id="additional-content" placeholder="추가로 메모를 하고 싶다면&#13;&#10;이곳에 작성하세요."></textarea>
-                            </div>
-                        </div>
-                        <div id="checkbox-area">
-                            #
-                            <input type="checkbox" class="check" id="tag-check1" name="tag" value="homework" autocomplete="off">
-                            <label for="tag-check1" align="center">숙제</label>
-
-                            <input type="checkbox" class="check" id="tag-check2" name="tag" value="exam" autocomplete="off">
-                            <label for="tag-check2" align="center">시험</label>
-
-                            <input type="checkbox" class="check" id="tag-check3" name="tag" value="review" autocomplete="off">
-                            <label for="tag-check3" align="center">복습</label>
-                            
-                            <input type="checkbox" class="check" id="tag-check4" name="tag" value="preview" autocomplete="off">
-                            <label for="tag-check4" align="center">예습</label>
-                            
-                            <input type="checkbox" class="check" id="tag-check5" name="tag" value="memo" autocomplete="off">
-                            <label for="tag-check5" align="center">메모</label>
-                        </div>
-                        <div class="modal-footer">
-                            <br>
-                                <label for="datesel">다른 날짜 선택</label>
-                                <input type="date" id="datesel">
-                            <button type="submit" class="save-button" data-bs-dismiss="modal">입력</button> 
-                        </div>
-                            </form>        
-                    </div>
-                    </div>                  
-            </div>
-        </div>
-    </div>
-    <!--여기까지-->
-    <!--여기부터 future모달-->
-    <div id="modal3" class="modal-overlay">
-        <div class="modal-window">
-            <div class="title">
-                <h2>Future Log</h2>
-            </div>
-            <div class="close-area3 close">X</div>
-            <div class="content">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">미래에 할 공부와 이벤트를 저장하세요.</h5>
-                        </div>
-                        <form action="Todo.do" method="post">
-                        <div class="modal-body">
-                            <div>
-                                <input type="text" class="modal-text" name = "todoHead" placeholder="Todo">
-                                <br>
-                            </div>
-                            <div>
-                                <br><textarea class="modal-textarea" name="todoBody" id="additional-content" placeholder="추가로 메모를 하고 싶다면&#13;&#10;이곳에 작성하세요."></textarea>
-                            </div>
-                        </div>
-                        <div id="checkbox-area">
-                            #
-                            <input type="checkbox" class="check" id="tag-check1" name="tag" value="homework" autocomplete="off">
-                            <label for="tag-check1" align="center">숙제</label>
-
-                            <input type="checkbox" class="check" id="tag-check2" name="tag" value="exam" autocomplete="off">
-                            <label for="tag-check2" align="center">시험</label>
-
-                            <input type="checkbox" class="check" id="tag-check3" name="tag" value="review" autocomplete="off">
-                            <label for="tag-check3" align="center">복습</label>
-                            
-                            <input type="checkbox" class="check" id="tag-check4" name="tag" value="preview" autocomplete="off">
-                            <label for="tag-check4" align="center">예습</label>
-                            
-                            <input type="checkbox" class="check" id="tag-check5" name="tag" value="memo" autocomplete="off">
-                            <label for="tag-check5" align="center">메모</label>
-                        </div>
-                        <div class="modal-footer">
-                            <br>
-                            <button type="submit" class="save-button" data-bs-dismiss="modal">입력</button>         
-                        </div>
-                    </form>
-                    </div>                  
-            </div>
-        </div>
-    </div>
-    <!--여기까지-->
-         
-    <script>
-    const modal1 = document.getElementById("modal1")
-    const btnModal1 = document.getElementById("btn-modal1")
-    btnModal1.addEventListener("click", e => {
-        modal1.style.display = "flex"})
-    const closeBtn1 = modal1.querySelector(".close-area1")
-    closeBtn1.addEventListener("click", e => {
-        modal1.style.display = "none"})   
-    modal1.addEventListener("click", e => {
-        const evTarget = e.target
-        if(evTarget.classList.contains("modal-overlay")) {
-            modal1.style.display = "none"}
-    })
-
-    const modal2 = document.getElementById("modal2")
-    const btnModal2 = document.getElementById("btn-modal2")
-    btnModal2.addEventListener("click", e => {
-        modal2.style.display = "flex"})
-    const closeBtn2 = modal2.querySelector(".close-area2")
-    closeBtn2.addEventListener("click", e => {
-        modal2.style.display = "none"})   
-    modal2.addEventListener("click", e => {
-        const evTarget = e.target
-        if(evTarget.classList.contains("modal-overlay")) {
-            modal2.style.display = "none"}
-    })
-
-    const modal3 = document.getElementById("modal3")
-    const btnModal3 = document.getElementById("btn-modal3")
-    btnModal3.addEventListener("click", e => {
-        modal3.style.display = "flex"})
-    const closeBtn3 = modal3.querySelector(".close-area3")
-    closeBtn3.addEventListener("click", e => {
-        modal3.style.display = "none"})   
-    modal3.addEventListener("click", e => {
-        const evTarget = e.target
-        if(evTarget.classList.contains("modal-overlay")) {
-            modal3.style.display = "none"}
-    })
+				
+				
+				
+				
+	<!-- madal script -->
+	<script>
+	const modal = document.getElementById("modal")
+	const btnModal = document.getElementById("btn-modal")
+	btnModal.addEventListener("click", e => {
+	    modal.style.display = "flex"})
+	const closeBtn = modal.querySelector(".close-area")
+	closeBtn.addEventListener("click", e => {
+	    modal.style.display = "none"})   
+	modal.addEventListener("click", e => {
+	    const evTarget = e.target
+	    if(evTarget.classList.contains("modal-overlay")) {
+	        modal.style.display = "none"}
+	})
+	</script>		
+	<!-- modal script 끝 -->
+	<!-- calendar script -->
+	<script>
+	let date = new Date();
 
 
+const renderCalender = () => {
+  const viewYear = date.getFullYear();
+  const viewMonth = date.getMonth();
 
-    let taskBoardToday=document.querySelector("#task-board-today");
-    let taskBoardMonth=document.querySelector("#task-board-monthly");
-    let taskBoardFuture=document.querySelector("#task-board-future");
+  document.querySelector('.year-month').textContent = `${viewYear}년 ${viewMonth + 1}월`;
+
+  const prevLast = new Date(viewYear, viewMonth, 0);
+  const thisLast = new Date(viewYear, viewMonth + 1, 0);
+
+  const PLDate = prevLast.getDate();
+  const PLDay = prevLast.getDay();
+
+  const TLDate = thisLast.getDate();
+  const TLDay = thisLast.getDay();
+
+  const prevDates = [];
+  const thisDates = [...Array(TLDate + 1).keys()].slice(1);
+  const nextDates = [];
+
+  if (PLDay !== 6) {
+    for (let i = 0; i < PLDay + 1; i++) {
+      prevDates.unshift(PLDate - i);
+    }
+  }
+
+  for (let i = 1; i < 7 - TLDay; i++) {
+    nextDates.push(i);
+  }
+
+  const dates = prevDates.concat(thisDates, nextDates);
+  const firstDateIndex = dates.indexOf(1);
+  const lastDateIndex = dates.lastIndexOf(TLDate);
 
 
-    //기능구현후 DB에서 가져올예정
+  dates.forEach((date, i) => {
+    const condition = i >= firstDateIndex && i < lastDateIndex + 1
+                      ? 'this'
+                      : 'other';
+    dates[i] = `<div class="date"><span class=${condition}>${date}</span><br>`;
+    
+    
+    //여기부터
 
+    let ynm = document.querySelector('.year-month');
+    let ynmStr=ynm.innerText;
+    ynmStr= ynmStr.replace("년 ", "-");
+    ynmStr= ynmStr.replace("월", "-");
+    let thisDate=ynmStr+date;
+    if(condition=='other'){thisDate="";}
     //테스트용객체
     let todotest=[{"todo_seq":1,"todo_title":"리스트출력","todo_content":"내용","todo_tag":"#exam","todo_yn":"0","todo_percent":"0","user_id":"6","reg_date":"2022-9-30"},
-                {"todo_seq":2,"todo_title":"리스트출력2","todo_content":"내용","todo_tag":"#exam","todo_yn":"0","todo_percent":"0","user_id":"6","reg_date":"2500-1-1"},
-                {"todo_seq":1,"todo_title":"리스트출력3","todo_content":"내용","todo_tag":"#exam","todo_yn":"1","todo_percent":"0","user_id":"6","reg_date":"2022-9-20"}]
+            {"todo_seq":2,"todo_title":"리스트출력2","todo_content":"내용","todo_tag":"#exam","todo_yn":"0","todo_percent":"0","user_id":"6","reg_date":"2022-8-1"},
+            {"todo_seq":1,"todo_title":"리스트출력3","todo_content":"내용","todo_tag":"#exam","todo_yn":"1","todo_percent":"0","user_id":"6","reg_date":"2022-9-30"}]
+    //객체바인딩된 객체(테스트안해봄)
 
 
-
-    /*
-    function toStringByFormatting(source, delimiter = '-') {
-        const year = source.getFullYear();
-        const month = source.getMonth() + 1;
-        const day = source.getDate();
-        return [year, month, day].join(delimiter);
-    }
-
-    let renderToday=()=>{
-        let today = toStringByFormatting(new Date(),'-');
-        let resultHTML="";
-        todolist.forEach(x=>{
-            if(x.reg_date==today){
-                if(x.todo_yn==0){
-                resultHTML +=`<div class="task">• ${x.todo_title}</div>`;  }
-                else{resultHTML +=`<div class="task task-done">× ${x.todo_title}</div>`;  }}
-            });
-        taskBoardToday.innerHTML=resultHTML;
-    }
-
-    renderToday();
-
-    let renderMonthly=()=>{
-        
-        let yr=new Date().getFullYear();
-        let mon=new Date().getMonth()+1;
-        let resultHTML="";
-
-        todolist.forEach(x=>{
-            let arr=x.reg_date.split("-");
-            if(arr[0]==yr&&arr[1]==mon){
-                if(x.todo_yn==0){
-                resultHTML +=`<div class="task">• ${x.todo_title}</div>`;  }
-                else{resultHTML +=`<div class="task task-done">× ${x.todo_title}</div>`;  }}
-            });
-        taskBoardMonth.innerHTML=resultHTML;
-    }
-    
-    renderMonthly();
-
-    let renderfuture=()=>{
-        let resultHTML="";
-        todolist.forEach(x=>{
-            if(x.reg_date=='2500-1-1'){
-                resultHTML +=`<div class="task">• ${x.todo_title}</div>`;  }
-            });
-        taskBoardFuture.innerHTML=resultHTML;
-    } 
-    
-    renderfuture();
-    */
-
-
-    let date = new Date();
-
-		const renderCalender = () => {
-      const viewYear = date.getFullYear();
-      const viewMonth = date.getMonth();
-  		
-  
-      document.querySelector('.year-month').textContent = `${viewYear}년 ${viewMonth + 1}월`;
-
-      
-      const prevLast = new Date(viewYear, viewMonth, 0);
-      const thisLast = new Date(viewYear, viewMonth + 1, 0);
-
-      const PLDate = prevLast.getDate();
-      const PLDay = prevLast.getDay();
-
-      const TLDate = thisLast.getDate();
-      const TLDay = thisLast.getDay();
-
-      const prevDates = [];
-      const thisDates = [...Array(TLDate + 1).keys()].slice(1);
-      const nextDates = [];
-
-      if (PLDay !== 6) {
-        for (let i = 0; i < PLDay + 1; i++) {
-          prevDates.unshift(PLDate - i);
-        }
-      }
-
-      for (let i = 1; i < 7 - TLDay; i++) {
-        nextDates.push(i);
-      }
-
-      const dates = prevDates.concat(thisDates, nextDates);
-      const firstDateIndex = dates.indexOf(1);
-      const lastDateIndex = dates.lastIndexOf(TLDate);
-
-
-      dates.forEach((date, i) => {
-        const condition = i >= firstDateIndex && i < lastDateIndex + 1
-                          ? 'this'
-                          : 'other';
-        dates[i] = `<div class="date"><span class=${condition}>${date}</span><br>`;
-        
-        
-        //여기부터
-
-        let ynm = document.querySelector('.year-month');
-        let ynmStr=ynm.innerText;
-        ynmStr= ynmStr.replace("년 ", "-");
-        ynmStr= ynmStr.replace("월", "-");
-        let thisDate=ynmStr+date;
-        if(condition=='other'){thisDate="";}
-        //테스트용객체
-        let todotest=[{"todo_seq":1,"todo_title":"리스트출력","todo_content":"내용","todo_tag":"#exam","todo_yn":"0","todo_percent":"0","user_id":"6","reg_date":"2022-9-30"},
-                {"todo_seq":2,"todo_title":"리스트출력2","todo_content":"내용","todo_tag":"#exam","todo_yn":"0","todo_percent":"0","user_id":"6","reg_date":"2022-8-1"},
-                {"todo_seq":1,"todo_title":"리스트출력3","todo_content":"내용","todo_tag":"#exam","todo_yn":"1","todo_percent":"0","user_id":"6","reg_date":"2022-9-30"}]
-        //객체바인딩된 객체(테스트안해봄)
-        //todotest -> todolist로 바꿀것
-
-                todotest.forEach(x=>{
-                  if(x.reg_date==thisDate){
-                    dates[i]+=`<div class='caltodo'>${x.todo_title}</div>`;          
-                  }                
-            });
-        //여기까지
-        dates[i]+=`</div>`;
+            todolist.forEach(x=>{
+              if(x.reg_date==thisDate){
+                dates[i]+=`<div class='caltodo'>${x.todo_title}</div>`;          
+              }                
         });
+    //여기까지
+    dates[i]+=`</div>`;
+    });
 
 
-      document.querySelector('.dates').innerHTML = dates.join('');
+  document.querySelector('.dates').innerHTML = dates.join('');
 
-      const today = new Date();
-      if (viewMonth === today.getMonth() && viewYear === today.getFullYear()) {
-        for (let date of document.querySelectorAll('.this')) {
-          if (+date.innerText === today.getDate()) {
-            date.classList.add('today');
-            break;
-          }
-        }
+  const today = new Date();
+  if (viewMonth === today.getMonth() && viewYear === today.getFullYear()) {
+    for (let date of document.querySelectorAll('.this')) {
+      if (+date.innerText === today.getDate()) {
+        date.classList.add('today');
+        break;
       }
+    }
+  }
 
 
 
-    };
+};
 
 
+renderCalender();
+
+const prevMonth = () => {
+    date.setDate(1);
+    date.setMonth(date.getMonth() - 1);
+    renderCalender();
+    
+    
+  }
+  
+  const nextMonth = () => {
+    date.setDate(1);
+    date.setMonth(date.getMonth() + 1);
+    renderCalender();
+    
+  }
+  
+  const goToday = () => {
+    date = new Date();
     renderCalender();
 
-    const prevMonth = () => {
-        date.setDate(1);
-        date.setMonth(date.getMonth() - 1);
-        renderCalender();
-        
-        
-      }
-      
-      const nextMonth = () => {
-        date.setDate(1);
-        date.setMonth(date.getMonth() + 1);
-        renderCalender();
-        
-      }
-      
-      const goToday = () => {
-        date = new Date();
-        renderCalender();
+  }
 
-      }</script>
+  // const firstDateIndex = date.indexOf(1);
+  // const lastDateIndex = date.lastIndexOf(TLDate);
+  // date.forEach((date, i) => {
+  //   const condition = i >= firstDateIndex && i < lastDateIndex + 1
+  //                     ? 'this'
+  //                     : 'other';
+
+  //   dates[i] = `<div class="date"><span class="${condition}">${date}</span></div>`;
+  // })
+
+</script>
+	
+	<!-- calendar script 끝 -->
+	
+            </div>
+    
        
 </body>
 </html>

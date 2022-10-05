@@ -16,20 +16,10 @@ package com.smhrd.model;
 
 	    // 작성자 아이디 
 	    private String user_id;
-	    
-	    // 작성자 이름
-	    private String user_name;
-	    
-	    // 작성자 닉네임
-	    private String user_nick;
-	    
-	    // 작성자 이메일
-	    private String user_email;
-	    
+
 	    // 노트 작성일 
 	    private String note_date;
 	    
-	    // 노트 첨부파일
 	    private String note_file;
 	        
 		public NoteDTO() {
@@ -37,44 +27,18 @@ package com.smhrd.model;
 		}
 
 		public NoteDTO(String note_seq, String note_title, String note_content, String note_tag, String user_id,
-				String user_name, String user_nick, String user_email, String note_date, String note_file) {
+				String note_date) {
 			super();
 			this.note_seq = note_seq;
 			this.note_title = note_title;
 			this.note_content = note_content;
 			this.note_tag = note_tag;
 			this.user_id = user_id;
-			this.user_name = user_name;
-			this.user_nick = user_nick;
-			this.user_email = user_email;
 			this.note_date = note_date;
-			this.note_file = note_file;
 		}
 
-		public String getUser_name() {
-			return user_name;
-		}
-
-		public void setUser_name(String user_name) {
-			this.user_name = user_name;
-		}
-
-		public String getUser_nick() {
-			return user_nick;
-		}
-
-		public void setUser_nick(String user_nick) {
-			this.user_nick = user_nick;
-		}
-
-		public String getUser_email() {
-			return user_email;
-		}
-
-		public void setUser_email(String user_email) {
-			this.user_email = user_email;
-		}
-
+		
+		
 		public String getNote_seq() {
 			return note_seq;
 		}

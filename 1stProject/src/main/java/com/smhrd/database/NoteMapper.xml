@@ -2,14 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.smhrd.model.NoteDAO"> <!-- Mapper 경로 추가 -->
 	<select id="selectAll" resultType="Note">
-  		select t1.note_seq, t1.note_title, t1.note_content, t1.note_tag, t1.user_id, t1.note_date, t1.note_file, t2.user_name, t2. user_nick, t2. user_email 
-  		from tbl_note t1, tbl_user t2
-  		where t1.user_id = t2.user_id
+  		select * from tbl_note
   	</select>
   	<insert id="insert" parameterType="Note">
-		insert into tbl_note(note_seq,user_id,note_title,
+		insert into tbl_note(user_id,note_title,
 		note_content,note_date,note_parent)
-		values(tbl_note_seq.nextval,#{user_id},#{note_title},#{note_content},to_date(sysdate,'yy-mm-dd'),1)
+		values(#{user_id},#{note_title},#{note_content},to_date(sysdate,'yy-mm-dd'),1)
   	</insert>
   	<select id="selectOne" resultType="Note">
   		select * from tbl_note 

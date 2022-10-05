@@ -20,6 +20,24 @@ public class GoMain implements Controller {
 		HttpSession session = request.getSession();
 		UserDTO userDto = (UserDTO) session.getAttribute("userDto");
 		TodoDAO dao = new TodoDAO();
+<<<<<<< HEAD
+		
+		String id=userDto.getUser_id();
+		
+		ArrayList<TodoDTO> todoDtos = dao.callTodo(id);
+//		request.setAttribute("todo", todoDtos);
+		Gson gson = new Gson();
+		String jsonArr = gson.toJson(todoDtos);
+		response.setContentType("application/json; charset=UTF-8"); 
+		PrintWriter out;
+		try {
+			out = response.getWriter();
+			out.print(jsonArr);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+=======
+>>>>>>> branch 'master' of https://github.com/1team-Edution/Edution.git
 		
 		String id=userDto.getUser_id();
 		
@@ -36,7 +54,7 @@ public class GoMain implements Controller {
 			e.printStackTrace();
 		}
 		
-		return "Main.html";
+		return "Main";
 	}
 
 }

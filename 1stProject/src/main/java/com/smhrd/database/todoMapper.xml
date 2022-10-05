@@ -9,8 +9,10 @@
 		insert into tbl_todo_list(todo_seq,todo_title,todo_content,todo_tag,todo_yn,user_id,reg_date)
 		values(tbl_todo_list_SEQ.nextval,#{todo_title},#{todo_content},#{todo_tag},0,#{user_id},#{reg_date})
 	</insert>
-	<select id="todoSelect" resultType="TodoDTO" parameterType="string">
-		select * from tbl_todo_list where user_id=#{id}
+	<select id="TodoSelect" resultType="TodoDTO" parameterType="TodoDTO">
+		select * from tbl_todo_list where user_id=#{user_id}
 	</select>
-	
+	<select id="selectyn" resultType = "TodoDTO">
+		select * from tbl_todo_list
+	</select>
 	</mapper>

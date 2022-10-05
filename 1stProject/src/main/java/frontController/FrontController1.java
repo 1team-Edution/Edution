@@ -12,8 +12,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+<<<<<<< HEAD
 import com.smhrd.controller.NoteAjaxInsert;
 import com.smhrd.controller.NoteAjaxSelectone;
+=======
+
+import com.smhrd.controller.BoardInsertCon;
+import com.smhrd.controller.BoardSelectAllCon;
+
+>>>>>>> branch 'master' of https://github.com/1team-Edution/Edution.git
 import com.smhrd.controller.CommunityCon;
 import com.smhrd.controller.CommunityInsertCon;
 import com.smhrd.controller.Controller;
@@ -36,8 +43,10 @@ import com.smhrd.controller.QnAInsertCon;
 import com.smhrd.controller.QnASelectAllCon;
 import com.smhrd.controller.QnASelectOneCon;
 import com.smhrd.controller.QnAUpdateCon;
+import com.smhrd.controller.TodoAjax;
 import com.smhrd.controller.TodoCon;
 import com.smhrd.controller.indexView;
+import com.smhrd.controller.testAjax;
 
 @WebServlet("*.do")
 public class FrontController1 extends HttpServlet {
@@ -54,13 +63,21 @@ public class FrontController1 extends HttpServlet {
 		mappings.put("/GoJoin.do", new GoJoinCon());
 		mappings.put("/Join.do", new JoinCon());
 		mappings.put("/GoQnA.do", new GoQnACon());
+		
+		//QnA mappings
 		mappings.put("/QnASelectAll.do", new QnASelectAllCon());
 		mappings.put("/QnASelectOne.do", new QnASelectOneCon());
 		mappings.put("/QnAInsert.do", new QnAInsertCon());
 		mappings.put("/QnAInsertComplete.do", new QnAInsertCompleteCon());
 		mappings.put("/QnAUpdate.do", new QnAUpdateCon());
 		mappings.put("/QnADelete.do", new QnADeleteCon());
+		
+		// Todo mappings
 		mappings.put("/Todo.do", new TodoCon());
+		mappings.put("/TodoAjax.do", new TodoAjax());
+		
+		
+		// Note mappings
 		mappings.put("/NoteSelectAll.do", new NoteSelectAllCon());
 		mappings.put("/NoteSelectOne.do", new NoteSelectOneCon());
 		mappings.put("/NoteInsert.do", new NoteInsertCon());
@@ -72,6 +89,13 @@ public class FrontController1 extends HttpServlet {
 		mappings.put("/NoteAjax.do", new NoteAjax());
 
 		mappings.put("/MypageView.do", new PopmypageCon());
+
+		
+		// Board mappings
+		mappings.put("/BoardInsert.do", new BoardInsertCon());
+		mappings.put("/BoardSelectAll.do", new BoardSelectAllCon());
+		
+
 		mappings.put("/CommunityView.do", new CommunityCon());
 		mappings.put("/CommunityInsert.do", new CommunityInsertCon());
 		mappings.put("/NoteAjaxInsert.do", new NoteAjaxInsert());
