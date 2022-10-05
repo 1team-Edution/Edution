@@ -61,9 +61,6 @@ CREATE TABLE tbl_user
      PRIMARY KEY (user_id)
 );
 
-alter table tbl_user
-modify user_joindate default sysdate;
-
 COMMENT ON TABLE tbl_user IS '사용자';
 
 COMMENT ON COLUMN tbl_user.user_id IS '사용자 아이디';
@@ -88,6 +85,12 @@ COMMENT ON COLUMN tbl_user.user_templet IS '템플릿';
 
 CREATE UNIQUE INDEX UQ_tbl_user_1
     ON tbl_user(user_nick);
+
+ALTER TABLE tbl_user
+MODIFY user_joindate DEFAULT sysdate;
+    
+ALTER TABLE tbl_user
+ADD CONSTRAINT tbl_user_email_tbl_user unique (user_email);
 
 -- tbl_board Table Create SQL
 CREATE TABLE tbl_board
