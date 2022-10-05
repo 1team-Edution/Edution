@@ -1,13 +1,16 @@
-package com.smhrd.controller;
+package com.smhrd.controller.user;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class QnADeleteCon implements Controller {
+import com.smhrd.controller.Controller;
+
+public class PopmypageCon implements Controller {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		return null;
+		// TODO Auto-generated method stub
+		return "MyPage";
 	}
 
 }

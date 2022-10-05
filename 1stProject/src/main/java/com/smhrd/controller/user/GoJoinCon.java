@@ -1,14 +1,17 @@
-package com.smhrd.controller;
+package com.smhrd.controller.user;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class GoQnACon implements Controller {
+import com.smhrd.controller.Controller;
+
+public class GoJoinCon implements Controller {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		
-		return "QnA";
+		return "Join";
+		
 	}
 
 }

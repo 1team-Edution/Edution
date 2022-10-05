@@ -1,4 +1,4 @@
-package com.smhrd.controller;
+package com.smhrd.controller.todo;
 
 import java.io.UnsupportedEncodingException;
 
@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.smhrd.controller.Controller;
 import com.smhrd.model.TodoDAO;
 import com.smhrd.model.TodoDTO;
 import com.smhrd.model.UserDTO;

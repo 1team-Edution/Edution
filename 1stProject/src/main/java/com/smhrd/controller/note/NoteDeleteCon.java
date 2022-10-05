@@ -1,8 +1,9 @@
-package com.smhrd.controller;
+package com.smhrd.controller.note;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.smhrd.controller.Controller;
 import com.smhrd.model.NoteDAO;
 
 public class NoteDeleteCon implements Controller {

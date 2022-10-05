@@ -1,4 +1,4 @@
-package com.smhrd.controller;
+package com.smhrd.controller.QnA;
 
 import java.util.ArrayList;
 
@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.ibatis.session.SqlSession;
 
+import com.smhrd.controller.Controller;
 import com.smhrd.model.QnADAO;
 import com.smhrd.model.QnADTO;
 

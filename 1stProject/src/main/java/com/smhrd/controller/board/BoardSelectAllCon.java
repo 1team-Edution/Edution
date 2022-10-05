@@ -1,10 +1,11 @@
-package com.smhrd.controller;
+package com.smhrd.controller.board;
 
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.smhrd.controller.Controller;
 import com.smhrd.model.BoardDAO;
 import com.smhrd.model.BoardDTO;
 

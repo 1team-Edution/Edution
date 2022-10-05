@@ -1,4 +1,4 @@
-package com.smhrd.controller;
+package com.smhrd.controller.user;
 
 import java.io.IOException;
 
@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+import com.smhrd.controller.Controller;
 import com.smhrd.model.UserDAO;
 import com.smhrd.model.UserDTO;
 

@@ -1,15 +1,15 @@
-package com.smhrd.controller;
+package com.smhrd.controller.QnA;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class LoginPage implements Controller{
+import com.smhrd.controller.Controller;
+
+public class QnADeleteCon implements Controller {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-	
-		
-		return "LoginPage";
+		return null;
 	}
 
 }

@@ -1,8 +1,10 @@
-package com.smhrd.controller;
+package com.smhrd.controller.note;
 
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.smhrd.controller.Controller;
 
 public class NoteGoInsertCon implements Controller {
 

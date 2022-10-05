@@ -12,43 +12,35 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.smhrd.controller.NoteAjaxInsert;
-
-
-import com.smhrd.controller.BoardInsertCon;
-import com.smhrd.controller.BoardSelectAllCon;
-
-
-
 import com.smhrd.controller.Controller;
-import com.smhrd.controller.GoJoinCon;
-import com.smhrd.controller.GoMain;
-import com.smhrd.controller.GoQnACon;
-import com.smhrd.controller.JoinCon;
-import com.smhrd.controller.LoginPage;
-import com.smhrd.controller.NoteAjax;
-import com.smhrd.controller.NoteDeleteCon;
-import com.smhrd.controller.NoteGoInsertCon;
-import com.smhrd.controller.NoteInsertCon;
-import com.smhrd.controller.NoteSelectAllCon;
-import com.smhrd.controller.NoteSelectOneCon;
-import com.smhrd.controller.NoteUpdateCon;
-import com.smhrd.controller.PopmypageCon;
-import com.smhrd.controller.QnADeleteCon;
-import com.smhrd.controller.QnAInsertCompleteCon;
-import com.smhrd.controller.QnAInsertCon;
-import com.smhrd.controller.QnASelectAllCon;
-import com.smhrd.controller.QnASelectOneCon;
-import com.smhrd.controller.QnAUpdateCon;
-
-import com.smhrd.controller.TodoCheckCon;
-
-import com.smhrd.controller.TodoAjax;
-
-import com.smhrd.controller.TodoCon;
-import com.smhrd.controller.TodoDeleteCon;
-import com.smhrd.controller.TodoEditCon;
 import com.smhrd.controller.indexView;
+import com.smhrd.controller.QnA.GoQnACon;
+import com.smhrd.controller.QnA.QnADeleteCon;
+import com.smhrd.controller.QnA.QnAInsertCompleteCon;
+import com.smhrd.controller.QnA.QnAInsertCon;
+import com.smhrd.controller.QnA.QnASelectAllCon;
+import com.smhrd.controller.QnA.QnASelectOneCon;
+import com.smhrd.controller.QnA.QnAUpdateCon;
+import com.smhrd.controller.board.BoardInsertCon;
+import com.smhrd.controller.board.BoardSelectAllCon;
+import com.smhrd.controller.note.NoteAjax;
+import com.smhrd.controller.note.NoteAjaxInsert;
+import com.smhrd.controller.note.NoteDeleteCon;
+import com.smhrd.controller.note.NoteGoInsertCon;
+import com.smhrd.controller.note.NoteInsertCon;
+import com.smhrd.controller.note.NoteSelectAllCon;
+import com.smhrd.controller.note.NoteSelectOneCon;
+import com.smhrd.controller.note.NoteUpdateCon;
+import com.smhrd.controller.todo.GoMain;
+import com.smhrd.controller.todo.TodoAjax;
+import com.smhrd.controller.todo.TodoCheckCon;
+import com.smhrd.controller.todo.TodoCon;
+import com.smhrd.controller.todo.TodoDeleteCon;
+import com.smhrd.controller.todo.TodoEditCon;
+import com.smhrd.controller.user.GoJoinCon;
+import com.smhrd.controller.user.JoinCon;
+import com.smhrd.controller.user.LoginPage;
+import com.smhrd.controller.user.PopmypageCon;
 
 
 @WebServlet("*.do")

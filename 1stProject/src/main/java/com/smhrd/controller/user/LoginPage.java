@@ -1,14 +1,17 @@
-package com.smhrd.controller;
+package com.smhrd.controller.user;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class PopmypageCon implements Controller {
+import com.smhrd.controller.Controller;
+
+public class LoginPage implements Controller{
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		// TODO Auto-generated method stub
-		return "MyPage";
+	
+		
+		return "LoginPage";
 	}
 
 }

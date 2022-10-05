@@ -1,4 +1,4 @@
-package com.smhrd.controller;
+package com.smhrd.controller.todo;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
+import com.smhrd.controller.Controller;
 import com.smhrd.model.TodoDAO;
 import com.smhrd.model.TodoDTO;
 

@@ -1,4 +1,4 @@
-package com.smhrd.controller;
+package com.smhrd.controller.board;
 
 import java.io.IOException;
 
