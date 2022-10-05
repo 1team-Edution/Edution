@@ -31,10 +31,10 @@ private SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSessionFac
 		
 	}
 	
-	public ArrayList<TodoDTO> selectyn (String id) {
+	public ArrayList<TodoDTO> selectyn () {
 		ArrayList<TodoDTO> list = null;
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
-		list = (ArrayList)sqlSession.selectList("com.smhrd.model.TodoDAO.selectyn", id);
+		list = (ArrayList)sqlSession.selectList("com.smhrd.model.TodoDAO.selectyn");
 		
 		
 		sqlSession.close();

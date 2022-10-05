@@ -17,7 +17,6 @@ public class TodoAjax implements Controller {
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		response.setCharacterEncoding("UTF-8");
 		String user_id = request.getParameter("user_id");
-		System.out.println(user_id);
 		PrintWriter out = null;
 		
 		try {
@@ -28,15 +27,21 @@ public class TodoAjax implements Controller {
 		
 		TodoDAO dao = new TodoDAO();
 		
-		ArrayList<TodoDTO> list = dao.callTodo(user_id);
-		System.out.println(list);
+		ArrayList<TodoDTO> list = dao.selectyn();
 		
+		int j = 0;
+		
+			for (int i = 0; i < list.size(); i++) {
+				
+				System.out.println(list.get(i).getTodo_yn());
+			}
+			
 		Gson gson = new Gson();
 		String json = gson.toJson(list);
 		
 		out.print(json);
 		
-		return "redirect:/NewFile.jsp";
+		return null;
 	}
 
 }
