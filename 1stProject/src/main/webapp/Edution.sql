@@ -198,10 +198,6 @@ ALTER TABLE tbl_comment
     ADD CONSTRAINT FK_tbl_comment_brd_seq_tbl_boa FOREIGN KEY (brd_seq)
         REFERENCES tbl_board (brd_seq) ;
         
--- tbl_board brd_title 12자 제한으로 수정
-ALTER TABLE tbl_board
-MODIFY brd_title VARCHAR2(36);
-        
 -- tbl_note Table Create SQL
 CREATE TABLE tbl_note
 (

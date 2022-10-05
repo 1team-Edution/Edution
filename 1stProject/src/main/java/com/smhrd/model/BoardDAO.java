@@ -1,5 +1,7 @@
 package com.smhrd.model;
 
+import java.util.ArrayList;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -21,4 +23,15 @@ public class BoardDAO  {
 
 		return result;
 	}
+	public ArrayList<BoardDTO> selectAll() {
+		ArrayList<BoardDTO> list = null;
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		
+		list = (ArrayList)sqlSession.selectList("com.smhrd.model.BoardDAO.BoardselectAll");
+		
+		sqlSession.close();
+		
+		return list;
+	}
+	
 }

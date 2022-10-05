@@ -24,10 +24,8 @@ public class GoMain implements Controller {
 		TodoDAO dao = new TodoDAO();
 		
 		String id=userDto.getUser_id();
+
 		ArrayList<TodoDTO> todoDtos = dao.callTodo(id);
-//		Date date = new Date();
-//		String today=(date.getYear()+1900)+"-"+(date.getMonth()+1)+"-"+date.getDate();
-//		request.setAttribute("today", today);
 		request.setAttribute("todolist", todoDtos);
 		
 		Gson gson = new Gson();
@@ -40,6 +38,8 @@ public class GoMain implements Controller {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+
+		
 
 		return "Main";
 	}
