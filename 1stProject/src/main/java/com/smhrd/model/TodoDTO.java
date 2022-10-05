@@ -10,24 +10,20 @@ public class TodoDTO {
 	private String reg_date;
 	
 	
-	public TodoDTO(String todoHead, String todoBody, String[] tags, String date) {
-			todo_title=todoHead;
-			todo_content=todoBody;
-			String str="";
-			for(int i=0;i<tags.length;i++) {
-					str+="#"+tags[i];
-				}
-			// db저장형식 : #tag1#tag2#tag3
-			todo_tag=str;
-			reg_date=date;
-			
-			System.out.println(todo_title+todo_content+todo_tag+reg_date);
+
+	public TodoDTO(String id, String todoHead, String todoBody, String[] tags, String date) {
+		todo_title=todoHead;
+		todo_content=todoBody;
+		String str="";
+		for(int i=0;i<tags.length;i++) {
+				str+="#"+tags[i];
 			}
+		// db저장형식 : #tag1#tag2#tag3
+		todo_tag=str;
+		todo_yn=0;
+		user_id=id;
+		reg_date=date;
 
-	
-
-	public TodoDTO() {
-		super();
 	}
 
 
