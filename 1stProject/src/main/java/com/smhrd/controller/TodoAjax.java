@@ -3,6 +3,7 @@ package com.smhrd.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -28,14 +29,7 @@ public class TodoAjax implements Controller {
 		TodoDAO dao = new TodoDAO();
 		
 		ArrayList<TodoDTO> list = dao.selectyn();
-		
-		int j = 0;
-		
-			for (int i = 0; i < list.size(); i++) {
-				
-				System.out.println(list.get(i).getTodo_yn());
-			}
-			
+		System.out.println(list);
 		Gson gson = new Gson();
 		String json = gson.toJson(list);
 		
