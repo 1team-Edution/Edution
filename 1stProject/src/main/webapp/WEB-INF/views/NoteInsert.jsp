@@ -22,9 +22,8 @@
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
  
   
-  <style>
-  .ck-editor__editable { height: 400px; }
-  .ck-content { font-size: 12px; }
+<style>
+ 
 #title{
 	position : sticky;
 }
@@ -129,12 +128,12 @@ position : sticky;
           <div id="cover"></div>
           
           
-          <div>
+          <div id = "notemain">
            <form id = "frm" method="post" >
           
           <div id = "title"><h1><input type="text" name = "note_title" id = "note_title"></h1></div>
           
-           <div id = "user"><input type= "text" name = "user_id" id = "user_id" value = "user_id 02"></div>
+           <div id = "user"><input type= "hidden" name = "user_id" id = "user_id" value = "user_id 02"></div>
           <textarea class="summernote2" name = "note_content" id = "note_content"></textarea>
           <div style = "float: right;"><button type="submit" class="btn btn-default" id = "add">작성</button></div>
           
@@ -190,11 +189,17 @@ position : sticky;
 						console.log(res[i].note_seq);
 						console.log(res);
 						
-						pageTitle.innerHTML += `<div style ="overflow : auto";><button id="settingsicon" style ="margin-left: 15px;">󠀫󠀫󠀫󠀫➕</button>
-						<a href="NoteSelectOne.do?note_seq=${res[i].note_seq}">${res[i].note_title}</a><div style = "float: right; margin-right: 15px;">
+						pageTitle.innerHTML += `<div style ="overflow : auto";>
+						<input type = "hidden" id = "note_seq" value = ${res[i].note_seq}> 
+						<a href="NoteSelectOne.do?note_seq=${res[i].note_seq}" id ="notetitle" style = "float : left; margin-left : 15px;">${res[i].note_title}</a><div style = "float: right; margin-right: 15px;">
+						<button id="settingsicon" style ="margin-left: 15px;">󠀫󠀫󠀫󠀫➕</button>
 						<button id="deleteBotton" style="overflow : auto;" onclick="location.href='NoteDelete.do?note_seq=${res[i].note_seq}'">🗑️</button></div></div>`;
-					  
+						
 					  }
+					
+					
+					
+					
 				},
 				error : function(e){
 					console.log(e)
@@ -204,8 +209,8 @@ position : sticky;
 	});	
     
     </script>
-    <script type="text/javascript">
-$(document).ready(function(){
+ <script type="text/javascript">
+
 	$('#add').on('click', function(){
         $.ajax({
             url: "NoteAjaxInsert.do",
@@ -217,10 +222,15 @@ $(document).ready(function(){
             error: function(){  alert("error");  }
         });
     });
-});	
-
+	
+</script>
+<script type="text/javascript">
+$('#notetitle').on('click', function(){
+	console.log("dd");
+}
 
 </script>
+
     
     
   </body>

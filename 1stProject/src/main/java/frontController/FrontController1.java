@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.smhrd.controller.NoteAjaxInsert;
+import com.smhrd.controller.NoteAjaxSelectone;
 import com.smhrd.controller.CommunityCon;
 import com.smhrd.controller.CommunityInsertCon;
 import com.smhrd.controller.Controller;
@@ -74,9 +75,7 @@ public class FrontController1 extends HttpServlet {
 		mappings.put("/CommunityView.do", new CommunityCon());
 		mappings.put("/CommunityInsert.do", new CommunityInsertCon());
 		mappings.put("/NoteAjaxInsert.do", new NoteAjaxInsert());
-		
-
-
+		mappings.put("/NoteAjaxSelectone.do", new NoteAjaxSelectone());
 		
 	}
 
