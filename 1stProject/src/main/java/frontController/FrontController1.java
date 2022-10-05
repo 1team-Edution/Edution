@@ -35,7 +35,10 @@ import com.smhrd.controller.QnAInsertCon;
 import com.smhrd.controller.QnASelectAllCon;
 import com.smhrd.controller.QnASelectOneCon;
 import com.smhrd.controller.QnAUpdateCon;
+import com.smhrd.controller.TodoCheckCon;
 import com.smhrd.controller.TodoCon;
+import com.smhrd.controller.TodoDeleteCon;
+import com.smhrd.controller.TodoEditCon;
 import com.smhrd.controller.indexView;
 
 @WebServlet("*.do")
@@ -59,13 +62,18 @@ public class FrontController1 extends HttpServlet {
 		mappings.put("/QnAInsertComplete.do", new QnAInsertCompleteCon());
 		mappings.put("/QnAUpdate.do", new QnAUpdateCon());
 		mappings.put("/QnADelete.do", new QnADeleteCon());
+		
 		mappings.put("/Todo.do", new TodoCon());
+		mappings.put("/TodoCheck.do", new TodoCheckCon());
+		mappings.put("/TodoEdit.do", new TodoEditCon());
+		mappings.put("/TodoDelete.do", new TodoDeleteCon());
+		mappings.put("/Main.do", new GoMain());
+		
 		mappings.put("/NoteSelectAll.do", new NoteSelectAllCon());
 		mappings.put("/NoteSelectOne.do", new NoteSelectOneCon());
 		mappings.put("/NoteInsert.do", new NoteInsertCon());
 		mappings.put("/NoteUpdate.do", new NoteUpdateCon());
 		mappings.put("/NoteDelete.do", new NoteDeleteCon());
-		mappings.put("/Main.do", new GoMain());
 
 		mappings.put("/NoteGoInsert.do", new NoteGoInsertCon());
 		mappings.put("/NoteAjax.do", new NoteAjax());

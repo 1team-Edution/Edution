@@ -4,9 +4,11 @@ import java.io.UnsupportedEncodingException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.smhrd.model.TodoDAO;
 import com.smhrd.model.TodoDTO;
+import com.smhrd.model.UserDTO;
 
 public class TodoCon implements Controller {
 
@@ -21,12 +23,15 @@ public class TodoCon implements Controller {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		HttpSession session = request.getSession();
+		UserDTO userDto = (UserDTO) session.getAttribute("userDto");
+		String id=userDto.getUser_id();
 		String todoHead=request.getParameter("todoHead");
 		String todoBody=request.getParameter("todoBody");
 		String[] tags=request.getParameterValues("tag");
 		String date = request.getParameter("date");
 		if(date==null) {date="2500-1-1";}
-		TodoDTO dto = new TodoDTO(todoHead,todoBody,tags,date);
+		TodoDTO dto = new TodoDTO(id,todoHead,todoBody,tags,date);
 		TodoDAO dao = new TodoDAO();
 		dao.insert(dto);
 		

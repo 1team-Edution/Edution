@@ -3,6 +3,8 @@ package com.smhrd.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Date;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
@@ -22,9 +24,12 @@ public class GoMain implements Controller {
 		TodoDAO dao = new TodoDAO();
 		
 		String id=userDto.getUser_id();
-		
 		ArrayList<TodoDTO> todoDtos = dao.callTodo(id);
-//		request.setAttribute("todo", todoDtos);
+//		Date date = new Date();
+//		String today=(date.getYear()+1900)+"-"+(date.getMonth()+1)+"-"+date.getDate();
+//		request.setAttribute("today", today);
+		request.setAttribute("todolist", todoDtos);
+		
 		Gson gson = new Gson();
 		String jsonArr = gson.toJson(todoDtos);
 		response.setContentType("application/json; charset=UTF-8"); 
@@ -35,8 +40,8 @@ public class GoMain implements Controller {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-		return "Main.html";
+
+		return "Main";
 	}
 
 }
