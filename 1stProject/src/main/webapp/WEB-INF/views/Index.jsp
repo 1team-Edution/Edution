@@ -2738,12 +2738,11 @@ a {
 					<div class="jsx-1805324592 text-wrap">
 						<h1
 							class="global-title global-title global-title-color-dark global-title-weight-bold global-title-size-xl">
-							여기에<br class="jsx-1805324592">넣을 문구 추천 해주세요
+							계획하고,<br class="jsx-1805324592">기록하고,<br class="jsx-1805324592">실행하세요.
 						</h1>
 						<div class="jsx-1805324592 subtitle-wrap">
 							<h2
-								class="global-title global-title global-title-color-medium global-title-weight-medium global-title-size-xxs">환영문구
-								넣어주세요</h2>
+								class="global-title global-title global-title-color-medium global-title-weight-medium global-title-size-xxs">환영합니다! Edution은 여러분이 더 체계적이고 나은 사람이 되도록 돕겠습니다.</h2>
 						</div>
 						<div class="jsx-1805324592 button-wrap">
 							<!-- 회원가입 페이지로 연결 -->

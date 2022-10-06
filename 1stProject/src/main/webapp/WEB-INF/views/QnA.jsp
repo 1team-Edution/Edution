@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<<<<<<< HEAD
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -721,7 +721,7 @@
         
     </head>
 
-=======
+
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
@@ -774,10 +774,10 @@
 </style>
 
 </head>
->>>>>>> branch 'master' of https://github.com/1team-Edution/Edution.git
+
 <body>
 
-<<<<<<< HEAD
+
 <div style="font-size: 15px; white-space: nowrap; top: 0px; width: 100%; background: rgb(255, 254, 252); display: flex; flex-direction: column; align-items: center; justify-content: center;">
 <nav style="display: flex; align-items: center; justify-content: center; width: 100%; max-width: 1300px; padding-left: 20px; padding-right: 20px; transition: height 250ms ease 0s; height: 80px; position: relative; overflow: hidden; box-shadow: none;">
 <div style="flex-shrink: 0;">
@@ -864,7 +864,7 @@
             <div class="jsx-448f407d1ced1fc8 submit-wrap">
             <button type="submit" class="jsx-2971364727 button primary full-width button-size-l">제출하기</button></div></div></form></div></div></div></section>
 <!-- 여기까지 form 태그 끝 -->
-=======
+
 	<!-- Edution 로고 들어갈 자리
 	
 	
@@ -880,7 +880,7 @@
 					class="global-title global-title global-title-color-dark global-title-weight-bold global-title-size-xl">Notion
 					영업팀에 문의하기</h1>
 			</div>
-			<h2 class="global-subtitle">Notion을 어떻게 활용할지 함께 고민해드립니다.</h2>
+			<h2 class="global-subtitle">Edution을 어떻게 활용할지 함께 고민해드립니다.</h2>
 			<div class="global-margin-xs">
 				<div class="jsx-2182651440 background">
 					<ul class="jsx-1605174824 body-list">
@@ -890,7 +890,7 @@
 									style="width: 16px; height: 16px; display: flex; fill: rgba(0, 0, 0, 0.6); flex-shrink: 0;">
 								<path fill="currentColor" d="M6.385 14.162c.362 0 .642-.15.84-.444L13.652 3.71c.144-.226.205-.417.205-.602 0-.485-.341-.82-.833-.82-.335 0-.54.123-.746.444l-5.926 9.4-3.042-3.903c-.205-.267-.417-.376-.718-.376-.492 0-.848.348-.848.827 0 .212.075.417.253.629l3.541 4.416c.24.3.492.437.848.437z"></path></svg>
 							</div>
-							<div class="jsx-1605174824 body-list-item-text">회사 전체의 지식
+							<div class="jsx-1605174824 body-list-item-text">
 								공유, 프로젝트 관리, 협업을 하나로 진행할 수 있는 유연한 도구</div></li>
 						<li class="jsx-1605174824 body-list-item">
 							<div class="jsx-1605174824 check-icon">
@@ -936,7 +936,7 @@
 							class="jsx-2655736279 jsx-3868764881 input-wrap input-wrap-medium">
 							<input type="text" name="user_name" placeholder="길동" required=""
 								class="jsx-2655736279 jsx-3868764881 input"
-								value="${QnADTO.user_name}">
+								value=\"${QnADTO.user_name}">
 						</div>
 					</label>
 				</div>
@@ -950,7 +950,7 @@
 							class="jsx-2655736279 jsx-3868764881 input-wrap input-wrap-medium">
 							<input type="text" name="user_id" placeholder="가나다 주식회사"
 								required="" class="jsx-2655736279 jsx-3868764881 input"
-								value="${QnADTO.user_id}">
+								value=\"${QnADTO.user_id}">
 						</div>
 					</label>
 				</div>
@@ -964,7 +964,7 @@
 							class="jsx-2655736279 jsx-3868764881 input-wrap input-wrap-medium">
 							<input type="text" name="help_content" placeholder="가나다 주식회사"
 								required="" class="jsx-2655736279 jsx-3868764881 input"
-								value="${QnADTO.help_content}">
+								value=\"${QnADTO.help_content}">
 						</div>
 					</label>
 				</div>
@@ -984,7 +984,7 @@
 	</div>
 
 	
->>>>>>> branch 'master' of https://github.com/1team-Edution/Edution.git
+
 
 </body>
 </html>
