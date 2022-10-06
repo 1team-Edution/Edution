@@ -76,7 +76,7 @@
 					
 					let avg =  result / arr2.length;
 					
-					console.log(Math.round(avg * 100));
+					/* console.log(Math.round(avg * 100)); */
 					
 					
 					
