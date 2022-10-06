@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
@@ -18,49 +18,71 @@
 <!-- Latest compiled JavaScript -->
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="./resources/js/summernote/summernote-lite.js"></script>
+<script src="./resources/js/summernote/lang/summernote-ko-KR.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+
 </head>
 <body>
 
-	
-
+<form action="NoteUpdate.do" method="post">
 	<div class="container">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h2>°Ô½Ã±Û »ó¼¼º¸±â</h2>
+				<h2>ê²Œì‹œê¸€ ìƒì„¸ë³´ê¸°</h2>
 			</div>
+			
 			<div class="panel-body">
-				<form action="NoteUpdate.do" method="post">
-					<input type="hidden" name="note_seq" value="${tbl_note.note_seq}">
-					<div class="form-group">
-
-						<label>Á¦¸ñ:</label> ${note.note_title}
-							
-
-					</div>
+			<div class="form-group"><h1><input type="text" value="${note.note_title}"name="note_title"></h1></div>
+					<input type="hidden" name="note_seq" value="${note.note_seq}">
 
 					<div class="form-group">
 
-						<label>ÀÛ¼ºÀÚ:</label> 
-						${note.user_id}
-							
-
+						<input type="hidden" value="${note.user_id}"
+							class="form-control" name="user_id">
 					</div>
-
-			
 					<div class="form-group">
 
-						<label>³»¿ë:</label>
-						${note.note_content}
+						<input type="text" disabled="true" value="${note.note_date}"
+							class="form-control" name="note_date">
+					</div>
+					<div class="form-group">
+
+				<textarea class="summernote2" name = "note_content" id = "note_content">${note.note_content}</textarea>
 					</div>
 
-					<button type="submit" class="btn btn-primary btn-sm">¼öÁ¤ÇÏ±â</button>
-
-				</form>
+					<button type="submit" class="btn btn-primary btn-sm" style = "float : right;">ìˆ˜ì •í•˜ê¸°</button>
 			</div>
-
-			
 
 		</div>
 	</div>
+				</form>
+	<script src="./resources/js/app.js"></script>
+                <script>
+                $('.summernote2').summernote({
+                dialogsInBody: true,
+          		  height: 300,                 // ì—ë””í„° ë†’ì´
+          		  minHeight: null,             // ìµœì†Œ ë†’ì´
+          		  maxHeight: null,  // ìµœëŒ€ ë†’ì´
+          		  lang: "ko-KR",
+          		  toolbar: [
+          			    // [groupName, [list of button]]
+          			    ['fontname', ['fontname']],
+          			    ['fontsize', ['fontsize']],
+          			    ['style', ['bold', 'italic', 'underline','strikethrough', 'clear']],
+          			    ['color', ['forecolor','color']],
+          			    ['table', ['table']],
+          			    ['para', ['ul', 'ol', 'paragraph']],
+          			    ['height', ['height']],
+          			    ['insert',['picture','link','video']],
+          			    ['view', ['fullscreen', 'help']]
+          			  ],
+          			fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New','ë§‘ì€ ê³ ë”•','ê¶ì„œ','êµ´ë¦¼ì²´','êµ´ë¦¼','ë‹ì›€ì²´','ë°”íƒ•ì²´'],
+          			fontSizes: ['8','9','10','11','12','14','16','18','20','22','24','28','30','36','50','72']
+          		
+                    
+          	});
+          $('.note-statusbar').hide();
+                </script>
 </body>
 </html>

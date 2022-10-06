@@ -21,7 +21,9 @@
 					<tbody>
 						<!-- el 표현식을 활용하면 scope 영역에 객체바인딩 된 데이터를 바로 꺼내올 수 있다. -->
 						<c:forEach var="board" items="${list}">
+						
 							<tr>
+							
 								<td>${board.brd_title}</a></td>
 								<td>${board.user_name}</td>
 								<td>${board.brd_date}</td>

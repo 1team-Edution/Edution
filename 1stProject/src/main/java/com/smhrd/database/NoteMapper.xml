@@ -15,7 +15,7 @@
   	</select>
   	<update id="update" parameterType="Note">
   		update tbl_note 
-  		set note_title = #{note_title},note_content = #{note_content},note_tag = #{note_tag},user_id = #{user_id},note_date = #{note_date},note_parent = #{note_parent},note_file = #{note_file}
+  		set note_title = #{note_title},note_content = #{note_content},user_id = #{user_id} where note_seq = #{note_seq}
   	</update>
   	<delete id="delete">
   		delete from tbl_note 

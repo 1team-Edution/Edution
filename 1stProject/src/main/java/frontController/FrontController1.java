@@ -3,7 +3,6 @@ package frontController;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -12,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.smhrd.controller.NoteAjaxSelectone;
 import com.smhrd.controller.Controller;
 import com.smhrd.controller.indexView;
 import com.smhrd.controller.QnA.GoQnACon;
@@ -42,6 +42,7 @@ import com.smhrd.controller.user.GoJoinCon;
 import com.smhrd.controller.user.JoinCon;
 import com.smhrd.controller.user.LoginPage;
 import com.smhrd.controller.user.PopmypageCon;
+
 
 
 @WebServlet("*.do")
@@ -102,9 +103,7 @@ public class FrontController1 extends HttpServlet {
 
 
 		mappings.put("/NoteAjaxInsert.do", new NoteAjaxInsert());
-		
-
-
+		mappings.put("/NoteAjaxSelectone.do", new NoteAjaxSelectone());
 		
 	}
 

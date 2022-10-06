@@ -21,7 +21,7 @@
 		select * from tbl_todo_list where user_id=#{user_id}
 	</select>
 	<select id="selectyn" resultType = "TodoDTO">
-		select todo_yn, user_id from tbl_todo_list group by todo_yn, user_id
+		select * from tbl_todo_list
 	</select>
 	
 	 <delete id="TodoDelete">
