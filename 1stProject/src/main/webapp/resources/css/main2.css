@@ -1,0 +1,135 @@
+@charset "UTF-8";
+    #editable{
+    	display: none;
+        position: fixed;
+        width: 600px;
+        height: 100%;
+        border: 1px solid rgb(209, 209, 209);
+        border-radius: 5px;
+        padding: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        right:0px;
+        background-color:white;
+    }
+    .editheader{
+        height: 44;
+        width: 100;
+    }
+    #edit-close{
+        user-select: none; 
+        transition: background 20ms ease-in 0s; 
+        cursor: pointer; 
+        display: inline-flex; 
+        align-items: center; 
+        justify-content: center; 
+        flex-shrink: 0; 
+        border-radius: 3px; 
+        height: 24px; 
+        width: 24px; 
+        padding: 0px;}
+    .editbody{
+        margin-left: 50px;
+    }
+    #edittitle{
+        max-width: 100%;
+        width: 100%; 
+        white-space: pre-wrap; 
+        word-break: break-word; 
+        caret-color: rgb(55, 53, 47); 
+        padding: 3px 2px;
+        font-size: 30px;
+        font-weight: 800;
+        display:inline-block;
+
+        }
+    .editimg{
+        display: flex;
+        width: 16px; 
+        height: 16px; 
+        fill: rgba(55, 53, 47, 0.45); 
+        flex-shrink: 0; 
+        backface-visibility: hidden;
+        margin-top: 5px;
+        }
+    #edittag{
+        display: inline-block;
+        cursor: pointer;
+    }
+    #editdate{
+        display: inline-block;
+        cursor: pointer;}
+    .subwrap{
+        width: 100px;
+        display: flex;
+        color: gray;
+        float:left;
+    }
+    .editsub{
+        padding-left: 10px;
+    }
+    
+    input[type='date']{padding: 1px 1.5px; font-size:15px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        border:none;
+    }
+    input[type='text']{
+        border: 1px solid rgb(201, 201, 201);
+        border-radius: 5px;
+    }
+    input[type='submit']{
+        border: 1px solid rgb(194, 194, 194);
+        border-radius: 5px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        cursor: pointer;
+        color: gray;
+        float: right;
+        width: 50px;
+        height: 30px;
+        box-shadow: 1px 1px 4px rgb(143, 143, 143);
+    }
+    input[type='submit']:hover{
+        background-color: rgb(197, 197, 197);
+        color: white;
+    }
+    #datepicker{
+        display: none;
+    }
+    #tagbox{
+        display:none;
+    }
+    #calimg{
+        width: 15px;
+        height: 15px;
+        position: relative;
+        top: 4px;
+        left: -20px;
+        pointer-events: none;
+    }
+    #status{
+        cursor: pointer;
+        display: inline-block;
+        border-radius: 5px;
+    }
+    #editcontent{
+        cursor:pointer;
+    }
+    #status:hover,#editdate:hover,#edittag:hover,#editcontent:hover,#edittitle:hover{
+        background-color: rgb(235, 235, 235);
+        color: rgb(143, 143, 143);
+    }
+    #editinput{
+        width:100%;
+        height: 400px;
+        display: none;
+    }
+    #titleinput{
+        display: none;
+        width: 300px;
+        height: 50px;
+        font-size: 30px;
+        font-weight: 800;
+    }
+    .goright{
+    transition: all 0.3s;
+    transform: translateX(700px);
+	}
