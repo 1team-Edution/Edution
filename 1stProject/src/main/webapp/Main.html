@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edution 나의 플래너</title>
      <link rel="stylesheet" href="resources/css/main.css" type="text/css">
+     <link rel="stylesheet" href="resources/css/main2.css" type="text/css">
         </head>
         <body>
 			<script src="resources/js/jquery-3.6.1.min.js"></script>
@@ -423,6 +424,69 @@
         </tr>
               </table>
 </div><!--여기까지--></div>
+<!-- 수정팝업(나중에 기본 display none으로 바꿀예정) -->
+
+<div style="width: 100px; height: 100%; display: flex;">
+    <div id="editable">
+        <div class="editheader">
+            <div id="edit-close">
+                <svg viewBox="0 0 16 16" class="doubleChevronRight" style="width: 16px; height: 16px; display: block; fill: rgba(55, 53, 47, 0.45); flex-shrink: 0; backface-visibility: hidden;">
+                    <path d="M2.25781 14.1211C2.47656 14.1211 2.66797 14.0391 2.81836 13.8887L8.14355 8.67969C8.32812 8.49512 8.41699 8.29688 8.41699 8.06445C8.41699 7.8252 8.32812 7.62012 8.14355 7.44922L2.81836 2.24023C2.66797 2.08984 2.4834 2.00781 2.25781 2.00781C1.81348 2.00781 1.46484 2.35645 1.46484 2.80078C1.46484 3.0127 1.55371 3.21777 1.7041 3.375L6.50977 8.05762L1.7041 12.7539C1.55371 12.9043 1.46484 13.1094 1.46484 13.3281C1.46484 13.7725 1.81348 14.1211 2.25781 14.1211ZM8.36914 14.1211C8.58789 14.1211 8.77246 14.0391 8.92285 13.8887L14.2549 8.67969C14.4395 8.49512 14.5283 8.29688 14.5283 8.06445C14.5283 7.8252 14.4326 7.62012 14.2549 7.44922L8.92285 2.24023C8.77246 2.08984 8.58789 2.00781 8.36914 2.00781C7.9248 2.00781 7.56934 2.35645 7.56934 2.80078C7.56934 3.0127 7.66504 3.21777 7.81543 3.375L12.6211 8.05762L7.81543 12.7539C7.66504 12.9043 7.56934 13.1094 7.56934 13.3281C7.56934 13.7725 7.9248 14.1211 8.36914 14.1211Z"></path>
+                </svg>
+            </div>    
+        </div>
+        <form>
+        <div class="editbody">
+            <div id="edittitle">할일제목</div>
+            <input type="text" id="titleinput">
+            <br><br>
+            <div class="subwrap">
+                <svg viewBox="0 0 14 14" class="editimg"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg>
+                <span class="editsub">태그</span>
+                
+            </div>
+            <div id="edittag">태그1, 태그2,태그3</div>
+            <div id="tagbox">
+                <input type="checkbox" class="check" id="tag-check1" name="tag" value="homework" autocomplete="off">
+                <label for="tag-check1" align="center">숙제</label>
+
+                <input type="checkbox" class="check" id="tag-check2" name="tag" value="exam" autocomplete="off">
+                <label for="tag-check2" align="center">시험</label>
+
+                <input type="checkbox" class="check" id="tag-check3" name="tag" value="review" autocomplete="off">
+                <label for="tag-check3" align="center">복습</label>
+                
+                <input type="checkbox" class="check" id="tag-check4" name="tag" value="preview" autocomplete="off">
+                <label for="tag-check4" align="center">예습</label>
+                
+                <input type="checkbox" class="check" id="tag-check5" name="tag" value="memo" autocomplete="off">
+                <label for="tag-check5" align="center">메모</label>
+            </div><br>
+            <div class="subwrap">
+                <svg viewBox="0 0 14 14" class="editimg"><path d="M7.01356 14.0001C8.8042 14.0001 10.5958 13.3107 11.9575 11.9324C14.681 9.21201 14.6808 4.7603 11.9571 2.04013C9.23336 -0.680043 4.77573 -0.680043 2.05199 2.04013C0.727519 3.36277 0 5.13301 0 6.99553C0 8.8764 0.727811 10.6285 2.05199 11.9509C3.43207 13.3106 5.22243 14.0001 7.01356 14.0001ZM3.72947 7.00914V8.461V8.65543H3.92382H5.34563H8.2794H8.4738V8.461V5.52541V3.37947V3.18502H8.2794H6.82747H6.63307V3.37947V6.81467H3.92382H3.72947V7.00914ZM1.83985 6.99553C1.83985 5.61698 2.38099 4.32597 3.36061 3.3477C5.36746 1.34337 8.64803 1.34062 10.6585 3.33944C10.6613 3.34219 10.6639 3.34494 10.6668 3.3477C12.676 5.3546 12.6763 8.63642 10.6668 10.6434C8.65705 12.6504 5.37031 12.6504 3.36061 10.6434C2.38099 9.66506 1.83985 8.37408 1.83985 6.99553Z"></path></svg>
+                <span class="editsub">날짜</span>
+            </div>
+            <div id="editdate">2500년 1월 1일</div>
+            <div id="datepicker">
+            <input type="date">
+            <img id="calimg" src="img/calendar.png">
+            </div>
+            <br>
+            <div class="subwrap">
+                <svg viewBox="0 0 14 14" class="editimg"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg>
+                <span class="editsub">상태</span>
+            </div>
+            <div id="status">미완료</div>
+            <hr>
+            <div id="editcontent">내용</div>
+            <input type="text" placeholder="내용" id="editinput">
+            <br>
+            <input type="submit" value="수정">
+        </div></form> 
+    </div>
+</div>
+<!-- 여기까지 -->
+
          
     <script>
     const modal1 = document.getElementById("modal1")
@@ -684,7 +748,10 @@
 				}   
 	
 			editMenu.addEventListener("click",function(){
-				location.href = "TodoEdit.do?todonum="+todonum;
+//				location.href = "TodoEdit.do?todonum="+todonum;
+				editrender();
+			  editable.classList.remove("goright");
+				editable.style.display='inline';
 				});
 			
 			deleteMenu.addEventListener("click",function(){
@@ -707,6 +774,79 @@
     });
 
    
+</script>
+
+<script>
+
+
+//input토글
+let editable=document.querySelector('#editable');
+let edittitle = document.querySelector('#edittitle');
+let titleinput=document.querySelector('#titleinput');
+let edittag=document.querySelector('#edittag');
+let tagbox=document.querySelector('#tagbox');
+let editdate=document.querySelector('#editdate');
+let datepicker=document.querySelector('#datepicker');
+let status=document.querySelector('#status');
+let editcontent=document.querySelector('#editcontent');
+let editinput=document.querySelector('#editinput');
+let editclose=document.querySelector('#edit-close');
+
+editrender=()=>{
+    todotest.forEach(a=>{
+        if(a.todo_sqe==todonum){
+            edittitle.innerText=a.todo_title;
+            titleinput.value=a.todo_title;
+            edittag.innerText=a.todo_tag;
+            editdate.innerText=a.reg_date;
+            if(a.todo_content!=null){
+            editcontent.innerText=a.todo_content;
+            editinput.value=a.todo_content;
+            }
+        }
+    })
+}
+
+editclose.addEventListener('click',handleClick);
+function handleClick() {
+  edittag.style.display='flex';
+  tagbox.style.display='none';
+  edittitle.style.display='flex';
+  titleinput.style.display='none';
+  editdate.style.display='flex';
+  datepicker.style.display='none';
+  editcontent.style.display='flex';
+  editinput.style.display='none';
+  editable.classList.add("goright");
+  setTimeout(function() { editable.style.display='none';}, 300);
+ }
+
+edittitle.addEventListener('click',function(){
+    edittitle.style.display='none';
+    titleinput.style.display='flex';
+})
+edittag.addEventListener('click',function(){
+    edittag.style.display='none';
+    tagbox.style.display='flex';
+})
+editdate.addEventListener('click',function(){
+    editdate.style.display='none';
+    datepicker.style.display='flex';
+})
+
+status.addEventListener('click',function(){
+
+    if(status.innerText=='미완료'){
+        status.innerText='완료';
+    }
+    else{status.innerText='미완료';
+    }
+})
+editcontent.addEventListener('click',function(){
+    editcontent.style.display='none';
+    editinput.style.display='flex';
+})
+
 </script>
        
 </body>
