@@ -115,8 +115,7 @@
     }
     #status:hover,#editdate:hover,#edittag:hover,#editcontent:hover,#edittitle:hover{
         background-color: rgb(235, 235, 235);
-        color: rgb(143, 143, 143);
-    }
+        color:  rgb(143, 143, 143);   }
     #editinput{
         width:100%;
         height: 400px;
@@ -132,4 +131,9 @@
     .goright{
     transition: all 0.3s;
     transform: translateX(700px);
+	}
+	
+	.goleft{
+    transition: all 0.3s;
+    transform: translateX(-700px);
 	}

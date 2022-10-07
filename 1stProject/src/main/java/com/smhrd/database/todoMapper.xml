@@ -16,6 +16,9 @@
 	<update id="updateUndo">
 	 	update tbl_todo_list set todo_yn=0 where todo_seq=#{todonum}
 	</update>
+	<update id="dragUpdate" parameterType="com.smhrd.model.TodoDTO">
+	 	update tbl_todo_list set reg_date=#{reg_date} where todo_seq=#{todo_seq}
+	</update>
 	
 	<select id="TodoSelect" resultType="TodoDTO" parameterType="TodoDTO">
 		select * from tbl_todo_list where user_id=#{user_id}

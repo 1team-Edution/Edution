@@ -28,6 +28,11 @@ public class TodoDTO {
 
 
 
+	public TodoDTO() {
+	}
+
+
+
 	public String getTodo_seq() {
 		return todo_seq;
 	}

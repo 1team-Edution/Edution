@@ -14,7 +14,6 @@ private SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSessionFac
 	
 	
 	public int insert(TodoDTO dto) {
-		System.out.println("todoDao.insert 실행");
 		int result = 0;
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		result = sqlSession.insert("com.smhrd.model.TodoDAO.todoInsert", dto);
@@ -36,20 +35,11 @@ private SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSessionFac
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		list = (ArrayList)sqlSession.selectList("com.smhrd.model.TodoDAO.selectyn");
 		
-		
 		sqlSession.close();
 		return list;
-		
-		
+
 	}
 
-	public int edit(String todonum) {
-		int result = 0;
-		SqlSession sqlSession = sqlSessionFactory.openSession(true);
-		result = sqlSession.update("com.smhrd.model.TodoDAO.update", todonum);
-		sqlSession.close();
-		return result;
-	}
 
 	public int check(String todonum) {
 		int result = 0;
@@ -75,4 +65,26 @@ private SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSessionFac
 		return result;
 	}
 
+	public int dragUpdate(String todonum, String reg_date) {
+		int result = 0;
+		TodoDTO dto = new TodoDTO();
+		dto.setTodo_seq(todonum);
+		dto.setReg_date(reg_date);
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		try {
+		result = sqlSession.update("com.smhrd.model.TodoDAO.dragUpdate", dto);}
+		catch(Exception e){
+		}
+		sqlSession.close();
+		return result;
+		
+	}
+
+	public int edit(String todonum) {
+		int result = 0;
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		result = sqlSession.update("com.smhrd.model.TodoDAO.update", todonum);
+		sqlSession.close();
+		return result;
+	}
 }
