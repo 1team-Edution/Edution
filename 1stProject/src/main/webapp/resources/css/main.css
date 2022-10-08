@@ -437,7 +437,7 @@ input[class="check"] {
             display: block;
             cursor: pointer;
         }
-        tr:hover{
+        .context-btn:hover{
             color:rgb(139, 139, 139);
             background-color: rgb(238, 238, 238);
             }

@@ -24,28 +24,23 @@ public class UserDAO {
 
 	
 	
-	public ArrayList<UserDTO> selectlogin(UserDTO dto) {
+	public UserDTO selectlogin(UserDTO dto) {
 		
 		ArrayList<UserDTO> list =null;
-		SqlSession sqlSession = sqlSessionFactory.openSession(true);
-		
-		
-		
-		 
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);		 
 		list = (ArrayList)sqlSession.selectList("com.smhrd.model.UserDAO.selectlogin",dto);
-		
 		sqlSession.close();  
-		return list;
+		UserDTO user=list.get(0);
+		
+		return user;
 	}
 
 	
 	public ArrayList<UserDTO> Naverlogin(UserDTO dto) {
 		ArrayList<UserDTO> list =null;
-		
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
-		
 		list = (ArrayList)sqlSession.selectList("com.smhrd.model.UserDAO.Naverlogin",dto);
-		
+	
 		sqlSession.close();  	
 		return list;
 	}

@@ -19,6 +19,12 @@
 	<update id="dragUpdate" parameterType="com.smhrd.model.TodoDTO">
 	 	update tbl_todo_list set reg_date=#{reg_date} where todo_seq=#{todo_seq}
 	</update>
+	<update id="todoEditUpdateF" parameterType="com.smhrd.model.TodoDTO">
+	 	update tbl_todo_list set todo_title=#{todo_title}, todo_content=#{todo_content, jdbcType=VARCHAR}, todo_tag=#{todo_tag, jdbcType=VARCHAR}, todo_yn=#{todo_yn} where todo_seq=#{todo_seq}
+	</update>
+	<update id="todoEditUpdateT" parameterType="com.smhrd.model.TodoDTO">
+		update tbl_todo_list set todo_title=#{todo_title}, todo_content=#{todo_content, jdbcType=VARCHAR}, todo_tag=#{todo_tag, jdbcType=VARCHAR}, todo_yn=#{todo_yn},reg_date=#{reg_date} where todo_seq=#{todo_seq}
+	</update>
 	
 	<select id="TodoSelect" resultType="TodoDTO" parameterType="TodoDTO">
 		select * from tbl_todo_list where user_id=#{user_id}
