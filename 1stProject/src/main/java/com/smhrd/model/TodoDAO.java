@@ -1,8 +1,6 @@
 package com.smhrd.model;
 
 import java.util.ArrayList;
-import java.util.List;
-
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import com.smhrd.database.SqlSessionManager;
@@ -80,15 +78,31 @@ private SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSessionFac
 		
 	}
 
-	public void editF() {
+	public int editF(TodoDTO dto) {
 		// futurelog 업데이트
-		
-	}
+		int result = 0;
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		try {
+		result = sqlSession.update("com.smhrd.model.TodoDAO.todoEditUpdateF", dto);}
+		catch(Exception e){
+			System.out.println("sql 문제 발생");
+		}
+		sqlSession.close();
+		return result;
+		}
 
-	public void editT() {
+	public int editT(TodoDTO dto) {
 		// today, monthly 업데이트
-		
-	}
+		int result = 0;
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		try {
+		result = sqlSession.update("com.smhrd.model.TodoDAO.todoEditUpdateT", dto);}
+		catch(Exception e){
+			System.out.println("sql 문제 발생");
+		}
+		sqlSession.close();
+		return result;
+		}
 
 
 }

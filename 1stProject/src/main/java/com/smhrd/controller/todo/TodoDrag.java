@@ -31,10 +31,5 @@ public class TodoDrag extends HttpServlet {
 		//이 부분 fromtcon 방식으로 수정
 		RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/views/Main.html");		
 		rd.forward(request, response);
-
-	
-	
-	
 	}
-
 }
