@@ -62,4 +62,26 @@
   
   </select>
   
+  
+  <delete id="deleteId" parameterType="UserDTO" >
+  
+  delete 
+  from tbl_user
+  where user_id ='${user_id}'
+  
+  </delete>
+  
+  
+  <update id="user_update" parameterType="UserDTO">
+  
+  update tbl_user
+  
+  set user_email = '${user_email}', user_nick = '${user_nick}'
+  
+  where user_id = '${user_id}'
+  
+
+  
+  </update>
+  
   </mapper>

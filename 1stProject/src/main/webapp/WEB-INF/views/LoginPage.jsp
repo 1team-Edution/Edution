@@ -283,7 +283,7 @@ login-main-rightbtn:focus{
 </div>
 
 
-<<<<<<< HEAD
+
         
 <div style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
     <div id="login-main-left">
@@ -332,26 +332,7 @@ login-main-rightbtn:focus{
     
     
     	<!-- 네이버 로그인 연동구문 -->
-=======
-                <div class="notion-focusable-within" style="display: flex; align-items: center; width: 100%; font-size: 14px; line-height: 20px; padding: 0px; position: relative; border-radius: 3px; box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px inset; background: rgba(242, 241, 238, 0.6); cursor: text; opacity: 0; height: 0px; pointer-events: none;">
-                <input type="password" autocomplete="current-password" tabindex="-1" aria-hidden="true" style="font-size: inherit; line-height: inherit; border: none; background: none; width: 100%; display: block; resize: none; padding: 0px;"></div>
-                <input value = "로그인" class="notion-focusable" type="submit" aria-disabled="false" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; white-space: nowrap; height: 36px; border-radius: 4px; color: rgb(235, 87, 87); font-size: 14px; line-height: 1; padding-left: 12px; padding-right: 12px; font-weight: 500; background: rgb(253, 245, 242); box-shadow: rgba(15, 15, 15, 0.1) 0px 1px 2px, rgba(235, 87, 87, 0.3) 0px 0px 0px 1px inset; margin-top: 6px; margin-bottom: 12px; width: 100%;">로그인 계속하기</div>
-                </form>
-                <div style="font-size: 14px; color: rgb(235, 87, 87); text-align: center; display: none; width: 100%;"></div>
-                        <div style="color: rgba(55, 53, 47, 0.65); font-size: 14px; line-height: 1.6; margin-top: 8px; margin-bottom: 8px; text-align: center;">
-                            <a rel="noopener noreferrer" class="notion-link" style="display: inline; text-decoration: underline; user-select: none; cursor: pointer; color: inherit;">아이디 찾기</a>
-                            <a rel="noopener noreferrer" class="notion-link" style="display: inline; text-decoration: underline; user-select: none; cursor: pointer; color: inherit;">비밀번호 찾기</a>
-                        </div>
-                                <div style="width: 100%; margin-top: 64px; margin-bottom: 0px; font-size: 12px; color: rgba(55, 53, 47, 0.5); text-align: left;">
-                <p style="margin-bottom: 0px;">위의 “kakao/facebook/instargram/로그인을 클릭하면 Edution의 
-                                        <a href="#" rel="noopener noreferrer" class="notion-link" style="display: inline; text-decoration: underline; user-select: none; cursor: pointer; color: inherit;">이용약관</a> 
-                                        및 <a href="#" rel="noopener noreferrer" class="notion-link" style="display: inline; text-decoration: underline; user-select: none; cursor: pointer; color: inherit;">개인정보 보호정책</a>
-                                        을 읽고 이해했으며 그에 동의하는 것으로 간주됩니다.</p></div></div></div>
-	
-	
-	
-	<!-- 네이버 로그인 연동구문 -->
->>>>>>> branch 'master' of https://github.com/1team-Edution/Edution.git
+
 	
 	<script type="text/javascript">
 	var naverLogin = new naver.LoginWithNaverId(

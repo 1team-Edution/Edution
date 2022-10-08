@@ -19,6 +19,8 @@ public class LoginCon implements Controller {
 		String user_id = request.getParameter("user_id");
 		String user_pw = request.getParameter("user_pw");
 		
+		
+		
 		UserDTO dto = new UserDTO();
 		dto.setUser_id(user_id);
 		dto.setUser_pw(user_pw);
@@ -26,12 +28,16 @@ public class LoginCon implements Controller {
 		UserDAO dao = new UserDAO();
 
 		UserDTO list = dao.selectlogin(dto);
-
+		
+		
 		try {
 			if (list != null) {
 				HttpSession session = request.getSession();
 				session.setAttribute("loginUser", list);
 				request.setAttribute("list", list);
+				
+				//return "MyPage";
+				//원래 주소! 편의를 위해 바꿔둠
 				return "redirect:/Main.do";
 
 			}

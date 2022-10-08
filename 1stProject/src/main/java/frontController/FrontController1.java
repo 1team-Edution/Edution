@@ -43,9 +43,11 @@ import com.smhrd.controller.user.GoJoinCon;
 import com.smhrd.controller.user.JoinCon;
 import com.smhrd.controller.user.LoginCon;
 import com.smhrd.controller.user.LoginPage;
+import com.smhrd.controller.user.MyPageGo;
 import com.smhrd.controller.user.Naver_callback;
 import com.smhrd.controller.user.NaverloginCon;
 import com.smhrd.controller.user.PopmypageCon;
+import com.smhrd.controller.user.UpdateCon;
 
 
 
@@ -69,6 +71,8 @@ public class FrontController1 extends HttpServlet {
 		mappings.put("/Naver_callback.do", new Naver_callback());
 		mappings.put("/NaverloginCon.do", new NaverloginCon());
 		mappings.put("/Account_delete.do", new Account_deleteCon());
+		mappings.put("/UpdateCon.do", new UpdateCon());
+		mappings.put("/MyPageGo.do", new MyPageGo());
 		
 		//QnA mappings
 		mappings.put("/QnASelectAll.do", new QnASelectAllCon());
