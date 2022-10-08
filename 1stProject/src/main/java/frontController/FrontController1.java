@@ -12,7 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.smhrd.controller.NoteAjaxSelectone;
+
 import com.smhrd.controller.Controller;
+
 import com.smhrd.controller.indexView;
 import com.smhrd.controller.QnA.GoQnACon;
 import com.smhrd.controller.QnA.QnADeleteCon;
@@ -37,9 +39,13 @@ import com.smhrd.controller.todo.TodoCheckCon;
 import com.smhrd.controller.todo.TodoCheckCon2;
 import com.smhrd.controller.todo.TodoCon;
 import com.smhrd.controller.todo.TodoDeleteCon;
+import com.smhrd.controller.user.Account_deleteCon;
 import com.smhrd.controller.user.GoJoinCon;
 import com.smhrd.controller.user.JoinCon;
+import com.smhrd.controller.user.LoginCon;
 import com.smhrd.controller.user.LoginPage;
+import com.smhrd.controller.user.Naver_callback;
+import com.smhrd.controller.user.NaverloginCon;
 import com.smhrd.controller.user.PopmypageCon;
 
 
@@ -54,11 +60,16 @@ public class FrontController1 extends HttpServlet {
 
 		mappings = new HashMap<>();
 		
+		//User mappings
 		mappings.put("/indexView.do", new indexView());
 		mappings.put("/LoginPage.do", new LoginPage());
 		mappings.put("/GoJoin.do", new GoJoinCon());
 		mappings.put("/Join.do", new JoinCon());
-		mappings.put("/GoQnA.do", new GoQnACon());
+		mappings.put("/Login.do", new LoginCon());
+		mappings.put("/LoginPage.do", new LoginPage());
+		mappings.put("/Naver_callback.do", new Naver_callback());
+		mappings.put("/NaverloginCon.do", new NaverloginCon());
+		mappings.put("/Account_delete.do", new Account_deleteCon());
 		
 		//QnA mappings
 		mappings.put("/QnASelectAll.do", new QnASelectAllCon());
