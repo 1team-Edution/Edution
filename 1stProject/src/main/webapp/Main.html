@@ -636,8 +636,53 @@
           }
         }
       }
-    };
+    //드래그&드롭 기능
 
+      let caltodo=document.querySelectorAll('.caltodo');
+      let dragdate = document.querySelectorAll('.this');
+      //색 바꾸기,드롭
+      dragdate.forEach(d=>{
+          let dateParent = d.parentNode;
+          dateParent.addEventListener('dragenter',(e)=>{
+              e.preventDefault();
+              dateParent.style.backgroundColor='#F6EBEB';
+              d.style.backgroundColor='unset';
+          });
+          dateParent.addEventListener('dragleave',(e)=>{
+              e.preventDefault(); 
+              dateParent.style.backgroundColor='unset';
+          });
+          dateParent.addEventListener('dragover',(e)=>{
+              e.preventDefault(); 
+              
+          });
+          dateParent.addEventListener('drop',(e)=>{
+              e.preventDefault(); 
+              dateParent.style.backgroundColor='unset';
+              let ynm = document.querySelector('.year-month');
+              let ynmStr=ynm.innerText;
+              ynmStr= ynmStr.replace("년 ", "-");
+              ynmStr= ynmStr.replace("월", "-");
+              let dragging = document.querySelector(".dragging");
+              let divdata=ynmStr+dateParent.innerText+"n"+dragging.lastChild.innerText;
+              location.href = "TodoDrag?divdata="+divdata;
+          });
+      })
+      //드래그요소에 클래스추가
+      caltodo.forEach(c=>{
+          c.addEventListener("dragstart",()=>{
+           c.classList.add("dragging");   
+          });
+          c.addEventListener("dragend",()=>{
+          c.classList.remove("dragging");
+          });
+      })
+      
+      //드래그&드롭 끝
+      
+      
+    };
+//rendercalender끝
 
     renderCalender();
 
@@ -813,45 +858,6 @@ editcontent.addEventListener('click',function(){
 
 
 
-        let caltodo=document.querySelectorAll('.caltodo');
-        let dragdate = document.querySelectorAll('.this');
-        //색 바꾸기,드롭
-        dragdate.forEach(d=>{
-            let dateParent = d.parentNode;
-            dateParent.addEventListener('dragenter',(e)=>{
-                e.preventDefault();
-                dateParent.style.backgroundColor='#F6EBEB';
-                d.style.backgroundColor='unset';
-            });
-            dateParent.addEventListener('dragleave',(e)=>{
-                e.preventDefault(); 
-                dateParent.style.backgroundColor='unset';
-            });
-            dateParent.addEventListener('dragover',(e)=>{
-                e.preventDefault(); 
-                
-            });
-            dateParent.addEventListener('drop',(e)=>{
-                e.preventDefault(); 
-                dateParent.style.backgroundColor='unset';
-                let ynm = document.querySelector('.year-month');
-                let ynmStr=ynm.innerText;
-                ynmStr= ynmStr.replace("년 ", "-");
-                ynmStr= ynmStr.replace("월", "-");
-                let dragging = document.querySelector(".dragging");
-                let divdata=ynmStr+dateParent.innerText+"n"+dragging.lastChild.innerText;
-                location.href = "TodoDrag?divdata="+divdata;
-            });
-        })
-        //드래그요소에 클래스추가
-        caltodo.forEach(c=>{
-            c.addEventListener("dragstart",()=>{
-             c.classList.add("dragging");   
-            });
-            c.addEventListener("dragend",()=>{
-            c.classList.remove("dragging");
-            });
-        })
     </script>
        
 </body>

@@ -360,55 +360,6 @@
         </div>
     </div>
     <!--여기까지-->
-    <!-- 여기부터 수정기능 -->
-    <div id="modal4" class="modal-overlay">
-        <div class="modal-window">
-            <div class="title">
-                <h2>Todo List Edit</h2>
-            </div>
-            <div class="close-area4 close">X</div>
-            <div class="content">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">변경할 사항을 입력하세요.</h5>
-                        </div>
-                        <form action="TodoEdit.do" method="post">
-                        <div class="modal-body">
-                            <div>
-                                <input type="text" class="modal-text" name = "todoHead" placeholder="Todo">
-                                <br>
-                            </div>
-                            <div>
-                                <br><textarea class="modal-textarea" name="todoBody" id="additional-content" placeholder="추가로 메모를 하고 싶다면&#13;&#10;이곳에 작성하세요."></textarea>
-                            </div>
-                        </div>
-                        <div id="checkbox-area">
-                            #
-                            <input type="checkbox" class="check" id="tag-check16" name="tag" value="homework" autocomplete="off">
-                            <label for="tag-check16" align="center">숙제</label>
-
-                            <input type="checkbox" class="check" id="tag-check17" name="tag" value="exam" autocomplete="off">
-                            <label for="tag-check17" align="center">시험</label>
-
-                            <input type="checkbox" class="check" id="tag-check18" name="tag" value="review" autocomplete="off">
-                            <label for="tag-check18" align="center">복습</label>
-                            
-                            <input type="checkbox" class="check" id="tag-check19" name="tag" value="preview" autocomplete="off">
-                            <label for="tag-check19" align="center">예습</label>
-                            
-                            <input type="checkbox" class="check" id="tag-check20" name="tag" value="memo" autocomplete="off">
-                            <label for="tag-check20" align="center">메모</label>
-                        </div>
-                        <div class="modal-footer">
-                            <br>
-                            <button type="submit" class="save-button" data-bs-dismiss="modal">수정완료</button>         
-                        </div>
-                    </form>
-                    </div>                  
-            </div>
-        </div>
-    </div>
-    <!-- 여기까지 -->
     <!-- 메뉴 팝업창 -->
 <div id="wrapper">
 <div id="popMenu" class="list-group" style="display: none;">
@@ -449,20 +400,20 @@
             </div></td><td width="500px">
             <div id="edittag">태그1, 태그2,태그3</div>
             <div id="tagbox">
-                <input type="checkbox" class="check" id="tag-check1" name="tag" value="homework" autocomplete="off">
-                <label for="tag-check1" align="center">숙제</label>
+                <input type="checkbox" class="check" id="tag-check16" name="tag" value="homework" autocomplete="off">
+                <label for="tag-check16" align="center">숙제</label>
 
-                <input type="checkbox" class="check" id="tag-check2" name="tag" value="exam" autocomplete="off">
-                <label for="tag-check2" align="center">시험</label>
+                <input type="checkbox" class="check" id="tag-check17" name="tag" value="exam" autocomplete="off">
+                <label for="tag-check17" align="center">시험</label>
 
-                <input type="checkbox" class="check" id="tag-check3" name="tag" value="review" autocomplete="off">
-                <label for="tag-check3" align="center">복습</label>
+                <input type="checkbox" class="check" id="tag-check18" name="tag" value="review" autocomplete="off">
+                <label for="tag-check18" align="center">복습</label>
                 
-                <input type="checkbox" class="check" id="tag-check4" name="tag" value="preview" autocomplete="off">
-                <label for="tag-check4" align="center">예습</label>
+                <input type="checkbox" class="check" id="tag-check19" name="tag" value="preview" autocomplete="off">
+                <label for="tag-check19" align="center">예습</label>
                 
-                <input type="checkbox" class="check" id="tag-check5" name="tag" value="memo" autocomplete="off">
-                <label for="tag-check5" align="center">메모</label>
+                <input type="checkbox" class="check" id="tag-check20" name="tag" value="memo" autocomplete="off">
+                <label for="tag-check20" align="center">메모</label>
             </div></td></tr><tr><td>
             <div class="subwrap">
                 <svg viewBox="0 0 14 14" class="editimg"><path d="M7.01356 14.0001C8.8042 14.0001 10.5958 13.3107 11.9575 11.9324C14.681 9.21201 14.6808 4.7603 11.9571 2.04013C9.23336 -0.680043 4.77573 -0.680043 2.05199 2.04013C0.727519 3.36277 0 5.13301 0 6.99553C0 8.8764 0.727811 10.6285 2.05199 11.9509C3.43207 13.3106 5.22243 14.0001 7.01356 14.0001ZM3.72947 7.00914V8.461V8.65543H3.92382H5.34563H8.2794H8.4738V8.461V5.52541V3.37947V3.18502H8.2794H6.82747H6.63307V3.37947V6.81467H3.92382H3.72947V7.00914ZM1.83985 6.99553C1.83985 5.61698 2.38099 4.32597 3.36061 3.3477C5.36746 1.34337 8.64803 1.34062 10.6585 3.33944C10.6613 3.34219 10.6639 3.34494 10.6668 3.3477C12.676 5.3546 12.6763 8.63642 10.6668 10.6434C8.65705 12.6504 5.37031 12.6504 3.36061 10.6434C2.38099 9.66506 1.83985 8.37408 1.83985 6.99553Z"></path></svg>
@@ -685,8 +636,53 @@
           }
         }
       }
-    };
+    //드래그&드롭 기능
 
+      let caltodo=document.querySelectorAll('.caltodo');
+      let dragdate = document.querySelectorAll('.this');
+      //색 바꾸기,드롭
+      dragdate.forEach(d=>{
+          let dateParent = d.parentNode;
+          dateParent.addEventListener('dragenter',(e)=>{
+              e.preventDefault();
+              dateParent.style.backgroundColor='#F6EBEB';
+              d.style.backgroundColor='unset';
+          });
+          dateParent.addEventListener('dragleave',(e)=>{
+              e.preventDefault(); 
+              dateParent.style.backgroundColor='unset';
+          });
+          dateParent.addEventListener('dragover',(e)=>{
+              e.preventDefault(); 
+              
+          });
+          dateParent.addEventListener('drop',(e)=>{
+              e.preventDefault(); 
+              dateParent.style.backgroundColor='unset';
+              let ynm = document.querySelector('.year-month');
+              let ynmStr=ynm.innerText;
+              ynmStr= ynmStr.replace("년 ", "-");
+              ynmStr= ynmStr.replace("월", "-");
+              let dragging = document.querySelector(".dragging");
+              let divdata=ynmStr+dateParent.innerText+"n"+dragging.lastChild.innerText;
+              location.href = "TodoDrag?divdata="+divdata;
+          });
+      })
+      //드래그요소에 클래스추가
+      caltodo.forEach(c=>{
+          c.addEventListener("dragstart",()=>{
+           c.classList.add("dragging");   
+          });
+          c.addEventListener("dragend",()=>{
+          c.classList.remove("dragging");
+          });
+      })
+      
+      //드래그&드롭 끝
+      
+      
+    };
+//rendercalender끝
 
     renderCalender();
 
@@ -862,45 +858,6 @@ editcontent.addEventListener('click',function(){
 
 
 
-        let caltodo=document.querySelectorAll('.caltodo');
-        let dragdate = document.querySelectorAll('.this');
-        //색 바꾸기,드롭
-        dragdate.forEach(d=>{
-            let dateParent = d.parentNode;
-            dateParent.addEventListener('dragenter',(e)=>{
-                e.preventDefault();
-                dateParent.style.backgroundColor='#F6EBEB';
-                d.style.backgroundColor='unset';
-            });
-            dateParent.addEventListener('dragleave',(e)=>{
-                e.preventDefault(); 
-                dateParent.style.backgroundColor='unset';
-            });
-            dateParent.addEventListener('dragover',(e)=>{
-                e.preventDefault(); 
-                
-            });
-            dateParent.addEventListener('drop',(e)=>{
-                e.preventDefault(); 
-                dateParent.style.backgroundColor='unset';
-                let ynm = document.querySelector('.year-month');
-                let ynmStr=ynm.innerText;
-                ynmStr= ynmStr.replace("년 ", "-");
-                ynmStr= ynmStr.replace("월", "-");
-                let dragging = document.querySelector(".dragging");
-                let divdata=ynmStr+dateParent.innerText+"n"+dragging.lastChild.innerText;
-                location.href = "TodoDrag?divdata="+divdata;
-            });
-        })
-        //드래그요소에 클래스추가
-        caltodo.forEach(c=>{
-            c.addEventListener("dragstart",()=>{
-             c.classList.add("dragging");   
-            });
-            c.addEventListener("dragend",()=>{
-            c.classList.remove("dragging");
-            });
-        })
     </script>
        
 </body>

@@ -21,8 +21,7 @@ public class TodoDrag extends HttpServlet {
 		TodoDAO dao = new TodoDAO();
 		String divdata = request.getParameter("divdata");
 		String[] splitdiv = divdata.split("n");
-		System.out.println(splitdiv[0]);
-		System.out.println(splitdiv[1]);
+
 		String reg_date=splitdiv[0];
 		String todonum=splitdiv[1];
 		
