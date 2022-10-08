@@ -23,6 +23,7 @@ import com.smhrd.controller.QnA.QnAInsertCon;
 import com.smhrd.controller.QnA.QnASelectAllCon;
 import com.smhrd.controller.QnA.QnASelectOneCon;
 import com.smhrd.controller.QnA.QnAUpdateCon;
+import com.smhrd.controller.board.BoardGetJsonCon;
 import com.smhrd.controller.board.BoardInsertCon;
 import com.smhrd.controller.board.BoardSelectAllCon;
 import com.smhrd.controller.note.NoteAjax;
@@ -108,6 +109,7 @@ public class FrontController1 extends HttpServlet {
 		// Board mappings
 		mappings.put("/BoardInsert.do", new BoardInsertCon());
 		mappings.put("/BoardSelectAll.do", new BoardSelectAllCon());
+		mappings.put("/BoardGetJson.do", new BoardGetJsonCon());
 		
 
 
