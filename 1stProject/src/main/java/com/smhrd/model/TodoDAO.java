@@ -80,11 +80,15 @@ private SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSessionFac
 		
 	}
 
-	public int edit(String todonum) {
-		int result = 0;
-		SqlSession sqlSession = sqlSessionFactory.openSession(true);
-		result = sqlSession.update("com.smhrd.model.TodoDAO.update", todonum);
-		sqlSession.close();
-		return result;
+	public void editF() {
+		// futurelog 업데이트
+		
 	}
+
+	public void editT() {
+		// today, monthly 업데이트
+		
+	}
+
+
 }

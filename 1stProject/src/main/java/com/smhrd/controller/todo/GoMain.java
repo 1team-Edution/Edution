@@ -22,7 +22,7 @@ public class GoMain implements Controller {
 		//userdto 받아서 tododto 객체바인딩하고 메인으로가는 controller
 		
 		HttpSession session = request.getSession();
-		UserDTO userDto = (UserDTO) session.getAttribute("userDto");
+		UserDTO userDto = (UserDTO) session.getAttribute("loginUser");
 		TodoDAO dao = new TodoDAO();
 		
 		String id=userDto.getUser_id();

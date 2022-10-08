@@ -15,15 +15,35 @@ public class TodoDTO {
 		todo_title=todoHead;
 		todo_content=todoBody;
 		String str="";
+		try {
 		for(int i=0;i<tags.length;i++) {
 				str+="#"+tags[i];
-			}
+			}}catch(Exception e) {}
 		// db저장형식 : #tag1#tag2#tag3
 		todo_tag=str;
 		todo_yn=0;
 		user_id=id;
 		reg_date=date;
 
+	}
+
+
+
+	public TodoDTO(String todo_seq, String todo_title, String todo_content, String[] todo_tags, int todo_yn,
+			String user_id, String reg_date) {
+		this.todo_seq = todo_seq;
+		this.todo_title = todo_title;
+		this.todo_content = todo_content;
+		String str="";
+		try {
+		for(int i=0;i<todo_tags.length;i++) {
+				str+="#"+todo_tags[i];
+			}}catch(Exception e) {}
+		// db저장형식 : #tag1#tag2#tag3
+		this.todo_tag = str;
+		this.todo_yn = todo_yn;
+		this.user_id = user_id;
+		this.reg_date = reg_date;
 	}
 
 
