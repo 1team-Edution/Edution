@@ -10,21 +10,7 @@
         </head>
         <body>
 			<script src="resources/js/jquery-3.6.1.min.js"></script>
-        <script>	
-		//서버에 데이터를 요청하는 함수
-		$.ajax({
-                url: "GoMain",
-                dataType:"json",
-                success: function(data) {        
-                	console.log(data);
-                	let todolist=data;
-                },
-                error: function(){
-                    console.log("요청실패");
-                }
-            });		
-	</script>
-        
+		
             <header class="jsx-2604928324 header">
                 <div class="jsx-2604928324 inner">
                     <div class="jsx-2604928324 desktop-actions">
@@ -444,6 +430,24 @@
 
          
     <script>
+    //todolist 호출
+			$.ajax({
+                url: "ajax01",
+                dataType:"json",
+                success: function(data) {        
+                	console.log("요청성공");
+                	let todolist=data;
+                	console.log(todolist)
+                },
+                error: function(){
+                    console.log("요청실패");
+                }
+            });
+    
+    
+    
+    
+    //modal script
     const modal1 = document.getElementById("modal1")
     const btnModal1 = document.getElementById("btn-modal1")
     btnModal1.addEventListener("click", e => {
@@ -482,7 +486,7 @@
         if(evTarget.classList.contains("modal-overlay")) {
             modal3.style.display = "none"}
     })
-
+	//여기까지
 
 
 
@@ -512,7 +516,7 @@
         let today = toStringByFormatting(new Date(),'-');
         let resultHTML="";
         //이 객체 변경
-        todotest.forEach(x=>{
+        todolist.forEach(x=>{
             if(x.reg_date==today){
                 if(x.todo_yn==0){
                 resultHTML +=`<div class="task">• ${x.todo_title}<span class="todoseq">${x.todo_seq}</span></div>`;  }
@@ -529,7 +533,7 @@
         let mon=new Date().getMonth()+1;
         let resultHTML="";
         //이 객체 변경
-        todotest.forEach(x=>{
+        todolist.forEach(x=>{
             let arr=x.reg_date.split("-");
             if(arr[0]==yr&&arr[1]==mon){
                 if(x.todo_yn==0){
@@ -544,7 +548,7 @@
     let renderfuture=()=>{
         let resultHTML="";
         //이 객체 변경
-        todotest.forEach(x=>{
+        todolist.forEach(x=>{
             if(x.reg_date=='2500-1-1'){
                 resultHTML +=`<div class="task">• ${x.todo_title}<span class="todoseq">${x.todo_seq}</span></div>`;  }
             });
@@ -615,7 +619,7 @@
         //객체바인딩된 객체(테스트안해봄)
         //todotest -> todolist로 바꿀것
 
-                todotest2.forEach(x=>{
+                todolist.forEach(x=>{
                   if(x.reg_date==thisDate){
                 	 dates[i]+=`<div draggable='true' class='caltodo'>${x.todo_title}<span class="todoseq">${x.todo_seq}</span></div>`;       
                   }                
@@ -738,7 +742,8 @@
 			if(targetclass=="task task-done"){checkMenu.innerHTML=`<img src="img/undo.png" class="menuimg">미완료`;
 			checkMenu.addEventListener("click",function(){
 			console.log(todonum);
-			location.href = "TodoCheck2.do?todonum="+todonum;});
+			location.href = "TodoCheck2.do?todonum="+todonum;
+			});
 			}
 			else{checkMenu.innerHTML=`<img src="img/done.png" class="menuimg"> 완료`;
 				checkMenu.addEventListener("click",function(){
@@ -803,7 +808,7 @@ let edityn=document.querySelector('#edityn');
 
 editrender=()=>{
 	editnum.value=todonum;
-    todotest.forEach(a=>{
+    todolist.forEach(a=>{
         if(a.todo_seq==todonum){
             edittitle.innerText=a.todo_title;
             titleinput.value=a.todo_title;

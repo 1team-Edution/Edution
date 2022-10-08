@@ -13,7 +13,7 @@ public class TodoCheckCon2 implements Controller {
 		TodoDAO dao = new TodoDAO();
 		String todonum = request.getParameter("todonum");
 		int row = dao.checkundo(todonum);
-		return "redirect:/GoMain.do";
+		return "redirect:/Main.do";
 	}
 
 }

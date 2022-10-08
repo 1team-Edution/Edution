@@ -14,7 +14,7 @@ public class TodoDeleteCon implements Controller {
 		TodoDAO dao = new TodoDAO();
 		String todonum = request.getParameter("todonum");
 		int row = dao.delete(todonum);
-		return "redirect:/GoMain.do";
+		return "redirect:/Main.do";
 //		return "Main.html";
 	}
 

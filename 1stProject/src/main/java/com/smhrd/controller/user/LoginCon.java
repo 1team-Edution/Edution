@@ -19,8 +19,6 @@ public class LoginCon implements Controller {
 		String user_id = request.getParameter("user_id");
 		String user_pw = request.getParameter("user_pw");
 		
-		System.out.println(user_id+'/'+user_pw);
-
 		UserDTO dto = new UserDTO();
 		dto.setUser_id(user_id);
 		dto.setUser_pw(user_pw);
@@ -34,7 +32,6 @@ public class LoginCon implements Controller {
 				HttpSession session = request.getSession();
 				session.setAttribute("loginUser", list);
 				request.setAttribute("list", list);
-
 				return "redirect:/Main.do";
 
 			}

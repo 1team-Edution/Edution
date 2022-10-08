@@ -10,21 +10,7 @@
         </head>
         <body>
 			<script src="resources/js/jquery-3.6.1.min.js"></script>
-        <script>	
-		//서버에 데이터를 요청하는 함수
-		$.ajax({
-                url: "GoMain",
-                dataType:"json",
-                success: function(data) {        
-                	console.log(data);
-                	let todolist=data;
-                },
-                error: function(){
-                    console.log("요청실패");
-                }
-            });		
-	</script>
-        
+		
             <header class="jsx-2604928324 header">
                 <div class="jsx-2604928324 inner">
                     <div class="jsx-2604928324 desktop-actions">
@@ -444,6 +430,24 @@
 
          
     <script>
+    //todolist 호출
+			$.ajax({
+                url: "ajax01",
+                dataType:"json",
+                success: function(data) {        
+                	console.log("요청성공");
+                	let todolist=data;
+                	console.log(todolist)
+                },
+                error: function(){
+                    console.log("요청실패");
+                }
+            });
+    
+    
+    
+    
+    //modal script
     const modal1 = document.getElementById("modal1")
     const btnModal1 = document.getElementById("btn-modal1")
     btnModal1.addEventListener("click", e => {
@@ -482,7 +486,7 @@
         if(evTarget.classList.contains("modal-overlay")) {
             modal3.style.display = "none"}
     })
-
+	//여기까지
 
 
 
@@ -738,7 +742,8 @@
 			if(targetclass=="task task-done"){checkMenu.innerHTML=`<img src="img/undo.png" class="menuimg">미완료`;
 			checkMenu.addEventListener("click",function(){
 			console.log(todonum);
-			location.href = "TodoCheck2.do?todonum="+todonum;});
+			location.href = "TodoCheck2.do?todonum="+todonum;
+			});
 			}
 			else{checkMenu.innerHTML=`<img src="img/done.png" class="menuimg"> 완료`;
 				checkMenu.addEventListener("click",function(){
