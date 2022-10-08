@@ -28,12 +28,10 @@ import com.smhrd.controller.board.BoardInsertCon;
 import com.smhrd.controller.board.BoardSelectAllCon;
 import com.smhrd.controller.note.NoteAjax;
 import com.smhrd.controller.note.NoteAjaxInsert;
+import com.smhrd.controller.note.NoteAjaxParentInsert;
+import com.smhrd.controller.note.NoteAjaxUpdate;
 import com.smhrd.controller.note.NoteDeleteCon;
 import com.smhrd.controller.note.NoteGoInsertCon;
-import com.smhrd.controller.note.NoteInsertCon;
-import com.smhrd.controller.note.NoteSelectAllCon;
-import com.smhrd.controller.note.NoteSelectOneCon;
-import com.smhrd.controller.note.NoteUpdateCon;
 import com.smhrd.controller.todo.GoMain;
 import com.smhrd.controller.todo.TodoAjax;
 import com.smhrd.controller.todo.TodoCheckCon;
@@ -94,14 +92,14 @@ public class FrontController1 extends HttpServlet {
 		
 		// Note mappings
 
-		mappings.put("/NoteSelectAll.do", new NoteSelectAllCon());
-		mappings.put("/NoteSelectOne.do", new NoteSelectOneCon());
-		mappings.put("/NoteInsert.do", new NoteInsertCon());
-		mappings.put("/NoteUpdate.do", new NoteUpdateCon());
 		mappings.put("/NoteDelete.do", new NoteDeleteCon());
-
+		mappings.put("/Main.do", new GoMain());
 		mappings.put("/NoteGoInsert.do", new NoteGoInsertCon());
 		mappings.put("/NoteAjax.do", new NoteAjax());
+		mappings.put("/NoteAjaxUpdate.do", new NoteAjaxUpdate());
+		mappings.put("/NoteAjaxInsert.do", new NoteAjaxInsert());
+		mappings.put("/NoteAjaxSelectone.do", new NoteAjaxSelectone());
+		mappings.put("/NoteAjaxParentInsert.do", new NoteAjaxParentInsert());
 
 		mappings.put("/MypageView.do", new PopmypageCon());
 
