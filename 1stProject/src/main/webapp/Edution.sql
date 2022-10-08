@@ -363,3 +363,5 @@ ALTER TABLE tbl_help
 select * from TBL_NOTE
 
 insert into TBL_NOTE values(tbl_note_SEQ.nextval,'테스트','테스트 입니다','태그','user_id 02',to_date(sysdate,'yyyy-mm-dd'),'1',null)
+
+select * from tbl_help;
