@@ -30,18 +30,16 @@ public class GoMain implements Controller {
 		ArrayList<TodoDTO> todoDtos = dao.callTodo(id);
 		request.setAttribute("todolist", todoDtos);
 		
-		Gson gson = new Gson();
-		String jsonArr = gson.toJson(todoDtos);
-		response.setContentType("application/json; charset=UTF-8"); 
-		PrintWriter out;
-		try {
-			out = response.getWriter();
-			out.print(jsonArr);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		
+//		Gson gson = new Gson();
+//		String jsonArr = gson.toJson(todoDtos);
+//		response.setContentType("application/json; charset=UTF-8"); 
+//		PrintWriter out;
+//		try {
+//			out = response.getWriter();
+//			out.print(jsonArr);
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}	
 
 		return "Main.html";
 	}
