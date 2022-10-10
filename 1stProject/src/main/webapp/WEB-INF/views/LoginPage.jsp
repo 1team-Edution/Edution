@@ -18,7 +18,7 @@
     
     
 
-    <style>
+       <style>
 html{
     font-family: "Lato",Arial,sans-serif;
         padding: 60px;
@@ -38,8 +38,8 @@ header {
     height: 50px; /* footer의 높이 */
     position: absolute; 
     align-items: center;
-    top: 10px;
-    left: -150px;
+    top: 1vh;
+    left: -16vh;
 }
 
 
@@ -51,7 +51,7 @@ header {
     border-radius: 5px;
     padding: 0.375rem 0.875rem 0.4375rem 0.875rem;
     position: absolute; 
-    left:92%;
+    left:183vh;
     top:1vh;
 }
 
@@ -67,40 +67,35 @@ header {
 
 .login-main-title{
     position: absolute; 
-    top: 5%;
-    left: 15%;
+    top: 2vh;
+    left: 7vh;
 
 }
 
 .login-main-naver{
     position: absolute; 
-    top: 16%;
-    left: 66.4%;
+    top: 8vh;
+    left: 33.5vh;
 
 }
-
 
 .login-main-kakao{
     position: absolute; 
-    top: 16%;
-    left: 74.5%;
+    top: 8vh;
+    left: 38vh;
 }
-
-.login-main-kakao:hover,
-.login-main-facebook:hover{
-cursor: pointer;}
 
 .login-main-facebook{
     position: absolute; 
-    top: 16%;
-    left: 83%;
+    top: 8vh;
+    left: 43vh;
 
 }
 
 .login-main-idform{
     position: absolute; 
-    top: 35%;
-    left: 12%;
+    top: 18vh;
+    left: 6vh;
     width: 400px;
     height: 53px;
     background-color: rgba(0,0,0,0.1);
@@ -110,8 +105,8 @@ cursor: pointer;}
 
 .login-main-pwform{
     position: absolute; 
-    top: 48%;
-    left: 12%;
+    top: 24.5vh;
+    left: 6vh;
     width: 400px;
     height: 53px;
     background-color: rgba(0,0,0,0.1);
@@ -122,8 +117,8 @@ cursor: pointer;}
 .login-main-idform-input{
 
     position: absolute; 
-    top: 36%;
-    left: 17%;
+    top: 18.5vh;
+    left: 8.5vh;
     width: 250px;
     height: 40px;
     border-color: rgba(0,0,0,0);
@@ -134,8 +129,8 @@ cursor: pointer;}
 .login-main-pwform-input{
 
 position: absolute; 
-top: 48.6%;
-left: 17%;
+top: 25vh;
+left: 8.5vh;
 width: 250px;
 height: 40px;
 border-color: rgba(0,0,0,0);
@@ -145,8 +140,8 @@ background-color: rgba(0,0,0,0);
 
 .login-main-submit{
     position: absolute; 
-    top: 62%;
-    left: 12%;
+    top: 31vh;
+    left: 6vh;
     width: 400px;
     height: 53px;
     background-color: rgb(225, 98, 89, 0.6);
@@ -183,8 +178,8 @@ input::placeholder{
 
 #login-main-right{
     position: absolute; 
-    top: 25%;
-    left: 50%;
+    top: 25vh;
+    left: 100vh;
     width: 500px;
     height: 500px;
     background-color: rgb(225, 98, 89);
@@ -194,8 +189,8 @@ input::placeholder{
 #login-main-left{
 
     position: absolute; 
-    top: 25%;
-    left: 24.5%;
+    top: 25vh;
+    left: 50vh;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     width: 500px;
     height: 500px;
@@ -207,8 +202,8 @@ input::placeholder{
 
 .login-sub-title{
     position: absolute; 
-    top: 25%;
-    left: 17%;
+    top: 13vh;
+    left: 9vh;
 
 }
 
@@ -220,8 +215,8 @@ input::placeholder{
     border-radius: 50px;
     color: #fff;
     position: absolute; 
-    top: 60%;
-    left: 40%;
+    top: 30vh;
+    left: 20vh;
 }
 
 .login-main-rightbtn:hover,
@@ -234,8 +229,8 @@ login-main-rightbtn:focus{
 
 .login-sitting-img{
     position: absolute; 
-    top: 60%;
-    left:16%;
+    top: 60vh;
+    left:32vh;
 }
 
     </style>
@@ -283,7 +278,6 @@ login-main-rightbtn:focus{
 </div>
 
 
-<<<<<<< HEAD
         
 <div style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
     <div id="login-main-left">
@@ -331,27 +325,11 @@ login-main-rightbtn:focus{
     </main>
     
     
-    	<!-- 네이버 로그인 연동구문 -->
-=======
-                <div class="notion-focusable-within" style="display: flex; align-items: center; width: 100%; font-size: 14px; line-height: 20px; padding: 0px; position: relative; border-radius: 3px; box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px inset; background: rgba(242, 241, 238, 0.6); cursor: text; opacity: 0; height: 0px; pointer-events: none;">
-                <input type="password" autocomplete="current-password" tabindex="-1" aria-hidden="true" style="font-size: inherit; line-height: inherit; border: none; background: none; width: 100%; display: block; resize: none; padding: 0px;"></div>
-                <input value = "로그인" class="notion-focusable" type="submit" aria-disabled="false" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; white-space: nowrap; height: 36px; border-radius: 4px; color: rgb(235, 87, 87); font-size: 14px; line-height: 1; padding-left: 12px; padding-right: 12px; font-weight: 500; background: rgb(253, 245, 242); box-shadow: rgba(15, 15, 15, 0.1) 0px 1px 2px, rgba(235, 87, 87, 0.3) 0px 0px 0px 1px inset; margin-top: 6px; margin-bottom: 12px; width: 100%;">로그인 계속하기</div>
-                </form>
-                <div style="font-size: 14px; color: rgb(235, 87, 87); text-align: center; display: none; width: 100%;"></div>
-                        <div style="color: rgba(55, 53, 47, 0.65); font-size: 14px; line-height: 1.6; margin-top: 8px; margin-bottom: 8px; text-align: center;">
-                            <a rel="noopener noreferrer" class="notion-link" style="display: inline; text-decoration: underline; user-select: none; cursor: pointer; color: inherit;">아이디 찾기</a>
-                            <a rel="noopener noreferrer" class="notion-link" style="display: inline; text-decoration: underline; user-select: none; cursor: pointer; color: inherit;">비밀번호 찾기</a>
-                        </div>
-                                <div style="width: 100%; margin-top: 64px; margin-bottom: 0px; font-size: 12px; color: rgba(55, 53, 47, 0.5); text-align: left;">
-                <p style="margin-bottom: 0px;">위의 “kakao/facebook/instargram/로그인을 클릭하면 Edution의 
-                                        <a href="#" rel="noopener noreferrer" class="notion-link" style="display: inline; text-decoration: underline; user-select: none; cursor: pointer; color: inherit;">이용약관</a> 
-                                        및 <a href="#" rel="noopener noreferrer" class="notion-link" style="display: inline; text-decoration: underline; user-select: none; cursor: pointer; color: inherit;">개인정보 보호정책</a>
-                                        을 읽고 이해했으며 그에 동의하는 것으로 간주됩니다.</p></div></div></div>
-	
+   
 	
 	
 	<!-- 네이버 로그인 연동구문 -->
->>>>>>> branch 'master' of https://github.com/1team-Edution/Edution.git
+
 	
 	<script type="text/javascript">
 	var naverLogin = new naver.LoginWithNaverId(
