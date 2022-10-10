@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,22 +11,21 @@
     
      <script type="text/javascript" async="" src="https://widget.intercom.io/widget/gpfdrxfd"></script>
     <link href="/app-aff2fcd08e2ef484f02e.css" rel="stylesheet">
-	<!-- ·Î±×ÀÎ ¿¬µ¿ °ü·Ã ½ºÅ©¸³Æ® ºÒ·¯¿À±â -->
+	<!-- æ¿¡ï¿½æ´¹ëª„ï¿½ï¿½ ï¿½ê³•ï¿½ï¿½ æ„¿ï¿½ï¿½ï¿½ ï¿½ã…½ï¿½Ñ‰â”°ï¿½ï¿½ éºï¿½ï¿½ÑŠï¿½ã…ºë¦° -->
 	<script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js" charset="utf-8"></script>
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
     <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
 	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v10.0&appId=1588150011384568" nonce="SiOBIhLG"></script>
-    
-    
-
        <style>
 html{
     font-family: "Lato",Arial,sans-serif;
         padding: 60px;
-        min-width: 1020px;
+        
     }
 
 body{
+    height:969px;
+    width:1261px;
     
     font-family: inter-var, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 17px;
@@ -35,7 +35,7 @@ body{
 }
 header {
     width: 100%;
-    height: 50px; /* footerÀÇ ³ôÀÌ */
+    height: 50px; 
     position: absolute; 
     align-items: center;
     top: 1vh;
@@ -88,7 +88,7 @@ header {
 .login-main-facebook{
     position: absolute; 
     top: 8vh;
-    left: 43vh;
+    left: 42.5vh;
 
 }
 
@@ -235,6 +235,7 @@ login-main-rightbtn:focus{
 
     </style>
 
+   
 
 </head>
 <body>    
@@ -254,12 +255,12 @@ login-main-rightbtn:focus{
                         <li style="float: left; margin-left: 15px; margin-right: 15px; cursor: default;"><a href="#" style="text-decoration: none; color:inherit; ">Q&A</a></li>
                         <!-- <li style="float: left; ">
                             <div style="position: absolute; left:88%;">
-                                <a href="#" style="text-decoration: none; color:inherit ">·Î±×ÀÎ</a>
+                                <a href="#" style="text-decoration: none; color:inherit ">æ¿¡ï¿½æ´¹ëª„ï¿½ï¿½</a>
                             </div>
                         </li>
                         <li> -->
                             <div class="index-sub-joinbtn">
-                                <a href="#">È¸¿ø°¡ÀÔ</a>
+                                <a href="#">íšŒì›ê°€ì…</a>
                             </div>
                                   
                         </li>
@@ -276,6 +277,7 @@ login-main-rightbtn:focus{
 <div class="login-sitting-img">
     <img src="img/sitting-character.avif" style="width: 300px;">
 </div>
+
 
 
         
@@ -313,7 +315,7 @@ login-main-rightbtn:focus{
     <div id="login-main-right">
 
         <div class="login-sub-title"><h1 style="color: #fff;">Welcome to Edution!</h1>
-        <blockquote style="color: #fff; padding-left: 30px; font-size: 16px;">Edution¿¡ Ã³À½ ¿À¼Ì³ª¿ä?</blockquote>
+        <blockquote style="color: #fff; padding-left: 30px; font-size: 16px;">Edutionì— ì²˜ìŒì´ì‹ ê°€ìš”?</blockquote>
     </div>
     
     <button class="login-main-rightbtn" onclick = "location.href='GoJoin.do'">Sign Up</button>
@@ -325,10 +327,7 @@ login-main-rightbtn:focus{
     </main>
     
     
-   
-	
-	
-	<!-- ³×ÀÌ¹ö ·Î±×ÀÎ ¿¬µ¿±¸¹® -->
+    	<!-- ï¿½ã…¼ï¿½ëŒ€ï¿½ æ¿¡ï¿½æ´¹ëª„ï¿½ï¿½ ï¿½ê³•ï¿½ï¿½æ´Ñ‰Ğ¦ -->
 
 	
 	<script type="text/javascript">
@@ -336,45 +335,45 @@ login-main-rightbtn:focus{
 		{
 			clientId: "gHew1L2rBs2uyMgz103W",
 			callbackUrl: "http://localhost:8037/1stProject/Naver_callback.do",
-			isPopup: false, /* ÆË¾÷À» ÅëÇÑ ¿¬µ¿Ã³¸® ¿©ºÎ */
-			loginButton: {color: "green", type: 1, height: 37} /* ·Î±×ÀÎ ¹öÆ°ÀÇ Å¸ÀÔÀ» ÁöÁ¤ */
+			isPopup: false, /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ë“¯ï¿½ï¿½ ï¿½ê³•ï¿½ï¿½ï§£ï¿½ç”±ï¿½ ï¿½Ñ‰ï¿½ */
+			loginButton: {color: "green", type: 1, height: 37} /* æ¿¡ï¿½æ´¹ëª„ï¿½ï¿½ è¸°ï¿½ï¿½ì‡±ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï§ï¿½ï¿½ï¿½ */
 		}
 	);
 	
-	/* ¼³Á¤Á¤º¸¸¦ ÃÊ±âÈ­ÇÏ°í ¿¬µ¿À» ÁØºñ */
+	/* ï¿½ã…¼ï¿½ï¿½ï¿½ï¿½è¹‚ëŒ€ï¿½ï¿½ ç¥ï¿½æ¹²ê³ ï¿½ï¿½ï¿½ï¿½æ€¨ï¿½ ï¿½ê³•ï¿½ï¿½ï¿½ï¿½ ä»¥ï¿½é®ï¿½ */
 	naverLogin.init();
 	
 	</script>
 	
 	
-	<!-- Ä«Ä«¿À ·Î±×ÀÎ ¿¬µ¿±¸¹® -->
+	<!-- ç§»ëŒë­…ï¿½ï¿½ æ¿¡ï¿½æ´¹ëª„ï¿½ï¿½ ï¿½ê³•ï¿½ï¿½æ´Ñ‰Ğ¦ -->
 	<script>
 	
      window.Kakao.init('1a0d4c352b4d7ba448b06a7a71fa5fdc');
 
    function kakaoLogin() {
        window.Kakao.Auth.login({
-           scope: 'account_email', //µ¿ÀÇÇ×¸ñ ÆäÀÌÁö¿¡ ÀÖ´Â °³ÀÎÁ¤º¸ º¸È£ Å×ÀÌºíÀÇ È°¼ºÈ­µÈ ID°ªÀ» ³Ö½À´Ï´Ù.
+           scope: 'account_email', //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï§ï¿½ ï¿½ï¿½ï¿½ëŒï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ åª›ï¿½ï¿½ëª„ï¿½ï¿½è¹‚ï¿½ è¹‚ëŒ„ï¿½ï¿½ ï¿½ï¿½ï¿½ëŒ€ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ê¹Šï¿½ï¿½ï¿½ï¿½ IDåª›ï¿½ï¿½ï¿½ ï¿½ï½Œï¿½ë“¬ï¿½ï¿½ï¿½ï¿½.
            success: function(response) {
-               console.log(response) // ·Î±×ÀÎ ¼º°øÇÏ¸é ¹Ş¾Æ¿À´Â µ¥ÀÌÅÍ
-               window.Kakao.API.request({ // »ç¿ëÀÚ Á¤º¸ °¡Á®¿À±â 
+               console.log(response) // æ¿¡ï¿½æ´¹ëª„ï¿½ï¿½ ï¿½ê¹ƒë‚¬ï¿½ï¿½ï§ï¿½ è«›ï¿½ï¿½ï¿½ï¿½ã…»ï¿½ï¿½ ï¿½ê³—ï¿½ëŒ„ï¿½ï¿½
+               window.Kakao.API.request({ // ï¿½ÑŠï¿½â‘¹ï¿½ï¿½ ï¿½ï¿½è¹‚ï¿½ åª›ï¿½ï¿½ëª„ï¿½ã…ºë¦° 
                    url: '/v2/user/me',
                    success: (res) => {
                        const kakao_account = res.kakao_account;
                        console.log(kakao_account)
                        
-                       //form ÅÂ±×¸¦ ¸¸µé¾î¼­
-                       //post ¹æ½ÄÀ¸·ÎÀü¼Û
+                       //form ï¿½ï¿½æ´¹ëªƒï¿½ï¿½ ï§ï¿½ï¿½ã…¼ï¿½ëŒï¿½ï¿½
+                       //post è«›â‘¹ï¿½ï¿½ï¿½ì‡°ï¿½ï¿½ï¿½ï¿½ï¿½
                        
-                       var form = document.createElement('form'); // Æû°´Ã¼ »ı¼º
+                       var form = document.createElement('form'); // ï¿½ì‡¨ï¿½ï§£ï¿½ ï¿½ï¿½ï¿½ï¿½
 							var objs;
-							objs = document.createElement('input'); // °ªÀÌ µé¾îÀÖ´Â ³à¼®ÀÇ Çü½Ä
-							//objs.setAttribute('type', 'text'); // °ªÀÌ µé¾îÀÖ´Â ³à¼®ÀÇ type
-							objs.setAttribute('name', 'email'); // °´Ã¼ÀÌ¸§
-							objs.setAttribute('value', kakao_account.email); //°´Ã¼°ª
+							objs = document.createElement('input'); // åª›ï¿½ï¿½ï¿½ ï¿½ã…¼ï¿½ëŒï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+							//objs.setAttribute('type', 'text'); // åª›ï¿½ï¿½ï¿½ ï¿½ã…¼ï¿½ëŒï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ type
+							objs.setAttribute('name', 'email'); // åª›ï¿½ï§£ëŒï¿½ëŒ€ï¿½
+							objs.setAttribute('value', kakao_account.email); //åª›ï¿½ï§£ë‹¿ï¿½
 							form.appendChild(objs);
-							form.setAttribute('method', 'post'); //get,post °¡´É
-							form.setAttribute('action', "http://localhost:8037/1stProject/NaverloginCon.do"); //º¸³»´Â url  "/login/users"
+							form.setAttribute('method', 'post'); //get,post åª›ï¿½ï¿½ï¿½
+							form.setAttribute('action', "http://localhost:8037/1stProject/NaverloginCon.do"); //è¹‚ëŒ€ï¿½ëŒ€ï¿½ï¿½ url  "/login/users"
 							document.body.appendChild(form);
 							form.submit();
 				  
@@ -392,11 +391,11 @@ login-main-rightbtn:focus{
    
    </script>
    
-   <!-- ÆäÀÌ½ººÏ ·Î±×ÀÎ ¿¬µ¿±¸¹® -->
+   <!-- ï¿½ï¿½ï¿½ëŒï¿½ã…»ï¿½ æ¿¡ï¿½æ´¹ëª„ï¿½ï¿½ ï¿½ê³•ï¿½ï¿½æ´Ñ‰Ğ¦ -->
 	
 	<script>
        
-       //±âÁ¸ ·Î±×ÀÎ »óÅÂ¸¦ °¡Á®¿À±â À§ÇØ Facebook¿¡ ´ëÇÑ È£Ãâ
+       //æ¹²ê³—ã€ˆ æ¿¡ï¿½æ´¹ëª„ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ç‘œï¿½ åª›ï¿½ï¿½ëª„ï¿½ã…ºë¦° ï¿½ï¿½ï¿½ï¿½ Facebookï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ëª„ï¿½
        function statusChangeCallback(res){
            statusChangeCallback(response);
        }
@@ -408,33 +407,33 @@ login-main-rightbtn:focus{
                        console.log(r.email);
                        
                      
-                       var form = document.createElement('form'); // Æû°´Ã¼ »ı¼º
+                       var form = document.createElement('form'); // ï¿½ì‡¨ï¿½ï§£ï¿½ ï¿½ï¿½ï¿½ï¿½
 						var objs;
-						objs = document.createElement('input'); // °ªÀÌ µé¾îÀÖ´Â ³à¼®ÀÇ Çü½Ä
-						//objs.setAttribute('type', 'text'); // °ªÀÌ µé¾îÀÖ´Â ³à¼®ÀÇ type
-						objs.setAttribute('name', 'email'); // °´Ã¼ÀÌ¸§
-						objs.setAttribute('value', r.email); //°´Ã¼°ª
+						objs = document.createElement('input'); // åª›ï¿½ï¿½ï¿½ ï¿½ã…¼ï¿½ëŒï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+						//objs.setAttribute('type', 'text'); // åª›ï¿½ï¿½ï¿½ ï¿½ã…¼ï¿½ëŒï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ type
+						objs.setAttribute('name', 'email'); // åª›ï¿½ï§£ëŒï¿½ëŒ€ï¿½
+						objs.setAttribute('value', r.email); //åª›ï¿½ï§£ë‹¿ï¿½
 						form.appendChild(objs);
-						form.setAttribute('method', 'post'); //get,post °¡´É
-						form.setAttribute('action', "http://localhost:8037/1stProject/NaverloginCon.do"); //º¸³»´Â url  "/login/users"
+						form.setAttribute('method', 'post'); //get,post åª›ï¿½ï¿½ï¿½
+						form.setAttribute('action', "http://localhost:8037/1stProject/NaverloginCon.do"); //è¹‚ëŒ€ï¿½ëŒ€ï¿½ï¿½ url  "/login/users"
 						document.body.appendChild(form);
 						form.submit();
                        
                        
                    })
                } else if (response.status === 'not_authorized') {
-                   // »ç¶÷Àº Facebook¿¡ ·Î±×ÀÎÇßÁö¸¸ ¾Û¿¡´Â ·Î±×ÀÎÇÏÁö ¾Ê¾Ò½À´Ï´Ù.
-                  // alert('À¥¿¡ ·Î±×ÀÎÇØ¾ß ÀÌ¿ë°¡´ÉÇÑ ±â´ÉÀÔ´Ï´Ù.');
+                   // ï¿½Ñ‰ï¿½ï¿½ï¿½ï¿½ Facebookï¿½ï¿½ æ¿¡ï¿½æ´¹ëª„ï¿½ëª…ï¿½ï¿½ï§ï¿½ï§ï¿½ ï¿½ê¹†ï¿½ï¿½ï¿½ï¿½ æ¿¡ï¿½æ´¹ëª„ï¿½ëª…ï¿½ï¿½ï§ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ë“¬ï¿½ï¿½ï¿½ï¿½.
+                  // alert('ï¿½ë±€ï¿½ï¿½ æ¿¡ï¿½æ´¹ëª„ï¿½ëª…ï¿½ëŒï¿½ï¿½ ï¿½ëŒï¿½â‘·ï¿½ï¿½Î½ï¿½ï¿½ æ¹²ê³•ï¿½Î¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.');
                } else {
-                   // ±× »ç¶÷Àº Facebook¿¡ ·Î±×ÀÎÇÏÁö ¾Ê¾ÒÀ¸¹Ç·ÎÀÌ ¾Û¿¡ ·Î±×ÀÎÇß´ÂÁö ¿©ºÎ´Â È®½ÇÇÏÁö ¾Ê½À´Ï´Ù.
-                  // alert('ÆäÀÌ½ººÏ¿¡ ·Î±×ÀÎÇØ¾ß ÀÌ¿ë°¡´ÉÇÑ ±â´ÉÀÔ´Ï´Ù.');
+                   // æ´¹ï¿½ ï¿½Ñ‰ï¿½ï¿½ï¿½ï¿½ Facebookï¿½ï¿½ æ¿¡ï¿½æ´¹ëª„ï¿½ëª…ï¿½ï¿½ï§ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ì‡°ï¿½ï¿½æ¿¡ï¿½ï¿½ï¿½ ï¿½ê¹†ï¿½ï¿½ æ¿¡ï¿½æ´¹ëª„ï¿½ëª…ï¿½ï¿½ï¿½ï¿½ï§ï¿½ ï¿½Ñ‰ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ã…½ï¿½ï¿½ï§ï¿½ ï¿½ï¿½ï¿½ë“¬ï¿½ï¿½ï¿½ï¿½.
+                  // alert('ï¿½ï¿½ï¿½ëŒï¿½ã…»ï¿½ï¿½ï¿½ æ¿¡ï¿½æ´¹ëª„ï¿½ëª…ï¿½ëŒï¿½ï¿½ ï¿½ëŒï¿½â‘·ï¿½ï¿½Î½ï¿½ï¿½ æ¹²ê³•ï¿½Î¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.');
                }
            }, {scope: 'public_profile,email'});
        }
        
        window.fbAsyncInit = function() {
            FB.init({
-               appId      : '1459647184504088', // ³» ¾Û ID¸¦ ÀÔ·ÂÇÑ´Ù.
+               appId      : '1459647184504088', // ï¿½ï¿½ ï¿½ï¿½ IDç‘œï¿½ ï¿½ï¿½ï¿½Î½ï¿½ï¿½ï¿½ï¿½.
                cookie     : true,
                xfbml      : true,
                version    : 'v10.0'
@@ -448,7 +447,7 @@ login-main-rightbtn:focus{
        
        </script>
        
-       <!--¹İµå½Ã Áß°£¿¡ º»ÀÎÀÇ ¾Û¾ÆÀÌµğ¸¦ ÀÔ·ÂÇÏ¼Å¾ß ÇÕ´Ï´Ù.-->
+       <!ï¿½ï¿½è«›ï¿½ï¿½ï¿½ï¿½ï¿½ ä»¥ï¿½åª›ï¿½ï¿½ï¿½ è¹‚ëª„ï¿½ëª„ï¿½ï¿½ ï¿½ê¹†ï¿½ï¿½ï¿½ëŒ€ï¿½ï¿½ç‘œï¿½ ï¿½ï¿½ï¿½Î½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½â‘¸ï¿½ï¿½ï¿½ï¿½.ï¿½ï¿½>
        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v10.0&appId=1588150011384568" nonce="SiOBIhLG"></script>
     
     
