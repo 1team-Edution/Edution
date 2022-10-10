@@ -279,7 +279,11 @@ login-main-rightbtn:focus{
 </div>
 
 
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> branch 'master' of https://github.com/1team-Edution/Edution.git
         
 <div style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
     <div id="login-main-left">
@@ -327,8 +331,13 @@ login-main-rightbtn:focus{
     </main>
     
     
+<<<<<<< HEAD
     	<!-- ï¿½ã…¼ï¿½ëŒ€ï¿½ æ¿¡ï¿½æ´¹ëª„ï¿½ï¿½ ï¿½ê³•ï¿½ï¿½æ´Ñ‰Ð¦ -->
 
+=======
+    	<!-- ³×ÀÌ¹ö ·Î±×ÀÎ ¿¬µ¿±¸¹® -->
+
+>>>>>>> branch 'master' of https://github.com/1team-Edution/Edution.git
 	
 	<script type="text/javascript">
 	var naverLogin = new naver.LoginWithNaverId(

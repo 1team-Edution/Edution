@@ -13,13 +13,13 @@ public class NoteDeleteCon implements Controller {
 		
 		String note_seq = request.getParameter("note_seq");
 		
-		NoteDAO n_dao = new NoteDAO();
-		int row = n_dao.delete(note_seq);
+		NoteDAO dao = new NoteDAO();
+		int row = dao.delete(note_seq);
 		
 		// 여기는 아직 정확하지 않습니다--------
 		if (row > 0) {
 			
-			return "redirect:/NoteSelectAll.do";
+			return "redirect:/NoteGoInsert.do";
 
 		} else {
 

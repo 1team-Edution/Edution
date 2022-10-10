@@ -40,7 +40,7 @@ private SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSessionFac
 		// 1. sqlsession 열어주기
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		// 2. mapper.xml안에 있는 쿼리문 실행
-		result = (NoteDTO)sqlSession.selectOne("com.smhrd.model.NoteDAO.select", note_seq);	
+		result = (NoteDTO)sqlSession.selectOne("com.smhrd.model.NoteDAO.selectOne", note_seq);	
 		// 3. 결과값 반환
 		sqlSession.close();
 		return result;
@@ -73,11 +73,23 @@ private SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSessionFac
 
 		result = sqlSession.delete("com.smhrd.model.NoteDAO.delete",note_seq);
 
+
 		
 		// 3. SqlSession 반환
 		sqlSession.close();
 		
 		// 4. 실행결과 리턴
+		return result;
+	}
+	public int parentInsert(NoteDTO note) {
+		int result = 0;
+		// 1. sqlsession 가져오기
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		// 2. sql구문 실행
+		result = sqlSession.insert("com.smhrd.model.NoteDAO.parentInsert", note);
+		
+		sqlSession.close();
+		
 		return result;
 	}
 	

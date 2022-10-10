@@ -1,5 +1,7 @@
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=branch 'master' of https\://github.com/1team-Edution/Edution.git
 eclipse.preferences.version=1
 encoding//src/main/webapp/WEB-INF/views/LoginPage.jsp=UTF-8
-encoding//src/main/webapp/WEB-INF/views/NoteContents.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/QnA.jsp=UTF-8
 encoding/<project>=UTF-8

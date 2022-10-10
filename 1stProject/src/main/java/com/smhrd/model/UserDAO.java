@@ -26,15 +26,21 @@ public class UserDAO {
 	
 	public UserDTO selectlogin(UserDTO dto) {
 		
-		ArrayList<UserDTO> list =null;
-		SqlSession sqlSession = sqlSessionFactory.openSession(true);		 
-		list = (ArrayList)sqlSession.selectList("com.smhrd.model.UserDAO.selectlogin",dto);
-		sqlSession.close();  
-		UserDTO user=list.get(0);
+		UserDTO list = null;
 		
-		return user;
-	}
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		
+		
+		 
+		list = sqlSession.selectOne("com.smhrd.model.UserDAO.selectlogin",dto);
+		
+		sqlSession.close();  
 
+		//UserDTO user=list.getUser_id();
+		
+		return list;
+
+	}
 	
 	public ArrayList<UserDTO> Naverlogin(UserDTO dto) {
 		ArrayList<UserDTO> list =null;
@@ -85,6 +91,35 @@ public class UserDAO {
 		
 		result = sqlSession.selectOne("nickSame", dto);
 		System.out.println("메소드입니다"+result);
+		return result;
+	}
+
+
+
+	public int deleteId(UserDTO dto) {
+		
+		int result = 0;
+		System.out.println(dto.getUser_id());
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		
+		result = sqlSession.delete("deleteId", dto);
+		
+		sqlSession.close();
+		
+		return result;
+	}
+
+
+
+	public int user_update(UserDTO dto) {
+		int result = 0;
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		
+		result = sqlSession.update("user_update", dto);
+		
+		sqlSession.close();
+		
 		return result;
 	}
 	

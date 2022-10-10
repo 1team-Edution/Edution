@@ -13,7 +13,7 @@ import com.smhrd.controller.Controller;
 import com.smhrd.model.NoteDAO;
 import com.smhrd.model.NoteDTO;
 
-public class NoteAjaxInsert implements Controller {
+public class NoteAjaxParentInsert implements Controller {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
@@ -44,6 +44,8 @@ public class NoteAjaxInsert implements Controller {
 		String user_id = multi.getParameter("user_id");
 		String note_parent = multi.getParameter("note_parent");
 		String note_file = null;
+		System.out.println(note_title);
+		System.out.println(note_parent);
 		
 		if(multi.getFilesystemName("note_file") == null) {
 			note_file = "";

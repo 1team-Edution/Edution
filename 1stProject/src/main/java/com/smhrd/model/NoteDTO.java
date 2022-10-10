@@ -10,35 +10,48 @@ package com.smhrd.model;
 
 	    // 노트 내용 
 	    private String note_content;
-
-	    // 노트 태그 
-	    private String note_tag;
-
+	   
 	    // 작성자 아이디 
 	    private String user_id;
 
 	    // 노트 작성일 
 	    private String note_date;
 	    
+	    // 노트 파일
 	    private String note_file;
+	    
+	    // 노트 상위 번호
+	    private String note_parent;
+	    
+	
+	    
+	    
 	        
 		public NoteDTO() {
 			super();
 		}
-
-		public NoteDTO(String note_seq, String note_title, String note_content, String note_tag, String user_id,
-				String note_date) {
-			super();
-			this.note_seq = note_seq;
-			this.note_title = note_title;
-			this.note_content = note_content;
-			this.note_tag = note_tag;
-			this.user_id = user_id;
-			this.note_date = note_date;
+		
+		
+				
+		
+		public String getNote_parent() {
+			return note_parent;
 		}
 
+
+
+
+		public void setNote_parent(String note_parent) {
+			this.note_parent = note_parent;
+		}
+
+
+
+
 		
-		
+
+
+
 		public String getNote_seq() {
 			return note_seq;
 		}
@@ -79,13 +92,7 @@ package com.smhrd.model;
 			this.note_content = note_content;
 		}
 
-		public String getNote_tag() {
-			return note_tag;
-		}
-
-		public void setNote_tag(String note_tag) {
-			this.note_tag = note_tag;
-		}
+		
 
 		public String getUser_id() {
 			return user_id;
