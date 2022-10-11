@@ -76,7 +76,7 @@
   
   update tbl_user
   
-  set user_email = '${user_email}', user_nick = '${user_nick}'
+  set user_email = '${user_email}', user_nick = '${user_nick}', user_photo = '${user_photo}'
   
   where user_id = '${user_id}'
   

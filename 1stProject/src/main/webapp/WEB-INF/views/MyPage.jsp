@@ -54,8 +54,8 @@
                     <div style="background: white; border-radius: 100%; box-shadow: rgba(15, 15, 15, 0.1) 0px 2px 4px;">
                 <div style="border-radius: 100%; width: 20px; height: 20px; max-width: 100%; max-height: 100%; display: flex; align-items: center; justify-content: center; user-select: none; opacity: 1;">
                 <div style="width: 100%; height: 100%;">
-                <img src="resources/image/<%=list.getUser_photo()%>" style="display: block; object-fit: cover; border-radius: 100%; width: 100%; height: 100%;"></div></div></div></div></div>
-                <div style="font-size: 14px; line-height: 20px; color: rgb(55, 53, 47); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">내 계정</div></div></div>
+                <img src="resources/image/<%=list.getUser_photo()%>" id="preview" style="display: block; object-fit: cover; border-radius: 100%; width: 100%; height: 100%;"></div></div></div></div></div>
+                <div onclick="window.location.reload()" style="font-size: 14px; line-height: 20px; color: rgb(55, 53, 47); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">내 계정</div></div></div>
                 
                 <div class="notion-focusable" role="button" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: flex; align-items: center; justify-content: space-between; padding: 5px 15px; ">
                     <div style="display: flex; align-items: center;">
@@ -91,26 +91,26 @@
         <div style="color: rgb(55, 53, 47); border-bottom: 0px; margin-bottom: 8px; padding-bottom: 0px; font-size: 14px; font-weight: 400; width: auto;">사진</div>
 
 <!-- form 태그는 여기서부터 ! -->
-       
+<form action = "UpdateCon.do" enctype="multipart/form-data" method="post">          
   <!-- 사진 입력 창 -->      
     <div class="mb-3">
-        <label for="formFile" class="form-label" name="user_photo"> 
+        <label for="formFile" class="form-label"> 
             <div style="width: 90px; height: 90px;"><div style="width: 100%; height: 100%;">
-            <img src="resources/image/<%=list.getUser_photo()%>" style="display: block; object-fit: cover; border-radius: 100%; width: 90px; height: 90px;"></div></div>
+            <img src="resources/image/<%=list.getUser_photo()%>" id="preview2" style="display: block; object-fit: cover; border-radius: 100%; width: 90px; height: 90px;"></div></div>
         </label>
-        <form id="ajaxform" enctype = "multipart/form-data">
-        <input class="form-control" type="file" multiple id="photo_upload">
-        <output id="list"></output>
-			<input type="button" value="적용" id="files_send">
-        </form>
+        <!-- <form id="ajaxform" enctype = "multipart/form-data"> -->
+        <input class="form-control" type="file" onchange="readURL(this);" name="user_photo" multiple id="photo_upload" >
+        <!-- <output id="list"></output> -->
+			<!-- <input type="button" value="적용" id="files_send"> -->
+    <!--     </form> -->
         
       </div>
         
         
         
               
-<!-- 37번에 108번으로 이동함 -->    
-<form action = "UpdateCon.do" enctype="multipart/form-data" method="post">   
+  
+
              <input type= "hidden" value="<%=list.getUser_id()%>" name="user_id">    
 <div style="display: flex; align-items: center; justify-content: center; pointer-events: none; width: 100%; height: 37px; flex: 0 0 auto;">
 <div style="width: 100%; height: 1px; visibility: visible; border-bottom: 1px solid rgba(55, 53, 47, 0.16);"></div></div>
@@ -173,6 +173,30 @@
 <div onclick = "cancel()"class="notion-focusable" role="button" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; white-space: nowrap; border-radius: 3px; height: 32px; padding-left: 12px; padding-right: 12px; font-size: 14px; line-height: 1.2; border: 1px solid rgba(55, 53, 47, 0.16); margin-left: 12px;">취소</div></div></div></div></div></div></div>
 </form>
 <!-- 여기까지 form 태그 -->
+
+
+
+
+<!-- 사진 기능 -->
+<script>
+function readURL(input) {
+	if (input.files && input.files[0]) {
+		var reader = new FileReader();
+		reader.onload = function(e) {
+			document.getElementById('preview').src = e.target.result;
+			document.getElementById('preview2').src = e.target.result;
+		};
+		reader.readAsDataURL(input.files[0]);
+	} else {
+		document.getElementById('preview').src = "";
+		document.getElementById('preview2').src = "";
+	}
+}
+</script>
+
+
+
+
 
 
 

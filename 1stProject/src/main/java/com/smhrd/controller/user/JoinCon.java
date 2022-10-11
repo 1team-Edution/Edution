@@ -41,6 +41,26 @@ public class JoinCon implements Controller {
 		String user_email = multi.getParameter("user_email");
 		String user_nick = multi.getParameter("user_nick");
 		
+	
+
+		  
+			System.out.println(user_photo);
+			System.out.println(user_id);
+			System.out.println(user_pw);
+			System.out.println(user_name);
+			System.out.println(user_email);
+			System.out.println(user_nick);
+			
+		
+	if (user_id == null || user_pw == null || user_name== null || user_email==null || user_nick==null) {
+			
+		    return "Join.do";
+					
+		     }
+		
+		
+		
+		
 		// null값 사진 저장
 		if (user_photo == null) {
 
@@ -83,13 +103,12 @@ public class JoinCon implements Controller {
 		 int row = dao.insert(userDTO);
 		 
 		System.out.println("여기는 로우 입니다."+row);
-		 
 		try {
 			response.setContentType("text/html");
 			response.setCharacterEncoding("utf-8");
 
 			PrintWriter out = response.getWriter();
-
+	
 		  if (row > 0) {
 			  
 			  out.println("<script>alert('회원가입을 성공적으로 마쳤습니다');location.href='LoginPage.do';</script>");
