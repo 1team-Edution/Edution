@@ -194,6 +194,58 @@
             <div class="dates"></div>
         </div>
     </div>
+    <!--태그검색기-->
+    <div id="tswrapper">
+    <div id="tagsearch">
+        <div class="tagtitle">태그로 모아보기</div>
+        <form name="tagform" onsubmit="return false;">
+        <div id="tagcheck-area">
+            #
+            <input type="checkbox" class="check" id="stag-check1" name="stag" value="homework" autocomplete="off">
+            <label for="stag-check1" align="center">숙제</label>
+
+            <input type="checkbox" class="check" id="stag-check2" name="stag" value="exam" autocomplete="off">
+            <label for="stag-check2" align="center">시험</label>
+
+            <input type="checkbox" class="check" id="stag-check3" name="stag" value="review" autocomplete="off">
+            <label for="stag-check3" align="center">복습</label>
+            
+            <input type="checkbox" class="check" id="stag-check4" name="stag" value="preview" autocomplete="off">
+            <label for="stag-check4" align="center">예습</label>
+            
+            <input type="checkbox" class="check" id="stag-check5" name="stag" value="memo" autocomplete="off">
+            <label for="stag-check5" align="center">메모</label>
+        </div>
+        <button id="btn-tag" onclick="send(this.form)" style="-webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: var(--button-bg-color);
+            color: var(--button-color);
+            border: none;
+            cursor: pointer;"><img src="img/glass.png" id="glassimg"></button>
+    </form>
+    </div>
+
+        <!--여기부터 모달-->
+        <div id="tagmodal" class="modal-overlay">
+            <div class="tag-window">
+                <div class="title">
+                    <h2 id="stagtitle">선택한 태그</h2>
+                </div>
+                <div class="close-area">X</div>
+                <div class="content">
+                        <div class="modal-content" id="stagtable">
+                                <table class="tagresulttable">
+                                    <tr>
+                                        <td>날짜</td><td>제목</td><td>상태</td>
+                                    </tr>
+                                </table>
+                        </div>                  
+                    </div>
+                </div>
+        </div>
+</div>
+<!--태그검색기끝-->
 	 <!--여기부터 today모달-->
     <div id="modal1" class="modal-overlay">
         <div class="modal-window">
@@ -431,58 +483,7 @@
 
 
 <!-- 여기까지 -->
-<!--태그검색기-->
-    <div id="tswrapper">
-    <div id="tagsearch">
-        <div class="tagtitle">태그로 모아보기</div>
-        <form name="tagform" onsubmit="return false;">
-        <div id="tagcheck-area">
-            #
-            <input type="checkbox" class="check" id="stag-check1" name="stag" value="homework" autocomplete="off">
-            <label for="stag-check1" align="center">숙제</label>
 
-            <input type="checkbox" class="check" id="stag-check2" name="stag" value="exam" autocomplete="off">
-            <label for="stag-check2" align="center">시험</label>
-
-            <input type="checkbox" class="check" id="stag-check3" name="stag" value="review" autocomplete="off">
-            <label for="stag-check3" align="center">복습</label>
-            
-            <input type="checkbox" class="check" id="stag-check4" name="stag" value="preview" autocomplete="off">
-            <label for="stag-check4" align="center">예습</label>
-            
-            <input type="checkbox" class="check" id="stag-check5" name="stag" value="memo" autocomplete="off">
-            <label for="stag-check5" align="center">메모</label>
-        </div>
-        <button id="btn-tag" onclick="send(this.form)" style="-webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            background: var(--button-bg-color);
-            color: var(--button-color);
-            border: none;
-            cursor: pointer;"><img src="img/glass.png" id="glassimg"></button>
-    </form>
-    </div>
-
-        <!--여기부터 모달-->
-        <div id="tagmodal" class="modal-overlay">
-            <div class="tag-window">
-                <div class="title">
-                    <h2 id="stagtitle">선택한 태그</h2>
-                </div>
-                <div class="close-area">X</div>
-                <div class="content">
-                        <div class="modal-content" id="stagtable">
-                                <table class="tagresulttable">
-                                    <tr>
-                                        <td>날짜</td><td>제목</td><td>상태</td>
-                                    </tr>
-                                </table>
-                        </div>                  
-                    </div>
-                </div>
-        </div>
-</div>
-<!--태그검색기끝-->
 
          
     <script>
