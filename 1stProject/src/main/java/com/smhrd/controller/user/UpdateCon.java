@@ -36,17 +36,18 @@ public class UpdateCon implements Controller {
 			e.printStackTrace();
 		}
 		
+		String user_photo = multi.getFilesystemName("user_photo");
 		String user_id = multi.getParameter("user_id");
 		String user_email = multi.getParameter("user_email");
 		String user_nick = multi.getParameter("user_nick");
-	
+		
 		
 		
 		
 
 		
 		UserDTO dto = new UserDTO();
-		
+		dto.setUser_photo(user_photo);
 		dto.setUser_id(user_id);
 		dto.setUser_email(user_email);
 		dto.setUser_nick(user_nick);

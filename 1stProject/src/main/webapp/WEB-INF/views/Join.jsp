@@ -35,7 +35,7 @@
 
 
 		
-<form action ="Join.do" enctype = "multipart/form-data" method="post">
+<form id = "joinform" name = "joinform" action ="Join.do" enctype = "multipart/form-data" method="post">
    <!-- 사진 입력 창 -->      
     <div class="mb-3">
     <label for="formFile" class="form-label" name="#"> 
@@ -97,7 +97,7 @@
                               <div onclick = "nickCheck()" class="notion-focusable" role="button" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: inline-flex; align-items: center; white-space: nowrap; height: 20px; border-radius: 3px; font-size: 12px; line-height: 1.2; padding-left: 5px; padding-right: 5px; color: rgba(55, 53, 47, 0.65);">닉네임 중복체크<br></div>
 						<span id="nick_result" style="margin-right: 12px;">사용자 닉네임을 입력해주세요</span>                          
 
-                        <input type = "submit" value="가입하기" class="notion-focusable" role="button" aria-disabled="false" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; white-space: nowrap; height: 36px; border-radius: 4px; color: rgb(235, 87, 87); font-size: 14px; line-height: 1; padding-left: 12px; padding-right: 12px; font-weight: 500; background: rgb(253, 245, 242); box-shadow: rgba(15, 15, 15, 0.1) 0px 1px 2px, rgba(235, 87, 87, 0.3) 0px 0px 0px 1px inset; margin-top: 6px; margin-bottom: 12px; width: 100%;"></div>
+                        <input type = "button" onclick= "joinform_check();" value="가입하기" class="notion-focusable" aria-disabled="false" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; white-space: nowrap; height: 36px; border-radius: 4px; color: rgb(235, 87, 87); font-size: 14px; line-height: 1; padding-left: 12px; padding-right: 12px; font-weight: 500; background: rgb(253, 245, 242); box-shadow: rgba(15, 15, 15, 0.1) 0px 1px 2px, rgba(235, 87, 87, 0.3) 0px 0px 0px 1px inset; margin-top: 6px; margin-bottom: 12px; width: 100%;"></div>
                       </form>
 </body>
 
@@ -244,6 +244,49 @@ function readURL(input) {
 </script>
 
 
+<script>
+	function joinform_check(){
+
+		 var id = document.getElementById("user_id");
+	     var pw = document.getElementById("pw");
+	     var pw2 = document.getElementById("pw2");
+	     var name = document.getElementById("name");  
+	     var email = document.getElementById("email");
+	     var nick = document.getElementById("nick");
+	     
+	     if(id.value == ""){
+	          alert("아이디를 입력해주세요.")
+	          id.focus();
+	          return false;
+	       }
+	       if(pw.value == ""){
+	          alert("비밀번호를 제대로 입력 해주세요.")
+	          pw.focus();
+	          return false;
+	       }
+	       if(name.value == ""){
+	          alert("비밀번호를 제대로 입력 해주세요.")
+	          name.focus();
+	          return false;
+	       }
+	       if(email.value == ""){
+	          alert("이메일을 입력해주세요.");
+	          email.focus();
+	          return false;
+	       }
+	       if(nick.value == ""){
+	          alert("닉네임을 입력해주세요.")
+	          return false;
+	       }
+	     
+	       document.joinform.submit();
+	    
+	
+	}
+	     
+	    
+
+	</script>
 
 
 

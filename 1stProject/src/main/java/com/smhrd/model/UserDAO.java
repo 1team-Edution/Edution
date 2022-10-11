@@ -158,9 +158,9 @@ public class UserDAO {
 	public UserDTO LoginidSearch(UserDTO dto) {
 		UserDTO result = null;
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
-				
-		result = sqlSession.selectOne("LoginidSearch", dto);
 		
+		result = sqlSession.selectOne("LoginidSearch", dto);
+		System.out.println("메소드"+result);
 		sqlSession.close();
 		
 		return result;
