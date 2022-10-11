@@ -25,18 +25,18 @@ public class TodoCon implements Controller {
 			e.printStackTrace();
 		}
 		HttpSession session = request.getSession();
-		UserDTO userDto = (UserDTO) session.getAttribute("userDto");
+		UserDTO userDto = (UserDTO) session.getAttribute("loginUser");
 		String id=userDto.getUser_id();
 		String todoHead=request.getParameter("todoHead");
 		String todoBody=request.getParameter("todoBody");
 		String[] tags=request.getParameterValues("tag");
 		String date = request.getParameter("date");
-		if(date==null) {date="2500-1-1";}
+		if(date==null) {date="2500-01-01";}
 		TodoDTO dto = new TodoDTO(id,todoHead,todoBody,tags,date);
 		TodoDAO dao = new TodoDAO();
 		dao.insert(dto);
 		
-		return "Main";
+		return "redirect:/Main.do";
 	}
 
 }

@@ -142,9 +142,9 @@
         <!-- 여기까지 왼쪽 메뉴바 부분 -->
                 
 
-        <div style="column-count :auto; display: inline-block; padding-top: 90px; padding-left: 450px; margin-right:10px; width:100%; overflow:auto;">
+        <div style="column-count :auto; display: inline-block; padding-top: 90px; padding-left: 300px; margin-right:10px; width:100%; overflow:auto;">
             <!-- 이 부분에 넣어주세요 위 div태그 안에 감싸지도록! -->
-				    <div id="container-today">
+		<div id="container-today">
         <b id="task-head-today">오늘의 학습</b><hr>
         <!--모달 창 열기 버튼-->
         <button id="btn-modal1" class="btn-modal">+</button><br><br>
@@ -194,6 +194,58 @@
             <div class="dates"></div>
         </div>
     </div>
+    <!--태그검색기-->
+    <div id="tswrapper">
+    <div id="tagsearch">
+        <div class="tagtitle">태그로 모아보기</div>
+        <form name="tagform" onsubmit="return false;">
+        <div id="tagcheck-area">
+            #
+            <input type="checkbox" class="check" id="stag-check1" name="stag" value="homework" autocomplete="off">
+            <label for="stag-check1" align="center">숙제</label>
+
+            <input type="checkbox" class="check" id="stag-check2" name="stag" value="exam" autocomplete="off">
+            <label for="stag-check2" align="center">시험</label>
+
+            <input type="checkbox" class="check" id="stag-check3" name="stag" value="review" autocomplete="off">
+            <label for="stag-check3" align="center">복습</label>
+            
+            <input type="checkbox" class="check" id="stag-check4" name="stag" value="preview" autocomplete="off">
+            <label for="stag-check4" align="center">예습</label>
+            
+            <input type="checkbox" class="check" id="stag-check5" name="stag" value="memo" autocomplete="off">
+            <label for="stag-check5" align="center">메모</label>
+        </div>
+        <button id="btn-tag" onclick="send(this.form)" style="-webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: var(--button-bg-color);
+            color: var(--button-color);
+            border: none;
+            cursor: pointer;"><img src="img/glass.png" id="glassimg"></button>
+    </form>
+    </div>
+
+        <!--여기부터 모달-->
+        <div id="tagmodal" class="modal-overlay">
+            <div class="tag-window">
+                <div class="title">
+                    <h2 id="stagtitle">선택한 태그</h2>
+                </div>
+                <div class="close-area">X</div>
+                <div class="content">
+                        <div class="modal-content" id="stagtable">
+                                <table class="tagresulttable">
+                                    <tr>
+                                        <td>날짜</td><td>제목</td><td>상태</td>
+                                    </tr>
+                                </table>
+                        </div>                  
+                    </div>
+                </div>
+        </div>
+</div>
+<!--태그검색기끝-->
 	 <!--여기부터 today모달-->
     <div id="modal1" class="modal-overlay">
         <div class="modal-window">
@@ -236,7 +288,7 @@
                         <div class="modal-footer">
                             <br>
                                 <label for="datesel">다른 날짜 선택</label>
-                                <input type="date" id="datesel">
+                                <input type="date" id="datesel" name="date">
                             <button type="submit" class="save-button" data-bs-dismiss="modal">입력</button>         
                         </div>
                     </form>
@@ -287,7 +339,7 @@
                         <div class="modal-footer">
                             <br>
                                 <label for="datesel">다른 날짜 선택</label>
-                                <input type="date" id="datesel">
+                                <input type="date" id="datesel" name="date">
                             <button type="submit" class="save-button" data-bs-dismiss="modal">입력</button> 
                         </div>
                             </form>        
@@ -372,7 +424,7 @@
                 </svg>
             </div>    
         </div>
-        <form action="TodoEdit" method="post">
+        <form action="TodoEdit.do" method="post">
         <div class="editbody">
 							<table><tr>            
                 <td colspan=2>
@@ -426,24 +478,30 @@
         </div></form> 
     </div>
 </div>
+
+
+
+
 <!-- 여기까지 -->
+
 
          
     <script>
     //todolist 호출
+    let todolist=[];
+    
 			$.ajax({
                 url: "ajax01",
+                async:false,
                 dataType:"json",
                 success: function(data) {        
                 	console.log("요청성공");
-                	let todolist=data;
-                	console.log(todolist)
+                	todolist=data;
                 },
                 error: function(){
                     console.log("요청실패");
                 }
             });
-    
     
     
     
@@ -489,26 +547,14 @@
 	//여기까지
 
 
-
-
-    //기능구현후 DB에서 가져올예정
-
-    //테스트용객체
-    const todotest=[{"todo_seq":1,"todo_title":"리스트출력","todo_content":"내용","todo_tag":"#exam","todo_yn":"0","todo_percent":"0","user_id":"6","reg_date":"2022-10-4"},
-                {"todo_seq":2,"todo_title":"리스트출력2","todo_content":"내용","todo_tag":"#exam","todo_yn":"0","todo_percent":"0","user_id":"6","reg_date":"2500-1-1"},
-                {"todo_seq":1,"todo_title":"리스트출력3","todo_content":"내용","todo_tag":"#exam","todo_yn":"1","todo_percent":"0","user_id":"6","reg_date":"2022-10-4"}]
-
-
-
-
     let taskBoardToday=document.querySelector("#task-board-today");
     let taskBoardMonth=document.querySelector("#task-board-monthly");
     let taskBoardFuture=document.querySelector("#task-board-future");
     
     function toStringByFormatting(source, delimiter = '-') {
         const year = source.getFullYear();
-        const month = source.getMonth() + 1;
-        const day = source.getDate();
+        let month = source.getMonth() + 1;
+        let day = source.getDate();
         return [year, month, day].join(delimiter);
     }
 
@@ -516,8 +562,8 @@
         let today = toStringByFormatting(new Date(),'-');
         let resultHTML="";
         //이 객체 변경
-        todotest.forEach(x=>{
-            if(x.reg_date==today){
+        todolist.forEach(x=>{
+            if(x.reg_date.slice(0, 10)==today){
                 if(x.todo_yn==0){
                 resultHTML +=`<div class="task">• ${x.todo_title}<span class="todoseq">${x.todo_seq}</span></div>`;  }
                 else{resultHTML +=`<div class="task task-done">× ${x.todo_title}<span class="todoseq">${x.todo_seq}</span></div>`;  }}
@@ -533,8 +579,8 @@
         let mon=new Date().getMonth()+1;
         let resultHTML="";
         //이 객체 변경
-        todotest.forEach(x=>{
-            let arr=x.reg_date.split("-");
+        todolist.forEach(x=>{
+            let arr=x.reg_date.slice(0, 10).split("-");
             if(arr[0]==yr&&arr[1]==mon){
                 if(x.todo_yn==0){
                 resultHTML +=`<div class="task">• ${x.todo_title}<span class="todoseq">${x.todo_seq}</span></div>`;  }
@@ -548,8 +594,8 @@
     let renderfuture=()=>{
         let resultHTML="";
         //이 객체 변경
-        todotest.forEach(x=>{
-            if(x.reg_date=='2500-1-1'){
+        todolist.forEach(x=>{
+            if(x.reg_date.slice(0, 10)=='2500-01-01'){
                 resultHTML +=`<div class="task">• ${x.todo_title}<span class="todoseq">${x.todo_seq}</span></div>`;  }
             });
         taskBoardFuture.innerHTML=resultHTML;
@@ -610,17 +656,23 @@
         let ynmStr=ynm.innerText;
         ynmStr= ynmStr.replace("년 ", "-");
         ynmStr= ynmStr.replace("월", "-");
-        let thisDate=ynmStr+date;
+        let ynmSplit = ynmStr.split("-");
+        let y1 = parseInt(ynmSplit[1]);
+        if(y1<10) {
+        	ynmSplit[1]="0";
+        	ynmSplit[1]+=y1;
+        }
+        let y2 = parseInt(date);
+        y2s="";
+        if(y2<10) {
+        	y2s="0";
+        	y2s+=y2;
+        }else{y2s=y2;}
+        
+        let thisDate=ynmSplit[0]+"-"+ynmSplit[1]+"-"+y2s;
         if(condition=='other'){thisDate="";}
-        //테스트용객체
-        todotest2=[{"todo_seq":1,"todo_title":"리스트출력","todo_content":"내용","todo_tag":"#exam","todo_yn":"0","todo_percent":"0","user_id":"6","reg_date":"2022-9-30"},
-                {"todo_seq":2,"todo_title":"리스트출력2","todo_content":"내용","todo_tag":"#exam","todo_yn":"0","todo_percent":"0","user_id":"6","reg_date":"2022-8-1"},
-                {"todo_seq":1,"todo_title":"리스트출력3","todo_content":"내용","todo_tag":"#exam","todo_yn":"1","todo_percent":"0","user_id":"6","reg_date":"2022-10-4"}]
-        //객체바인딩된 객체(테스트안해봄)
-        //todotest -> todolist로 바꿀것
-
-                todotest2.forEach(x=>{
-                  if(x.reg_date==thisDate){
+                todolist.forEach(x=>{
+                  if(x.reg_date.slice(0, 10)==thisDate){
                 	 dates[i]+=`<div draggable='true' class='caltodo'>${x.todo_title}<span class="todoseq">${x.todo_seq}</span></div>`;       
                   }                
             });
@@ -669,7 +721,7 @@
               ynmStr= ynmStr.replace("월", "-");
               let dragging = document.querySelector(".dragging");
               let divdata=ynmStr+dateParent.innerText+"n"+dragging.lastChild.innerText;
-              location.href = "TodoDrag?divdata="+divdata;
+              location.href = "TodoDrag.do?divdata="+divdata;
           });
       })
       //드래그요소에 클래스추가
@@ -752,7 +804,7 @@
 				}   
 	
 			editMenu.addEventListener("click",function(){
-//				location.href = "TodoEdit.do?todonum="+todonum;
+				//location.href = "TodoEdit.do?todonum="+todonum;
 				  edittag.style.display='flex';
 				  tagbox.style.display='none';
 				  edittitle.style.display='flex';
@@ -808,12 +860,12 @@ let edityn=document.querySelector('#edityn');
 
 editrender=()=>{
 	editnum.value=todonum;
-    todotest.forEach(a=>{
+    todolist.forEach(a=>{
         if(a.todo_seq==todonum){
             edittitle.innerText=a.todo_title;
             titleinput.value=a.todo_title;
             edittag.innerText=a.todo_tag;
-            if(a.reg_date=="2500-1-1"){
+            if(a.reg_date.slice(0, 10)=="2500-01-01"){
             	editdate.innerText="비어있음";}
             else{
             	editdate.innerText=a.reg_date;

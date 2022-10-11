@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import com.smhrd.database.SqlSessionManager;
-;
+import com.smhrd.model.TodoDTO;
 
 public class TodoDAO {
 
@@ -13,9 +13,16 @@ private SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSessionFac
 	
 	public int insert(TodoDTO dto) {
 		int result = 0;
+		System.out.println("insert 실행!");
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
-		result = sqlSession.insert("com.smhrd.model.TodoDAO.todoInsert", dto);
-		sqlSession.close();
+		try {
+		result = sqlSession.insert("com.smhrd.model.TodoDAO.TodoInsert", dto);
+		sqlSession.close();}
+		catch(Exception e) {System.out.println("insert실행 도중 문제 발생");
+		System.out.println(dto.getReg_date());
+		System.out.println(dto.getTodo_content());
+		System.out.println(dto.getTodo_tag());
+		}
 		return result;
 	}
 
@@ -103,6 +110,22 @@ private SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSessionFac
 		sqlSession.close();
 		return result;
 		}
+
+	public ArrayList<TodoDTO> tagSearch(ArrayList<TodoDTO> todoDtos, String[] tags) {
+		ArrayList<TodoDTO> list = new ArrayList<>();;
+		int check=0;
+		for(int i=0;i<todoDtos.size();i++) {
+			check=0;
+			String todotag = todoDtos.get(i).getTodo_tag();
+			String[] taglist=todotag.split("#");
+			for(int j = 0; j<tags.length;j++) {
+				for(int k =0; k<taglist.length;k++) {
+					if(tags[j].equals(taglist[k])) {check++;}	
+				}
+			}if(check==tags.length) {list.add(todoDtos.get(i));}
+		}
+		return list;
+	}
 
 
 }
