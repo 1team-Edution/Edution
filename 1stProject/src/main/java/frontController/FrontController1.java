@@ -38,6 +38,8 @@ import com.smhrd.controller.todo.TodoCheckCon;
 import com.smhrd.controller.todo.TodoCheckCon2;
 import com.smhrd.controller.todo.TodoCon;
 import com.smhrd.controller.todo.TodoDeleteCon;
+import com.smhrd.controller.todo.TodoDragCon;
+import com.smhrd.controller.todo.TodoEditCon;
 import com.smhrd.controller.user.Account_deleteCon;
 import com.smhrd.controller.user.GoJoinCon;
 import com.smhrd.controller.user.JoinCon;
@@ -88,6 +90,8 @@ public class FrontController1 extends HttpServlet {
 		mappings.put("/TodoCheck.do", new TodoCheckCon());
 		mappings.put("/TodoCheck2.do", new TodoCheckCon2());
 		mappings.put("/TodoDelete.do", new TodoDeleteCon());
+		mappings.put("/TodoEdit.do", new TodoEditCon());
+		mappings.put("/TodoDrag.do", new TodoDragCon());
 		mappings.put("/Main.do", new GoMain());
 		
 

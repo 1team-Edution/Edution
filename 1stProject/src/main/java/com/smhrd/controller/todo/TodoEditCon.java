@@ -4,24 +4,18 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
+import com.smhrd.controller.Controller;
 import com.smhrd.model.TodoDAO;
 import com.smhrd.model.TodoDTO;
-import com.smhrd.model.UserDTO;
 
-@WebServlet("/TodoEdit")
-public class TodoEdit extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+public class TodoEditCon implements Controller {
 
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+	@Override
+	public String execute(HttpServletRequest request, HttpServletResponse response) {
+
 		try {
 			request.setCharacterEncoding("UTF-8");
 		} catch (UnsupportedEncodingException e) {
@@ -42,18 +36,24 @@ public class TodoEdit extends HttpServlet {
 		TodoDAO dao = new TodoDAO();
 		if(date==null) {dao.editF(dto);}
 		else {dao.editT(dto);}
-			RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/views/Main.html");		
-			rd.forward(request, response);
 		
 		}catch(Exception e) {
 
 			System.out.println("예외발생");
 			response.setContentType("text/html");
 			response.setCharacterEncoding("utf-8");
-			PrintWriter out = response.getWriter();
-			out.println("<script>alert('제목은 비워 둘 수 없습니다.');location.href='Main.do';</script>");
-			out.flush();
-			out.close();
+			PrintWriter out;
+			try {
+				out = response.getWriter();
+				out.println("<script>alert('제목은 비워 둘 수 없습니다.');location.href='Main.do';</script>");
+				out.flush();
+				out.close();
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+	
 		}
-	}
-}
+		return "redirect:/Main.do";
+}}
+
+

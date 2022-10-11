@@ -12,6 +12,7 @@ public class TodoDTO {
 	
 
 	public TodoDTO(String id, String todoHead, String todoBody, String[] tags, String date) {
+		todo_seq="0";
 		todo_title=todoHead;
 		todo_content=todoBody;
 		String str="";
