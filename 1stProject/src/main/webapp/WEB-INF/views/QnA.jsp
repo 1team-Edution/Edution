@@ -178,32 +178,26 @@ input::placeholder{
     font-size: 15px;
 }
 
-.qna-sendbtn{
-    width: 105px;
-    height: 23px;
-    background-color: rgb(225, 98, 89);
-    border-radius: 5px;
-    padding: 0.275rem 0.775rem 0.4375rem 0.875rem;
-    position: absolute; 
-    left:71%;
-}
-
-
-.qna-sendbtn > a {
-  
-  font-size: 1rem;
-  font-weight: 570;
-  color: #fff;
-  text-decoration: none; 
-  color: white;
-
-}
 
 .qna-main-sendmessage{
     position:absolute;
         left:52%;
         top:5vh;
 }
+
+   .qna-main-submit{
+    width: 150px;
+    height: 30px;
+    background-color: rgb(225, 98, 89);
+    padding-top: 4px;
+    border: none;
+    border-radius: 5px;
+    font-size:1rem;
+    position:absolute;
+    left:67%
+            
+        
+        }
 
 </style>
 
@@ -282,7 +276,7 @@ input::placeholder{
     <textarea class="qna-form-content" placeholder="Write your message"></textarea>
     
     <div style="padding-top: 10px;"></div>
-    <div class="qna-sendbtn"><a href="">Send Message</a></div>
+      <input type="submit" class="qna-main-submit" value="Send Message" style="color: white;">
 </div>
 
 

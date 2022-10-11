@@ -3,87 +3,408 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
+    <meta charset="EUC-KR">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+   
+       <style>
+html{
+    font-family: "Lato",Arial,sans-serif;
+        padding: 60px;
+        
+    }
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+body{
+    height:969px;
+    width:1261px;
+    
+    font-family: inter-var, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 17px;
+    line-height: 1.5;
+    overflow: hidden;
+
+}
+header {
+    width: 100%;
+    height: 50px; 
+    position: absolute; 
+    align-items: center;
+    top: 1vh;
+    left: -16vh;
+}
 
 
+
+    .index-sub-joinbtn{
+    width: 65px;
+    height: 23px;
+    background-color: rgb(225, 98, 89);
+    border-radius: 5px;
+    padding: 0.375rem 0.875rem 0.4375rem 0.875rem;
+    position: absolute; 
+    left:183vh;
+    top:1vh;
+}
+
+.index-sub-joinbtn > a {
+  
+  font-size: 1rem;
+  font-weight: 570;
+  color: #fff;
+  text-decoration: none; 
+  color: white;
+
+}
+
+.login-main-title{
+    position: absolute; 
+    top: 2vh;
+    left: 7vh;
+
+}
+
+
+.login-main-idform{
+    position: absolute; 
+    top: 23.5vh;
+    left: 6vh;
+    width: 400px;
+    height: 53px;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 50px;
+
+}
+
+.login-main-pwform{
+    position: absolute; 
+    top: 30vh;
+    left: 6vh;
+    width: 400px;
+    height: 53px;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 50px;
+
+}
+
+.join-main-emailform{
+    position: absolute; 
+    top: 36.5vh;
+    left: 6vh;
+    width: 400px;
+    height: 53px;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 50px;
+}
+
+.join-main-nickform{
+
+    position: absolute; 
+    top: 43vh;
+    left: 6vh;
+    width: 400px;
+    height: 53px;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 50px;
+
+}
+
+.join-main-nickform-input{
+    position: absolute; 
+top: 43.5vh;
+left: 8.5vh;
+width: 250px;
+height: 40px;
+border-color: rgba(0,0,0,0);
+outline: none;
+background-color: rgba(0,0,0,0)
+}
+
+
+.filebox .upload-name {
+    position: absolute; 
+    top: 17vh;
+    left: 7vh;
+    display: inline-block;
+    height: 40px;
+    padding: 0 10px;
+    vertical-align: middle;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    width: 250px;
+    color: #999999;
+}
+
+.filebox label {
+    position: absolute; 
+    top: 17vh;
+    left: 35vh;
+    display: inline-block;
+    padding-top: 7px;
+    padding-left: 14px;
+    padding-right: 14px;
+    color: #fff;
+    vertical-align: middle;
+    border-radius: 10px;
+    background-color: #999999;
+    cursor: pointer;
+    height: 38px;
+    margin-left: 10px;
+    text-align: center;
+    
+}
+
+.filebox input[type="file"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+}
+
+
+
+
+.join-main-emailform-input{
+
+position: absolute; 
+top: 37vh;
+left: 8.5vh;
+width: 250px;
+height: 40px;
+border-color: rgba(0,0,0,0);
+outline: none;
+background-color: rgba(0,0,0,0);
+}
+
+
+.login-main-idform-input{
+
+    position: absolute; 
+    top: 24vh;
+    left: 8.5vh;
+    width: 250px;
+    height: 40px;
+    border-color: rgba(0,0,0,0);
+    outline: none;
+    background-color: rgba(0,0,0,0);
+}
+
+.login-main-pwform-input{
+
+position: absolute; 
+top: 30.5vh;
+left: 8.5vh;
+width: 250px;
+height: 40px;
+border-color: rgba(0,0,0,0);
+outline: none;
+background-color: rgba(0,0,0,0);
+}
+
+
+
+.login-main-submit{
+    position: absolute; 
+    top: 50vh;
+    left: 6vh;
+    width: 400px;
+    height: 53px;
+    background-color: rgb(225, 98, 89, 0.6);
+    border: none;
+    border-radius: 50px;
+    font-size:16px;
+    
+
+}
+
+.submit-text{
+
+    position: absolute; 
+    top: 55vh;
+    left: 7vh;
+
+    font-size: 14px;
+    color: rgba(0,0,0,0.5);
+}
+
+.login-main-submit:focus,
+.login-main-submit:hover
+{
+    background-color: rgb(225, 98, 89);
+    cursor: pointer;
+
+}
+
+
+
+.login-main-submit > a{
+
+position: absolute; 
+top: 50;
+left: 50;
+color: fff;
+
+}
+
+input::placeholder{
+    font-size: 16px;
+}
+
+
+#join-main-right{
+    position: absolute; 
+    top: 20vh;
+    left: 100vh;
+    width: 500px;
+    height: 700px;
+    background-color: rgb(225, 98, 89);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#join-main-left{
+
+    position: absolute; 
+    top: 20vh;
+    left: 48.5vh;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 15px;
+    width: 500px;
+    height: 700px;
+    
+}
+
+
+
+
+.login-sub-title{
+    position: absolute; 
+    top: 25vh;
+    left: 9vh;
+
+}
+
+.login-main-rightbtn{
+    width: 92px;
+    height: 45px;
+    background-color: rgb(225, 98, 89);
+    border: solid 1px #fff;
+    border-radius: 50px;
+    color: #fff;
+    position: absolute; 
+    top: 42vh;
+    left: 22vh;
+}
+
+.login-main-rightbtn:hover,
+login-main-rightbtn:focus{
+
+    background-color: #fff;
+    color: black;
+    cursor: pointer;
+}
+
+
+
+    </style>
+
+   
 
 </head>
+<body>    
+    <header>
+        <div style="font-size: 15px; white-space: nowrap; top: 0px; width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <nav style="display: flex; align-items: center; width: 100%; max-width: 1300px;  height: px; overflow: hidden;">
+            <div style="flex-shrink: 0;">
+                <div style="display: flex; align-items: center">                   
+                    <img src="img/Edution2.png" style="width: 30px; height: 30px; padding-top: 15px;">
+                    <div role="button" style="font-weight: 500; font-size: 17px; cursor: default; padding-top: 15px;
+                    font-family:inter-var, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, 'Apple Color Emoji', Arial, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol';">Edution
+                    </div>
+                <div >
+                    <ul style="list-style: none;">
+                        <li style="float: left; margin-left: 15px; margin-right: 15px; font-weight: 500; cursor: default;"><a href="" style="text-decoration: none; color:inherit;">Home</a></li>
+                        <li style="float: left; margin-left: 15px; margin-right: 15px; cursor: default;"><a href="" style="text-decoration: none; color:inherit;">Community</a></li>
+                        <li style="float: left; margin-left: 15px; margin-right: 15px; cursor: default;"><a href="#" style="text-decoration: none; color:inherit; ">Q&A</a></li>
+                        <li style="float: left; ">
+                            <div style="position: absolute; left:88%;">
+                                <a href="#" style="text-decoration: none; color:inherit ">로그인</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="index-sub-joinbtn">
+                                <a href="#">회원가입</a>
+                            </div>
+                                  
+                        </li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+        </nav>
+        </div>
+    </header>
+    
 
-<body>
-<div style="font-size: 15px; white-space: nowrap; top: 0px; width: 100%; background: rgb(255, 254, 252); display: flex; flex-direction: column; align-items: center; justify-content: center;">
-<nav style="display: flex; align-items: center; justify-content: center; width: 100%; max-width: 1300px; padding-left: 20px; padding-right: 20px; transition: height 250ms ease 0s; height: 80px; position: relative; overflow: hidden; box-shadow: none;">
-<div style="flex-shrink: 0;">
+    <main>
 
-<a href="indexView.do" rel="noopener noreferrer" style="display: block; text-decoration: none; user-select: none; cursor: pointer; color: inherit;">
-    <div style="display: flex; align-items: center;">
-        <svg viewBox="0 0 120 126" class="edutionLogo" style="width: 30px; height: 30px; display: block; fill: inherit; flex-shrink: 0; backface-visibility: hidden; margin-right: 10px;"></svg>
 
-        <img src="img/Edution2.png" style="width: 30px; height: 30px;">
-        <div style="font-weight: 500; font-size: 16px;
-        font-family:inter-var, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, 'Apple Color Emoji', Arial, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol';">Edution</div></div></a></div>
-        <div style="flex: 1 1 0%; display: flex; justify-content: center;"></div></nav></div>
-<!-- 여기까지 상단바 -->
 
-  <div style="display: flex; flex-direction: column; align-items: center;">
-    <div style="font-size: 50px; margin-top: 8vh; font-weight: 700; margin-bottom: 24px; text-align: center; line-height: 1.1;">회원가입</div>
-    <div class="notion-login" style="width: 100%; display: flex; flex-direction: column; align-items: center; max-width: 320px; margin-bottom: 16vh;">
-      <div style="display: flex; flex-direction: column-reverse; width: 100%;"><div>
-  
+        
+<div style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+    <div id="join-main-left">
+        <div class="login-main-title" >
+            <h1 style="font-size: 50px;">Sign Up</h1>
+        </div>
 
-        <!-- 여기서부터 sns로그인 칸 -->
-        <div style="width: 100%;">
-          <div class="notion-focusable" role="button" aria-disabled="false" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; white-space: nowrap; height: 36px; border-radius: 4px; color: rgb(17, 17, 17); font-size: 14px; line-height: 1; padding-left: 12px; padding-right: 12px; font-weight: 500; background: white; border: 1px solid rgba(15, 15, 15, 0.15); width: 100%; box-shadow: rgba(15, 15, 15, 0.05) 0px 1px 2px; margin-bottom: 4px;">
-              카카오로 계속하기</div></div>
-              <div class="notion-focusable" role="button" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; white-space: nowrap; height: 36px; border-radius: 4px; color: rgb(55, 53, 47); fill: rgb(55, 53, 47); background: white; font-size: 14px; line-height: 1; padding-left: 12px; padding-right: 12px; font-weight: 500; border: 1px solid rgba(15, 15, 15, 0.15); width: 100%; box-shadow: rgba(15, 15, 15, 0.05) 0px 1px 2px; margin-top: 10px;">
-                페이스북으로 계속하기</div>
-                <div class="notion-focusable" role="button" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; white-space: nowrap; height: 36px; border-radius: 4px; color: rgb(55, 53, 47); fill: rgb(55, 53, 47); background: white; font-size: 14px; line-height: 1; padding-left: 12px; padding-right: 12px; font-weight: 500; border: 1px solid rgba(15, 15, 15, 0.15); width: 100%; box-shadow: rgba(15, 15, 15, 0.05) 0px 1px 2px; margin-top: 10px;">
-                  인스타그램으로 계속하기</div></div>
 
-                <div style="display: flex; align-items: center; justify-content: center; pointer-events: none; width: 100%; height: 42px; flex: 0 0 auto;">
-                  <div style="width: 100%; height: 1px; visibility: visible; border-bottom: 1px solid rgba(55, 53, 47, 0.16);"></div></div><div>
-                    
-                    
-                    <!-- 여기서부터 웹 페이지 로그인 부분 -->
-                    <!-- 이곳에 action, submit, name 넣어주세요! -->
+<form>
+        <div class="login-main-idform"></div>
+            <input class="login-main-idform-input" placeholder="User ID">
+        
+        <div class="login-main-pwform"></div>
+        <input type="password" class="login-main-pwform-input" placeholder="Password">
 
-						<div class="mb-3">
-		  <label style="display: block; margin-bottom: 4px; font-size: 12px; color: rgba(55, 53, 47, 0.65);">프로필사진</label>
-		  <input class="form-control" type="file" id="formFile">
-		</div>
-		
-		
+        <div class="join-main-emailform"></div>
+        <input type="email" class="join-main-emailform-input" placeholder="User E-mail">
 
-					<!-- input 추가 필요할 경우 여기서부터 -->
+        <div class="join-main-nickform"></div>
+        <input type="text" class="join-main-nickform-input" placeholder="Nickname">
 
-                    <form>
-					 <div class="mb-3">
-					  <label for="formFileMultiple" class="form-label">프로필 사진 등록</label>
-					  <input class="form-control" type="file" id="formFileMultiple" multiple>
-					</div>
-				
-                      <!-- input 추가 필요할 경우 여기서부터 -->
 
-                  
-                      <label style="display: block; margin-bottom: 4px; font-size: 12px; color: rgba(55, 53, 47, 0.65);">ID/PW</label>
-                      <div style="display: flex; align-items: center; width: 100%; font-size: 15px; line-height: 26px; padding: 4px 10px; position: relative; border-radius: 3px; box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px inset; background: rgba(242, 241, 238, 0.6); cursor: text; margin-top: 4px; margin-bottom: 8px;">
-                        <input placeholder="ID를 입력하세요." style="font-size: inherit; line-height: inherit; border: none; background: none; width: 100%; display: block; resize: none; padding: 0px;"></div>                        
-                       <!-- 여기까지 복붙해서 사용하기! placeholder에 문구 입력! -->
+        <div class="filebox">
+            <input class="upload-name" placeholder="User Profile...">
+            <label for="file">파일찾기</label> 
+            <input type="file" id="file">
+        </div>
 
-                        <div style="display: flex; align-items: center; width: 100%; font-size: 15px; line-height: 26px; padding: 4px 10px; position: relative; border-radius: 3px; box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px inset; background: rgba(242, 241, 238, 0.6); cursor: text; margin-top: 4px; margin-bottom: 8px;">
-                          <input placeholder="PW를 입력하세요." type="password" style="font-size: inherit; line-height: inherit; border: none; background: none; width: 100%; display: block; resize: none; padding: 0px;"></div>  
+        <input type="submit" class="login-main-submit" value="Sign Up" style="color: white;">
+        <p class="submit-text">*프로필 사진을 제외한 모든 항목은 필수항목입니다.</p>
+    </div>
 
-                          <label style="display: block; margin-bottom: 4px; font-size: 12px; color: rgba(55, 53, 47, 0.65);">이메일</label>
-                          <div style="display: flex; align-items: center; width: 100%; font-size: 15px; line-height: 26px; padding: 4px 10px; position: relative; border-radius: 3px; box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px inset; background: rgba(242, 241, 238, 0.6); cursor: text; margin-top: 4px; margin-bottom: 8px;">
-                            <input placeholder="이메일을 입력하세요." style="font-size: inherit; line-height: inherit; border: none; background: none; width: 100%; display: block; resize: none; padding: 0px;"></div>                        
- 
-                            <label style="display: block; margin-bottom: 4px; font-size: 12px; color: rgba(55, 53, 47, 0.65);">이름</label>
-                            <div style="display: flex; align-items: center; width: 100%; font-size: 15px; line-height: 26px; padding: 4px 10px; position: relative; border-radius: 3px; box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px inset; background: rgba(242, 241, 238, 0.6); cursor: text; margin-top: 4px; margin-bottom: 8px;">
-                              <input placeholder="닉네임을 입력하세요." style="font-size: inherit; line-height: inherit; border: none; background: none; width: 100%; display: block; resize: none; padding: 0px;"></div>                          
+</form>
 
-                        <div class="notion-focusable" role="button" aria-disabled="false" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; white-space: nowrap; height: 36px; border-radius: 4px; color: rgb(235, 87, 87); font-size: 14px; line-height: 1; padding-left: 12px; padding-right: 12px; font-weight: 500; background: rgb(253, 245, 242); box-shadow: rgba(15, 15, 15, 0.1) 0px 1px 2px, rgba(235, 87, 87, 0.3) 0px 0px 0px 1px inset; margin-top: 6px; margin-bottom: 12px; width: 100%;">가입하기</div>
-                      </form>
+    <div id="join-main-right">
+
+
+
+        <div class="login-sub-title"><h1 style="color: #fff;">Welcome to Edution!</h1>
+        <blockquote style="color: #fff; padding-left: 30px; font-size: 16px;">이미 Edution 회원이신가요?</blockquote>
+    </div>
+    
+    <button class="login-main-rightbtn" onclick = "location.href='#'">Sign In</button>
+    
+
+    </div>
+        
+</div>        
+
+    </main>
+    
+    
+    
+    
+
 </body>
 </html>
