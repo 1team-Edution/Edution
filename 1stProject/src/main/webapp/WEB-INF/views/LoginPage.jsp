@@ -16,235 +16,237 @@
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
     <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
 	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v10.0&appId=1588150011384568" nonce="SiOBIhLG"></script>
-       <style>
-html{
-    font-family: "Lato",Arial,sans-serif;
-        padding: 60px;
+ 
+ <style>
+        html{
+
+            width: 100%;
+            height: 100%;
+            padding: 60px;
+            
+            }
         
-    }
-
-body{
-    height:969px;
-    width:1261px;
-    
-    font-family: inter-var, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 17px;
-    line-height: 1.5;
-    overflow: hidden;
-
-}
-header {
-    width: 100%;
-    height: 50px; 
-    position: absolute; 
-    align-items: center;
-    top: 1vh;
-    left: -16vh;
-}
-
-
-
-    .index-sub-joinbtn{
-    width: 65px;
-    height: 23px;
-    background-color: rgb(225, 98, 89);
-    border-radius: 5px;
-    padding: 0.375rem 0.875rem 0.4375rem 0.875rem;
-    position: absolute; 
-    left:183vh;
-    top:1vh;
-}
-
-.index-sub-joinbtn > a {
+        body{
   
-  font-size: 1rem;
-  font-weight: 570;
-  color: #fff;
-  text-decoration: none; 
-  color: white;
+            width: 100%;
+            height: 100%;
+            font-family: inter-var, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+            font-size: 17px;
+            line-height: 1.5;
+            overflow: auto;
+        
+        }
+        header {
+            width: 100%;
+            height: 50px; /* footer의 높이 */
+            position: absolute; 
+            align-items: center;
+            top: 1vh;
+            left: -16vh;
+        }
 
-}
+        main{
 
-.login-main-title{
-    position: absolute; 
-    top: 2vh;
-    left: 7vh;
+            width: 100%; 
+            height: 100%;
 
-}
-
-.login-main-naver{
-    position: absolute; 
-    top: 8vh;
-    left: 33.5vh;
-
-}
-
-.login-main-kakao{
-    position: absolute; 
-    top: 8vh;
-    left: 38vh;
-}
-
-.login-main-facebook{
-    position: absolute; 
-    top: 8vh;
-    left: 42.5vh;
-
-}
-
-.login-main-idform{
-    position: absolute; 
-    top: 18vh;
-    left: 6vh;
-    width: 400px;
-    height: 53px;
-    background-color: rgba(0,0,0,0.1);
-    border-radius: 50px;
-
-}
-
-.login-main-pwform{
-    position: absolute; 
-    top: 24.5vh;
-    left: 6vh;
-    width: 400px;
-    height: 53px;
-    background-color: rgba(0,0,0,0.1);
-    border-radius: 50px;
-
-}
-
-.login-main-idform-input{
-
-    position: absolute; 
-    top: 18.5vh;
-    left: 8.5vh;
-    width: 250px;
-    height: 40px;
-    border-color: rgba(0,0,0,0);
-    outline: none;
-    background-color: rgba(0,0,0,0);
-}
-
-.login-main-pwform-input{
-
-position: absolute; 
-top: 25vh;
-left: 8.5vh;
-width: 250px;
-height: 40px;
-border-color: rgba(0,0,0,0);
-outline: none;
-background-color: rgba(0,0,0,0);
-}
-
-.login-main-submit{
-    position: absolute; 
-    top: 31vh;
-    left: 6vh;
-    width: 400px;
-    height: 53px;
-    background-color: rgb(225, 98, 89, 0.6);
-    border: none;
-    border-radius: 50px;
-    font-size:16px;
-    
-
-}
-
-.login-main-submit:focus,
-.login-main-submit:hover
-{
-    background-color: rgb(225, 98, 89);
-    cursor: pointer;
-
-}
+        }
 
 
+        
+        .index-sub-joinbtn{
+            width: 65px;
+            height: 23px;
+            background-color: rgb(225, 98, 89);
+            border-radius: 5px;
+            padding: 0.375rem 0.875rem 0.4375rem 0.875rem;
+            position: absolute; 
+            left:1800px;
+            top:15px;
+        }
+        
+        .index-sub-joinbtn > a {
+          
+          font-size: 1rem;
+          font-weight: 570;
+          color: #fff;
+          text-decoration: none; 
+          color: white;
+        
+        }
+        
+        .login-main-title{
+            position: absolute; 
+            top: 18px;
+            left: 65px;
+        
+        }
+        
+        .login-main-naver{
+            position: absolute; 
+            top: 78px;
+            left: 325px;
+        
+        }
+        
+        .login-main-kakao{
+            position: absolute; 
+            top: 78px;
+            left: 368px;
+        }
+        
+        .login-main-facebook{
+            position: absolute; 
+            top: 78px;
+            left: 415px;
+        
+        }
+        
+        .login-main-idform{
+            position: absolute; 
+            top: 175px;
+            left: 60px;
+            width: 400px;
+            height: 53px;
+            background-color: rgba(0,0,0,0.1);
+            border-radius: 50px;
+        
+        }
+        
+        .login-main-pwform{
+            position: absolute; 
+            top: 238px;
+            left: 60px;
+            width: 400px;
+            height: 53px;
+            background-color: rgba(0,0,0,0.1);
+            border-radius: 50px;
+        
+        }
+        
+        .login-main-idform-input{
+        
+            position: absolute; 
+            top: 178px;
+            left: 80px;
+            width: 250px;
+            height: 40px;
+            border-color: rgba(0,0,0,0);
+            outline: none;
+            background-color: rgba(0,0,0,0);
+        }
+        
+        .login-main-pwform-input{
+        
+        position: absolute; 
+        top: 241px;
+        left: 80px;
+        width: 250px;
+        height: 40px;
+        border-color: rgba(0,0,0,0);
+        outline: none;
+        background-color: rgba(0,0,0,0);
+        }
+        
+        .login-main-submit{
+            position: absolute; 
+            top: 300px;
+            left: 60px;
+            width: 400px;
+            height: 53px;
+            background-color: rgb(225, 98, 89, 0.6);
+            border: none;
+            border-radius: 50px;
+            font-size:16px;
+            
+        
+        }
+        
+        .login-main-submit:focus,
+        .login-main-submit:hover
+        {
+            background-color: rgb(225, 98, 89);
+            cursor: pointer;
+        
+        }
+        
+        
+        input::placeholder{
+            font-size: 16px;
+        }
+        
+        
+        #login-main-right{
+            position: absolute; 
+            top: 243px;
+            left: 975px;
+            width: 500px;
+            height: 500px;
+            background-color: rgb(225, 98, 89);
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        
+        #login-main-left{
+        
+            position: absolute; 
+            top: 243px;
+            left: 475px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            width: 500px;
+            height: 500px;
+            
+        }
+        
+        
+        
+        
+        .login-sub-title{
+            position: absolute; 
+            top: 150px;
+            left: 90px;
+        
+        }
+        
+        .login-main-rightbtn{
+            width: 92px;
+            height: 45px;
+            background-color: rgb(225, 98, 89);
+            border: solid 1px #fff;
+            border-radius: 50px;
+            color: #fff;
+            position: absolute; 
+            top: 300px;
+            left: 210px;
+        }
+        
+        .login-main-rightbtn:hover,
+        login-main-rightbtn:focus{
+        
+            background-color: #fff;
+            color: black;
+            cursor: pointer;
+        }
+        
+        .login-sitting-img{
+            position: absolute; 
+            top: 580px;
+            left:300px;
+        }
 
-.login-main-submit > a{
-
-position: absolute; 
-top: 50;
-left: 50;
-color: fff;
-
-}
-
-input::placeholder{
-    font-size: 16px;
-}
-
-
-#login-main-right{
-    position: absolute; 
-    top: 25vh;
-    left: 100vh;
-    width: 500px;
-    height: 500px;
-    background-color: rgb(225, 98, 89);
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-
-#login-main-left{
-
-    position: absolute; 
-    top: 25vh;
-    left: 50vh;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    width: 500px;
-    height: 500px;
-    
-}
-
-
-
-
-.login-sub-title{
-    position: absolute; 
-    top: 13vh;
-    left: 9vh;
-
-}
-
-.login-main-rightbtn{
-    width: 92px;
-    height: 45px;
-    background-color: rgb(225, 98, 89);
-    border: solid 1px #fff;
-    border-radius: 50px;
-    color: #fff;
-    position: absolute; 
-    top: 30vh;
-    left: 20vh;
-}
-
-.login-main-rightbtn:hover,
-login-main-rightbtn:focus{
-
-    background-color: #fff;
-    color: black;
-    cursor: pointer;
-}
-
-.login-sitting-img{
-    position: absolute; 
-    top: 60vh;
-    left:32vh;
-}
-.login-findidpw-text{
+        .login-findidpw-text{
 
             position: absolute; 
-            top: 40vh;
-            left:6vh;
+            top: 380px;
+            left:60px;
             font-size: 14px;
             color: rgba(0,0,0,0.6);
-}
+        }
+
         
         .login-findid{
 position: absolute; 
-top: 40vh;
-left:30vh;
+top: 380px;
+left:290px;
 font-size: 14px;
 
 }
@@ -252,14 +254,15 @@ font-size: 14px;
 .login-findpw{
 
     position: absolute; 
-top: 40vh;
-left:38vh;
+top: 380px;
+left:370px;
 font-size: 14px;
 
 }
-
-    </style>
-
+        
+            </style>
+ 
+ 
    
 
 </head>
