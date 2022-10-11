@@ -7,8 +7,8 @@
   
   
   <insert id="insert" parameterType="userDTO">
-  insert into tbl_user(user_id, user_pw, user_name, user_email, user_nick, user_photo, user_type, user_sns, user_templet)
-  values (#{user_id},#{user_pw},#{user_name},#{user_email},#{user_nick},#{user_photo}, #{user_type}, #{user_sns},#{user_templet})
+  insert into tbl_user(user_id, user_pw, user_name, user_email, user_nick, user_photo)
+  values (#{user_id},#{user_pw},#{user_name},#{user_email},#{user_nick},#{user_photo})
   </insert>
   
   
@@ -83,5 +83,30 @@
 
   
   </update>
+  
+  <update id="img_insert" parameterType="UserDTO">
+  
+  update tbl_user
+  
+  set user_photo = '${user_photo}'
+  
+  where user_id = '${user_id}'
+  
+  </update>
+  
+  <select id="idSearch" parameterType="UserDTO" resultType="UserDTO">
+  
+  select user_id
+  from tbl_user
+  where user_id = '${user_id}'
+  
+  </select>
+  
+  <select id="LoginidSearch" parameterType="UserDTO" resultType="UserDTO">
+  select user_id
+  from tbl_user
+  where user_name = '${user_name}' and user_email = '${user_email}'
+  
+  </select>
   
   </mapper>

@@ -122,6 +122,49 @@ public class UserDAO {
 		
 		return result;
 	}
+
+
+
+	public int img_insert(UserDTO dto) {
+		int result = 0;
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		
+		result = sqlSession.insert("img_insert", dto);
+		
+		sqlSession.close();
+		
+		
+		return result;
+	}
+
+
+
+	public UserDTO idSearch(UserDTO dto) {
+		UserDTO result = null;
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		
+		result = sqlSession.selectOne("idSearch", dto);
+		
+		sqlSession.close();
+		
+		
+		return result;
+	}
+
+
+
+	public UserDTO LoginidSearch(UserDTO dto) {
+		UserDTO result = null;
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+				
+		result = sqlSession.selectOne("LoginidSearch", dto);
+		
+		sqlSession.close();
+		
+		return result;
+	}
 	
 	
 	
