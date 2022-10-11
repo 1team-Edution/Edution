@@ -55,12 +55,11 @@ input {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background: rgba(255, 255, 255, 0.3);
-	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 	backdrop-filter: blur(8px);
 	-webkit-backdrop-filter: blur(8px);
 	border-radius: 10px;
-	border: 1px solid rgba(255, 255, 255, 0.18);
+
+
 }
 
 #modal .modal-window {
@@ -71,6 +70,9 @@ input {
 	position: relative;
 	top: -100px;
 	padding: 10px;
+	padding-top:150px;
+	width: 850px;
+	height: 100%;
 }
 </style>
 
@@ -119,9 +121,9 @@ input {
 			style="flex: 0 0 auto; width: 1px; height: 16px; margin-left: 8px; margin-right: 8px; background: rgba(55, 53, 47, 0.16);"></div>
 		<div role="button" tabindex="0"
 			style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: inline-flex; align-items: center; flex-shrink: 0; white-space: nowrap; height: 28px; border-radius: 3px; font-size: 14px; line-height: 1.2; min-width: 0px; padding-left: 8px; padding-right: 8px; color: rgb(55, 53, 47);">
-
+		
 			<img src="img/Edution2.png" style="width: 20px; height: 20px;">
-			Edution으로 돌아가기
+			<a href="indexView.do" style="text-decoration: none; color:black;">Edution으로 돌아가기</a>
 		</div>
 	</div>
 
@@ -229,7 +231,7 @@ input {
 							<span style="width: 150px;">Likes</span> <span id="brd_likes" style="color: black;">게시글 좋아요 개수를 넣어주세요</span>
 						</div>
 
-						게시글 파일
+						<!-- 게시글 파일  -->
 						<div id="file_content" style="line-height: 2; margin-bottom: 80px; caret-color: rgb(55, 53, 47); padding-top: 50px;">
 							<img id="brd_file" src="" style="display: block; object-fit: cover; border-radius: 1px; pointer-events: auto; width: 100%; height: 500px;">
 							<div id="brd_content" style="white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding-bottom: 30px;">안녕하세요. 게시글 내용을 출력해주세요.</div>
