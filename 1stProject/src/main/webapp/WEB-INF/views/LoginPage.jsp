@@ -232,6 +232,31 @@ login-main-rightbtn:focus{
     top: 60vh;
     left:32vh;
 }
+.login-findidpw-text{
+
+            position: absolute; 
+            top: 40vh;
+            left:6vh;
+            font-size: 14px;
+            color: rgba(0,0,0,0.6);
+}
+        
+        .login-findid{
+position: absolute; 
+top: 40vh;
+left:30vh;
+font-size: 14px;
+
+}
+
+.login-findpw{
+
+    position: absolute; 
+top: 40vh;
+left:38vh;
+font-size: 14px;
+
+}
 
     </style>
 
@@ -306,6 +331,11 @@ login-main-rightbtn:focus{
         <input name = "user_pw" type="password" class="login-main-pwform-input" placeholder="Password">
 
         <input type="submit" class="login-main-submit" value="Sign In" style="color: white;">
+        
+         <div class="login-findidpw-text">* 아이디 및 비밀번호를 잊으셨나요?</div>
+        <div class="login-findid"><a href="#" style="color: rgba(0,0,0,0.5);">아이디 찾기</a></div>
+        <div class="login-findpw"><a href="#" style="color: rgba(0,0,0,0.5);">비밀번호 찾기</a></div>
+        
     </div>
 
 </form>

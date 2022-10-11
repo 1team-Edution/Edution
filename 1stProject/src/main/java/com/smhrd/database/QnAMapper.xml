@@ -8,8 +8,8 @@
   		select * from tbl_help where help_seq = #{help_seq}
   	</select>
   	<insert id="QnAInsert" parameterType="QnA">
-  		insert into tbl_help(help_seq,help_content,user_id)
-  		values(tbl_help_seq.nextval,#{help_content},#{user_id})
+  		insert into tbl_help(help_seq,help_content,user_id, help_title, help_date)
+  		values(tbl_help_seq.nextval,#{help_content},#{user_id},#{help_title},sysdate)
   	</insert>
   	<update id="QnAUpdate" parameterType="QnA">
   		update tbl_help set help_content=#{help_content}

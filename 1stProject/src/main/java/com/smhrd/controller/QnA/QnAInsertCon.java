@@ -13,25 +13,28 @@ public class QnAInsertCon implements Controller {
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		
 		
-		String user_name = request.getParameter("user_name");
+		String help_title = request.getParameter("help_title");
 		String user_id = request.getParameter("user_id");
 		String help_content = request.getParameter("help_content");
 	
 		System.out.println(help_content);
-		System.out.println(user_name);
+		System.out.println(help_title);
 		System.out.println(user_id);
 		
 		QnADAO dao = new QnADAO();
 		
-		QnADTO dto = new QnADTO(user_id, user_name, help_content);
-
+		QnADTO dto = new QnADTO();
+		
+		dto.setHelp_content(help_content);
+		dto.setUser_id(user_id);
+		dto.setHelp_title(help_title);
 		
 		int result = dao.insert(dto);
 		
 		
 		if (result > 0) {
-			System.out.println("frontcontroller 보내기 성공");
-			return "redirect:/QnAInsertComplete.do";
+			System.out.println("데이터 보내기 성공");
+			return "redirect:/GoQnA.do";
 		}else {
 			System.out.println("입력실패");
 			return "redirect:/QnAInsert.do";

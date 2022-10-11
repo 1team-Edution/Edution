@@ -178,32 +178,26 @@ input::placeholder{
     font-size: 15px;
 }
 
-.qna-sendbtn{
-    width: 105px;
-    height: 23px;
-    background-color: rgb(225, 98, 89);
-    border-radius: 5px;
-    padding: 0.275rem 0.775rem 0.4375rem 0.875rem;
-    position: absolute; 
-    left:71%;
-}
-
-
-.qna-sendbtn > a {
-  
-  font-size: 1rem;
-  font-weight: 570;
-  color: #fff;
-  text-decoration: none; 
-  color: white;
-
-}
 
 .qna-main-sendmessage{
     position:absolute;
         left:52%;
         top:5vh;
 }
+
+   .qna-main-submit{
+    width: 150px;
+    height: 30px;
+    background-color: rgb(225, 98, 89);
+    padding-top: 4px;
+    border: none;
+    border-radius: 5px;
+    font-size:1rem;
+    position:absolute;
+    left:67%
+            
+        
+        }
 
 </style>
 
@@ -271,6 +265,7 @@ input::placeholder{
             
             <div class="qna-main-sendmessage"><h1>Edution에게<img src="img/qnasendimage.png" style="margin-left:15px; width: 140px;"><br>
                                                   Message를 보내주세요!</h1></div>
+<<<<<<< HEAD
     <div class="qna-main-right">
                 
     <input type="text" class="qna-form-userid" placeholder="Your ID">
@@ -282,8 +277,24 @@ input::placeholder{
     <textarea class="qna-form-content" placeholder="Write your message"></textarea>
     
     <div style="padding-top: 10px;"></div>
-    <div class="qna-sendbtn"><a href="">Send Message</a></div>
+      <input type="submit" class="qna-main-submit" value="Send Message" style="color: white;">
 </div>
+=======
+      <form action="QnAInsert.do">                                            
+	    <div class="qna-main-right">
+	   	 <input type="text" name="user_id" class="qna-form-userid" placeholder="Your ID">
+	    
+	    <div style="padding: 5px;"></div>
+	   	 <input type="text" name="help_title" class="qna-form-title" placeholder="Write title of your message">
+	
+	    <div style="padding-top: 10px;"></div>
+	   	 <textarea class="qna-form-content" name="help_content" placeholder="Write your message"></textarea>
+	    
+	    <div style="padding-top: 10px;"></div>
+	     <input type="submit" class="qna-main-submit" value="Send Message" style="color: white;">
+		</div>
+	  </form>  
+>>>>>>> branch 'master' of https://github.com/1team-Edution/Edution.git
 
 
 
