@@ -236,8 +236,8 @@ input {
 						</div>
 
 						게시글 파일
-						<div style="line-height: 2; margin-bottom: 80px; caret-color: rgb(55, 53, 47); padding-top: 50px;">
-							<img src="" style="display: block; object-fit: cover; border-radius: 1px; pointer-events: auto; width: 100%; height: 500px;">
+						<div id="file_content" style="line-height: 2; margin-bottom: 80px; caret-color: rgb(55, 53, 47); padding-top: 50px;">
+							<img id="brd_file" src="" style="display: block; object-fit: cover; border-radius: 1px; pointer-events: auto; width: 100%; height: 500px;">
 							<div id="brd_content" style="white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding-bottom: 30px;">안녕하세요. 게시글 내용을 출력해주세요.</div>
 						</div>
 					</div>
@@ -247,19 +247,26 @@ input {
 let boardShow = document.getElementById('boardShow');
 let modalShow = document.getElementById('modalShow');
 let resultHTML = [];
-/* let modalHTML = [];
-let modal = [];
-let btnModal = [];
-let btnModal1 = []; */
+let date = [];
+let json = [];
+
 let brd_title = document.getElementById('brd_title');
 let brd_date = document.getElementById('brd_date');
 let user_name = document.getElementById('user_name');
-let brd_file = document.getElementById('brd_file');
+let file_content = document.getElementById('file_content');
+let brd_likes = document.getElementById('brd_likes');
 
 function modalOn(index) {
 	//modal.style.display === "flex"
 	$('.modal-overlay').css('display','flex');
-	return index
+	brd_title.innerText = json[index].brd_title;
+	brd_date.innerText = date[index][0];
+	user_name.innerText = json[index].user_name;
+	file_content.innerHTML = `
+		<img src="resources/test/${json[index].brd_file}" style="display: block; object-fit: cover; border-radius: 1px; pointer-events: auto; width: 100%; height: 500px;">
+		<div id="brd_content" style="white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding-bottom: 30px;">${json[index].brd_content}</div>
+	`;
+	
 }
 
 function modalOff() {
@@ -282,25 +289,24 @@ $(document).ready(function() {
 	
 		dataType : "JSON",
 		success : function(res) {
-			// id값 랜덤 생성 function
+			// DB에서 가져온 게시물 데이터 배열에 저장
+			json = res;
 			
 			
 			
 			console.log(res);
 			// 게시글 조회 반복문
 			for (var i = 0; i < res.length; i++) {
-				/* btnModal.push(idRandomGenerate());
-				btnModal1.push(idRandomGenerate());
-				modal.push(idRandomGenerate()); */
+			
+				//날짜에서 시분초를 제외한 값 배열에 저장
+				date.push(res[i].brd_date.split(' '));
 				
-				let date = res[i].brd_date.split(' ');
-				console.log(date);
 
 				//${btnModal[i]}
 				
 				resultHTML += `
 					<div role="button" class="modalTest">
-					<a role="button" onclick="modalOn()" style="display: block; color: inherit; text-decoration: none; box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 2px 4px; border-radius: 3px; background: white; overflow: hidden; transition: background 100ms ease-out 0s; position: static; height: 100%;">
+					<a role="button" onclick="modalOn(${i})" style="display: block; color: inherit; text-decoration: none; box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 2px 4px; border-radius: 3px; background: white; overflow: hidden; transition: background 100ms ease-out 0s; position: static; height: 100%;">
 						<div class="btn-modal" tabindex="0"
 							style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; width: 100%; height: 100%; display: flex; flex-direction: column;">
 							<div style="position: relative; width: 100%;">
@@ -328,8 +334,7 @@ $(document).ready(function() {
 									style="padding-right: 10px; font-size: 12px; display: flex; align-items: stretch; padding-bottom: 2px; height: 24px; white-space: nowrap;">
 									<div role="button" aria-disabled="true" tabindex="-1"
 										style="user-select: none; transition: background 20ms ease-in 0s; display: flex; align-items: center; border-radius: 5px; padding-top: 0px; padding-left: 4px;">
-										<div
-											style="line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 0px; margin-right: 4px; pointer-events: all;">${date[0]}</div>
+										<div style="line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 0px; margin-right: 4px; pointer-events: all;">${date[i][0]}</div>
 										<div
 											style="display: flex; position: absolute; right: 6px; top: -1px;"></div>
 									</div>
@@ -348,51 +353,7 @@ $(document).ready(function() {
 			
 			boardShow.innerHTML = resultHTML;
 			
-			/* brd_title.innerHTML =  */
-	
-
-/* function modalOn() {
-	//modal.style.display === "flex"
-	$('.modal-overlay').css('display','flex');
-} */
-/* function isModalOn () {
-    modal.style.display === "flex"
-} */
-/* function modalOff() {
-    //modal.style.display = "none"
-	$('.modal-overlay').css('display','none');
-} */
-
-
-/* $('.modalTest').on("click",function(){
-	//modal.style.display === "flex"
-	$('.modal-overlay').css('display','flex');
-}) */
-
-/* btnModal.addEventListener("click", function() {
-	modal.style.display === "flex"
-})
- */
-/* btnModal1.addEventListener("click", e => {
-	modal.style.display === "flex"
-})  */
-
-/*  modal.addEventListener("click", e => {
-    const evTarget = e.target
-    if(evTarget.classList.contains("modal-overlay")) {
-        modalOff();
-    }
-})
-*/
-
-
-						
-
-			
-		
-			
-			
-		////////////// success 끝나는 지점 /////////////////////////////////	
+			////////////// success 끝나는 지점 /////////////////////////////////	
 		}, 
 		
 		error : function(e) {
@@ -403,16 +364,8 @@ $(document).ready(function() {
 
 });
 ///////////////// ajax 끝나는 지점 //////////////////////////////	
-/* let idRandomGenerate = ()=> {
-    return Math.random().toString(36).substring(2, 9);
-
-}
-btnModal.push(idRandomGenerate());	 */
 
 
-
-///////////////////// 게시글 조회 ///////////////////////////
-		
 		
 		
 

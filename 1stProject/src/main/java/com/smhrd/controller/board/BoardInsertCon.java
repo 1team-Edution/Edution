@@ -45,7 +45,7 @@ public class BoardInsertCon implements Controller {
 		
 		String brd_title = multi.getParameter("brd_title");
 		String brd_content = multi.getParameter("brd_content");
-		int brd_likes = Integer.parseInt(multi.getParameter("brd_likes"));
+		int brd_likes = 0;
 		String user_id = multi.getParameter("user_id");
 		
 		
@@ -71,7 +71,7 @@ public class BoardInsertCon implements Controller {
 			
 		}else {
 			System.out.println("게시글 입력실패");
-			return "TestBoardInsert";
+			return "CommunityView";
 		}
 	}
 
