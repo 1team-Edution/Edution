@@ -137,3 +137,66 @@
     transition: all 0.3s;
     transform: translateX(-700px);
 	}
+	
+	
+	
+	
+	
+	        #glassimg{
+            width: 20px;
+            height: 20px;
+            margin-top:4px;
+            margin-left: 10px;
+            float: left;
+            filter: opacity(0.4) drop-shadow(0 0 0 rgb(255, 255, 255));
+        }
+        #tagcheck-area{
+            float: left;
+        }
+        #btn-tag{
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: var(--button-bg-color);
+            color: var(--button-color);
+            border: none;
+            cursor: pointer;
+        }
+        .tag-window {
+            box-shadow: 0 6px 10px 0 rgba(134, 134, 134, 0.37);
+            backdrop-filter: blur( 13.5px );
+            -webkit-backdrop-filter: blur( 13.5px );
+            border-radius: 10px;
+            background-color: rgb(255, 255, 255);
+            border: 2px solid rgba(43, 43, 43, 0.18);
+            width: 400px;
+            height: 330px;
+            position: relative;
+            top: -100px;
+            padding: 10px;
+            display: inline;
+        }
+        .tagtitle{
+            margin-left: 15px;
+            margin-bottom: 5px;
+            font-family: 맑은고딕, Arial;
+            font-size: 15px;
+            color:#888888;
+        }
+        #tagsearch{
+            border: 2px solid rgba(43, 43, 43, 0.18);
+            border-radius: 10px;
+            width: 400px;
+            height: 70px;
+            padding-left: 10px;
+            padding-top: 10px;
+            position: absolute;
+            top: 80px;
+            left: 400px;
+        }
+        .tagresulttable{
+            width: 380px;
+        }
+        #tagwrapper{
+            position: relative;
+        }

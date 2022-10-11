@@ -19,9 +19,8 @@ public class TodoTagSearchCon implements Controller {
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();
 		ArrayList<TodoDTO> todoDtos = (ArrayList<TodoDTO>) session.getAttribute("todolist");
-		String[] tags = request.getParameterValues("tag");
-		
-		
+		String tag = request.getParameter("checkedtag");
+		String[] tags=tag.split("#");
 		
 		
 		
