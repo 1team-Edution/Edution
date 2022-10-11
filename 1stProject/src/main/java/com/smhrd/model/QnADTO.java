@@ -7,27 +7,35 @@ public class QnADTO {
 	private String user_id;
 	private String help_content;
 	private String help_date;
+	private String help_title;
 	
 	// user테이블과 조인을 통해 가져올 데이터
 	private String user_name;
 	// 생성자
 	
-	public QnADTO(String user_id, String help_content, String user_name) {
-		super();
-		this.user_id = user_id;
-		this.help_content = help_content;
-		this.user_name = user_name;
-	}
+		
+	
+	
 
 	
 
 	// help_id는 fk이기 때문에 setter메소드가 없음.
-	public String getHelp_content() {
-		return help_content;
+	
+
+	public String getHelp_title() {
+		return help_title;
 	}
 
 
 
+	public void setHelp_title(String help_title) {
+		this.help_title = help_title;
+	}
+
+	public String getHelp_content() {
+		return help_content;
+	}
+	
 
 	public void setHelp_content(String help_content) {
 		this.help_content = help_content;

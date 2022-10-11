@@ -1,6 +1,7 @@
 package com.smhrd.controller.user;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -33,25 +34,41 @@ public class JoinCon implements Controller {
 			e.printStackTrace();
 		}
 
+		String user_photo = multi.getFilesystemName("user_photo");
 		String user_id = multi.getParameter("user_id");
 		String user_pw = multi.getParameter("user_pw");
 		String user_name = multi.getParameter("user_name");
 		String user_email = multi.getParameter("user_email");
 		String user_nick = multi.getParameter("user_nick");
-		String user_photo = multi.getFilesystemName("user_photo");
-		String user_type = multi.getParameter("user_type");
-		String user_sns = multi.getParameter("user_sns");
-		String user_templet = multi.getParameter("user_templet");
-
-		System.out.println(user_id);
-		System.out.println(user_pw);
-
-		// 사진 저장안하면 오류가 나기 때문에 썼습니다.
+		
+		// null값 사진 저장
 		if (user_photo == null) {
 
-			user_photo = "사진없음";
-		}
+		    user_photo = "home-page.webp";
+					
+		     }
+		
+		System.out.println(user_id);
+		System.out.println(user_photo);
+		System.out.println(user_email);
+		System.out.println(user_pw);
+		
+		/*
+		 * String file = multi.getFilesystemName("file"); String user_type =
+		 * multi.getParameter("user_type"); String user_sns =
+		 * multi.getParameter("user_sns"); String user_templet =
+		 * multi.getParameter("user_templet");
+		 */
 
+		
+		
+
+		
+
+		
+		
+		
+		
 		UserDTO userDTO = new UserDTO();
 		userDTO.setUser_id(user_id);
 		userDTO.setUser_pw(user_pw);
@@ -59,23 +76,49 @@ public class JoinCon implements Controller {
 		userDTO.setUser_email(user_email);
 		userDTO.setUser_nick(user_nick);
 		userDTO.setUser_photo(user_photo);
-		userDTO.setUser_type(user_type);
-		userDTO.setUser_sns(user_sns);
-		userDTO.setUser_templet(user_templet);
+		
+		
+		  UserDAO dao = new UserDAO(); 
+		  
+		 int row = dao.insert(userDTO);
+		 
+		System.out.println("여기는 로우 입니다."+row);
+		 
+		try {
+			response.setContentType("text/html");
+			response.setCharacterEncoding("utf-8");
 
-		UserDAO dao = new UserDAO();
-		int row = dao.insert(userDTO);
+			PrintWriter out = response.getWriter();
 
-		if (row > 0) {
+		  if (row > 0) {
+			  
+			  out.println("<script>alert('회원가입을 성공적으로 마쳤습니다');location.href='LoginPage.do';</script>");
+				out.flush();
+				out.close();
+		  
+		  return "LoginPage";
+		  
+		  }
+		  
+		  else { 
+			  
+			  
+				out.println("<script>alert('회원가입에 실패 하셨습니다');location.href='Join.do';</script>");
+				out.flush();
+				out.close();
 
-			return "redirect:/indexView.do";
+				
+
+			 return "Join";
+		  
+		  }
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return "Join";
 		}
 
-		else {
-			return "redirect:/Join.do";
-
-		}
-
+		
 	}
 
 }

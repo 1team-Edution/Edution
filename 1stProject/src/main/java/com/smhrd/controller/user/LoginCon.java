@@ -36,9 +36,9 @@ public class LoginCon implements Controller {
 				session.setAttribute("loginUser", list);
 				request.setAttribute("list", list);
 				
-				//return "MyPage";
+				return "Main.html";
 				//원래 주소! 편의를 위해 바꿔둠
-				return "redirect:/Main.do";
+				//return "redirect:/Main.do";
 
 			}
 			else {
