@@ -26,6 +26,8 @@ import com.smhrd.controller.QnA.QnAUpdateCon;
 import com.smhrd.controller.board.BoardGetJsonCon;
 import com.smhrd.controller.board.BoardInsertCon;
 import com.smhrd.controller.board.BoardSelectAllCon;
+import com.smhrd.controller.board.GoBoardCon;
+import com.smhrd.controller.board.GoBoardInsertCon;
 import com.smhrd.controller.note.NoteAjax;
 import com.smhrd.controller.note.NoteAjaxInsert;
 import com.smhrd.controller.note.NoteAjaxParentInsert;
@@ -81,6 +83,8 @@ public class FrontController1 extends HttpServlet {
 		mappings.put("/QnAInsertComplete.do", new QnAInsertCompleteCon());
 		mappings.put("/QnAUpdate.do", new QnAUpdateCon());
 		mappings.put("/QnADelete.do", new QnADeleteCon());
+		mappings.put("/GoQnA.do", new GoQnACon());
+		
 
 		// Todo mappings
 
@@ -112,6 +116,8 @@ public class FrontController1 extends HttpServlet {
 		mappings.put("/BoardInsert.do", new BoardInsertCon());
 		mappings.put("/BoardSelectAll.do", new BoardSelectAllCon());
 		mappings.put("/BoardGetJson.do", new BoardGetJsonCon());
+		mappings.put("/GoBoard.do", new GoBoardCon());
+		mappings.put("/GoBoardInsert.do", new GoBoardInsertCon());
 		
 
 

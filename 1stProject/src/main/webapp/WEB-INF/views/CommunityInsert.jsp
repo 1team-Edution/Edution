@@ -68,7 +68,7 @@
               </div>
               <div class="mb-3">
                 <label for="formFile" class="form-label">나의 템플릿/사진</label>
-                <input name="brd_file" class="form-control" type="file" id="formFile">
+                <input name="file" class="form-control" type="file" id="formFile">
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">게시글 내용</label>

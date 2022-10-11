@@ -23,6 +23,8 @@ public class LoginidSearch extends HttpServlet {
 		String name = request.getParameter("name");
 		String email = request.getParameter("email");
 		  
+		System.out.println(name);
+		System.out.println(email);
 		
         
         UserDTO dto = new UserDTO();

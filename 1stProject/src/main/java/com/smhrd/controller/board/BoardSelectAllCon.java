@@ -21,7 +21,7 @@ public class BoardSelectAllCon implements Controller {
 		System.out.println(list.get(0));		
 		request.setAttribute("list", list);
 		
-		return "redirect:/TestBoardList.jsp";
+		return "redirect:/GoBoard.do";
 	}
 
 }
