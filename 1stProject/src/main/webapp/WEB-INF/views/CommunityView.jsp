@@ -166,7 +166,7 @@ input {
 				</div>
 				<!-- 게시글 등록하기 버튼 부분 -->
 					<div style="max-width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 3px 2px; min-height: 1em; color: rgb(55, 53, 47); -webkit-text-fill-color: rgba(55, 53, 47, 0.5);"></div>
-					<a href="CommunityInsert.jsp" role="button" style="padding-left: 412.5px; padding-right: 412.5px; min-width: 708px;">
+					<a href="GoBoardInsert.do?" role="button" style="padding-left: 412.5px; padding-right: 412.5px; min-width: 708px;">
 						<div class="jsx-2971364727 button primary button-size-m">게시글 등록하기</div>
 					</a>
 					
