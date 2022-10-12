@@ -16,14 +16,28 @@ html{
         min-width: 1020px;
     }
 
-body{
+    body{
     
     font-family: inter-var, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 17px;
     line-height: 1.5;
     overflow: hidden;
 
-}
+    }
+
+    main{
+        width: 100%;
+        height: 100%;
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: auto;
+        margin-right: auto;
+        padding-right: 24px;
+        padding-left: 24px;
+        position:relative;
+
+    }
+
 
 header {
     width: 100%;
@@ -35,25 +49,6 @@ header {
 }
 
 
-.index-goqna{
-    position: absolute; 
-    left:80%;
-    font-weight: 700;
-}
-
-.index-checkimo{
-    position: absolute; 
-    left:79%;
-    font-weight: 0;
-}
-
-.index-goqna-after{
-    position: absolute; 
-    left:87%;
-    color: #fff;
-    border-right: solid 2px rgb(225, 98, 89, 0.2);
-}
-
 .index-sub-joinbtn{
     width: 65px;
     height: 23px;
@@ -61,8 +56,8 @@ header {
     border-radius: 5px;
     padding: 0.375rem 0.875rem 0.4375rem 0.875rem;
     position: absolute; 
-    left:92%;
-    top:1vh;
+    left:1775px;
+    top:10px;
 }
 
 .index-sub-joinbtn > a {
@@ -75,26 +70,14 @@ header {
 
 }
 
-main{
-        width: 100%;
-        height: 100%;
-        position:relative;
-        
-    }
-
 .qna-main-left{
         position:absolute;
-        left:14%;
-        top:15vh;
+        left:260px;
+        top:150px;
         
     }
 
-.qna-main-ulbox{
-        position:absolute;
-        left:13%;
-        top:36vh;
-        
-    }
+
 
 h1{
     display: block;
@@ -117,15 +100,15 @@ h2{
 
 .qna-main-lefth3{
     position:absolute;
-        left:12%;
-        top:55vh;
+        left:220px;
+        top:540px;
     margin-top: 10px;
 }
 
 .qna-main-right{
     position:absolute;
-        left:52%;
-        top:25vh;
+        left:950px;
+        top:250px;
 }
 
 .qna-form-userid{
@@ -178,11 +161,10 @@ input::placeholder{
     font-size: 15px;
 }
 
-
 .qna-main-sendmessage{
     position:absolute;
-        left:52%;
-        top:5vh;
+        left:950px;
+        top:50px;
 }
 
    .qna-main-submit{
@@ -194,10 +176,12 @@ input::placeholder{
     border-radius: 5px;
     font-size:1rem;
     position:absolute;
-    left:67%
+    left:300px;
             
         
         }
+        
+
 
 </style>
 
@@ -219,7 +203,7 @@ input::placeholder{
                         <li style="float: left; margin-left: 15px; margin-right: 15px; cursor: default;"><a href="" style="text-decoration: none; color:inherit;">Community</a></li>
                         <li style="float: left; margin-left: 15px; margin-right: 15px; cursor: default;"><a href="#" style="text-decoration: none; color:inherit; ">Q&A</a></li>
                         <li style="float: left;">
-                            <div style="position: absolute; left:88%; padding: auto;">
+                            <div style="position: absolute; left:1700px; padding: auto;">
                                 <a href="#" style="text-decoration: none; color:inherit">로그인</a>
                             </div>
                         </li>
