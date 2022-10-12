@@ -15,6 +15,7 @@
 
 <!-- jQuery library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -41,8 +42,11 @@ position : sticky;
 .note-editor.note-airframe .note-editing-area .note-editable {
     padding: 20px;
     overflow: auto;
-    word-wrap: break-word
+    word-wrap: break-word;
+    height : 500px;
+    width : 1000px
 }
+
 
 
 
@@ -50,35 +54,40 @@ position : sticky;
   </head>
   <body>
     
+   
     <div id="container">
     
       <div id="left-div"></div>
       <div id="right-div">
         <div id="header">
           <button type="button" id="slideout">>></button>
-          <div id="subheader"></div>
+          
+          
+          <div id="subheader"><div id= "maintitle"></div></div>
+          
+          
+          
         </div>
         <div id="area-below-header">
-           
           <div id="box">
             <div id="first">
               <div id="paddedname">
-                <div id="icon">🔥</div>
+                <div id="nick-area">🔥</div>
                 
               </div>
             </div>
             <div id="second">
               <div id="secondone">
                 <div id="searchicon">🔍</div>
-                <div id="quickfind">메뉴 1</div>
+                <div id="quickfind" onclick = "location.href='Main.do';">메인으로</div>
               </div>
               <div id="secondtwo">
                 <div id="timeicon">🔍</div>
-                <div id="allupdates">메뉴 2</div>
+                <div id="allupdates" onclick = "location.href='GoBoard.do';">게시판</div>
               </div>
               <div id="secondthree">
                 <div id="settingsicon">🔍</div>
-                <div id="settings">메뉴 3</div>
+                <div id="settings" onclick = "location.href='GoQnA.do';">QnA</div>
               </div>
             </div>
             <div id="third">
@@ -87,9 +96,15 @@ position : sticky;
                   <div id="workspace">
                     <div id="insideworkspace">
                       <span>Workspace</span>
+                      
                     </div>
                   </div>
                   <div id="page_title">
+                  <div id="fourth">
+              <div id="paddednamelast">
+                <div id="icon">➕</div>
+                <div id="name" onclick = "location.href='NoteGoInsert.do';">New Page</div>
+              </div>
                   
                     
                   </div>
@@ -126,18 +141,17 @@ position : sticky;
                 </div>
               </div>
             </div>
-            <div id="fourth">
-              <div id="paddednamelast">
-                <div id="icon">➕</div>
-                <div id="name" onclick = "location.href='NoteGoInsert.do';">New Page</div>
-              </div>
+            
+            
               
             </div>
+             
           </div>
-          
+         
           <div id="btn"></div>
           
           <div id="cover"></div>
+          
           
           
           <div id = "notemain">
@@ -167,7 +181,7 @@ position : sticky;
 	let userId = document.getElementById("user_id");
 	let noteContent = document.getElementById("note_content");
 	let noteMain = document.getElementById("notemain");
-	
+	let maintitle = document.getElementById("maintitle");
 	
 	$(document).ready(function(){
 			$.ajax({
@@ -184,11 +198,11 @@ position : sticky;
 						console.log(res[i].note_seq);
 						console.log(res);
 						
-						pageTitle.innerHTML += `<div style ="overflow : auto";>
-						<input type = "hidden" id = "noteseq" value = ${res[i].note_seq}>
-						<div id ="result_notetitle" onclick = "selectone(${res[i].note_seq})" style = "float : left; margin-left : 15px;">${res[i].note_title}</div>
+						pageTitle.innerHTML += `<div style ="overflow : auto;">
+							<input type = "hidden" id = "noteseq" value = ${res[i].note_seq}>
+						<div id ="result_notetitle" onclick = "selectone(${res[i].note_seq})" style = "float : left; margin-left : 15px;"><xmp>${res[i].note_title}</xmp></div>
 						<div style = "float: right; margin-right: 15px;">
-						<button id="addnote" style ="margin-left: 15px;" onclick = "parentinsert(${res[i].note_seq})">󠀫󠀫󠀫󠀫➕</button>
+						<button id="addnote"  onclick = "parentinsert(${res[i].note_seq})">󠀫󠀫󠀫󠀫➕</button>
 						<button id="deleteBotton" style="overflow : auto;" onclick="location.href='NoteDelete.do?note_seq=${res[i].note_seq}'">🗑️</button></div>
 						</div>`;
 						
@@ -203,10 +217,6 @@ position : sticky;
 			});
 	});	
 	
-	
-
-	
-		
 	
 	
  function selectone(noteseq){
@@ -227,30 +237,53 @@ position : sticky;
 		          <div id = "title"><h1><input type="text"style = "border : none;" name = "note_title" id = "note_title" value = "${res.note_title}"></h1>
 		           <div id = "user"><input type= "hidden" name = "user_id" id = "user_id" value = "${res.user_id}"></div>
 		          <textarea class="summernote2" name = "note_content" id = "note_content">${res.note_content}</textarea>
-		          <div class="form-group"><div style = "float : left; margin-left : 15mm;"><img width="40%" alt="" src="resources/notefile/${res.note_file}"><a href = "${res.note_file}">${res.note_file}</a></div>
-		          </div><div style = "float: right;"><button type="submit" class="btn btn-default" id = "update">수정하기</button></div>
-		          
-		           </form>
-		               
-		                `
+		          <div class="form-group"><div style = "float : left; margin-left : 15mm;">첨부파일 : <a href = "FileDown?fileName=${res.note_file}"><img src="./resources/image/fileimage.png" style = "width: 19px;">${res.note_file}</a></div>
+		          </div><div style = "float: right;">
+		          <button class="btn btn-default" id = "update">수정하기</button></div>
+		           </form>`
+		           maintitle.innerHTML = `<div><h5>${res.note_title}</h5></div>`
+		           
+		           
 		        	   $('.summernote2').summernote({
 		        		     dialogsInBody: true,
 		        				  height: 500,                 // 에디터 높이
 		        				  minHeight: null,             // 최소 높이
 		        				  maxHeight: null,  // 최대 높이
 		        				  lang: "ko-KR",
-		        				  toolbar: [
-		        					    // [groupName, [list of button]]
-		        					    ['fontname', ['fontname']],
-		        					    ['fontsize', ['fontsize']],
-		        					    ['style', ['bold', 'italic', 'underline','strikethrough', 'clear']],
-		        					    ['color', ['forecolor','color']],
-		        					    ['table', ['table']],
-		        					    ['para', ['ul', 'ol', 'paragraph']],
-		        					    ['height', ['height']],
-		        					    ['insert',['picture','link','video']],
-		        					    ['view', ['fullscreen', 'help']]
-		        					  ],
+		        				  airMode: true,
+		        			      popover: {
+		        			                air:[
+		        			      			    // [groupName, [list of button]]
+		        			      			    ['fontname', ['fontname']],
+		        			      			    ['fontsize', ['fontsize']],
+		        			      			    ['style', ['bold', 'italic', 'underline','strikethrough', 'clear']],
+		        			      			    ['color', ['forecolor','color']],
+		        			      			    ['table', ['table']],
+		        			      			    ['para', ['ul', 'ol', 'paragraph']],
+		        			      			    ['height', ['height']],
+		        			      			    ['insert',['picture','link','video']],
+		        			      			    ['view', ['fullscreen', 'help']]
+		        			      			  ]
+		        			      },
+		        					  hint: {
+		        		      			    match: /:([\-+\w]+)$/,
+		        		      			    search: function (keyword, callback) {
+		        		      			      callback($.grep(emojis, function (item) {
+		        		      			        return item.indexOf(keyword)  === 0;
+		        		      			      }));
+		        		      			    },
+		        		      			    template: function (item) {
+		        		      			      var content = emojiUrls[item];
+		        		      			      return '<img src="' + content + '" width="20" /> :' + item + ':';
+		        		      			    },
+		        		      			    content: function (item) {
+		        		      			      var url = emojiUrls[item];
+		        		      			      if (url) {
+		        		      			        return $('<img />').attr('src', url).css('width', 20)[0];
+		        		      			      }
+		        		      			      return '';
+		        		      			    }
+		        		      			  },
 		        					fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New','맑은 고딕','궁서','굴림체','굴림','돋움체','바탕체'],
 		        					fontSizes: ['8','9','10','11','12','14','16','18','20','22','24','28','30','36','50','72']
 		        				
@@ -268,6 +301,7 @@ position : sticky;
 		        		        error: function(){  alert("error");  }
 		        		    });
 		        		});
+		        		
 			
 			},
 			error : function(e){
@@ -281,24 +315,54 @@ position : sticky;
     </script> 
       <script src="./resources/js/app.js"></script>
                 <script type= text/javascript>
+                $.ajax({
+              	  url: 'https://api.github.com/emojis',
+              	  async: false 
+              	}).then(function(data) {
+              	  window.emojis = Object.keys(data);
+              	  window.emojiUrls = data; 
+              	});
                 $('.summernote2').summernote({
                 dialogsInBody: true,
           		  height: 500,                 // 에디터 높이
           		  minHeight: null,             // 최소 높이
           		  maxHeight: null,  // 최대 높이
           		  lang: "ko-KR",
-          		  toolbar: [
-          			    // [groupName, [list of button]]
-          			    ['fontname', ['fontname']],
-          			    ['fontsize', ['fontsize']],
-          			    ['style', ['bold', 'italic', 'underline','strikethrough', 'clear']],
-          			    ['color', ['forecolor','color']],
-          			    ['table', ['table']],
-          			    ['para', ['ul', 'ol', 'paragraph']],
-          			    ['height', ['height']],
-          			    ['insert',['picture','link','video']],
-          			    ['view', ['fullscreen', 'help']]
-          			  ],
+          		  
+          		airMode: true,
+			      popover: {
+			                air:[
+			      			    // [groupName, [list of button]]
+			      			    ['fontname', ['fontname']],
+			      			    ['fontsize', ['fontsize']],
+			      			    ['style', ['bold', 'italic', 'underline','strikethrough', 'clear']],
+			      			    ['color', ['forecolor','color']],
+			      			    ['table', ['table']],
+			      			    ['para', ['ul', 'ol', 'paragraph']],
+			      			    ['height', ['height']],
+			      			    ['insert',['picture','link','video']],
+			      			    ['view', ['fullscreen', 'help']]
+			      			  ]
+			      },
+      			hint: {
+      			    match: /:([\-+\w]+)$/,
+      			    search: function (keyword, callback) {
+      			      callback($.grep(emojis, function (item) {
+      			        return item.indexOf(keyword)  === 0;
+      			      }));
+      			    },
+      			    template: function (item) {
+      			      var content = emojiUrls[item];
+      			      return '<img src="' + content + '" width="20" /> :' + item + ':';
+      			    },
+      			    content: function (item) {
+      			      var url = emojiUrls[item];
+      			      if (url) {
+      			        return $('<img />').attr('src', url).css('width', 20)[0];
+      			      }
+      			      return '';
+      			    }
+      			  },
           			fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New','맑은 고딕','궁서','굴림체','굴림','돋움체','바탕체'],
           			fontSizes: ['8','9','10','11','12','14','16','18','20','22','24','28','30','36','50','72']
           			
@@ -330,19 +394,97 @@ console.log(formData);
 	
 
 </script>
+
 <script type="text/javascript">
-function parentinsert(noteseq){
-	console.log(noteseq)
+
+function parentinsert(parentseq){
 	
+noteMain.innerHTML = `<form id = "parentinsert" name ="parentinsert" method="POST" enctype = "multipart/form-data"  accept-charset="UTF-8">
+	    
+	    
+	    <div id = "title"><h1><input type="text" style = "border : none;"name = "note_title" id = "note_title" value = "하위 제목 입력"></h1></div>
+	    
+	     <div id = "user"><input type= "hidden" name = "user_id" id = "user_id" value = "user_id 02"></div>
+	     <input type= "hidden" name = "note_parent" id = "note_parent" value = ${parentseq}>
+	    <textarea class="summernote2" name = "note_content" id = "note_content"></textarea>
+	    <div class="form-group"><div style = "float : left; margin-left : 15mm;"><label>첨부파일</label> <input type="file" name="note_file" id = "note_file"></div>
+	    </div><div style = "float: right;"><button type="submit" class="btn btn-default" id = "parentadd">작성</button></div>
+	     </form>`
 	
- 
-}	
+			$('.summernote2').summernote({
+			     dialogsInBody: true,
+					  height: 500,                 // 에디터 높이
+					  minHeight: null,             // 최소 높이
+					  maxHeight: null,  // 최대 높이
+					  lang: "ko-KR",
+					  airMode: true,
+    			      popover: {
+    			                air:[
+    			      			    // [groupName, [list of button]]
+    			      			    ['fontname', ['fontname']],
+    			      			    ['fontsize', ['fontsize']],
+    			      			    ['style', ['bold', 'italic', 'underline','strikethrough', 'clear']],
+    			      			    ['color', ['forecolor','color']],
+    			      			    ['table', ['table']],
+    			      			    ['para', ['ul', 'ol', 'paragraph']],
+    			      			    ['height', ['height']],
+    			      			    ['insert',['picture','link','video']],
+    			      			    ['view', ['fullscreen', 'help']]
+    			      			  ]
+    			      },
+						fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New','맑은 고딕','궁서','굴림체','굴림','돋움체','바탕체'],
+						fontSizes: ['8','9','10','11','12','14','16','18','20','22','24','28','30','36','50','72']
+					
+			         
+				});
+			$('.note-statusbar').hide();
+			
+		
+
+$('#parentadd').on('click', function(){
+let form1 = $('#parentinsert')[0];
+let formData1 = new FormData(form1);
+
+ console.log(formData1);
+    $.ajax({
+            url: "NoteAjaxParentInsert.do",
+            type: "POST",
+            data: formData1,
+            cache: false,
+            processData: false, 
+            contentType: false,
+            success: function(data){
+                console.log(data)
+            },
+            error: function(){  alert("error");  },
+
+        });
+   });  
+	
+}
 
 
-</script>	
+</script>
+      <script>
+//유저 닉네임, 이메일 출력하는 스크립트
 
 
-    
+	let loginUser = [];
+	    
+		$.ajax({
+         url: "ajax02",
+         async:false,
+         dataType:"json",
+         success: function(data) {        
+         	loginUser=data;
+		    document.querySelector("#nick-area").innerText=loginUser.user_nick+"님의 노트";
+         },
+         error: function(){
+             console.log("요청실패");
+         }
+     });
+
+    </script>
     
   </body>
 </html>

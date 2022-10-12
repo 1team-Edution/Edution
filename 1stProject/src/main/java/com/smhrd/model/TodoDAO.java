@@ -115,6 +115,7 @@ private SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSessionFac
 		ArrayList<TodoDTO> list = new ArrayList<>();;
 		int check=0;
 		for(int i=0;i<todoDtos.size();i++) {
+			if(todoDtos.get(i).getTodo_tag()!=null) {
 			check=0;
 			String todotag = todoDtos.get(i).getTodo_tag();
 			String[] taglist=todotag.split("#");
@@ -122,7 +123,8 @@ private SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSessionFac
 				for(int k =0; k<taglist.length;k++) {
 					if(tags[j].equals(taglist[k])) {check++;}	
 				}
-			}if(check==tags.length) {list.add(todoDtos.get(i));}
+			}if(check==tags.length) {list.add(todoDtos.get(i));
+			}}
 		}
 		return list;
 	}

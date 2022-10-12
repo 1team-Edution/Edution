@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.smhrd.controller.NoteAjaxSelectone;
 
 import com.smhrd.controller.Controller;
 
@@ -31,6 +30,7 @@ import com.smhrd.controller.board.GoBoardInsertCon;
 import com.smhrd.controller.note.NoteAjax;
 import com.smhrd.controller.note.NoteAjaxInsert;
 import com.smhrd.controller.note.NoteAjaxParentInsert;
+import com.smhrd.controller.note.NoteAjaxSelectone;
 import com.smhrd.controller.note.NoteAjaxUpdate;
 import com.smhrd.controller.note.NoteDeleteCon;
 import com.smhrd.controller.note.NoteGoInsertCon;
@@ -112,8 +112,8 @@ public class FrontController1 extends HttpServlet {
 		mappings.put("/NoteAjax.do", new NoteAjax());
 		mappings.put("/NoteAjaxUpdate.do", new NoteAjaxUpdate());
 		mappings.put("/NoteAjaxInsert.do", new NoteAjaxInsert());
-		mappings.put("/NoteAjaxSelectone.do", new NoteAjaxSelectone());
 		mappings.put("/NoteAjaxParentInsert.do", new NoteAjaxParentInsert());
+		mappings.put("/NoteAjaxSelectone.do", new NoteAjaxSelectone());
 
 		mappings.put("/MypageView.do", new PopmypageCon());
 
@@ -124,11 +124,8 @@ public class FrontController1 extends HttpServlet {
 		mappings.put("/BoardGetJson.do", new BoardGetJsonCon());
 		mappings.put("/GoBoard.do", new GoBoardCon());
 		mappings.put("/GoBoardInsert.do", new GoBoardInsertCon());
-		
 
 
-		mappings.put("/NoteAjaxInsert.do", new NoteAjaxInsert());
-		mappings.put("/NoteAjaxSelectone.do", new NoteAjaxSelectone());
 		
 	}
 

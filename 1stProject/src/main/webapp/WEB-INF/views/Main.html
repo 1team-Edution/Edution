@@ -41,7 +41,7 @@
                     </div>
                     <div style=" white-space: nowrap; min-width: 0px; overflow: hidden; text-overflow: clip;
                     font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, 'Apple Color Emoji', Arial, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol'; -webkit-font-smoothing: auto;">
-                    <h3>닉네임</h3></div>
+                    <h3 id="nick-area">닉네임</h3></div>
                     </div></div>
                     
                     <div class="notion-focusable" role="button" tabindex="0" style=" padding-left: 140px; user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; border-radius: 3px; margin-left: 35px; margin-right: 4px; ">
@@ -49,7 +49,7 @@
                         <div style=" border-radius: 3px; color: rgba(55, 53, 47, 0.65);  height: 22px; display: flex; align-items: center; justify-content: center; margin-right: 0px;">
                         <div style="color: inherit;">
                     </div></div>
-                        <div style="white-space: nowrap; min-width: 0px; overflow: hidden; text-overflow: clip;">이메일넣어주세요</div>
+                        <div style="white-space: nowrap; min-width: 0px; overflow: hidden; text-overflow: clip;" id="email-area">이메일넣어주세요</div>
                         </div></div>
                         
                             <div style="margin-top: 18px;"></div>
@@ -77,12 +77,12 @@
                 <!-- 메뉴 추가는 여기 span태그 시작부터 -->
                 <span>
                     <div class="notion-focusable" role="button" tabindex="0" style=" padding-left: 140px; user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; border-radius: 3px; margin-left: 4px; ">
-                        <div class="user-menuselect" style="display: flex; align-items: center; font-size: 14px; min-height: 27px; padding: 2px 10px; margin-top: 1px; margin-bottom: 1px;">
+                        <div class="user-menuselect" style="display: flex; align-items: center; font-size: 14px; min-height: 27px; padding: 2px 10px; margin-top: 1px; margin-bottom: 1px;" onclick = "location.href='NoteGoInsert.do';" >
                             
                             <div role="button" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; position: relative; display: flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 3px;">
                             <svg  viewBox="0 0 12 12" class="chevronDownRoundedThick" style="width: 12px; height: 12px; display: block; fill: rgba(55, 53, 47, 0.35); flex-shrink: 0; backface-visibility: hidden; transition: transform 200ms ease-out 0s; transform: rotateZ(-90deg); opacity: 1;">
                             <path d="M6.02734 8.80274C6.27148 8.80274 6.47168 8.71484 6.66211 8.51465L10.2803 4.82324C10.4268 4.67676 10.5 4.49609 10.5 4.28125C10.5 3.85156 10.1484 3.5 9.72363 3.5C9.50879 3.5 9.30859 3.58789 9.15234 3.74902L6.03223 6.9668L2.90722 3.74902C2.74609 3.58789 2.55078 3.5 2.33105 3.5C1.90137 3.5 1.55469 3.85156 1.55469 4.28125C1.55469 4.49609 1.62793 4.67676 1.77441 4.82324L5.39258 8.51465C5.58789 8.71973 5.78808 8.80274 6.02734 8.80274Z"></path></svg></div>
-                            <div class="user-menuselect" style="white-space: nowrap; min-width: 0px; overflow: hidden; text-overflow: ellipsis;"  >
+                            <div class="user-menuselect" style="white-space: nowrap; min-width: 0px; overflow: hidden; text-overflow: ellipsis;" >
                                 <!-- span태그 안에 이모지 유니코드 넣으면 변경됨 -->               
                                 &#10004; 강의노트</div>
                                 <a class="moya" role="button">
@@ -232,7 +232,7 @@
                 <div class="title">
                     <h2 id="stagtitle">선택한 태그</h2>
                 </div>
-                <div class="close-area">X</div>
+                <div class="close-area4 close">X</div>
                 <div class="content">
                         <div class="modal-content" id="stagtable">
                                 <table class="tagresulttable">
@@ -496,7 +496,6 @@
                 async:false,
                 dataType:"json",
                 success: function(data) {        
-                	console.log("요청성공");
                 	todolist=data;
                 },
                 error: function(){
@@ -914,9 +913,101 @@ editcontent.addEventListener('click',function(){
     editinput.style.display='flex';
 })
 
+    </script>
+    <script>
+        //태그모아보기스크립트
+	const modal = document.getElementById("tagmodal")
+	const btnModal = document.getElementById("btn-tag")
+	btnModal.addEventListener("click", e => {
+    modal.style.display = "flex"})
+	const closeBtn = modal.querySelector(".close-area4")
+	closeBtn.addEventListener("click", e => {
+    modal.style.display = "none"})   
+	modal.addEventListener("click", e => {
+    const evTarget = e.target
+    if(evTarget.classList.contains("modal-overlay")) {
+        modal.style.display = "none"}
+})
 
+
+            function send(f) {
+                checkedtag="";
+                titletext="";
+            for(let i=0;i<5;i++){
+                if(f.stag[i].checked){
+                    checkedtag+=("-"+f.stag[i].value);
+                    if(f.stag[i].value=="homework"){
+                        titletext+="#숙제 ";
+                    }
+                    else if(f.stag[i].value=="exam"){
+                        titletext+="#시험 ";
+                    }
+                    else if(f.stag[i].value=="review"){
+                        titletext+="#복습 ";
+                    }
+                    else if(f.stag[i].value=="preview"){
+                        titletext+="#예습 ";
+                    }
+                    else if(f.stag[i].value=="memo"){
+                        titletext+="#메모 ";
+                    }
+                }
+            }
+                document.querySelector("#stagtitle").innerText=titletext;
+
+                let stagtable=document.querySelector("#stagtable")
+                let tabletext=`<table width: "400">`
+
+          //  ajax
+            $.ajax({
+                url: "TodoTagSearch.do?checkedtag="+checkedtag,
+                dataType:"json",
+                success: function(data) {        
+                	console.log("태그로 불러오기 요청성공");
+                	let resultlist=data;
+                	console.log(resultlist);
+                    resultlist.forEach(e => {
+                        let tagstatus="";
+                        if(e.todo_yn==0){tagstatus="미완료";}else{tagstatus="완료";}
+                        if(e.reg_date.slice(0,10)=="2500-01-01"){e.reg_date="날짜지정안됨";}
+                        tabletext+=`<tr><td>${e.reg_date.slice(0,10)}</td><td>${e.todo_title}</td><td>${tagstatus}</td></tr>`;
+                    	console.log(tabletext);
+                    });
+
+                tabletext+="</table>";
+                stagtable.innerHTML=tabletext;
+                },
+                error: function(){
+                    console.log("요청실패ㅠㅠ");
+                }
+            });
+        }
+         //태그모아보기스크립트끝
+    </script>
+
+
+    <script>
+//유저 닉네임, 이메일 출력하는 스크립트
+
+
+	let loginUser = [];
+	    
+		$.ajax({
+         url: "ajax02",
+         async:false,
+         dataType:"json",
+         success: function(data) {        
+         	loginUser=data;
+		    document.querySelector("#nick-area").innerText=loginUser.user_nick;
+    		document.querySelector("#email-area").innerText=loginUser.user_email;
+         },
+         error: function(){
+             console.log("요청실패");
+         }
+     });
 
     </script>
+    
        
 </body>
 </html>

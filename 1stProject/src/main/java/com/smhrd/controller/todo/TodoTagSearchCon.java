@@ -20,8 +20,7 @@ public class TodoTagSearchCon implements Controller {
 		HttpSession session = request.getSession();
 		ArrayList<TodoDTO> todoDtos = (ArrayList<TodoDTO>) session.getAttribute("todolist");
 		String tag = request.getParameter("checkedtag");
-		String[] tags=tag.split("#");
-		
+		String[] tags=tag.split("-");
 		
 		
 		TodoDAO dao = new TodoDAO();

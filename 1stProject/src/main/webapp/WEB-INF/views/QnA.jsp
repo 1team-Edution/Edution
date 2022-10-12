@@ -249,21 +249,7 @@ input::placeholder{
             
             <div class="qna-main-sendmessage"><h1>Edution에게<img src="img/qnasendimage.png" style="margin-left:15px; width: 140px;"><br>
                                                   Message를 보내주세요!</h1></div>
-<<<<<<< HEAD
-    <div class="qna-main-right">
-                
-    <input type="text" class="qna-form-userid" placeholder="Your ID">
-    
-    <div style="padding: 5px;"></div>
-    <input type="text" class="qna-form-title" placeholder="Write title of your message">
 
-    <div style="padding-top: 10px;"></div>
-    <textarea class="qna-form-content" placeholder="Write your message"></textarea>
-    
-    <div style="padding-top: 10px;"></div>
-      <input type="submit" class="qna-main-submit" value="Send Message" style="color: white;">
-</div>
-=======
       <form action="QnAInsert.do">                                            
 	    <div class="qna-main-right">
 	   	 <input type="text" name="user_id" class="qna-form-userid" placeholder="Your ID">
@@ -278,7 +264,6 @@ input::placeholder{
 	     <input type="submit" class="qna-main-submit" value="Send Message" style="color: white;">
 		</div>
 	  </form>  
->>>>>>> branch 'master' of https://github.com/1team-Edution/Edution.git
 
 
 
