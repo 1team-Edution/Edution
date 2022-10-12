@@ -44,8 +44,7 @@ public class NoteAjaxParentInsert implements Controller {
 		String user_id = multi.getParameter("user_id");
 		String note_parent = multi.getParameter("note_parent");
 		String note_file = null;
-		System.out.println(note_title);
-		System.out.println(note_parent);
+		
 		
 		if(multi.getFilesystemName("note_file") == null) {
 			note_file = "";

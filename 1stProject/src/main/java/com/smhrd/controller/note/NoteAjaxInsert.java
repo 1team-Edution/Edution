@@ -66,7 +66,7 @@ public class NoteAjaxInsert implements Controller {
 			e.printStackTrace();
 		}
 		NoteDTO note = new NoteDTO(); 
-		note.setNote_title("•"+note_title);
+		note.setNote_title(note_title);
 		note.setNote_content(note_content);
 		note.setUser_id(user_id);
 		note.setNote_file(note_file);

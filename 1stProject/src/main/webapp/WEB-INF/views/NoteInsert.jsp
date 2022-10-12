@@ -44,8 +44,9 @@ position : sticky;
     overflow: auto;
     word-wrap: break-word;
     height : 500px;
-    width : 700px
+    width : 1000px
 }
+
 
 
 
@@ -60,7 +61,12 @@ position : sticky;
       <div id="right-div">
         <div id="header">
           <button type="button" id="slideout">>></button>
+          
+          
           <div id="subheader"><div id= "maintitle"></div></div>
+          
+          
+          
         </div>
         <div id="area-below-header">
           <div id="box">
@@ -192,11 +198,11 @@ position : sticky;
 						console.log(res[i].note_seq);
 						console.log(res);
 						
-						pageTitle.innerHTML += `<div style ="overflow : auto";>
+						pageTitle.innerHTML += `<div style ="overflow : auto;">
 							<input type = "hidden" id = "noteseq" value = ${res[i].note_seq}>
 						<div id ="result_notetitle" onclick = "selectone(${res[i].note_seq})" style = "float : left; margin-left : 15px;"><xmp>${res[i].note_title}</xmp></div>
 						<div style = "float: right; margin-right: 15px;">
-						<button id="addnote" style ="margin-left: 15px;" onclick = "parentinsert(${res[i].note_seq})">󠀫󠀫󠀫󠀫➕</button>
+						<button id="addnote"  onclick = "parentinsert(${res[i].note_seq})">󠀫󠀫󠀫󠀫➕</button>
 						<button id="deleteBotton" style="overflow : auto;" onclick="location.href='NoteDelete.do?note_seq=${res[i].note_seq}'">🗑️</button></div>
 						</div>`;
 						
@@ -231,7 +237,7 @@ position : sticky;
 		          <div id = "title"><h1><input type="text"style = "border : none;" name = "note_title" id = "note_title" value = "${res.note_title}"></h1>
 		           <div id = "user"><input type= "hidden" name = "user_id" id = "user_id" value = "${res.user_id}"></div>
 		          <textarea class="summernote2" name = "note_content" id = "note_content">${res.note_content}</textarea>
-		          <div class="form-group"><div style = "float : left; margin-left : 15mm;"><img width="40%" alt="" src="resources/notefile/${res.note_file}"><a href = "${res.note_file}">${res.note_file}</a></div>
+		          <div class="form-group"><div style = "float : left; margin-left : 15mm;">첨부파일 : <a href = "FileDown?fileName=${res.note_file}"><img src="./resources/image/fileimage.png" style = "width: 19px;">${res.note_file}</a></div>
 		          </div><div style = "float: right;">
 		          <button class="btn btn-default" id = "update">수정하기</button></div>
 		           </form>`
@@ -471,7 +477,7 @@ let formData1 = new FormData(form1);
          dataType:"json",
          success: function(data) {        
          	loginUser=data;
-		    document.querySelector("#nick-area").innerText=loginUser.user_nick;
+		    document.querySelector("#nick-area").innerText=loginUser.user_nick+"님의 노트";
          },
          error: function(){
              console.log("요청실패");
