@@ -2,6 +2,7 @@
 <%@page import="com.smhrd.model.UserDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,25 +10,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-	<script src="./resources/js/jquery-3.6.1.min.js"></script> 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<style>
-    .notion-focusable:hover{
-        background: rgba(55, 53, 47, 0.08);
-        font-weight: 600;
-    }
-    #keyShow {
-  position: absolute;
-  display: none;
-  margin-left: -50px;
-  margin-top: 24px;
-  font-size: 9px;
-  cursor: pointer;
-  color: grey;
-}
-</style>
 
+	  
+      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+          <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+          <link rel="stylesheet" href="resources/css/style.css">
+          
 
 </head>
 <body>
@@ -39,169 +28,202 @@
 		
 		%>
 
-    <div style="position: relative; box-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 5px 10px, rgba(15, 15, 15, 0.2) 0px 15px 40px; border-radius: 5px; background: white; margin-bottom: 0px; overflow: auto;">
-        <div style="display: flex; height: 100%; flex-direction: row;">
-            <div style="height: 100%; background: rgb(251, 251, 250); flex-grow: 0; flex-shrink: 0; max-width: 250px; overflow-y: auto;">
-                <div style="display: flex; flex-direction: column; height: 100%; justify-content: space-between; padding-top: 10px;">
-            <div style="overflow: auto; padding-bottom: 12px;">
-                
-                <div>
-                <div style="letter-spacing: 0.03em; text-transform: uppercase; font-size: 11px; line-height: 1; margin-bottom: 1px; color: rgba(55, 53, 47, 0.65); font-weight: 500; padding: 5px 15px; text-overflow: ellipsis; overflow: hidden;"><%="\""+list.getUser_id()+"\"님의 마이페이지 입니다."%></div>
-                
-                <div class="notion-focusable" role="button" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: flex; align-items: center; justify-content: space-between; padding: 5px 15px; ">
-                    <div style="display: flex; align-items: center;">
-                        <div style="width: 20px; height: 20px; margin-right: 8px; color: rgba(55, 53, 47, 0.85); fill: rgba(55, 53, 47, 0.85);"><div>
-                    <div style="background: white; border-radius: 100%; box-shadow: rgba(15, 15, 15, 0.1) 0px 2px 4px;">
-                <div style="border-radius: 100%; width: 20px; height: 20px; max-width: 100%; max-height: 100%; display: flex; align-items: center; justify-content: center; user-select: none; opacity: 1;">
-                <div style="width: 100%; height: 100%;">
-                <img src="resources/image/<%=list.getUser_photo()%>" id="preview" style="display: block; object-fit: cover; border-radius: 100%; width: 100%; height: 100%;"></div></div></div></div></div>
-                <div onclick="window.location.reload()" style="font-size: 14px; line-height: 20px; color: rgb(55, 53, 47); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">내 계정</div></div></div>
-                
-                <div class="notion-focusable" role="button" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: flex; align-items: center; justify-content: space-between; padding: 5px 15px; ">
-                    <div style="display: flex; align-items: center;">
-                        <div style="width: 20px; height: 20px; margin-right: 8px; color: rgba(55, 53, 47, 0.85); fill: rgba(55, 53, 47, 0.85);"><div>
-                    <div style="background: white; border-radius: 100%; box-shadow: rgba(15, 15, 15, 0.1) 0px 2px 4px;">
-                <div style="border-radius: 100%; width: 20px; height: 20px; max-width: 100%; max-height: 100%; display: flex; align-items: center; justify-content: center; user-select: none; opacity: 1;">
-                <div style="width: 100%; height: 100%;">
-                <img src="img/home-page.webp" style="display: block; object-fit: cover; border-radius: 100%; width: 100%; height: 100%;"></div></div></div></div></div>
-                <div onclick="move()" style="font-size: 14px; line-height: 20px; color: rgb(55, 53, 47); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">메인페이지로 돌아가기</div></div></div>
-                
-                
-                
 
-<!-- 여백 -->
-        <div style="display: flex; align-items: center; justify-content: center; pointer-events: none; width: 100%; height: 18px; flex: 0 0 auto;">
+    <div style="background-color: #1D1919; display: flex; justify-content: space-between; align-items: center; overflow: hidden; height: 45px; padding-left: 12px; padding-right: 10px;">
+        <div style="display: flex; align-items: center; line-height: 1.2; font-size: 14px; height: 100%; flex-grow: 0; margin-right: 8px; min-width: 0px;">
+        <div  role="button" tabindex="0" style="user-select: none;  cursor: pointer; display: inline-flex; align-items: center; flex-shrink: 1; white-space: nowrap; height: 24px; border-radius: 3px; font-size: 14px; line-height: 1.2; min-width: 0px; padding-left: 6px; padding-right: 6px; color: rgb(55, 53, 47);">
+    <div style="display: flex; align-items: center; justify-content: center; height: 20px; width: 20px; border-radius: 0.25em; flex-shrink: 0; margin-right: 6px;">
+        
+        <div>
+        <div style="width: 100%; height: 100%;">
+    <img src="img/Edution2.png" referrerpolicy="same-origin" style="display: block; object-fit: cover; border-radius: 3px; width: 20px; height: 20px; transition: opacity 100ms ease-out 0s;"></div></div></div>
+    <div class="notranslate" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 240px; color: white;">Edution User</div></div></div>
+    <a href="#" style="color:white; user-select: none; cursor: pointer; display: inline-flex; align-items: center; flex-shrink: 0; white-space: nowrap; height: 28px; border-radius: 3px; font-size: 14px; line-height: 1.2; min-width: 0px; padding-left: 8px; padding-right: 8px;">
+    
+        <img src="img/Edution2.png"  style="width: 20px; height: 20px; margin-right: 10px; border-radius: 3px; ">
+        Edution으로 돌아가기</a>
+
+</div>
+<!-- 여기까지 상단바 부분 -->
+
+
+    <div class="wrapper d-flex align-items-stretch">
+        <nav id="sidebar">
+
+            <div class="p-4 pt-5">
+                <!-- 아이디의 프로필 사진이 보여지게 해주세요 -->
+              <a id="preview" href="#" class="img logo rounded-circle mb-5" style="background-image: url(img/Edution2.png);"></a>
+              <p style="color: #f8b739; margin-left: 90px;">My Page</p>
+              <p style="margin-left: 80px;">유저 닉네임</p>
+        <ul class="list-unstyled components mb-5">
+          <li>
+            <a href="#" data-toggle="collapse" aria-expanded="false" id="lihome" onclick="closeText(lihome);">My account</a>
+          </li>
+          <li>
+              <a href="#" id="liuser" onclick="closeText(liuser);">Profile photo</a>
+          </li>
+            <li>
+                <a href="#" id="licommunity1" onclick="closeText(licommunity1);">Logout</a>
+            </li>
+        </ul>
+
+
+      </div>
+    </nav>
+
+  
+		
+
+    <!-- Page Content  -->
+  <div id="content" class="p-4 p-md-5">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+
+        <button type="button" id="sidebarCollapse" class="btn btn-primary">
+          <i class="fa fa-bars"></i>
+          <span class="sr-only">Toggle Menu</span>
+        </button>
+        <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa fa-bars"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#" onclick="closeText(lihome)">My account</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="closeText(liuser)" >Profile photo</a>
+            </li>
+            <li class="nav-item" >
+                <a class="nav-link" href="#" onclick="closeText(licommunity1)">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <div id="test1" style="display: none;" class="adminTest">
+        <h2 class="mb-4" style="margin-top:15px">#Account</h2>
+        <div class="join-main-emailform">
+            <input id="email" name="user_email" type="email" class="join-main-emailform-input" placeholder="User E-mail">
+            <input id="email_result" name="user_email" type="email" class="join-main-emailform-input" style="display:none;" placeholder="확인" disabled>
+            <button onclick="emailCheck()" type="button" class="btn btn-secondary btn-sm" style="margin-left:50px">확인</button>
+        </div>
+        
+        <div class="join-main-nickform">
+            <input  id="nick" name="user_nick" type="text" class="join-main-nickform-input" placeholder="Nickname">
+            <input  id="nick_result" name="user_nick" type="text" class="join-main-nickform-input" placeholder="Nickname" style="display: none;" disabled>
+            <button onclick="nickCheck()" type="button" class="btn btn-secondary btn-sm" style="margin-left:50px">확인</button>
         </div>
 
-<!-- 마이페이지 메뉴가 필요하면 여기부터 추가하기 -->
-<!-- svg태그(path태그 포함)은 아이콘(톱니바퀴모양)이기 때문에 다른 모양 사용하려면 그 부분만 지우고 사용하기!-->
+        <div class="login-main-pwform">
+            <input autocomplete="false"  id="key" name="user_pw" type="password" type="password" class="login-main-pwform-input" placeholder="New Password">
+        </div>
+        <button  type="button" class="btn btn-dark" style="margin-right:5px">변경</button>
+        <button onclick = "cancel()" type="button" class="btn btn-secondary">취소</button>
+        
+    </div>
 
 
-</div></div></div></div>
+    <div id="test2" style="display: none; " class="adminTest">
+        <h2 class="mb-4">#Photo</h2>
 
+         <img src="resources/image/<%=list.getUser_photo()%>" id="preview2" style="border-radius: 100%; width: 120px; height: 120px;">
 
-<div style="flex-grow: 1; position: relative; z-index: 1; height: 100%;"><div style="display: flex; flex-direction: column; width: 100%; height: 100%; background-color: white;">
-        <div class="notion-scroller vertical horizontal" style="flex-grow: 1; transform: translateZ(0px); padding: 36px 60px; z-index: 1; margin-right: 0px; margin-bottom: 0px;">
-<div style="color: rgb(55, 53, 47); border-bottom: 1px solid rgba(55, 53, 47, 0.09); margin-bottom: 16px; padding-bottom: 12px; font-size: 16px; font-weight: 500; width: auto;">계정</div>
-<div style="margin-bottom: 24px;">
-<div  target="_blank" rel="noopener noreferrer" class="notion-print-ignore" style="display: block; text-decoration: none; user-select: none; cursor: pointer; color: inherit; margin-left: -6px;">
+        <div class="filebox">
+            <input class="upload-name" placeholder="User Profile...">
+            <label for="file">파일찾기</label> 
+            <input type="file" id="file" name= "user_photo" onchange="readURL(this);" multiple id="photo_upload">
+        </div><br>
+        <button type="submit" class="btn btn-dark" style="margin-right:5px">변경</button>
+        <button onclick = "cancel()" type="button" class="btn btn-secondary">취소</button>
+    </div>
+    
+        
+    
+    
+    
+
+    <div id="test4" style="display: none;" class="adminTest">
+        <h2 class="mb-4">#Logout, Delete account</h2>
+        
+        <button onclick="logout()" type="button" class="btn btn-outline-danger">Logout</button><br><br>
+
+        <button onclick="account_delete()" type="button" class="btn btn-outline-danger">Delete account</button>
+    </div>
+
+        
+    
 </div>
-        <div style="color: rgb(55, 53, 47); border-bottom: 0px; margin-bottom: 8px; padding-bottom: 0px; font-size: 14px; font-weight: 400; width: auto;">사진</div>
+</div>
 
-<!-- form 태그는 여기서부터 ! -->
-<form action = "UpdateCon.do" enctype="multipart/form-data" method="post">          
-  <!-- 사진 입력 창 -->      
-    <div class="mb-3">
-        <label for="formFile" class="form-label"> 
-            <div style="width: 90px; height: 90px;"><div style="width: 100%; height: 100%;">
-            <img src="resources/image/<%=list.getUser_photo()%>" id="preview2" style="display: block; object-fit: cover; border-radius: 100%; width: 90px; height: 90px;"></div></div>
-        </label>
-        <!-- <form id="ajaxform" enctype = "multipart/form-data"> -->
-        <input class="form-control" type="file" onchange="readURL(this);" name="user_photo" multiple id="photo_upload" >
-        <!-- <output id="list"></output> -->
-			<!-- <input type="button" value="적용" id="files_send"> -->
-    <!--     </form> -->
-        
-      </div>
-        
-        
-        
-              
-  
+<script src="./resources/js/jquery-3.6.1.min.js"></script> 
 
-             <input type= "hidden" value="<%=list.getUser_id()%>" name="user_id">    
-<div style="display: flex; align-items: center; justify-content: center; pointer-events: none; width: 100%; height: 37px; flex: 0 0 auto;">
-<div style="width: 100%; height: 1px; visibility: visible; border-bottom: 1px solid rgba(55, 53, 47, 0.16);"></div></div>
-<div style="color: rgb(55, 53, 47); border-bottom: 0px; margin-bottom: 8px; padding-bottom: 0px; font-size: 14px; font-weight: 400; width: auto;">개인 정보</div>
-<label style="display: block; margin-bottom: 4px; font-size: 12px; color: rgba(55, 53, 47, 0.65);">이메일</label>
-<div>
-<div class="notion-focusable-within" style="display: flex; align-items: center; width: 100%; font-size: 14px; line-height: 20px; padding: 4px 10px; position: relative; border-radius: 3px; box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px inset; background: rgba(242, 241, 238, 0.6); cursor: text;">
-<input id="email" name="user_email" value="<%=list.getUser_email()%>" type="text" style="font-size: inherit; line-height: inherit; border: none; background: none; width: 100%; display: block; resize: none; padding: 0px;"></div>
-<div onclick = "emailCheck()" class="notion-focusable" role="button" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: inline-flex; align-items: center; white-space: nowrap; height: 20px; border-radius: 3px; font-size: 12px; line-height: 1.2; padding-left: 5px; padding-right: 5px; color: rgba(55, 53, 47, 0.65);">이메일 변경</div>
-<span id="email_result" style="margin-right: 12px;">사용자 이메일 넣어주세요</span>
-
-
-<!-- 닉네임 -->
-<label style="display: block; margin-bottom: 4px; font-size: 12px; color: rgba(55, 53, 47, 0.65); margin-top: 14px;">선호하는 닉네임</label>
-<div class="notion-focusable-within" style="display: flex; align-items: center; width: 100%; font-size: 14px; line-height: 20px; padding: 4px 10px; position: relative; border-radius: 3px; box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px inset; background: rgba(242, 241, 238, 0.6); cursor: text;">
-<input id="nick" name="user_nick" value="<%=list.getUser_nick()%>" type="text" style="font-size: inherit; line-height: inherit; border: none; background: none; width: 100%; display: block; resize: none; padding: 0px;"></div>
-<div onclick = "nickCheck()"  class="notion-focusable" role="button" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: inline-flex; align-items: center; white-space: nowrap; height: 20px; border-radius: 3px; font-size: 12px; line-height: 1.2; padding-left: 5px; padding-right: 5px; color: rgba(55, 53, 47, 0.65);">닉네임 변경</div>
-<span id="nick_result" style="margin-right: 12px;">사용자 닉네임을 넣어주세요</span>
-<div style="display: flex; align-items: center; justify-content: center; pointer-events: none; width: 100%; height: 37px; flex: 0 0 auto;">
-<div style="width: 100%; height: 1px; visibility: visible; border-bottom: 1px solid rgba(55, 53, 47, 0.16);"></div></div>
-<div style="display: flex; flex-direction: column; align-items: flex-start; width: 100%; height: auto; padding-left: 0px; padding-right: 0px;">
-<div style="color: rgb(55, 53, 47); border-bottom: 0px; margin-bottom: 2px; padding-bottom: 0px; font-size: 14px; font-weight: 400; width: auto;">비밀번호변경</div>
-
-
-
-<!-- 비밀번호 변경 -->
-<label style="display: block; margin-bottom: 4px; font-size: 12px; color: rgba(55, 53, 47, 0.65); margin-top: 14px;">원하시는 비밀번호를 입력해주세요</label>
-<div class="notion-focusable-within" style="display: flex; align-items: center; width: 100%; font-size: 14px; line-height: 20px; padding: 4px 10px; position: relative; border-radius: 3px; box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px inset; background: rgba(242, 241, 238, 0.6); cursor: text;">
-<input autocomplete="false"  id="key" name="user_pw" type="password" value="<%=list.getUser_pw()%>"style="font-size: inherit; line-height: inherit; border: none; background: none; width: 100%; display: block; resize: none; padding: 0px;"></div></div>
-<div></div>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div id="keyShow" class="notion-focusable" role="button" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: inline-flex; align-items: center; white-space: nowrap; height: 20px; border-radius: 3px; font-size: 12px; line-height: 1.2; padding-left: 5px; padding-right: 5px; color: rgba(55, 53, 47, 0.65);">비밀번호 보이기</div>
-<!-- <span id="keyShow" class="notion-focusable" role="button" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: inline-flex; align-items: center; white-space: nowrap; height: 20px; border-radius: 3px; font-size: 12px; line-height: 1.2; padding-left: 5px; padding-right: 5px; color: rgba(55, 53, 47, 0.65);">원하시는 비밀번호를 입력해주세요</span> -->
-
-
-</div></div>
-<div style="display: flex; align-items: center; justify-content: center; pointer-events: none; width: 100%; height: 37px; flex: 0 0 auto;">
-<div style="width: 100%; height: 1px; visibility: visible; border-bottom: 1px solid rgba(55, 53, 47, 0.16);"></div></div><div>
-    <div style="">
-    <div style="display: flex; flex-direction: column; align-items: flex-start; width: 100%; height: auto; padding-left: 0px; padding-right: 0px;">
-    <div style="display: flex; align-items: flex-start; margin-bottom: 12px; width: 100%;">
-</div></div></div></div>
-
-                    
-                    <div style="display: flex; flex-direction: column; align-items: flex-start; width: 100%; height: auto; padding-left: 0px; padding-right: 0px;">
-                        <div style="color: rgb(55, 53, 47); border-bottom: 0px; margin-bottom: 2px; padding-bottom: 0px; font-size: 14px; font-weight: 400; width: auto;">모든 기기에서 로그아웃</div>
-                        <div style="font-size: 12px; line-height: 16px; color: rgba(55, 53, 47, 0.65); margin-top: 2px; width: 80%;">현재 세션을 제외한 모든 활성 세션에서 로그아웃되며 다시 로그인해야합니다.</div>
-                        <div onclick = "logout()" class="notion-focusable" role="button" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; white-space: nowrap; border-radius: 3px; height: 32px; padding-left: 12px; padding-right: 12px; font-size: 14px; line-height: 1.2; color: rgb(235, 87, 87); border: 1px solid rgba(235, 87, 87, 0.5); margin-top: 12px;">로그아웃</div></div>
-                <div style="display: flex; align-items: center; justify-content: center; pointer-events: none; width: 100%; height: 37px; flex: 0 0 auto;">
-                    <div style="width: 100%; height: 1px; visibility: visible; border-bottom: 1px solid rgba(55, 53, 47, 0.16);"></div></div>
-            
-                    <div onclick = "account_delete()" class="notion-focusable" role="button" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; white-space: nowrap; border-radius: 3px; height: 32px; padding-left: 12px; padding-right: 12px; font-size: 14px; line-height: 1.2; color: rgb(235, 87, 87); border: 1px solid rgba(235, 87, 87, 0.5);">내 계정 삭제</div></div>
-
-<div style="flex-grow: 0; flex-shrink: 0; padding: 16px 60px; box-shadow: rgba(55, 53, 47, 0.09) 0px -1px 0px;">
-    <div style="display: flex;">
-        <!-- submit 넣을 '변경' 버튼은 여기! -->
-<input type= "submit" value = "변경" class="notion-focusable" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; white-space: nowrap; height: 32px; border-radius: 3px; box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px inset, rgba(15, 15, 15, 0.1) 0px 1px 2px; background: rgb(35, 131, 226); color: white; fill: white; line-height: 1.2; padding-left: 12px; padding-right: 12px; font-size: 14px; font-weight: 500;">
-<div onclick = "cancel()"class="notion-focusable" role="button" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; white-space: nowrap; border-radius: 3px; height: 32px; padding-left: 12px; padding-right: 12px; font-size: 14px; line-height: 1.2; border: 1px solid rgba(55, 53, 47, 0.16); margin-left: 12px;">취소</div></div></div></div></div></div></div>
-</form>
-<!-- 여기까지 form 태그 -->
-
-
-
-
-<!-- 사진 기능 -->
 <script>
 function readURL(input) {
-	if (input.files && input.files[0]) {
-		var reader = new FileReader();
-		reader.onload = function(e) {
-			document.getElementById('preview').src = e.target.result;
-			document.getElementById('preview2').src = e.target.result;
-		};
-		reader.readAsDataURL(input.files[0]);
-	} else {
-		document.getElementById('preview').src = "";
-		document.getElementById('preview2').src = "";
-	}
+   if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function(e) {
+         document.getElementById('preview').src = e.target.result;
+         document.getElementById('preview2').src = e.target.result;
+      };
+      reader.readAsDataURL(input.files[0]);
+   } else {
+      document.getElementById('preview').src = "";
+      document.getElementById('preview2').src = "";
+   }
 }
 </script>
 
 
+    <script>
+
+       
+
+        var test1=document.getElementById("test1")
+        var test2=document.getElementById("test2")
+        var test3=document.getElementById("test3")
+        var test4=document.getElementById("test4")
+        var test5=document.getElementById("test5")
+        var test6=document.getElementById("test6")
+        var lihome=document.getElementById("lihome")
+        var liuser=document.getElementById("liuser")
+        var licommunity=document.getElementById("licommunity")
+        var licommunity1=document.getElementById("licommunity1")
+        var licommunity2=document.getElementById("licommunity2")
+        var litotal=document.getElementById("litotal")
+
+        
+        function closeText(data){
+            
+            if(data == lihome){
+                $(".adminTest").css('display','none');
+                    test1.style="display:block;"     
+                                 
+                }
+                else if(data == liuser){
+                    $(".adminTest").css('display','none');
+                    test2.style="display:block;"
+                    
+                }else if(data == licommunity){
+                    
+                }else if(data == licommunity1){
+                    $(".adminTest").css('display','none');
+                    test4.style="display:block;"
+                      
+                }else if(data == licommunity2){
+                    $(".adminTest").css('display','none');
+                    test5.style="display:block;"
+                       
+                }
+            
+        }
+            
 
 
-
-
-
-<!-- 이메일 체크 -->
-
-<script type="text/javascript">
-     function emailCheck(){
+        function emailCheck(){
           //jQuery에서 선택자역할
           var emailStr = $("#email").val();
           
@@ -209,21 +231,21 @@ function readURL(input) {
               url : "MypageCheckemail?email="+emailStr,
               success : function(data){
                    if(data == "success"){
-                        $("#email_result").text("사용가능한 이메일입니다.");
+                        
+                    $("#email_result").attr("placeholder", "사용 가능한 이메일입니다.");
+                    $("#email_result").css("display", "inline");
+                    $("#email").css("display","none");
+
                    }else if(data == "fail"){
-                        $("#email_result").text("이미 존재하는 이메일 입니다.");
+                    $("#email").val('');
+                    $("#email").attr("placeholder", "이미 사용 중인 이메일입니다.");	
+
                    }
               }
           });
      }
-</script>
 
 
-
-
-<!-- 닉네임 체크 -->
-
-<script type="text/javascript">
      function nickCheck(){
           //jQuery에서 선택자역할
           var nickStr = $("#nick").val();
@@ -232,38 +254,30 @@ function readURL(input) {
         	  url : "MypageChecknick?nick="+nickStr,
               success : function(data){
                    if(data == "success"){
-                	   $("#nick_result").text("사용 가능한 닉네임입니다.");
+                    $("#nick_result").attr("placeholder", "사용 가능한 닉네임입니다.");
+                    $("#nick_result").css("display", "inline");
+                    $("#nick").css("display","none");
+
                    }else if(data == "fail"){
-                	   $("#nick_result").text("이 닉네임은 사용하실 수 없습니다.");
+                       $("#nick").val('');
+                       $("#nick").attr("placeholder", "이미 사용 중인 닉네임입니다.");
                    }
               }
           });
      }
-</script>
 
-
-<script type="text/javascript">
-	function logout() {
+     function logout() {
 		 
-		    	var result1 = confirm("로그아웃 하시겠습니까?");
-		    	if(result1){
-		    		<%session.removeAttribute("session");%>
-		       		location.href='http://localhost:8037/1stProject/index.jsp'
-		    	}else{
-		    	    alert("로그아웃이 취소되었습니다");
-		    	}	
-	}
-		   
-	
+         var result1 = confirm("로그아웃 하시겠습니까?");
+         if(result1){
+             <%session.removeAttribute("session");%>
+                location.href='http://localhost:8037/1stProject/index.jsp'
+         }else{
+             alert("로그아웃이 취소되었습니다");
+         }	
+}
 
-
-</script>
- 
-
-
-<script>
-	
-    function account_delete() {
+function account_delete() {
     	var result = confirm("정말 계정을 삭제 하시겠습니까?");
     	if(result){
     	    alert("정상적으로 탈퇴되었습니다");
@@ -284,97 +298,21 @@ function readURL(input) {
 			
     	}else{
     	    alert("내 계정 삭제가 취소되었습니다");
-    	}
+        }
     }
-    
-</script>
 
-
-<script>
-	
-	function move() {
-		
-		location.href='http://localhost:8037/1stProject/Main.html'
-	}
-
-</script>
-
-
-
-<script>
-	
-	function cancel() {
+            function cancel() {
 		 alert("변경이 취소되었습니다. 메인페이지로 돌아갑니다.");
 		location.href='http://localhost:8037/1stProject/Main.html'
 	}
 
-</script>
-
-<script type="text/javascript">
-
-       	$("#files_send").click(function(){
-       		var formData = new FormData();
-       		var temp = $("#photo_upload")[0].files[0];
-       		console.log(temp);
-       		
-       		  for(var i=0; i<$('#photo_upload')[0].files.length; i++){
-       			  formData.append('uploadFile', $('#photo_upload')[0].files[i]);
-       		  }
-       		  for (var key of formData.keys()) {
-       			  console.log(key);
-
-       			}
-       		  
-       			$.ajax({
-       				type : "POST",
-       				url : "MyPageImgServlet?list_id="+<%=list_id%>,
-       		        processData: false,
-       		        contentType: false,
-       				data : formData,
-       						
-       				success : function(data) {
-       					//alert('업로드 성공')
-						window.location.reload(true)
-       				},
-       				error : function(xhr, status, error) {
-       					alert('이미지를 제대로 선택해주세요');
-       				}
-       			});
-       		
-       	});
-
-       </script>
+         </script>
 
 
 
-<script>
-
-$("#key").on("keyup", function(event) {
-	  if (event.keyCode === 13) {
-	    event.preventDefault();
-	    $("#checkKey").triggerHandler("click");
-	  } else {
-	    if (this.value) {
-	      $("#keyShow").css("display", "inline-block");
-	    } else {
-	      $("#keyShow").hide();
-	    }
-	  }
-	}).focus();
-
-	$("#keyShow").on("click", function() {
-	  if ($("#key").attr("type") == "password") {
-	    $("#key").attr("type", "text");
-	    $($(this)).text("비밀번호 감추기");
-	  } else {
-	    $("#key").attr("type", "password");
-	    $($(this)).text("비밀번호 보이기");
-	  }
-	});
-
-
-</script>
-
+<script src="resources/js/popper.js"></script>
+<script src="resources/js/bootstrap.min.js"></script>
+<script src="resources/js/main.js"></script>
 
 </body>
 </html>

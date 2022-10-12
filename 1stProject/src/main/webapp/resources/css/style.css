@@ -75,6 +75,119 @@ h1, h2, h3, h4, h5, h6 {
 p {
   margin-top: 0;
   margin-bottom: 1rem; }
+  
+  .filebox .upload-name {
+    margin-top: 10px;
+
+    display: inline-block;
+    height: 40px;
+    padding: 0 10px;
+    vertical-align: middle;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    width: 250px;
+    color: #999999;
+}
+
+.filebox label {
+    margin-top: 15px;
+    display: inline-block;
+    padding-top: 7px;
+    padding-left: 14px;
+    padding-right: 14px;
+    color: #fff;
+    vertical-align: middle;
+    border-radius: 10px;
+    background-color: #999999;
+    cursor: pointer;
+    height: 38px;
+    margin-left: 10px;
+    text-align: center;
+    
+}
+
+.filebox input[type="file"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+}
+
+.join-main-emailform{
+	margin-top:15px;
+margin-bottom:15px;
+  width: 400px;
+  height: 53px;
+  background-color: rgba(0,0,0,0.1);
+  border-radius: 50px;
+}
+
+.join-main-nickform{
+  margin-top:20px;
+  margin-bottom: 15px;
+  width: 400px;
+  height: 53px;
+  background-color: rgba(0,0,0,0.1);
+  border-radius: 50px;
+
+}
+
+.join-main-nickform-input{
+margin-left: 15px;
+margin-top:5px;
+width: 250px;
+height: 40px;
+border-color: rgba(0,0,0,0);
+outline: none;
+background-color: rgba(0,0,0,0)
+}
+
+.join-main-emailform-input{
+  margin-left: 15px;
+  margin-top:5px;
+  width: 250px;
+  height: 40px;
+  border-color: rgba(0,0,0,0);
+  outline: none;
+  background-color: rgba(0,0,0,0);
+  }
+
+  .login-main-pwform{
+    margin-bottom: 15px;
+    width: 400px;
+    height: 53px;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 50px;
+
+}
+
+.login-main-pwform-input{
+  margin-left:15px;
+  margin-top:5px;
+  width: 250px;
+  height: 40px;
+  border-color: rgba(0,0,0,0);
+  outline: none;
+  background-color: rgba(0,0,0,0);
+  }
+
+#email_result{
+
+  margin-left:15px;
+  margin-top:5px;
+  width: 250px;
+  height: 40px;
+  border-color: rgba(0,0,0,0);
+  outline: none;
+  background-color: rgba(0,0,0,0);
+
+}
+
+  
+  
+  
 
 abbr[title],
 abbr[data-original-title] {

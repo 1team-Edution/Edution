@@ -16,52 +16,62 @@
 
 
     <style>
-        html{
-            font-family: "Lato",Arial,sans-serif;
-                padding: 60px;
-                width: 1261px;
-                height: 969px;
-            }
-        
-        body{
-            
-            font-family: inter-var, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
-            font-size: 17px;
-            line-height: 1.5;
-            overflow: hidden;
-        
-        }
-        header {
-            width: 100%;
-            height: 50px; /* footer의 높이 */
-            position: absolute; 
-            align-items: center;
-            top: 1vh;
-            left: -16vh;
-        }
-        
-        
-        
-            .index-sub-joinbtn{
-            width: 65px;
-            height: 23px;
-            background-color: rgb(225, 98, 89);
-            border-radius: 5px;
-            padding: 0.375rem 0.875rem 0.4375rem 0.875rem;
-            position: absolute; 
-            left:183vh;
-            top:1vh;
-        }
-        
-        .index-sub-joinbtn > a {
-          
-          font-size: 1rem;
-          font-weight: 570;
-          color: #fff;
-          text-decoration: none; 
-          color: white;
-        
-        }
+       html{
+
+width: 100%;
+height: 100%;
+padding: 60px;
+
+}
+
+body{
+
+width: 100%;
+height: 100%;
+font-family: inter-var, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+font-size: 17px;
+line-height: 1.5;
+overflow: auto;
+
+}
+header {
+width: 100%;
+height: 50px; /* footer의 높이 */
+position: absolute; 
+align-items: center;
+top: 1vh;
+left: -16vh;
+}
+
+main{
+
+width: 100%; 
+height: 100%;
+
+}
+
+
+
+.index-sub-joinbtn{
+width: 65px;
+height: 23px;
+background-color: rgb(225, 98, 89);
+border-radius: 5px;
+padding: 0.375rem 0.875rem 0.4375rem 0.875rem;
+position: absolute; 
+left:1775px;
+top:10px;
+}
+
+.index-sub-joinbtn > a {
+
+font-size: 1rem;
+font-weight: 570;
+color: #fff;
+text-decoration: none; 
+color: white;
+
+}
 
 .find-id-maintitle{
 
@@ -69,8 +79,8 @@
     height: 450px;
     background-color: rgba(0,0,0,0.0.03);
     position: absolute; 
-    left:95vh;
-    top:25vh;
+    left:950px;
+    top:250px;
 }
 
 h1{
@@ -97,8 +107,8 @@ h2{
         
 .find-id-nickform{
             position: absolute; 
-            top: 20vh;
-            left: 6vh;
+            top: 200px;
+            left: 60px;
             width: 400px;
             height: 53px;
             background-color: rgba(0,0,0,0.1);
@@ -109,8 +119,8 @@ h2{
 .find-id-nickform-input{
         
         position: absolute; 
-        top: 20.5vh;
-        left: 8.5vh;
+        top: 205px;
+        left: 85px;
         width: 250px;
         height: 40px;
         border-color: rgba(0,0,0,0);
@@ -130,8 +140,8 @@ input::placeholder{
 
 .find-id-emailform{
             position: absolute; 
-            top: 27vh;
-            left: 6vh;
+            top: 270px;
+            left: 60px;
             width: 400px;
             height: 53px;
             background-color: rgba(0,0,0,0.1);
@@ -142,8 +152,8 @@ input::placeholder{
 .find-id-emailform-input{
         
         position: absolute; 
-        top: 27.5vh;
-        left: 8.5vh;
+        top: 275px;
+        left: 85px;
         width: 250px;
         height: 40px;
         border-color: rgba(0,0,0,0);
@@ -160,8 +170,8 @@ input::placeholder{
     border-radius: 50px;
     font-size:1rem;
     position:absolute;
-    top: 35vh;
-    left: 6vh;
+    top: 350px;
+    left: 60px;
 
         }
 
@@ -179,21 +189,21 @@ input::placeholder{
 
     
     position: absolute; 
-    left:39vh;
-    top:18vh;
+    left:390px;
+    top:180px;
 
 }
 
 #id_result{
 
-	display:none;
+    display:none;
     width: 400px;
     height: 250px;
     background-color: rgba(0,0,0,0.1);
     border-radius: 50px;
     position: absolute; 
-    top: 15vh;
-    left: 5vh;
+    top: 150px;
+    left: 60px;
 
 }
 
@@ -202,10 +212,9 @@ input::placeholder{
     font-size: 20px;
     color: rgba(0, 0, 0, 0.6);
     position: absolute; 
-    top: 10vh;
-    left: 8vh;
+    top: 100px;
+    left: 80px;
 }
-
 
         
             </style>

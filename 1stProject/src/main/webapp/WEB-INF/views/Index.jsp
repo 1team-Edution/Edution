@@ -21,7 +21,7 @@
     font-family: inter-var, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 17px;
     line-height: 1.5;
-    overflow: hidden;
+    overflow: auto;
 
     }
 
@@ -97,7 +97,6 @@ top:150px;
     border-radius: 5px;
     padding: 0.375rem 0.875rem 0.4375rem 0.875rem;
     position: absolute; 
-    left:1775px;
     top:10px;
 }
 
@@ -179,7 +178,7 @@ footer {
  
     <header>
         <div style="font-size: 15px; white-space: nowrap; top: 0px; width: 100%; display: flex; flex-direction: column; align-items: center;">
-            <nav style="display: flex; align-items: center; width: 100%; max-width: 1300px;  height: px; overflow: hidden;">
+            <nav style="display: flex; align-items: center; width: 100%; max-width: 1300px;  height: px; overflow: auto;">
             <div style="flex-shrink: 0;">
                 <div style="display: flex; align-items: center">                   
                     <img src="img/Edution2.png" style="width: 30px; height: 30px; padding-top: 15px;">
@@ -192,7 +191,7 @@ footer {
                         <li style="float: left; margin-left: 15px; margin-right: 15px; cursor: default;"><a href="" style="text-decoration: none; color:inherit;">Community</a></li>
                         <li style="float: left; margin-left: 15px; margin-right: 15px; cursor: default;"><a href="#" style="text-decoration: none; color:inherit; ">Q&A</a></li>
                         <li style="float: left;">
-                            <div style="position: absolute; left:1700px; padding: auto;"><a href="LoginPage.do" style="text-decoration: none; color:inherit">로그인</a>
+                            <div style="position: absolute; left:1750px; padding: auto;"><a href="LoginPage.do" style="text-decoration: none; color:inherit">로그인</a>
                             </div>
                         </li>
                         <li>

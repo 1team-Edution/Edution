@@ -61,8 +61,8 @@
             border-radius: 5px;
             padding: 0.375rem 0.875rem 0.4375rem 0.875rem;
             position: absolute; 
-            left:1800px;
-            top:15px;
+		    left:1775px;
+		    top:10px;
         }
         
         .index-sub-joinbtn > a {
@@ -269,7 +269,7 @@ font-size: 14px;
 <body>    
     <header>
         <div style="font-size: 15px; white-space: nowrap; top: 0px; width: 100%; display: flex; flex-direction: column; align-items: center;">
-            <nav style="display: flex; align-items: center; width: 100%; max-width: 1300px;  height: px; overflow: hidden;">
+            <nav style="display: flex; align-items: center; width: 100%; max-width: 1300px;  height: px; overflow: auto;">
             <div style="flex-shrink: 0;">
                 <div style="display: flex; align-items: center">                   
                     <img src="img/Edution2.png" style="width: 30px; height: 30px; padding-top: 15px;">
