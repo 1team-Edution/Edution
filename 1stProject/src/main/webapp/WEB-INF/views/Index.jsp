@@ -6,8 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edution (에듀션) – 모든
-	취준생을 위한 웹 스터디플래너</title>
+    <title>Edution(에듀션) - 모든 취준생을 위한 단 하나의 웹 스터디 플래너</title>
 
 <style>
 
@@ -40,20 +39,32 @@
     }
 
 
+.index-sub-joinbtn{
+width: 65px;
+height: 23px;
+background-color: rgb(225, 98, 89);
+border-radius: 5px;
+padding: 0.375rem 0.875rem 0.4375rem 0.875rem;
+position: absolute; 
+left:1830px;
+top:150px;
+}
+
+
+
 
     h1{
     display: block;
     font-size: 4em;
     font-weight: 700;
-
     line-height: 4.825rem;
 
     }
 
     #index-main-left{
         position:absolute;
-        left:7%;
-        top:17vh;
+        left:160px;
+        top:170px;
         
     }
 
@@ -86,8 +97,8 @@
     border-radius: 5px;
     padding: 0.375rem 0.875rem 0.4375rem 0.875rem;
     position: absolute; 
-    left:92%;
-    top:1vh;
+    left:1775px;
+    top:10px;
 }
 
 .index-sub-joinbtn > a {
@@ -113,8 +124,8 @@
 
 .index-main-image{
     position:absolute;
-    left:55%;
-    top:20vh;
+    left:950px;
+    top:200px;
     margin: auto;
 }
 
@@ -133,7 +144,7 @@ footer {
     position: absolute; 
     align-items: center;
     bottom: 0%;
-    left: 10%;
+    left: 210px;
 }
 
 .index-footer-1div{
@@ -146,17 +157,17 @@ footer {
 
 .index-footer-2div{
     position:relative;
-    left: 60%;
+    left: 1150px;
 }
 
 .index-footer-naverlogo{
     position:relative;
-    left: 61%;
+    left: 1170px;
 }
 
 .index-footer-kakaologo{
     position:relative;
-    left: 62%;
+    left: 1190px;
 }
 
 
@@ -178,11 +189,10 @@ footer {
                 <div >
                     <ul style="list-style: none;">
                         <li style="float: left; margin-left: 15px; margin-right: 15px; font-weight: 500; cursor: default;"><a href="" style="text-decoration: none; color:inherit;">Home</a></li>
-                        <li style="float: left; margin-left: 15px; margin-right: 15px; cursor: default;"><a href="GoBoard.do" style="text-decoration: none; color:inherit;">Community</a></li>
-                        <li style="float: left; margin-left: 15px; margin-right: 15px; cursor: default;"><a href="GoQnA.do?" style="text-decoration: none; color:inherit; ">Q&A</a></li>
+                        <li style="float: left; margin-left: 15px; margin-right: 15px; cursor: default;"><a href="" style="text-decoration: none; color:inherit;">Community</a></li>
+                        <li style="float: left; margin-left: 15px; margin-right: 15px; cursor: default;"><a href="#" style="text-decoration: none; color:inherit; ">Q&A</a></li>
                         <li style="float: left;">
-                            <div style="position: absolute; left:88%; padding: auto;">
-                                <a href="LoginPage.do" style="text-decoration: none; color:inherit">로그인</a>
+                            <div style="position: absolute; left:1700px; padding: auto;"><a href="LoginPage.do" style="text-decoration: none; color:inherit">로그인</a>
                             </div>
                         </li>
                         <li>
@@ -226,7 +236,7 @@ footer {
                 </div>
                     
                     <div class="index-main-joinbtn">
-                        <a href="GoJoin.do" class="index-main-joinbtn-a" style="text-decoration: none;">Edution 회원가입</a>
+                        <a class="index-main-joinbtn-a">Edution 회원가입</a>
                     </div>
                     
                     
@@ -253,7 +263,7 @@ footer {
                 </div>
 
                 <div class="index-footer-naverlogo">
-                    <img src="img/naverlogo.PNG" style="width: 18px; height: 18px;">
+                    <img src="img/naverlogo.png" style="width: 18px; height: 18px;">
                 </div>
                 
                 <div class="index-footer-kakaologo">
