@@ -76,13 +76,22 @@
   
   update tbl_user
   
-  set user_email = '${user_email}', user_nick = '${user_nick}', user_photo = '${user_photo}', user_pw='${user_pw}'
+  set user_email = '${user_email}', user_nick = '${user_nick}', user_photo = '${user_photo}', user_pw = '${user_pw}'
   
   where user_id = '${user_id}'
   
-
-  
   </update>
+  
+ 
+  <update id="user_update2" parameterType="UserDTO">
+  update tbl_user
+  
+  set user_email = '${user_email}', user_nick = '${user_nick}', user_pw = '${user_pw}'
+  
+  where user_id = '${user_id}'
+  
+  </update> 
+  
   
   <update id="img_insert" parameterType="UserDTO">
   
@@ -106,6 +115,15 @@
   select user_id
   from tbl_user
   where user_name = '${user_name}' and user_email = '${user_email}'
+  
+  </select>
+  
+  
+  <select id="LoginpwSearch" parameterType="UserDTO" resultType="UserDTO">
+  
+  select user_pw
+  from tbl_user
+  where user_id = '${user_id}' and user_email = '${user_email}'
   
   </select>
   

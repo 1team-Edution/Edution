@@ -278,9 +278,9 @@ font-size: 14px;
                     </div>
                 <div >
                     <ul style="list-style: none;">
-                        <li style="float: left; margin-left: 15px; margin-right: 15px; font-weight: 500; cursor: default;"><a href="" style="text-decoration: none; color:inherit;">Home</a></li>
-                        <li style="float: left; margin-left: 15px; margin-right: 15px; cursor: default;"><a href="" style="text-decoration: none; color:inherit;">Community</a></li>
-                        <li style="float: left; margin-left: 15px; margin-right: 15px; cursor: default;"><a href="#" style="text-decoration: none; color:inherit; ">Q&A</a></li>
+                        <li style="float: left; margin-left: 15px; margin-right: 15px; font-weight: 500; cursor: default;"><a href="indexView.do" style="text-decoration: none; color:inherit;">Home</a></li>
+                        <li style="float: left; margin-left: 15px; margin-right: 15px; cursor: default;"><a href="GoBoard.do" style="text-decoration: none; color:inherit;">Community</a></li>
+                        <li style="float: left; margin-left: 15px; margin-right: 15px; cursor: default;"><a href="GoQnA.do" style="text-decoration: none; color:inherit; ">Q&A</a></li>
                         <!-- <li style="float: left; ">
                             <div style="position: absolute; left:88%;">
                                 <a href="#" style="text-decoration: none; color:inherit ">濡�洹몄��</a>
@@ -288,7 +288,7 @@ font-size: 14px;
                         </li>
                         <li> -->
                             <div class="index-sub-joinbtn">
-                                <a href="#">회원가입</a>
+                                <a href="GoJoin.do">회원가입</a>
                             </div>
                                   
                         </li>
@@ -336,8 +336,8 @@ font-size: 14px;
         <input type="submit" class="login-main-submit" value="Sign In" style="color: white;">
         
          <div class="login-findidpw-text">* 아이디 및 비밀번호를 잊으셨나요?</div>
-        <div class="login-findid"><a href="#" style="color: rgba(0,0,0,0.5);">아이디 찾기</a></div>
-        <div class="login-findpw"><a href="#" style="color: rgba(0,0,0,0.5);">비밀번호 찾기</a></div>
+        <div class="login-findid"><a href="GoLogin_IdSearch.do" style="color: rgba(0,0,0,0.5);">아이디 찾기</a></div>
+        <div class="login-findpw"><a href="GoLogin_pwSearch.do" style="color: rgba(0,0,0,0.5);">비밀번호 찾기</a></div>
         
     </div>
 
