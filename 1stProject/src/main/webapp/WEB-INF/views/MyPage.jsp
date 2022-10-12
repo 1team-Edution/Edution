@@ -52,9 +52,9 @@
 
             <div class="p-4 pt-5">
                 <!-- 아이디의 프로필 사진이 보여지게 해주세요 -->
-              <a id="preview" href="#" class="img logo rounded-circle mb-5" style="background-image: url(img/Edution2.png);"></a>
-              <p style="color: #f8b739; margin-left: 90px;">My Page</p>
-              <p style="margin-left: 80px;">유저 닉네임</p>
+              <a id="preview" href="#" class="img logo rounded-circle mb-5" style="background-image: url(resources/image/<%=list.getUser_photo()%>);"></a>
+              <p style="color: #f8b739; margin-left: 80px;">My Page</p>
+              <p style="margin-left: 80px;"><%=list.getUser_id()%>님의 페이지</p>
         <ul class="list-unstyled components mb-5">
           <li>
             <a href="#" data-toggle="collapse" aria-expanded="false" id="lihome" onclick="closeText(lihome);">My account</a>
@@ -104,24 +104,36 @@
       </div>
     </nav>
     
+    
+  <form  action = "UpdateCon.do" enctype="multipart/form-data" method="post"> 
+        <input type= "hidden" value="<%=list.getUser_id()%>" name="user_id">   
     <div id="test1" style="display: none;" class="adminTest">
         <h2 class="mb-4" style="margin-top:15px">#Account</h2>
+   	         <img src="resources/image/<%=list.getUser_photo()%>" id="preview2" style="border-radius: 100%; width: 120px; height: 120px;">
+
+        <div class="filebox">
+            <input class="upload-name" placeholder="User Profile...">
+            <label for="file">파일찾기</label> 
+            <input type="file" id="file" name= "user_photo" onchange="readURL(this);" multiple id="photo_upload">
+        </div>     
+   
+        
         <div class="join-main-emailform">
-            <input id="email" name="user_email" type="email" class="join-main-emailform-input" placeholder="User E-mail">
-            <input id="email_result" name="user_email" type="email" class="join-main-emailform-input" style="display:none;" placeholder="확인" disabled>
+            <input id="email" name="user_email" type="text" class="join-main-emailform-input" placeholder="User E-mail">
+            <input id="email_result" type="email" class="join-main-emailform-input" style="display:none;" placeholder="확인" disabled>
             <button onclick="emailCheck()" type="button" class="btn btn-secondary btn-sm" style="margin-left:50px">확인</button>
         </div>
         
         <div class="join-main-nickform">
             <input  id="nick" name="user_nick" type="text" class="join-main-nickform-input" placeholder="Nickname">
-            <input  id="nick_result" name="user_nick" type="text" class="join-main-nickform-input" placeholder="Nickname" style="display: none;" disabled>
+            <input  id="nick_result" type="text" class="join-main-nickform-input" placeholder="Nickname" style="display: none;" disabled>
             <button onclick="nickCheck()" type="button" class="btn btn-secondary btn-sm" style="margin-left:50px">확인</button>
         </div>
 
         <div class="login-main-pwform">
-            <input autocomplete="false"  id="key" name="user_pw" type="password" type="password" class="login-main-pwform-input" placeholder="New Password">
+            <input autocomplete="false" id="key" name="user_pw" type="password" type="password" class="login-main-pwform-input" placeholder="New Password">
         </div>
-        <button  type="button" class="btn btn-dark" style="margin-right:5px">변경</button>
+        <input type="submit" class="btn btn-dark" style="margin-right:5px" value="변경">
         <button onclick = "cancel()" type="button" class="btn btn-secondary">취소</button>
         
     </div>
@@ -130,14 +142,8 @@
     <div id="test2" style="display: none; " class="adminTest">
         <h2 class="mb-4">#Photo</h2>
 
-         <img src="resources/image/<%=list.getUser_photo()%>" id="preview2" style="border-radius: 100%; width: 120px; height: 120px;">
-
-        <div class="filebox">
-            <input class="upload-name" placeholder="User Profile...">
-            <label for="file">파일찾기</label> 
-            <input type="file" id="file" name= "user_photo" onchange="readURL(this);" multiple id="photo_upload">
-        </div><br>
-        <button type="submit" class="btn btn-dark" style="margin-right:5px">변경</button>
+<br>
+        <input type="submit" class="btn btn-dark" style="margin-right:5px" value="변경">
         <button onclick = "cancel()" type="button" class="btn btn-secondary">취소</button>
     </div>
     
@@ -154,7 +160,7 @@
         <button onclick="account_delete()" type="button" class="btn btn-outline-danger">Delete account</button>
     </div>
 
-        
+</form>  
     
 </div>
 </div>
@@ -254,6 +260,7 @@ function readURL(input) {
         	  url : "MypageChecknick?nick="+nickStr,
               success : function(data){
                    if(data == "success"){
+                	   
                     $("#nick_result").attr("placeholder", "사용 가능한 닉네임입니다.");
                     $("#nick_result").css("display", "inline");
                     $("#nick").css("display","none");
