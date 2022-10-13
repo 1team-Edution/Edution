@@ -399,7 +399,7 @@ function account_delete() {
 
 <script src="resources/js/popper.js"></script>
 <script src="resources/js/bootstrap.min.js"></script>
-<script src="resources/js/main.js"></script>
+<script src="resources/js/main_qna_mypage.js"></script>
 
 </body>
 </html>

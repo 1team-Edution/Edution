@@ -187,7 +187,7 @@
 	</div>
 
 
-	<script src="js/jquery.min.js"></script>
+	<script src="resources/js/jquery.min.js"></script>
 	<script>
 		var test1 = document.getElementById("test1")
 		var test2 = document.getElementById("test2")
@@ -452,9 +452,9 @@
 
 
 
-	<script src="js/popper.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/main.js"></script>
+	<script src="resources/js/popper.js"></script>
+	<script src="resources/js/bootstrap.min.js"></script>
+	<script src="resources/js/main_qna_mypage.js"></script>
 
 </body>
 </html>
