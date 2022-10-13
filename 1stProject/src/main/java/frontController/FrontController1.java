@@ -79,7 +79,7 @@ public class FrontController1 extends HttpServlet {
 		mappings.put("/LoginPage.do", new LoginPage());
 		mappings.put("/Naver_callback.do", new Naver_callback());
 		mappings.put("/NaverloginCon.do", new NaverloginCon());
-		mappings.put("/Account_delete.do", new Account_deleteCon());
+		mappings.put("/Account_deleteCon.do", new Account_deleteCon());
 		mappings.put("/UpdateCon.do", new UpdateCon());
 		mappings.put("/MyPageGo.do", new MyPageGo());
 		mappings.put("/GoLogin_IdSearch.do", new GoLogin_IdSearch());

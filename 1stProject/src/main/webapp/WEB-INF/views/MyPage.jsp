@@ -238,22 +238,22 @@ function readURL(input) {
                     test5.style="display:block;"
                        
                 }
-            
         }
-            
 
+        </script>        
 
+<script>
         function emailCheck(){
           //jQuery에서 선택자역할
           var emailStr = $("#email").val();
-          var real_email = <%=list.getUser_email()%>;
+          var real_email = "<%=list.getUser_email()%>";
           
           $.ajax({
               url : "MypageCheckemail?email="+emailStr,
               success : function(data){
-            	  if(data == real_email){
-            		  $("#email").attr("placeholder", "SAME.");
-            		  $("#email_result").attr("placeholder", "SAME.");
+            	   if(data == real_email){
+            		   alert("작성하신 계정은 현재 나의 이메일입니다.");
+            		  
                  	}else if(data == "success"){
                         
                     $("#email_result").attr("placeholder", "사용 가능한 이메일입니다.");
@@ -269,19 +269,20 @@ function readURL(input) {
           });
      }
 
-
+        </script>  
+        
+    <script>    
      function nickCheck(){
           //jQuery에서 선택자역할
           var nickStr = $("#nick").val();
-          var real_nick = <%=list.getUser_nick()%>;
+          var real_nick = "<%=list.getUser_nick()%>";
           
           $.ajax({
         	  url : "MypageChecknick?nick="+nickStr,
               success : function(data){
             	  
             	  if(data == real_nick){
-            		  $("#nick").attr("placeholder", "SAME.");
-            		  $("#nick_result").attr("placeholder", "SAME.");
+            		  alert("작성하신 계정은 현재 나의 닉네임입니다.");
                  	}else if(data == "success"){
                 	   
                     $("#nick_result").attr("placeholder", "사용 가능한 닉네임입니다.");
@@ -296,6 +297,9 @@ function readURL(input) {
           });
      }
 
+     </script>
+     
+     <script>  
      function logout() {
 		 
          var result1 = confirm("로그아웃 하시겠습니까?");
@@ -306,7 +310,8 @@ function readURL(input) {
              alert("로그아웃이 취소되었습니다");
          }	
 }
-
+     </script>
+<script>  
 function account_delete() {
     	var result = confirm("정말 계정을 삭제 하시겠습니까?");
     	if(result){

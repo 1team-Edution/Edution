@@ -44,9 +44,10 @@ public class UserDAO {
 	
 	public UserDTO  Naverlogin(UserDTO dto) {
 		UserDTO list =null;
+		System.out.println("여기는 메소드 + "+ dto.getUser_email());
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		list = sqlSession.selectOne("com.smhrd.model.UserDAO.Naverlogin",dto);
-		
+		System.out.println("여기는 리스트 + "+ list);
 		sqlSession.close();  	
 		return list;
 	}

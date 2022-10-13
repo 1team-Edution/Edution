@@ -28,7 +28,7 @@ public class MypageChecknick extends HttpServlet {
 		
 		String nick = request.getParameter("nick");
 		  
-        System.out.println(nick);
+		System.out.println("여기는 닉네임서블릿 : " + nick);
         
         
         UserDTO dto = new UserDTO();
@@ -39,8 +39,8 @@ public class MypageChecknick extends HttpServlet {
 		
 		
 		  if(result != null) { 
-		  System.out.println("닉네임 실패"+result);
-		  out.print("fail");
+		  System.out.println("닉네임 실패"+result.getUser_nick());
+		  out.print(result.getUser_nick());
 		  
 		  
 		  } else { System.out.println("닉네임 성공"+result);

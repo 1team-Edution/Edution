@@ -326,7 +326,7 @@ font-size: 14px;
             <img src="img/facebooksymbol.PNG" style="height: 27px; width: 28px;"></div>
         </div>
 
-<form method="post" action="Login.do">
+<form method="post" action="Login.do" accept-charset="utf-8">
         <div class="login-main-idform"></div>
             <input name="user_id" class="login-main-idform-input" placeholder="User ID">
         

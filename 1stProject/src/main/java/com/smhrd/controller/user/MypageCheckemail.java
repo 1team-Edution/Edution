@@ -26,7 +26,7 @@ public class MypageCheckemail extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		String email = request.getParameter("email");
 		  
-        System.out.println(email);
+        System.out.println("여기는 이메일서블릿 : " + email);
         
         UserDTO dto = new UserDTO();
 		dto.setUser_email(email);;

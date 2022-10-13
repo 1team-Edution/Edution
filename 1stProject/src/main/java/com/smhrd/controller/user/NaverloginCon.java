@@ -21,7 +21,7 @@ public class NaverloginCon implements Controller {
 		
 		String email = request.getParameter("email");
 		
-		//System.out.println(email);
+		System.out.println("앞문 : " + email);
 		
 		UserDTO dto = new UserDTO();
 		dto.setUser_email(email);
@@ -29,7 +29,7 @@ public class NaverloginCon implements Controller {
 		UserDAO dao = new UserDAO();
 		UserDTO list = dao.Naverlogin(dto);
 		
-		System.out.println("아이디가" +list.getUser_id());
+		System.out.println("뒷문 : " +list.getUser_id());
 		try {
 			 if(list != null){
 				 
