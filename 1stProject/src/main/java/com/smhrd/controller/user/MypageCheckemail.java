@@ -40,7 +40,7 @@ public class MypageCheckemail extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		if(result != null) {	
 			 System.out.println("하나라도 있다."+result.getUser_email());
-			 out.print("fail");
+			 out.print(result.getUser_email());
 				
 				
 			} else {

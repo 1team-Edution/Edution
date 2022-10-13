@@ -23,6 +23,7 @@
 
 		<%
 		// 세션 가져오기.
+		request.setCharacterEncoding("UTF-8");
 		UserDTO list = (UserDTO)session.getAttribute("loginUser");
 		String list_id = list.getUser_id();
 		
@@ -37,7 +38,7 @@
         <div>
         <div style="width: 100%; height: 100%;">
     <img src="img/Edution2.png" referrerpolicy="same-origin" style="display: block; object-fit: cover; border-radius: 3px; width: 20px; height: 20px; transition: opacity 100ms ease-out 0s;"></div></div></div>
-    <div class="notranslate" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 240px; color: white;">Edution User</div></div></div>
+    <div href="#" onClick="top.location='javascript:location.reload()'" class="notranslate" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 240px; color: white;">Edution User</div></div></div>
     <a href="Main.do" style="color:white; user-select: none; cursor: pointer; display: inline-flex; align-items: center; flex-shrink: 0; white-space: nowrap; height: 28px; border-radius: 3px; font-size: 14px; line-height: 1.2; min-width: 0px; padding-left: 8px; padding-right: 8px;">
     
         <img src="img/Edution2.png"  style="width: 20px; height: 20px; margin-right: 10px; border-radius: 3px; ">
@@ -107,7 +108,7 @@
     </nav>
     
     
-  <form action = "UpdateCon.do" name= "MyPageform" enctype="multipart/form-data" method="post"> 
+  <form action = "UpdateCon.do" name= "MyPageform" enctype="multipart/form-data" method="post" accept-charset="utf-8"> 
         <input type= "hidden" value="<%=list.getUser_id()%>" name="user_id">   
     <div id="test1" style="display: none;" class="adminTest">
         <h2 class="mb-4" style="margin-top:15px">#Account</h2>
@@ -235,17 +236,21 @@ function readURL(input) {
         function emailCheck(){
           //jQuery에서 선택자역할
           var emailStr = $("#email").val();
+          var real_email = <%=list.getUser_email()%>;
           
           $.ajax({
               url : "MypageCheckemail?email="+emailStr,
               success : function(data){
-                   if(data == "success"){
+            	  if(data == real_email){
+            		  $("#email").attr("placeholder", "SAME.");
+            		  $("#email_result").attr("placeholder", "SAME.");
+                 	}else if(data == "success"){
                         
                     $("#email_result").attr("placeholder", "사용 가능한 이메일입니다.");
                     $("#email_result").css("display", "inline");
                     $("#email").css("display","none");
 
-                   }else if(data == "fail"){
+                   }else if(data != null){
                     $("#email").val('');
                     $("#email").attr("placeholder", "이미 사용 중인 이메일입니다.");	
 
@@ -258,17 +263,22 @@ function readURL(input) {
      function nickCheck(){
           //jQuery에서 선택자역할
           var nickStr = $("#nick").val();
+          var real_nick = <%=list.getUser_nick()%>;
           
           $.ajax({
         	  url : "MypageChecknick?nick="+nickStr,
               success : function(data){
-            	  if(data == "success"){
+            	  
+            	  if(data == real_nick){
+            		  $("#nick").attr("placeholder", "SAME.");
+            		  $("#nick_result").attr("placeholder", "SAME.");
+                 	}else if(data == "success"){
                 	   
                     $("#nick_result").attr("placeholder", "사용 가능한 닉네임입니다.");
                     $("#nick_result").css("display", "inline");
                     $("#nick").css("display","none");
 
-                   }else if(data == "fail"){
+                   }else if(data != null){
                        $("#nick").val('');
                        $("#nick").attr("placeholder", "이미 사용 중인 닉네임입니다.");
                    }
