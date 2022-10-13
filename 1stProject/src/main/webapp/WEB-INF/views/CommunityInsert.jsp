@@ -38,7 +38,7 @@
 
 </head>
 
-<body style="display:flex; flex-direction: column; position: absolute; margin-left: auto; max-width: 970px; border-radius: 3px; background: white; box-shadow: rgba(15, 15, 15, 0.016) 0px 0px 0px 1px, rgba(15, 15, 15, 0.03) 0px 3px 6px, rgba(15, 15, 15, 0.06) 0px 9px 24px; top: 72px; left: 72px; right: 72px; margin-right: auto; height: calc(100% - 144px);">
+<body style="display:flex; flex-direction: column; position: absolute; margin-left: auto; max-width: 970px;  background: white; top: 72px; left: 72px; right: 72px; margin-right: auto; height: calc(100% - 144px);">
     
 
     <img src="img/korean-cover.png" referrerpolicy="same-origin" style="display: block; object-fit: cover; border-radius: 0px; width: 100%; height: 30vh; opacity: 1; object-position: center 50%;">

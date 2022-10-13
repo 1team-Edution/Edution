@@ -486,7 +486,7 @@ login-main-rightbtn:focus{
         </div>
 
         <div class="join-main-userphoto">
-            <img src="img/home-page.webp" id="preview" style="border-radius: 100%; width: 120px; height: 120px;">
+            <img src="img/profile.jfif" id="preview" style="border-radius: 100%; width: 120px; height: 120px;">
         </div>
 
 

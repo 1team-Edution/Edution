@@ -117,6 +117,7 @@ top:150px;
     margin-left: 5px;
     font-size: 1rem;
     font-weight: 570;
+    text-decoration: none; 
     color: #fff;
     
 }

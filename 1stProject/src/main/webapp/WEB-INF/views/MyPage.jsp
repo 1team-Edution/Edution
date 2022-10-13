@@ -42,7 +42,7 @@
     <a href="Main.do" style="color:white; user-select: none; cursor: pointer; display: inline-flex; align-items: center; flex-shrink: 0; white-space: nowrap; height: 28px; border-radius: 3px; font-size: 14px; line-height: 1.2; min-width: 0px; padding-left: 8px; padding-right: 8px;">
     
         <img src="img/Edution2.png"  style="width: 20px; height: 20px; margin-right: 10px; border-radius: 3px; ">
-        Edution으로 돌아가기</a>
+        Edution planner 돌아가기</a>
 
 </div>
 <!-- 여기까지 상단바 부분 -->
@@ -61,10 +61,10 @@
               <%-- <a id="preview" href="#" class="img logo rounded-circle mb-5" style="background-image: url(resources/image/<%=list.getUser_photo()%>);"></a> --%>
               <%-- <img src="resources/image/<%=list.getUser_photo()%>" id="preview2" style="border-radius: 100%; width: 70px; height: 70px;"> --%>
 
-              <!-- <p style="color: #f8b739; margin-left: 80px;">My Page</p> -->
-              <h2 class="mb-4" style="margin-top:15px">#Account</h2>
-   	         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="resources/image/<%=list.getUser_photo()%>" id="preview" style="border-radius: 100%; width: 120px; height: 120px;" >
-     		  <p style="margin-left: 80px;"><%=list.getUser_id()%>님의 페이지</p>
+
+   	         <img class="img logo rounded-circle mb-5" src="resources/image/<%=list.getUser_photo()%>" id="preview" style="border-radius: 100%; width: 120px; height: 120px;" >
+               <p style="color: #f8b739; margin-left: 80px;">My Page</p>
+     		 
         <ul class="list-unstyled components mb-5">
           <li>
             <a href="#" data-toggle="collapse" aria-expanded="false" id="lihome" onclick="closeText(lihome);">My account</a>
@@ -120,7 +120,7 @@
   <form action = "UpdateCon.do" name= "MyPageform" enctype="multipart/form-data" method="post" accept-charset="utf-8"> 
         <input type= "hidden" value="<%=list.getUser_id()%>" name="user_id">   
     <div id="test1" style="display: none;" class="adminTest">
-        <h2 class="mb-4" style="margin-top:15px">#Account</h2>
+        <h2 class="mb-4" style="margin-top:15px">#Account of <%=list.getUser_id()%></h2>
    	         <img src="resources/image/<%=list.getUser_photo()%>" id="preview2" style="border-radius: 100%; width: 120px; height: 120px;">
 
         <div class="filebox">
@@ -131,13 +131,13 @@
    
         
         <div class="join-main-emailform">
-            <input id="email" name="user_email" value="<%=list.getUser_email()%>" type="text" class="join-main-emailform-input" placeholder="User E-mail">
+            <input id="email" name="user_email"  type="text" class="join-main-emailform-input" placeholder="New E-mail">
             <input id="email_result" type="email" class="join-main-emailform-input" style="display:none;" placeholder="확인" disabled>
             <button onclick="emailCheck()" type="button" class="btn btn-secondary btn-sm" style="margin-left:50px">확인</button>
         </div>
         
         <div class="join-main-nickform">
-            <input  id="nick" name="user_nick" value= "<%=list.getUser_nick()%>" type="text" class="join-main-nickform-input" placeholder="Nickname">
+            <input  id="nick" name="user_nick"  type="text" class="join-main-nickform-input" placeholder="New Nickname">
             <input  id="nick_result" type="text" class="join-main-nickform-input" placeholder="Nickname" style="display: none;" disabled>
             <button onclick="nickCheck()" type="button" class="btn btn-secondary btn-sm" style="margin-left:50px">확인</button>
         </div>
@@ -153,6 +153,7 @@
 
     <div id="test2" style="display: none; " class="adminTest">
         <h2 class="mb-4">Delete my account</h2>
+        <p>탈퇴 할 경우, 모든 정보는 삭제되며 재가입 시에도 복구되지 않습니다.</p>
 
 	<button onclick="account_delete()" type="button" class="btn btn-outline-danger">Delete account</button>
 <br>

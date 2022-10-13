@@ -165,21 +165,14 @@ input {
 			</div>
 		</div>
 		<div style="flex-grow: 1; flex-shrink: 1;"></div>
-		<div class="search" role="button" tabindex="0"
-			style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: inline-flex; align-items: center; flex-shrink: 0; white-space: nowrap; height: 28px; border-radius: 3px; font-size: 14px; line-height: 1.2; min-width: 0px; padding-left: 8px; padding-right: 8px; color: rgb(55, 53, 47);">
-			<svg viewBox="0 0 17 17" class="searchNew"
-				style="width: 14px; height: 14px; display: block; fill: inherit; flex-shrink: 0; backface-visibility: hidden; margin-right: 6px;">
-    <path
-					d="M6.78027 13.6729C8.24805 13.6729 9.60156 13.1982 10.709 12.4072L14.875 16.5732C15.0684 16.7666 15.3232 16.8633 15.5957 16.8633C16.167 16.8633 16.5713 16.4238 16.5713 15.8613C16.5713 15.5977 16.4834 15.3516 16.29 15.1582L12.1504 11.0098C13.0205 9.86719 13.5391 8.45215 13.5391 6.91406C13.5391 3.19629 10.498 0.155273 6.78027 0.155273C3.0625 0.155273 0.0214844 3.19629 0.0214844 6.91406C0.0214844 10.6318 3.0625 13.6729 6.78027 13.6729ZM6.78027 12.2139C3.87988 12.2139 1.48047 9.81445 1.48047 6.91406C1.48047 4.01367 3.87988 1.61426 6.78027 1.61426C9.68066 1.61426 12.0801 4.01367 12.0801 6.91406C12.0801 9.81445 9.68066 12.2139 6.78027 12.2139Z"></path></svg>
-			<input type="search" placeholder="검색어 입력">
-		</div>
+
 
 		<div role="button" tabindex="0"
 			style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: flex; align-items: center; justify-content: center; width: 32px; height: 28px; border-radius: 3px;">
 		</div>
 		<div
 			style="flex: 0 0 auto; width: 1px; height: 16px; margin-left: 8px; margin-right: 8px; background: rgba(55, 53, 47, 0.16);"></div>
-		<div role="button" tabindex="0" onclick="indexView.do" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: inline-flex; align-items: center; flex-shrink: 0; white-space: nowrap; height: 28px; border-radius: 3px; font-size: 14px; line-height: 1.2; min-width: 0px; padding-left: 8px; padding-right: 8px; color: rgb(55, 53, 47);">
+		<div onclick="location.href='indexView.do'" role="button" tabindex="0" onclick="indexView.do" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: inline-flex; align-items: center; flex-shrink: 0; white-space: nowrap; height: 28px; border-radius: 3px; font-size: 14px; line-height: 1.2; min-width: 0px; padding-left: 8px; padding-right: 8px; color: rgb(55, 53, 47);">
 
 			<img src="img/Edution2.png" style="width: 20px; height: 20px;">
 			Edution으로 돌아가기
@@ -214,7 +207,8 @@ input {
 								class="notion-selectable notion-page-block"
 								style="color: rgb(55, 53, 47); font-weight: 700; line-height: 1.2; font-size: 32px; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont,&amp; quot; Segoe UI&amp;quot; , Helvetica , &amp;quot; Apple Color Emoji&amp;quot; , Arial , sans-serif, &amp;quot; Segoe UI Emoji&amp;quot; , &amp; quot; Segoe UI Symbol&amp;quot;; cursor: text; display: flex; align-items: center;">
 							
-									<span style="text-decoration: none; color: inherit" data-token-index="0" class="notion-enable-hover"><a href="indexView.do">Edution으로 돌아가기</a></span>
+									<span style="text-decoration: none; color: inherit"
+										data-token-index="0" class="notion-enable-hover">Edution Community</span>
 
 							</div>
 

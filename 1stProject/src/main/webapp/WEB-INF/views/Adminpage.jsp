@@ -43,12 +43,12 @@
 					Admin</div>
 			</div>
 		</div>
-		<a href="#"
+		<a href="indexView.do"
 			style="color: white; user-select: none; cursor: pointer; display: inline-flex; align-items: center; flex-shrink: 0; white-space: nowrap; height: 28px; border-radius: 3px; font-size: 14px; line-height: 1.2; min-width: 0px; padding-left: 8px; padding-right: 8px;">
 
 			<img src="img/Edution2.png"
 			style="width: 20px; height: 20px; margin-right: 10px; border-radius: 3px;">
-			Edution으로 돌아가기
+			Logout
 		</a>
 
 	</div>
