@@ -45,6 +45,8 @@ import com.smhrd.controller.todo.TodoEditCon;
 import com.smhrd.controller.todo.TodoTagSearchCon;
 import com.smhrd.controller.user.Account_deleteCon;
 import com.smhrd.controller.user.GoJoinCon;
+import com.smhrd.controller.user.GoLogin_IdSearch;
+import com.smhrd.controller.user.GoLogin_pwSearch;
 import com.smhrd.controller.user.JoinCon;
 import com.smhrd.controller.user.LoginCon;
 import com.smhrd.controller.user.LoginPage;
@@ -78,6 +80,8 @@ public class FrontController1 extends HttpServlet {
 		mappings.put("/Account_delete.do", new Account_deleteCon());
 		mappings.put("/UpdateCon.do", new UpdateCon());
 		mappings.put("/MyPageGo.do", new MyPageGo());
+		mappings.put("/GoLogin_IdSearch.do", new GoLogin_IdSearch());
+		mappings.put("/GoLogin_pwSearch.do", new GoLogin_pwSearch());
 		
 		//QnA mappings
 		mappings.put("/QnASelectAll.do", new QnASelectAllCon());

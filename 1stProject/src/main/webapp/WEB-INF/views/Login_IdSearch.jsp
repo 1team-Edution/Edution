@@ -6,8 +6,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edution(에듀션) - 비밀번호 찾기</title>
-	<script src="./resources/js/jquery-3.6.1.min.js"></script>	
+    <title>Edution(에듀션) - 아이디 찾기</title>
+
+
+    <script type="text/javascript" async="" src="https://widget.intercom.io/widget/gpfdrxfd"></script>
+    <link href="/app-aff2fcd08e2ef484f02e.css" rel="stylesheet">
+    <script src="./resources/js/jquery-3.6.1.min.js"></script>
+
 
 
     <style>
@@ -62,7 +67,7 @@
 
     width: 500px;
     height: 450px;
-    background-color: rgba(0,0,0,0.03);
+    background-color: rgba(0,0,0,0.0.03);
     position: absolute; 
     left:95vh;
     top:25vh;
@@ -71,7 +76,7 @@
 h1{
     font-weight: 700;
     font-size: 3.3125rem;
-    padding-left: 80px;
+    padding-left: 100px;
 }
 
 h2{
@@ -79,8 +84,8 @@ h2{
     color: rgba(0, 0, 0, 0.6);
     font-weight: 500;
     font-variation-settings: "wght" 529;
-    padding-left: 30px;
 
+    padding-left: 40px;
 }
 
 .find-id-formlabel{
@@ -117,9 +122,9 @@ input::placeholder{
     font-size: 16px;
 }
 
-.find-pw-label{
+.find-id-label{
     font-size:14px;
-    padding-left: 130px;
+    padding-left: 120px;
     color: rgba(0,0,0,0.6);
 }
 
@@ -181,7 +186,7 @@ input::placeholder{
 
 #id_result{
 
-    display:none;
+	display:none;
     width: 400px;
     height: 250px;
     background-color: rgba(0,0,0,0.1);
@@ -200,6 +205,7 @@ input::placeholder{
     top: 10vh;
     left: 8vh;
 }
+
 
         
             </style>
@@ -221,6 +227,7 @@ input::placeholder{
                         <li style="float: left; margin-left: 15px; margin-right: 15px; cursor: default;"><a href="GoBoard.do" style="text-decoration: none; color:inherit;">Community</a></li>
                         <li style="float: left; margin-left: 15px; margin-right: 15px; cursor: default;"><a href="GoQnA.do" style="text-decoration: none; color:inherit; ">Q&A</a></li>
                         <li style="float: left; ">
+                                                  
                             <div style="position: absolute; left:74%;">
                                 <a href="LoginPage.do" style="text-decoration: none; color:inherit ">로그인</a>
                                 
@@ -235,12 +242,12 @@ input::placeholder{
                             <a href="GoLogin_pwSearch.do" style="text-decoration: none; color:inherit ">비밀번호 찾기</a>
                         	</div>
                         </li>
-                        <!-- <li>
+                      <!--    <li>
                             <div class="index-sub-joinbtn">
                                 <a href="#">회원가입</a>
                             </div>
                                   
-                        </li> -->
+                        </li>  -->
                     </ul>
                 </div>
                 </div>
@@ -253,19 +260,19 @@ input::placeholder{
 
     <div class="find-id-image">
         <img src="img/find-idpw.png" width="450px">
-        <h2>Edution에 가입한 비밀번호가 기억나지 않으세요?</h2>
+        <h2>Edution에 가입한 아이디가 기억나지 않으세요?</h2>
     </div>
 
     <div class="find-id-maintitle">
-        <h1>비밀번호 찾기</h1>
+        <h1>아이디 찾기</h1>
         
-     <form id="find-id">
-        <label class="find-id-label">등록된 ID와 E-maill을 입력해주세요</label>
+    <form id="find-id">
+        <label class="find-id-label">등록된 Name과 E-maill을 입력해주세요</label>
             <div class="find-id-nickform"></div>
-            <input id ="id" name="id" type="text" class="find-id-nickform-input" placeholder="User ID">
+            <input id ="name" name="name" type="text" class="find-id-nickform-input" placeholder="User Name">
             <div class="find-id-emailform"></div>
             <input id ="email" name="email" type="text" class="find-id-emailform-input" placeholder="User E-mail">
-            <button onclick="pwCheck()" class="find-id-submit" style="color: #fff;" type="button">아이디 찾기</button>
+            <button onclick="idCheck()" class="find-id-submit" style="color: #fff;" type="button">아이디 찾기</button>
         </form>
         
             <div id="id_result">
@@ -282,12 +289,12 @@ input::placeholder{
 
 
     <script type="text/javascript">
-        function pwCheck(){
+        function idCheck(){
              //jQuery에서 선택자역할
                        
-             if($("#id").val()==""){
-                   alert("아이디를 입력해주세요.");
-                   $("#id").focus();
+             if($("#name").val()==""){
+                   alert("이름을 입력해주세요.");
+                   $("#name").focus();
                    /* document.getElementById('id').focus(); */
                    return false; 
                }else if($("#email").val()==""){
@@ -297,21 +304,21 @@ input::placeholder{
                    return false; 
                }
              
-             var idStr = $("#id").val();
+             var nameStr = $("#name").val();
              var emailStr = $("#email").val();
              
              $.ajax({
-                 url : "Login_pwSearch",
-                 data : {id : idStr,
+                 url : "LoginidSearch",
+                 data : {name : nameStr,
                              email : emailStr},
                  success : function(data){
                      if(data == "fail"){
-                         $("#id_result > span").text("비밀번호를 찾을 수 없습니다.");
+                         $("#id_result > span").text("아이디를 찾을 수 없습니다.");
                          document.getElementById('find-id').style.display="none";
                          document.getElementById('id_result').style.display="block";
                     }
                      else if(data != null){
-                           $("#id_result > span").text("회원님의 비밀번호는 \" "+data+" \" 입니다.");
+                           $("#id_result > span").text("회원님의 아이디는 \" "+data+" \" 입니다.");
                            document.getElementById('find-id').style.display="none";
                            /* document.getElementById('id_result').innerHTML='비밀번호가 일치합니다.' */
                            document.getElementById('id_result').style.display="block";
@@ -320,7 +327,6 @@ input::placeholder{
              });
         }
    </script>
-
 
 
 </body>

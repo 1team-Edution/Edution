@@ -13,55 +13,63 @@ import com.smhrd.model.UserDTO;
 
 public class LoginCon implements Controller {
 
-	@Override
-	public String execute(HttpServletRequest request, HttpServletResponse response) {
+   @Override
+   public String execute(HttpServletRequest request, HttpServletResponse response) {
 
-		String user_id = request.getParameter("user_id");
-		String user_pw = request.getParameter("user_pw");
-		
-		
-		
-		UserDTO dto = new UserDTO();
-		dto.setUser_id(user_id);
-		dto.setUser_pw(user_pw);
+      String user_id = request.getParameter("user_id");
+      String user_pw = request.getParameter("user_pw");
+      
+      
+      
+      UserDTO dto = new UserDTO();
+      dto.setUser_id(user_id);
+      dto.setUser_pw(user_pw);
 
-		UserDAO dao = new UserDAO();
+      UserDAO dao = new UserDAO();
 
-		UserDTO list = dao.selectlogin(dto);
-		
-		
-		try {
-			if (list != null) {
-				HttpSession session = request.getSession();
-				session.setAttribute("loginUser", list);
-				request.setAttribute("list", list);
-				
-				
-//				return "Main.html";
-				//원래 주소! 편의를 위해 바꿔둠
-				return "redirect:/Main.do";
+      UserDTO list = dao.selectlogin(dto);
+      
+      
+      try {
+         if(list != null && list.getUser_id().equals("admin")) {
+            HttpSession session = request.getSession();
+            session.setAttribute("loginUser", list);
+            request.setAttribute("list", list);
+            
+            return "redirect:/GoAdmin.do";
+         }
+         else if (list != null) {
+            HttpSession session = request.getSession();
+            session.setAttribute("loginUser", list);
+            request.setAttribute("list", list);
+            
+            //return "MyPage";
+            
+            //원래 주소! 편의를 위해 바꿔둠
+            return "redirect:/Main.do";
 
-			}
-			else {
+         }
+         
+         else {
 
-				response.setContentType("text/html");
-				response.setCharacterEncoding("utf-8");
+            response.setContentType("text/html");
+            response.setCharacterEncoding("utf-8");
 
-				PrintWriter out = response.getWriter();
+            PrintWriter out = response.getWriter();
 
-				out.println("<script>alert('로그인 할 수 없습니다');location.href='LoginPage.do';</script>");
-				out.flush();
-				out.close();
+            out.println("<script>alert('로그인 할 수 없습니다');location.href='LoginPage.do';</script>");
+            out.flush();
+            out.close();
 
-				return "LoginPage";
-			}
+            return "LoginPage";
+         }
 
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			return "LoginPage";
-		}
+      } catch (IOException e) {
+         // TODO Auto-generated catch block
+         e.printStackTrace();
+         return "LoginPage";
+      }
 
-	}
+   }
 
 }

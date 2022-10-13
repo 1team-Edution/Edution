@@ -716,6 +716,11 @@ function readURL(input) {
              alert("닉네임을 입력해주세요.")
              return false;
           }
+          if(pw.value != pw2.value){
+	          alert("비밀번호가 일치하지 않습니다.")
+	          pw.focus();
+	          return false;
+	       }
         
           document.joinform.submit();
        

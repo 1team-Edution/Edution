@@ -113,7 +113,7 @@ public class UserDAO {
 
 	public int user_update(UserDTO dto) {
 		int result = 0;
-		
+		System.out.println(dto.getUser_photo()); 
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		
 		result = sqlSession.update("user_update", dto);
@@ -123,6 +123,20 @@ public class UserDAO {
 		return result;
 	}
 
+	
+	public int user_update2(UserDTO dto) {
+		
+		int result = 0;
+		System.out.println(dto.getUser_photo()); 
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		
+		result = sqlSession.update("user_update2", dto);
+		
+		sqlSession.close();
+		
+		return result;
+	}
+	
 
 
 	public int img_insert(UserDTO dto) {
@@ -165,6 +179,22 @@ public class UserDAO {
 		
 		return result;
 	}
+
+
+
+	public UserDTO LoginpwSearch(UserDTO dto) {
+		UserDTO result = null;
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		
+		result = sqlSession.selectOne("LoginpwSearch", dto);
+		System.out.println("메소드"+result);
+		sqlSession.close();
+		
+		return result;
+	}
+
+
+
 	
 	
 	

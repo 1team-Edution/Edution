@@ -58,15 +58,28 @@ public class UpdateCon implements Controller {
 		
 		
 		UserDAO dao = new UserDAO();
-		int row = dao.user_update(dto);
+		int row = 0;
 
+		if (user_photo == null) {
+			
+			 row = dao.user_update2(dto);
+			
+		}else {
+		
+			row = dao.user_update(dto);
+		}
+		
+		
+		
+		UserDTO list = dao.selectlogin(dto);
 		
 		 try {
 	         if(row>0) {
 	        	 response.setContentType("text/html");
 		            response.setCharacterEncoding("utf-8");
 	        	 PrintWriter out = response.getWriter();
-	        	 
+	        	 HttpSession session = request.getSession();
+	             session.setAttribute("loginUser", list);
 	        	 out.println("<script>alert('내용이 변경되었습니다.');location.href='http://localhost:8037/1stProject/Main.do';</script>");
 		         out.flush();
 		         out.close();

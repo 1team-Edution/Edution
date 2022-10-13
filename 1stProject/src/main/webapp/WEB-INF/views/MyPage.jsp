@@ -16,7 +16,7 @@
           <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
           <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
           <link rel="stylesheet" href="resources/css/style.css">
-          
+          <script src="./resources/js/jquery-3.6.1.min.js"></script>
 
 </head>
 <body>
@@ -38,7 +38,7 @@
         <div style="width: 100%; height: 100%;">
     <img src="img/Edution2.png" referrerpolicy="same-origin" style="display: block; object-fit: cover; border-radius: 3px; width: 20px; height: 20px; transition: opacity 100ms ease-out 0s;"></div></div></div>
     <div class="notranslate" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 240px; color: white;">Edution User</div></div></div>
-    <a href="#" style="color:white; user-select: none; cursor: pointer; display: inline-flex; align-items: center; flex-shrink: 0; white-space: nowrap; height: 28px; border-radius: 3px; font-size: 14px; line-height: 1.2; min-width: 0px; padding-left: 8px; padding-right: 8px;">
+    <a href="Main.do" style="color:white; user-select: none; cursor: pointer; display: inline-flex; align-items: center; flex-shrink: 0; white-space: nowrap; height: 28px; border-radius: 3px; font-size: 14px; line-height: 1.2; min-width: 0px; padding-left: 8px; padding-right: 8px;">
     
         <img src="img/Edution2.png"  style="width: 20px; height: 20px; margin-right: 10px; border-radius: 3px; ">
         Edution으로 돌아가기</a>
@@ -52,16 +52,28 @@
 
             <div class="p-4 pt-5">
                 <!-- 아이디의 프로필 사진이 보여지게 해주세요 -->
+<<<<<<< HEAD
                 <img id="preview" src="resources/image/<%=list.getUser_photo()%>">
 <!--               <a id="preview" class="img logo rounded-circle mb-5" style="background-image: url(resources/image/<%=list.getUser_photo()%>);"></a> -->
 
+=======
+        
+              <a id="preview" href="#" class="img logo rounded-circle mb-5" style="background-image: url(resources/image/<%=list.getUser_photo()%>);"></a>
+              <%-- <img src="resources/image/<%=list.getUser_photo()%>" id="preview2" style="border-radius: 100%; width: 70px; height: 70px;"> --%>
+>>>>>>> branch 'master' of https://github.com/1team-Edution/Edution.git
               <p style="color: #f8b739; margin-left: 80px;">My Page</p>
-              <p style="margin-left: 80px;"><%=list.getUser_id()%>님의 페이지</p>
+     		  <p style="margin-left: 80px;"><%=list.getUser_id()%>님의 페이지</p>
         <ul class="list-unstyled components mb-5">
           <li>
             <a href="#" data-toggle="collapse" aria-expanded="false" id="lihome" onclick="closeText(lihome);">My account</a>
           </li>
+<<<<<<< HEAD
 
+=======
+          <li>
+              <a href="#" id="liuser" onclick="closeText(liuser);">Delete my account</a>
+          </li>
+>>>>>>> branch 'master' of https://github.com/1team-Edution/Edution.git
             <li>
                 <a href="#" id="licommunity1" onclick="closeText(licommunity1);">Logout</a>
             </li>
@@ -93,6 +105,12 @@
             <li class="nav-item active">
                 <a class="nav-link" href="#" onclick="closeText(lihome)">My account</a>
             </li>
+<<<<<<< HEAD
+=======
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="closeText(liuser)" >Delete my account</a>
+            </li>
+>>>>>>> branch 'master' of https://github.com/1team-Edution/Edution.git
             <li class="nav-item" >
                 <a class="nav-link" href="#" onclick="closeText(licommunity1)">Logout</a>
             </li>
@@ -102,7 +120,7 @@
     </nav>
     
     
-  <form  action = "UpdateCon.do" enctype="multipart/form-data" method="post"> 
+  <form action = "UpdateCon.do" name= "MyPageform" enctype="multipart/form-data" method="post"> 
         <input type= "hidden" value="<%=list.getUser_id()%>" name="user_id">   
     <div id="test1" style="display: none;" class="adminTest">
         <h2 class="mb-4" style="margin-top:15px">#Account</h2>
@@ -116,32 +134,33 @@
    
         
         <div class="join-main-emailform">
-            <input id="email" name="user_email" type="text" class="join-main-emailform-input" placeholder="User E-mail">
+            <input id="email" name="user_email" value="<%=list.getUser_email()%>" type="text" class="join-main-emailform-input" placeholder="User E-mail">
             <input id="email_result" type="email" class="join-main-emailform-input" style="display:none;" placeholder="확인" disabled>
             <button onclick="emailCheck()" type="button" class="btn btn-secondary btn-sm" style="margin-left:50px">확인</button>
         </div>
         
         <div class="join-main-nickform">
-            <input  id="nick" name="user_nick" type="text" class="join-main-nickform-input" placeholder="Nickname">
+            <input  id="nick" name="user_nick" value= "<%=list.getUser_nick()%>" type="text" class="join-main-nickform-input" placeholder="Nickname">
             <input  id="nick_result" type="text" class="join-main-nickform-input" placeholder="Nickname" style="display: none;" disabled>
             <button onclick="nickCheck()" type="button" class="btn btn-secondary btn-sm" style="margin-left:50px">확인</button>
         </div>
 
         <div class="login-main-pwform">
-            <input autocomplete="false" id="key" name="user_pw" type="password" type="password" class="login-main-pwform-input" placeholder="New Password">
+            <input autocomplete="false" onchange="check_pw()" id="key" name="user_pw" type="password" type="password" class="login-main-pwform-input" placeholder="New Password">
         </div>
-        <input type="submit" class="btn btn-dark" style="margin-right:5px" value="변경">
+        <input type= "button" onclick= "MyPageform_check();"class="btn btn-dark" style="margin-right:5px" value="변경">
         <button onclick = "cancel()" type="button" class="btn btn-secondary">취소</button>
         
     </div>
-
+</form>
 
     <div id="test2" style="display: none; " class="adminTest">
-        <h2 class="mb-4">#Photo</h2>
+        <h2 class="mb-4">Delete my account</h2>
 
+	<button onclick="account_delete()" type="button" class="btn btn-outline-danger">Delete account</button>
 <br>
-        <input type="submit" class="btn btn-dark" style="margin-right:5px" value="변경">
-        <button onclick = "cancel()" type="button" class="btn btn-secondary">취소</button>
+        <!-- <input type="submit" class="btn btn-dark" style="margin-right:5px" value="변경">
+        <button onclick = "cancel()" type="button" class="btn btn-secondary">취소</button> -->
     </div>
     
         
@@ -150,19 +169,19 @@
     
 
     <div id="test4" style="display: none;" class="adminTest">
-        <h2 class="mb-4">#Logout, Delete account</h2>
+        <h2 class="mb-4">#Logout</h2>
         
         <button onclick="logout()" type="button" class="btn btn-outline-danger">Logout</button><br><br>
 
-        <button onclick="account_delete()" type="button" class="btn btn-outline-danger">Delete account</button>
+        
     </div>
 
-</form>  
+  
     
 </div>
 </div>
 
-<script src="./resources/js/jquery-3.6.1.min.js"></script> 
+ 
 
 <script>
 function readURL(input) {
@@ -256,7 +275,7 @@ function readURL(input) {
           $.ajax({
         	  url : "MypageChecknick?nick="+nickStr,
               success : function(data){
-                   if(data == "success"){
+            	  if(data == "success"){
                 	   
                     $("#nick_result").attr("placeholder", "사용 가능한 닉네임입니다.");
                     $("#nick_result").css("display", "inline");
@@ -305,12 +324,72 @@ function account_delete() {
         }
     }
 
-            function cancel() {
+
+
+
+	
+	function cancel() {
 		 alert("변경이 취소되었습니다. 메인페이지로 돌아갑니다.");
-		location.href='http://localhost:8037/1stProject/Main.html'
+		location.href='http://localhost:8037/1stProject/Main.do'
 	}
 
-         </script>
+</script>
+        
+         
+<!-- 비밀번호 로직 -->
+<script>
+        function check_pw(){
+ 
+            var pw = document.getElementById('key').value;
+           
+ 
+            if(pw.length < 4 || pw.length>16){
+                window.alert('비밀번호는 4글자 이상, 16글자 이하만 이용 가능합니다.');
+                document.getElementById('key').value='';
+                document.getElementById('key').focus();
+            }
+                      
+            
+        }
+    </script>         
+         
+         
+<!-- 값을 넣지 않을경우 서버쪽에 db를 넘기지 않는 조건문 -->
+<script>
+	function MyPageform_check(){
+
+	     var pw = document.getElementById("key");
+	     var email = document.getElementById("email");
+	     var nick = document.getElementById("nick");
+	     
+	     
+	      if(email.value == ""){
+	          alert("이메일을 입력해주세요.");
+	          email.focus();
+	          return false;
+	       }
+	       if(nick.value == ""){
+	          alert("닉네임을 입력해주세요.")
+	          return false;
+	       }
+	       if(pw.value == ""){
+		          alert("비밀번호를 제대로 입력 해주세요.")
+		          pw.focus();
+		          return false;
+		       }
+	      
+	     
+	       document.MyPageform.submit();
+	    
+	
+	}
+	     
+	    
+
+	</script>         
+         
+         
+         
 
 
 
