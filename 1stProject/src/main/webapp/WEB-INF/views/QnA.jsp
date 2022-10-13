@@ -210,14 +210,14 @@ input::placeholder{
             <div style="flex-shrink: 0;">
                 <div style="display: flex; align-items: center">                   
                     <img src="img/Edution2.png" style="width: 30px; height: 30px; padding-top: 15px;">
-                    <div role="button" style="font-weight: 500; font-size: 17px; cursor: default; padding-top: 15px;
+                    <div role="button" onclick="location.href='indexView.do'"style="font-weight: 500; font-size: 17px; cursor: default; padding-top: 15px;
                     font-family:inter-var, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, 'Apple Color Emoji', Arial, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol';">Edution
                     </div>
                 <div >
                     <ul style="list-style: none;">
                         <li style="float: left; margin-left: 15px; margin-right: 15px; font-weight: 500; cursor: default;"><a href="indexView.do" style="text-decoration: none; color:inherit;">Home</a></li>
                         <li style="float: left; margin-left: 15px; margin-right: 15px; cursor: default;"><a href="GoBoard.do" style="text-decoration: none; color:inherit;">Community</a></li>
-                        <li style="float: left; margin-left: 15px; margin-right: 15px; cursor: default;"><a href="#" style="text-decoration: none; color:inherit; ">Q&A</a></li>
+                        <li style="float: left; margin-left: 15px; margin-right: 15px; cursor: default;"><a href="GoQnA.do" style="text-decoration: none; color:inherit; ">Q&A</a></li>
                         <li style="float: left;">
 
                             <div style="position: absolute; left:1700px; padding: auto;">

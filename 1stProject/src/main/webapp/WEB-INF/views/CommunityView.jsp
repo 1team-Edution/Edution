@@ -12,7 +12,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-<style>
+<style>	
 .primary.jsx-2971364727 {
 	color: #FFFFFF;
 	background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%,
@@ -159,9 +159,7 @@ input {
 						</div>
 					</div>
 				</div>
-				<div class="notranslate"
-					style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 240px;">Edution
-					Community</div>
+				<div class="notranslate" role="button" onclick="location.href='GoBoard.do'" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 240px;">Edution Community</div>
 			</div>
 		</div>
 		<div style="flex-grow: 1; flex-shrink: 1;"></div>

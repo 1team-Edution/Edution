@@ -73,9 +73,9 @@
 						onclick="closeText(licommunity);">Board Tap</a>
 						<ul class="collapse list-unstyled" id="pageSubmenu">
 							<li><a href="#" id="licommunity1"
-								onclick="closeText(licommunity1);">Q&A</a></li>
+								onclick="location.href='GoQnA.do'">Q&A</a></li>
 							<li><a href="#" id="licommunity2"
-								onclick="closeText(licommunity2);">Community</a></li>
+								onclick="location.href='GoBoard.do'">Community</a></li>
 							<!-- <li>
                 <a href="#">Page 3</a>
             </li> -->
@@ -120,9 +120,9 @@
 							<li class="nav-item"><a class="nav-link" href="#"
 								onclick="closeText(liuser)">Users</a></li>
 							<li class="nav-item"><a class="nav-link" href="#"
-								onclick="closeText(licommunity1)">Q&A</a></li>
+								onclick="location.href='GoQnA.do'">Q&A</a></li>
 							<li class="nav-item"><a class="nav-link" href="#"
-								onclick="closeText(licommunity2)">Community</a></li>
+								onclick="location.href='GoBoard.do'">Community</a></li>
 							<!-- <li class="nav-item">
                 <a class="nav-link" href="#">Contact</a>
             </li> -->
@@ -380,15 +380,16 @@
 
 		});
 		
-		
+		////////////////// QnA관리 기능 //////////////////////////////////
 		let date = [];
 		let qna = document.getElementById("QnA");
 		let addhtml = '';
 		let answerArea = '';
 		
-		function answer(idx) {
+		
+		function answer(idx) { // 클릭시 textarea가 생겨서 답변을 해줄 수 있는 함수
 			answerArea = document.getElementById(`answer${idx}`);
-			answerArea.innerHTML = "<div id='answerclass' class='form-group'><label for='comment'>Comment:</label><textarea class='form-control' rows='5'id='comment'colspan='3'></textarea><input id='answer_btn' type='submit' class='btn btn-primary' value='답변하기'></div>";
+			answerArea.innerHTML = `<td id='answerclass' class='form-group'><label for='comment'>Comment:</label><textarea class='form-control' rows='5'id='comment'colspan='3'></textarea><div role='button' onclick='deleteQnA(${idx})'><input id='answer_btn' type='submit' class='btn btn-primary' value='답변하기'></div></td>`;
 			console.log('answer함수실행');
 			
 		}
