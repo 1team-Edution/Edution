@@ -262,7 +262,7 @@ footer {
                 </div>
 
                 <div class="index-footer-naverlogo">
-                    <img src="img/naverlogo.png" style="width: 18px; height: 18px;">
+                    <img src="img/naverlogo.PNG" style="width: 18px; height: 18px;">
                 </div>
                 
                 <div class="index-footer-kakaologo">

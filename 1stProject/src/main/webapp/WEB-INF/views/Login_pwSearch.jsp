@@ -201,6 +201,12 @@ input::placeholder{
     left: 8vh;
 }
 
+.find-pw-label{
+    font-size:14px;
+    padding-left: 120px;
+    color: rgba(0,0,0,0.6);
+}
+
         
             </style>
 
@@ -221,26 +227,17 @@ input::placeholder{
                         <li style="float: left; margin-left: 15px; margin-right: 15px; cursor: default;"><a href="GoBoard.do" style="text-decoration: none; color:inherit;">Community</a></li>
                         <li style="float: left; margin-left: 15px; margin-right: 15px; cursor: default;"><a href="GoQnA.do" style="text-decoration: none; color:inherit; ">Q&A</a></li>
                         <li style="float: left; ">
-                            <div style="position: absolute; left:74%;">
+                            <div style="position: absolute; left:1700px; padding: auto;">
                                 <a href="LoginPage.do" style="text-decoration: none; color:inherit ">로그인</a>
                                 
-                            </div>
-                            
-                            <div style="position: absolute; left:80%;">
-                            <a href="GoLogin_IdSearch.do" style="text-decoration: none; color:inherit ">아이디 찾기</a>
-                        	</div>
-                        	
-                        	
-                            <div style="position: absolute; left:88%;">
-                            <a href="GoLogin_pwSearch.do" style="text-decoration: none; color:inherit ">비밀번호 찾기</a>
-                        	</div>
+                            </div> 
                         </li>
-                        <!-- <li>
+                       <li>
                             <div class="index-sub-joinbtn">
                                 <a href="#">회원가입</a>
                             </div>
                                   
-                        </li> -->
+                        </li>
                     </ul>
                 </div>
                 </div>
@@ -260,12 +257,12 @@ input::placeholder{
         <h1>비밀번호 찾기</h1>
         
      <form id="find-id">
-        <label class="find-id-label">등록된 ID와 E-maill을 입력해주세요</label>
+        <label class="find-pw-label">등록된 ID와 E-maill을 입력해주세요</label>
             <div class="find-id-nickform"></div>
             <input id ="id" name="id" type="text" class="find-id-nickform-input" placeholder="User ID">
             <div class="find-id-emailform"></div>
             <input id ="email" name="email" type="text" class="find-id-emailform-input" placeholder="User E-mail">
-            <button onclick="pwCheck()" class="find-id-submit" style="color: #fff;" type="button">아이디 찾기</button>
+            <button onclick="pwCheck()" class="find-id-submit" style="color: #fff;" type="button">비밀번호 찾기</button>
         </form>
         
             <div id="id_result">

@@ -52,28 +52,23 @@
 
             <div class="p-4 pt-5">
                 <!-- 아이디의 프로필 사진이 보여지게 해주세요 -->
-<<<<<<< HEAD
+
                 <img id="preview" src="resources/image/<%=list.getUser_photo()%>">
 <!--               <a id="preview" class="img logo rounded-circle mb-5" style="background-image: url(resources/image/<%=list.getUser_photo()%>);"></a> -->
 
-=======
         
               <a id="preview" href="#" class="img logo rounded-circle mb-5" style="background-image: url(resources/image/<%=list.getUser_photo()%>);"></a>
               <%-- <img src="resources/image/<%=list.getUser_photo()%>" id="preview2" style="border-radius: 100%; width: 70px; height: 70px;"> --%>
->>>>>>> branch 'master' of https://github.com/1team-Edution/Edution.git
+
               <p style="color: #f8b739; margin-left: 80px;">My Page</p>
      		  <p style="margin-left: 80px;"><%=list.getUser_id()%>님의 페이지</p>
         <ul class="list-unstyled components mb-5">
           <li>
             <a href="#" data-toggle="collapse" aria-expanded="false" id="lihome" onclick="closeText(lihome);">My account</a>
           </li>
-<<<<<<< HEAD
-
-=======
           <li>
               <a href="#" id="liuser" onclick="closeText(liuser);">Delete my account</a>
           </li>
->>>>>>> branch 'master' of https://github.com/1team-Edution/Edution.git
             <li>
                 <a href="#" id="licommunity1" onclick="closeText(licommunity1);">Logout</a>
             </li>
@@ -105,12 +100,11 @@
             <li class="nav-item active">
                 <a class="nav-link" href="#" onclick="closeText(lihome)">My account</a>
             </li>
-<<<<<<< HEAD
-=======
+
             <li class="nav-item">
                 <a class="nav-link" href="#" onclick="closeText(liuser)" >Delete my account</a>
             </li>
->>>>>>> branch 'master' of https://github.com/1team-Edution/Edution.git
+
             <li class="nav-item" >
                 <a class="nav-link" href="#" onclick="closeText(licommunity1)">Logout</a>
             </li>
