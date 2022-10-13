@@ -23,7 +23,7 @@ public class MypageCheckemail extends HttpServlet {
 		
 		
 		//이메일
-		
+		response.setCharacterEncoding("UTF-8");
 		String email = request.getParameter("email");
 		  
         System.out.println(email);

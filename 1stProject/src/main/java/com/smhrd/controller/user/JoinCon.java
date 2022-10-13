@@ -21,7 +21,7 @@ public class JoinCon implements Controller {
 
 		int maxSize = 1024 * 1024 * 5;
 
-		String encoding = "EUC-KR";
+		String encoding = "UTF-8";
 
 		MultipartRequest multi = null;
 
@@ -64,7 +64,7 @@ public class JoinCon implements Controller {
 		// null값 사진 저장
 		if (user_photo == null) {
 
-		    user_photo = "home-page.webp";
+		    user_photo = "Edution2.png";
 					
 		     }
 		

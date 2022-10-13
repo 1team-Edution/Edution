@@ -30,15 +30,16 @@ public class JoinnickCheck extends HttpServlet {
 		
 		  UserDAO dao = new UserDAO();
 		  
-		  String result = dao.nickSame(dto);
+		  UserDTO result = dao.nickSame(dto);
 		  
-		  System.out.println("로우"+result);
+		  
 		  
 		 PrintWriter out = response.getWriter(); 
 		 
 		 if(result != null) {
 		 
 		  out.print("fail");
+		  System.out.println("로우"+result);
 		  
 			  
 		  } else {

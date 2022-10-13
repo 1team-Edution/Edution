@@ -28,12 +28,12 @@ public class UpdateCon implements Controller {
 
 		int maxSize = 1024 * 1024 * 5;
 
-		String encoding = "EUC-KR";
+		String encoding = "UTF-8";
 
 		MultipartRequest multi = null;
 
 		try {
-			request.setCharacterEncoding("EUC-KR");
+			request.setCharacterEncoding("UTF-8");
 			multi = new MultipartRequest(request, savePath, maxSize, encoding, new DefaultFileRenamePolicy());
 			
 		} catch (IOException e) {

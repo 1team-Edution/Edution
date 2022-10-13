@@ -21,6 +21,7 @@ public class MypageChecknick extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		
+		response.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
 		
 		//닉네임
@@ -33,7 +34,7 @@ public class MypageChecknick extends HttpServlet {
         UserDTO dto = new UserDTO();
 		dto.setUser_nick(nick);
 		UserDAO dao = new UserDAO();
-		String result = dao.nickSame(dto);
+		UserDTO result = dao.nickSame(dto);
 		
 		
 		

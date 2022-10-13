@@ -16,10 +16,11 @@ public class LoginCon implements Controller {
    @Override
    public String execute(HttpServletRequest request, HttpServletResponse response) {
 
+	  response.setCharacterEncoding("UTF-8");
       String user_id = request.getParameter("user_id");
       String user_pw = request.getParameter("user_pw");
       
-      
+      System.out.println(user_id);
       
       UserDTO dto = new UserDTO();
       dto.setUser_id(user_id);

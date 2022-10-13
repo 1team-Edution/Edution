@@ -42,11 +42,11 @@ public class UserDAO {
 
 	}
 	
-	public ArrayList<UserDTO> Naverlogin(UserDTO dto) {
-		ArrayList<UserDTO> list =null;
+	public UserDTO  Naverlogin(UserDTO dto) {
+		UserDTO list =null;
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
-		list = (ArrayList)sqlSession.selectList("com.smhrd.model.UserDAO.Naverlogin",dto);
-	
+		list = sqlSession.selectOne("com.smhrd.model.UserDAO.Naverlogin",dto);
+		
 		sqlSession.close();  	
 		return list;
 	}
@@ -83,9 +83,9 @@ public class UserDAO {
 
 
 
-	public String nickSame(UserDTO dto) {
+	public UserDTO nickSame(UserDTO dto) {
 		
-		String result = null;
+		UserDTO result = null;
 		
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		

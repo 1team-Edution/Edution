@@ -53,15 +53,17 @@
 
             <div class="p-4 pt-5">
                 <!-- 아이디의 프로필 사진이 보여지게 해주세요 -->
-
-                <img id="preview" src="resources/image/<%=list.getUser_photo()%>">
+				
+               <%--  <img id="preview" src="resources/image/<%=list.getUser_photo()%>"> --%>
 <!--               <a id="preview" class="img logo rounded-circle mb-5" style="background-image: url(resources/image/<%=list.getUser_photo()%>);"></a> -->
 
         
-              <a id="preview" href="#" class="img logo rounded-circle mb-5" style="background-image: url(resources/image/<%=list.getUser_photo()%>);"></a>
+              <%-- <a id="preview" href="#" class="img logo rounded-circle mb-5" style="background-image: url(resources/image/<%=list.getUser_photo()%>);"></a> --%>
               <%-- <img src="resources/image/<%=list.getUser_photo()%>" id="preview2" style="border-radius: 100%; width: 70px; height: 70px;"> --%>
 
-              <p style="color: #f8b739; margin-left: 80px;">My Page</p>
+              <!-- <p style="color: #f8b739; margin-left: 80px;">My Page</p> -->
+              <h2 class="mb-4" style="margin-top:15px">#Account</h2>
+   	         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="resources/image/<%=list.getUser_photo()%>" id="preview" style="border-radius: 100%; width: 120px; height: 120px;" >
      		  <p style="margin-left: 80px;"><%=list.getUser_id()%>님의 페이지</p>
         <ul class="list-unstyled components mb-5">
           <li>

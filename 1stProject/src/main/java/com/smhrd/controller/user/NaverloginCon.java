@@ -21,23 +21,25 @@ public class NaverloginCon implements Controller {
 		
 		String email = request.getParameter("email");
 		
-		System.out.println(email);
+		//System.out.println(email);
 		
 		UserDTO dto = new UserDTO();
 		dto.setUser_email(email);
 		
 		UserDAO dao = new UserDAO();
-		ArrayList<UserDTO> list = dao.Naverlogin(dto);
+		UserDTO list = dao.Naverlogin(dto);
 		
-		
+		System.out.println("아이디가" +list.getUser_id());
 		try {
 			 if(list != null){
+				 
 				 HttpSession session = request.getSession();
-		            session.setAttribute("session",list);
+		            session.setAttribute("loginUser", list);
+		            
 		            request.setAttribute("list", list);
 		            
 		            
-					return "Main.html";
+		            return "redirect:/Main.do";
 		            
 		        }
 			 

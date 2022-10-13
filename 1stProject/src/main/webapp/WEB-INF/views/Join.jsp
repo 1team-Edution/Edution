@@ -427,7 +427,7 @@ login-main-rightbtn:focus{
 
 
 
-<form id = "joinform" name = "joinform" action ="Join.do" enctype = "multipart/form-data" method="post">
+<form id = "joinform" name = "joinform" action ="Join.do" enctype = "multipart/form-data" method="post" accept-charset="utf-8">
         <div class="login-main-idform" >
 
         </div>
@@ -455,21 +455,27 @@ login-main-rightbtn:focus{
         </div>
         <input onchange="emailCheck()" type="email" id="email" name="user_email" class="join-main-emailform-input" placeholder="User E-mail">
         <input type="email" id="email_result" name="user_email" class="join-main-emailform-input" style="display: none;" placeholder="확인" disabled>
+	
+	
 
       <!-- 닉네임 -->
-        <div class="join-main-nickform">        
+        <div class="join-main-nickform">  
+        
+               
+              
 
         </div>
         <input onchange="nickCheck()" id="nick" name="user_nick" type="text" class="join-main-nickform-input" placeholder="Nickname">
         <input id="nick_result" type="text" class="join-main-nickform-input" placeholder="확인" style="display: none;" disabled>
       
-        
-        <!-- 이름 -->
+       
+       <!-- 이름 -->
         <div class="join-main-nameform"></div>
         <input id="name" name="user_name" type="text" class="join-main-nameform-input" placeholder="User Name">
-
-
-
+        
+       
+       
+       
 
 
    <!-- 사진 이미지 -->
@@ -484,8 +490,7 @@ login-main-rightbtn:focus{
         </div>
 
 
-
-
+ 
 
 
         <input type="button" onclick= "joinform_check();" class="login-main-submit" value="Sign Up" style="color: white;">
@@ -560,7 +565,7 @@ function readURL(input) {
              data : {id : idStr},
              success : function(data){
                   if(data == "success"){
-                	  window.alert('사용 가능한 아이디입니다.');
+                	  /* window.alert('사용 가능한 아이디입니다.'); */
                        $("#user_id").css("display", "none");
                        $("#id_result").css("display", "block");
                        $("#id_result").attr("placeholder", id);
@@ -568,6 +573,7 @@ function readURL(input) {
                   }else if(data == "fail"){
                    $("#user_id").val('');
                    $("#user_id").attr("placeholder", "사용 불가한 아이디입니다.");
+                   window.alert('이 아이디는 이미 사용중입니다.');
 
                   }
              }
@@ -628,7 +634,7 @@ function readURL(input) {
               data : {email : emailStr},
               success : function(data){
                    if(data == "success"){
-                	   window.alert('사용 가능한 이메일입니다.');
+                	  /*  window.alert('사용 가능한 이메일입니다.'); */
                        $("#email").css("display", "none");
                        $("#email_result").css("display", "block");
                        $("#email_result").attr("placeholder", emailStr);
@@ -638,7 +644,7 @@ function readURL(input) {
 						
                 	   $("#email").val('');
                        $("#email").attr("placeholder", "중복된 이메일입니다.");
-                    
+                       window.alert('이 이메일은 이미 사용중입니다.');
                    }
               }
           });
@@ -665,15 +671,16 @@ function readURL(input) {
               data : {nick : nickStr},
               success : function(data){
                    if(data == "success"){
-                	   window.alert('사용 가능한 닉네임입니다.');
+                	   /* window.alert('사용 가능한 닉네임입니다.'); */
                        $("#nick").css("display", "none");
                        $("#nick_result").css("display", "block");
                        $("#nick_result").attr("placeholder", nickStr);
                         
                    }else if(data == "fail"){
-                	   
+                	   window.alert('이 닉네임은 이미 사용중입니다.');
                 	   $("#nick").val('');
                        $("#nick").attr("placeholder", "이미 사용 중인 닉네임입니다.");
+                       
                         
                    }
               }
