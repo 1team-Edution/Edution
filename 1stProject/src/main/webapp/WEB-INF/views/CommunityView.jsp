@@ -179,7 +179,7 @@ input {
 		</div>
 		<div
 			style="flex: 0 0 auto; width: 1px; height: 16px; margin-left: 8px; margin-right: 8px; background: rgba(55, 53, 47, 0.16);"></div>
-		<div role="button" tabindex="0" href="GoMain.do" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: inline-flex; align-items: center; flex-shrink: 0; white-space: nowrap; height: 28px; border-radius: 3px; font-size: 14px; line-height: 1.2; min-width: 0px; padding-left: 8px; padding-right: 8px; color: rgb(55, 53, 47);">
+		<div role="button" tabindex="0" onclick="indexView.do" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: inline-flex; align-items: center; flex-shrink: 0; white-space: nowrap; height: 28px; border-radius: 3px; font-size: 14px; line-height: 1.2; min-width: 0px; padding-left: 8px; padding-right: 8px; color: rgb(55, 53, 47);">
 
 			<img src="img/Edution2.png" style="width: 20px; height: 20px;">
 			Edution으로 돌아가기
@@ -431,7 +431,7 @@ $(document).ready(function() {
 			boardShow.innerHTML = resultHTML;
 			
 			//////////////////// pagination//////////////////////////////////
-			const rowsPerPage = 15;
+			const rowsPerPage = 9;
 			const rows = document.querySelectorAll('#boardShow .modalTest');
 			const rowsCount = rows.length; // 40/8 --> 5페이지 
 			const pageCount = Math.ceil(rowsCount/rowsPerPage); 

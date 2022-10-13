@@ -32,25 +32,25 @@ public class QnAInsertCon implements Controller {
 		try {
 			
 			
-			response.setContentType("text/html; charset=EUC-KR");
-			if(user_id != dto.getUser_id()) {
-				System.out.println("없는 아이디");
-				PrintWriter out = response.getWriter();
-				out.println("<script language=javascript> alert('부적절한 아이디가 입력됨')</script>");
-				
-				out.flush();
-			}
-			} catch (Exception e) {
-
-				e.printStackTrace();
-			}
-		
 		
 
 		dto.setHelp_content(help_content);
 		dto.setUser_id(user_id);
 		dto.setHelp_title(help_title);
 
+		response.setContentType("text/html; charset=EUC-KR");
+		if(user_id != dto.getUser_id()) {
+			System.out.println(user_id);
+			PrintWriter out = response.getWriter();
+			out.println("<script language=javascript> alert('부적절한 아이디가 입력됨')</script>");
+			
+			out.flush();
+		}
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		}
+		
 		int result = dao.insert(dto);
 
 		if (result > 0) {
