@@ -219,13 +219,12 @@ input::placeholder{
                         <li style="float: left; margin-left: 15px; margin-right: 15px; cursor: default;"><a href="GoQnA.do" style="text-decoration: none; color:inherit;">Community</a></li>
                         <li style="float: left; margin-left: 15px; margin-right: 15px; cursor: default;"><a href="#" style="text-decoration: none; color:inherit; ">Q&A</a></li>
                         <li style="float: left;">
-<<<<<<< HEAD
+
                             <div style="position: absolute; left:1700px; padding: auto;">
                                 <a href="LoginPage.do" style="text-decoration: none; color:inherit">로그인</a>
-=======
-                            <div style="position: absolute; left:88%; padding: auto;">
-                                <a href="#" style="text-decoration: none; color:inherit">로그인</a>
->>>>>>> branch 'master' of https://github.com/1team-Edution/Edution.git
+
+                           
+
                             </div>
                         </li>
                         <li>
