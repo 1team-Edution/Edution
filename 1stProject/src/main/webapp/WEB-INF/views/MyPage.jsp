@@ -52,16 +52,16 @@
 
             <div class="p-4 pt-5">
                 <!-- 아이디의 프로필 사진이 보여지게 해주세요 -->
-              <a id="preview" href="#" class="img logo rounded-circle mb-5" style="background-image: url(resources/image/<%=list.getUser_photo()%>);"></a>
+                <img id="preview" src="resources/image/<%=list.getUser_photo()%>">
+<!--               <a id="preview" class="img logo rounded-circle mb-5" style="background-image: url(resources/image/<%=list.getUser_photo()%>);"></a> -->
+
               <p style="color: #f8b739; margin-left: 80px;">My Page</p>
               <p style="margin-left: 80px;"><%=list.getUser_id()%>님의 페이지</p>
         <ul class="list-unstyled components mb-5">
           <li>
             <a href="#" data-toggle="collapse" aria-expanded="false" id="lihome" onclick="closeText(lihome);">My account</a>
           </li>
-          <li>
-              <a href="#" id="liuser" onclick="closeText(liuser);">Profile photo</a>
-          </li>
+
             <li>
                 <a href="#" id="licommunity1" onclick="closeText(licommunity1);">Logout</a>
             </li>
@@ -92,9 +92,6 @@
           <ul class="nav navbar-nav ml-auto">
             <li class="nav-item active">
                 <a class="nav-link" href="#" onclick="closeText(lihome)">My account</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#" onclick="closeText(liuser)" >Profile photo</a>
             </li>
             <li class="nav-item" >
                 <a class="nav-link" href="#" onclick="closeText(licommunity1)">Logout</a>
