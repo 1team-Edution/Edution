@@ -2,6 +2,7 @@ package com.smhrd.controller.user;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,6 +20,10 @@ public class UpdateCon implements Controller {
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		
 		
+		
+		
+		
+		
 		String savePath = request.getServletContext().getRealPath("resources/image");
 
 		int maxSize = 1024 * 1024 * 5;
@@ -28,7 +33,7 @@ public class UpdateCon implements Controller {
 		MultipartRequest multi = null;
 
 		try {
-			
+			request.setCharacterEncoding("EUC-KR");
 			multi = new MultipartRequest(request, savePath, maxSize, encoding, new DefaultFileRenamePolicy());
 			
 		} catch (IOException e) {

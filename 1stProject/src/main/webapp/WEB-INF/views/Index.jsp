@@ -235,7 +235,7 @@ footer {
                 </div>
                     
                     <div class="index-main-joinbtn">
-                        <a class="index-main-joinbtn-a">Edution 회원가입</a>
+                        <a href ="GoJoin.do" class="index-main-joinbtn-a">Edution 회원가입</a>
                     </div>
                     
                     

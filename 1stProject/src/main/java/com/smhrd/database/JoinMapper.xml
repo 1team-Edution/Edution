@@ -54,7 +54,7 @@
   </select>
   
   
-  <select id="nickSame" parameterType="UserDTO" resultType="String">
+  <select id="nickSame" parameterType="UserDTO" resultType="UserDTO">
   
   select user_nick
   from tbl_user

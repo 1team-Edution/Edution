@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Document</title>
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -55,11 +56,12 @@ input {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	background: rgba(255, 255, 255, 0.3);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 	backdrop-filter: blur(8px);
 	-webkit-backdrop-filter: blur(8px);
 	border-radius: 10px;
-
-
+	border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 #modal .modal-window {
@@ -70,9 +72,6 @@ input {
 	position: relative;
 	top: -100px;
 	padding: 10px;
-	padding-top:150px;
-	width: 850px;
-	height: 100%;
 }
 </style>
 
@@ -119,11 +118,10 @@ input {
 		</div>
 		<div
 			style="flex: 0 0 auto; width: 1px; height: 16px; margin-left: 8px; margin-right: 8px; background: rgba(55, 53, 47, 0.16);"></div>
-		<div role="button" tabindex="0"
-			style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: inline-flex; align-items: center; flex-shrink: 0; white-space: nowrap; height: 28px; border-radius: 3px; font-size: 14px; line-height: 1.2; min-width: 0px; padding-left: 8px; padding-right: 8px; color: rgb(55, 53, 47);">
-		
+		<div role="button" tabindex="0" href="Go" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: inline-flex; align-items: center; flex-shrink: 0; white-space: nowrap; height: 28px; border-radius: 3px; font-size: 14px; line-height: 1.2; min-width: 0px; padding-left: 8px; padding-right: 8px; color: rgb(55, 53, 47);">
+
 			<img src="img/Edution2.png" style="width: 20px; height: 20px;">
-			<a href="indexView.do" style="text-decoration: none; color:black;">Edution으로 돌아가기</a>
+			Edution으로 돌아가기
 		</div>
 	</div>
 
@@ -154,7 +152,13 @@ input {
 							<div data-block-id="61220f50-7782-4ae6-8164-4cdd012006e9"
 								class="notion-selectable notion-page-block"
 								style="color: rgb(55, 53, 47); font-weight: 700; line-height: 1.2; font-size: 32px; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont,&amp; quot; Segoe UI&amp;quot; , Helvetica , &amp;quot; Apple Color Emoji&amp;quot; , Arial , sans-serif, &amp;quot; Segoe UI Emoji&amp;quot; , &amp; quot; Segoe UI Symbol&amp;quot;; cursor: text; display: flex; align-items: center;">
-									<span>Edution Community</span>
+								<div spellcheck="true" placeholder="제목 없음"
+									data-content-editable-leaf="true" contenteditable="false"
+									style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 3px 2px;">
+									<span style="text-decoration: none; color: inherit"
+										data-token-index="0" class="notion-enable-hover">Edution</span>
+									Community
+								</div>
 							</div>
 
 						</div>
@@ -189,7 +193,10 @@ input {
 					</div>
 				</div>
 				<!-- 게시글 복붙은 여기 /div 닫는 태그 안으로 넣기! -->
+				<ul class="pagination">
+           
 
+    			</ul>
 				
 
 
@@ -231,7 +238,7 @@ input {
 							<span style="width: 150px;">Likes</span> <span id="brd_likes" style="color: black;">게시글 좋아요 개수를 넣어주세요</span>
 						</div>
 
-						<!-- 게시글 파일  -->
+						게시글 파일
 						<div id="file_content" style="line-height: 2; margin-bottom: 80px; caret-color: rgb(55, 53, 47); padding-top: 50px;">
 							<img id="brd_file" src="" style="display: block; object-fit: cover; border-radius: 1px; pointer-events: auto; width: 100%; height: 500px;">
 							<div id="brd_content" style="white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding-bottom: 30px;">안녕하세요. 게시글 내용을 출력해주세요.</div>
@@ -242,15 +249,22 @@ input {
 <script>
 let boardShow = document.getElementById('boardShow');
 let modalShow = document.getElementById('modalShow');
-let resultHTML = [];
-let date = [];
-let json = [];
+let resultHTML = []; // 게시글 리스트 html 태그
+let date = []; // 시분초를 제외한 날짜 배열
+let json = []; // DB에서 가져온 json을 배열로 변환
 
+
+// 모달창 상세페이지 관련 id
 let brd_title = document.getElementById('brd_title');
 let brd_date = document.getElementById('brd_date');
 let user_name = document.getElementById('user_name');
 let file_content = document.getElementById('file_content');
 let brd_likes = document.getElementById('brd_likes');
+
+// 페이징
+
+
+
 
 function modalOn(index) {
 	//modal.style.display === "flex"
@@ -258,6 +272,7 @@ function modalOn(index) {
 	brd_title.innerText = json[index].brd_title;
 	brd_date.innerText = date[index][0];
 	user_name.innerText = json[index].user_name;
+	brd_likes.innerText = `${json[index].brd_likes}명의 유저가 이 글을 좋아합니다.`;
 	file_content.innerHTML = `
 		<img src="resources/test/${json[index].brd_file}" style="display: block; object-fit: cover; border-radius: 1px; pointer-events: auto; width: 100%; height: 500px;">
 		<div id="brd_content" style="white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding-bottom: 30px;">${json[index].brd_content}</div>
@@ -274,6 +289,9 @@ window.addEventListener("keyup", e => {
     	$('.modal-overlay').css('display','none');
     }
 }) 
+
+
+
 
 $(document).ready(function() {
 	$.ajax({
@@ -349,6 +367,67 @@ $(document).ready(function() {
 			
 			boardShow.innerHTML = resultHTML;
 			
+			//////////////////// pagination//////////////////////////////////
+			const rowsPerPage = 15;
+			const rows = document.querySelectorAll('#boardShow .modalTest');
+			const rowsCount = rows.length; // 40/8 --> 5페이지 
+			const pageCount = Math.ceil(rowsCount/rowsPerPage); 
+			let numbers = document.querySelector('.pagination');
+			console.log(rows);
+			
+			// 데이터 값에 따라 페이지 번호 출력
+			for(let i = 1; i<=pageCount; i++) {
+			    numbers.innerHTML += `<span><a href="">${i}</a></span>`;
+			}
+
+			const numberBtn = numbers.querySelectorAll('a');
+			console.log(numberBtn);
+			
+			// a태그 클릭시 displayRow함수를 호출
+			numberBtn.forEach((item, idx)=>{
+			    item.addEventListener('click', (e)=>{
+			        e.preventDefault();
+			       
+
+			        // 데이터를 출력 함수
+
+			        console.log(idx);
+			        displayRow(idx);
+
+			    });
+			});
+			
+			// 페이지 번호를 매개변수로 받아서 클릭시 나타낼 데이터 설정
+			function displayRow(idx) {
+			   
+
+			    let start = idx * rowsPerPage;
+			    let end = start + rowsPerPage;
+			 
+
+			    let rowsArray = Array.from(rows);
+			    
+			    for(ra of rowsArray) {
+			        ra.style.display = 'none';
+			        
+			    }
+
+			    let newRows = rowsArray.slice(start,end);
+			    for(nr of newRows) {
+			        nr.style.display = '';
+			    }
+			    for(nb of numberBtn) {
+			        nb.classList.remove('active');
+			    }
+			    numberBtn[idx].classList.add('active');
+			}// displayRow
+
+			displayRow(0); // 페이지 로딩시 첫 페이지를 보여주기
+			
+			
+			
+			
+			
 			////////////// success 끝나는 지점 /////////////////////////////////	
 		}, 
 		
@@ -362,10 +441,13 @@ $(document).ready(function() {
 ///////////////// ajax 끝나는 지점 //////////////////////////////	
 
 
+
+
 		
 		
 
     </script>
+    
 </body>
 </html>
 

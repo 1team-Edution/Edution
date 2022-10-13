@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.smhrd.controller.Controller;
 
 import com.smhrd.controller.indexView;
+import com.smhrd.controller.QnA.AnswerInsertCon;
 import com.smhrd.controller.QnA.GoQnACon;
 import com.smhrd.controller.QnA.QnADeleteCon;
 import com.smhrd.controller.QnA.QnAInsertCompleteCon;
@@ -44,6 +45,7 @@ import com.smhrd.controller.todo.TodoDragCon;
 import com.smhrd.controller.todo.TodoEditCon;
 import com.smhrd.controller.todo.TodoTagSearchCon;
 import com.smhrd.controller.user.Account_deleteCon;
+import com.smhrd.controller.user.GoAdminCon;
 import com.smhrd.controller.user.GoJoinCon;
 import com.smhrd.controller.user.GoLogin_IdSearch;
 import com.smhrd.controller.user.GoLogin_pwSearch;
@@ -82,7 +84,8 @@ public class FrontController1 extends HttpServlet {
 		mappings.put("/MyPageGo.do", new MyPageGo());
 		mappings.put("/GoLogin_IdSearch.do", new GoLogin_IdSearch());
 		mappings.put("/GoLogin_pwSearch.do", new GoLogin_pwSearch());
-		
+		mappings.put("/GoAdmin.do", new GoAdminCon());
+
 		//QnA mappings
 		mappings.put("/QnASelectAll.do", new QnASelectAllCon());
 		mappings.put("/QnASelectOne.do", new QnASelectOneCon());
@@ -91,7 +94,8 @@ public class FrontController1 extends HttpServlet {
 		mappings.put("/QnAUpdate.do", new QnAUpdateCon());
 		mappings.put("/QnADelete.do", new QnADeleteCon());
 		mappings.put("/GoQnA.do", new GoQnACon());
-		
+		mappings.put("/AnswerInsert.do", new AnswerInsertCon());
+
 
 		// Todo mappings
 
