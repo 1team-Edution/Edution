@@ -36,6 +36,9 @@ public class QnAInsertCon implements Controller {
 			System.out.println("데이터 보내기 성공");
 			return "redirect:/GoQnA.do";
 		}else {
+			
+			
+			
 			System.out.println("입력실패");
 			return "redirect:/QnAInsert.do";
 		}

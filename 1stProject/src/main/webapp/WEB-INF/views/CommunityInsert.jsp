@@ -63,7 +63,7 @@
             <input name="brd_title"spellcheck="true" placeholder="게시글 제목"  style="border: none; max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 3px 2px;"></div></div>
 
                 <div class="mb-3" style="padding-top: 25px;">
-                <label for="exampleFormControlInput1" class="form-label">작성자 ID/Nick</label>
+                <label for="exampleFormControlInput1" class="form-label">작성자 ID</label>
                 <input name="user_id" class="form-control" id="exampleFormControlInput1">
               </div>
               <div class="mb-3">
@@ -74,6 +74,7 @@
                 <label for="exampleFormControlTextarea1" class="form-label">게시글 내용</label>
                 <textarea name="brd_content" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
               </div>
+            </div>
                             
             <input type="submit" class="jsx-2971364727 button primary button-size-m" style="margin-bottom:14px;" value="게시글 등록하기">
          

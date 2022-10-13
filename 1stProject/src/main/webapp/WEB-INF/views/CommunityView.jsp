@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,6 +74,66 @@ input {
 	top: -100px;
 	padding: 10px;
 }
+
+
+    .page{
+
+        align-items: center;
+
+    }
+
+    .pagination{
+        list-style: none;
+        display: inline-block;
+        padding: 0;
+        margin-top: 20px;
+    }
+
+    .pagination li{
+        display: inline;
+        text-align: center;
+    }
+
+    /* 숫자들의 디자인 */
+    .pagination a{
+        float: left;
+        display: block;
+        font-size: 14px;
+        text-decoration: none;
+        padding: 5px 12px;
+        color: rgba(0, 0, 0, 0.6);
+        line-height: 1.5;
+    }
+
+
+    .pargination a:active{
+        outline: none;
+    }
+
+    .modal .num{
+        margin-left: 3px;
+        padding: 0;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        border-radius: 10px;
+    }
+
+    .modal .num:hover{
+        background-color: rgb(225, 98, 89, 0.6);
+        color: #FFFFFF;
+    }
+
+    .modal .num.active, .modal .num:active{
+        background-color: #e16259;
+        color: #FFFFFF;
+        cursor: pointer;
+    }
+
+
+
+
+
 </style>
 
 
@@ -152,13 +213,10 @@ input {
 							<div data-block-id="61220f50-7782-4ae6-8164-4cdd012006e9"
 								class="notion-selectable notion-page-block"
 								style="color: rgb(55, 53, 47); font-weight: 700; line-height: 1.2; font-size: 32px; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont,&amp; quot; Segoe UI&amp;quot; , Helvetica , &amp;quot; Apple Color Emoji&amp;quot; , Arial , sans-serif, &amp;quot; Segoe UI Emoji&amp;quot; , &amp; quot; Segoe UI Symbol&amp;quot;; cursor: text; display: flex; align-items: center;">
-								<div spellcheck="true" placeholder="제목 없음"
-									data-content-editable-leaf="true" contenteditable="false"
-									style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 3px 2px;">
+							
 									<span style="text-decoration: none; color: inherit"
-										data-token-index="0" class="notion-enable-hover">Edution</span>
-									Community
-								</div>
+										data-token-index="0" class="notion-enable-hover">Edution Community</span>
+
 							</div>
 
 						</div>
@@ -193,10 +251,16 @@ input {
 					</div>
 				</div>
 				<!-- 게시글 복붙은 여기 /div 닫는 태그 안으로 넣기! -->
-				<ul class="pagination">
-           
+				
+				
+            <div class="page">
+                <ul class="pagination modal">
+
+                    <li><a href="#" class="active num">1</a></li>
 
     			</ul>
+            </div>
+				
 				
 
 
@@ -376,9 +440,15 @@ $(document).ready(function() {
 			console.log(rows);
 			
 			// 데이터 값에 따라 페이지 번호 출력
-			for(let i = 1; i<=pageCount; i++) {
-			    numbers.innerHTML += `<span><a href="">${i}</a></span>`;
+
+
+			for(let i = 2; i<=pageCount; i++) {
+                
+			    numbers.innerHTML += `<li><a href="#" class="num">${i}</a></li>`;
 			}
+
+
+
 
 			const numberBtn = numbers.querySelectorAll('a');
 			console.log(numberBtn);
@@ -450,6 +520,11 @@ $(document).ready(function() {
     
 </body>
 </html>
+
+
+
+
+
 
 
 

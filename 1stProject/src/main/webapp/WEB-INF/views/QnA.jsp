@@ -298,9 +298,8 @@ input::placeholder{
 	    <div style="padding-top: 10px;"></div>
 	     <input type="submit" class="qna-main-submit" value="Send Message" style="color: white;">
 		</div>
-	  </form>  
-
-
+	  </form>
+	  
 
 
 </main>
